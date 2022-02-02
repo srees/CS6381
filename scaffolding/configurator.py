@@ -17,46 +17,59 @@
 
 # I am assuming there will be all these individual elements that this configurator
 # is able to produce when asked by the caller
-from cs6381_topiclist import TopicList
-from cs6381_publisher import Publisher
-from cs6381_pubproxy import PublisherProxy
-from cs6381_subscriber import Subscriber
-from cs6381_subproxy import SubscriberProxy
-from cs6381_broker import Broker
-from cs6381_brokerproxy import BrokerProxy
+from topiclist import TopicList
+from publisher import Publisher, DirectPublisher, ViaBrokerPublisher
+from pubproxy import PublisherProxy
+from subscriber import Subscriber
+from subproxy import SubscriberProxy
+from broker import Broker
+from brokerproxy import BrokerProxy
+
 
 # define the system configurator class that will be used as a factory object
 # to supply the right objects to the caller based on supplied command line
 # arguments
-class Configurator ():
+class Configurator:
+    arguments = []
 
     # constructor
-    def __init__ (self, args):
-        pass
-    
+    def __init__(self, args):
+        self.arguments = args
+
     # retrieve the right type of publisher depending on the cmd line argument
-    def get_publisher (self):
+    def get_publisher(self):
         # check what our role is. If we are the publisher app, we get the concrete
         # publisher object else get a proxy. The publisher itself may be specialized
         # depending on the dissemination strategy
-        pass
-    
+        if self.arguments.disseminate == 'direct':
+            return DirectPublisher(self.arguments)
+        else:
+            return ViaBrokerPublisher(self.arguments)
+
     # retrieve the right type of subscriber depending on the cmd line argument
-    def get_subscriber (self):
+    def get_subscriber(self):
         # check what our role is. If we are the subscriber app, we get the concrete
         # subscriber object else a proxy.  The subscriber itself may be specialized
         # depending on the dissemination strategy
         pass
 
     # retrieve the right type of broker depending on the cmd line argument
-    def get_broker (self):
+    def get_broker(self):
         # check what our role is. If we are the broker, we get the concrete
         # broker object else a proxy. The broker itself may be specialized
         # depending on the dissemination strategy
-        pass
+        if self.arguments.role == "broker":
+            return Broker(self.arguments)
+        else:
+            return BrokerProxy(self.arguments)
 
-     # A publisher and subscriber appln may decide to publish or subscribe to,
-     # respectively, a random set of topics. We provide such a helper in the
-     # cs6381_topiclist.py file
-    def get_interest (self):
+    # A publisher and subscriber app may decide to publish or subscribe to,
+    # respectively, a random set of topics. We provide such a helper in the
+    # cs6381_topiclist.py file
+    def get_interest(self):
         # as the topic list object t
+        topics = TopicList()
+        return topics.interest()
+
+    def get_iterations(self):
+        return int(self.arguments.count)

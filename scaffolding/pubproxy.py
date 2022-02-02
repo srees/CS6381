@@ -14,3 +14,5 @@
 # it delegates the work to the proxy to talk to its real counterpart. 
 # One may completely avoid this approach if pure message passing is
 # going to be used and not have a higher level remote procedure call approach.
+class PublisherProxy:
+    pass

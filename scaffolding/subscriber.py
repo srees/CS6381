@@ -15,3 +15,5 @@
 # may have to be done here. If dissemination is direct, then each subscriber
 # will have to connect to each separate publisher with whom we match.
 # For the ViaBroker approach, the broker is our only publisher for everything.
+class Subscriber:
+    pass

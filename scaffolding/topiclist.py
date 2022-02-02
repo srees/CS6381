@@ -18,17 +18,17 @@
 # we need this package
 import random
 
-# define a helper class to hold all the topics that we support in our system
-class TopicList ():
 
+# define a helper class to hold all the topics that we support in our system
+class TopicList:
     # some pre-defined topics from which a publisher or subscriber chooses
     # from
-    topiclist = ["weather", "humidity", "airquality", "light", \
-                          "pressure", "temperature", "sound", "altitude", \
-                          "location", "weather"]
+    topiclist = ["weather", "humidity", "airquality", "light",
+                 "pressure", "temperature", "sound", "altitude",
+                 "location", "weather"]
 
     # return a random subset of topics from this list, which becomes our interest
     # A publisher or subscriber application logic will invoke this method
-    def interest (self):
+    def interest(self):
         # here we just randomly create a subset from this list and return it
-        return random.sample (self.topiclist, random.randint (1, len (self.topiclist)))
+        return random.sample(self.topiclist, random.randint(1, len(self.topiclist)))

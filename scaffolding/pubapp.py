@@ -49,9 +49,11 @@
 # iterations of publishing are over, proceed to clean up the objects and exit
 #
 
-import argparse   # for argument parsing
-
-from cs6381_configurator import Configurator # factory class
+import argparse  # for argument parsing
+import random
+from random import randrange
+from configurator import Configurator  # factory class
+import socket
 
 # import any other packages you need.
 
@@ -60,9 +62,9 @@ from cs6381_configurator import Configurator # factory class
 # Parse command line arguments
 #
 ###################################
-def parseCmdLineArgs ():
+def parseCmdLineArgs():
     # instantiate a ArgumentParser object
-    parser = argparse.ArgumentParser (description="Publisher Application")
+    parser = argparse.ArgumentParser(description="Publisher Application")
 
     # Now specify all the optional arguments we support
     # At a minimum, you will need a way to specify the IP and port of the lookup
@@ -73,7 +75,13 @@ def parseCmdLineArgs ():
     # Here I am showing one example of adding a command line
     # arg for the dissemination strategy. Feel free to modify. Add more
     # options for all the things you need.
-    parser.add_argument ("-d", "--disseminate", choices=["direct", "broker"], default="direct", help="Dissemination strategy: direct or via broker; default is direct")
+    parser.add_argument("-d", "--disseminate", choices=["direct", "broker"], default="direct",
+                        help="Dissemination strategy: direct or via broker; default is direct")
+    parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP Address of the registry")
+    parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
+    parser.add_argument("-b", "--bind", default="5560", help="Port to publish topic on")
+    parser.add_argument("-t", "--topic", help="Topic to publish to (optional)")
+    parser.add_argument("-c", "--count", default="50", help="Number of publish iterations")
 
     return parser.parse_args()
 
@@ -83,30 +91,42 @@ def parseCmdLineArgs ():
 # Main program
 #
 ###################################
-def main ():
+def main():
     # first parse the arguments
-    print ("Main: parse command line arguments")
-    args = parseCmdLineArgs ()
+    print("Main: parse command line arguments")
+    args = parseCmdLineArgs()
+    args.role = "publisher"
 
     # get hold of the configurator, which is the factory that produces
     # many kinds of artifacts for us
-    config = Configurator (args)
-    
-    #Ask the configurator to give us a random subset of topics that we can publish
-    my_topics = config.get_interest ()
+    config = Configurator(args)
+
+    # Ask the configurator to give us a random subset of topics that we can publish
+    my_topics = config.get_interest()
 
     # get a handle to our publisher object
-    pub = config.get_publisher ()
+    pub = config.get_publisher()
 
     # get a handle to our broker object (will be a proxy)
-    pub = config.get_broker ()
+    broker = config.get_broker()
+    print("Publisher interested in publishing on these topics: {}".format(my_topics))
 
-    print ("Publisher interested in publishing on these topics: {}".format (my_topics))
+    # register with lookup/broker
+    ip = socket.gethostbyname(socket.gethostname())
+    # port = args.bind
+    # topics = my_topics
+    broker.register(args.role, ip, args.bind, my_topics)
 
     # wait for kickstart event from broker
+    broker.wait()
 
     # now do the publication for as many iterations that we plan to do
-    
+    iters = config.get_iterations()
+    for x in range(iters):
+        topic = random.sample(my_topics, 1)
+        value = randrange(0, 500)
+        pub.publish(topic, value)
+
 ###################################
 #
 # Main entry point
