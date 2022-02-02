@@ -20,17 +20,30 @@ import json
 class Broker:
     def __init__(self, args):
         self.context = zmq.Context()
-        self.socket = self.context.socket(zmq.REQ)
-        self.connect_str = "tcp://" + args.registry + ":" + str(args.port)
+        self.registry_connect_str = "tcp://" + args.registry + ":" + str(args.port)
+        self.pub_quantity = args.pubs
+        self.sub_quantity = args.subs
+        self.pubs = []
+        self.subs = []
+        self.broker = {}
+        self.bind = args.bind
 
-    def register(self, role, ip, port, topics):
-        self.socket.connect(self.connect_str)
-        data = {'role': role, 'ip': ip, 'port': port, 'topics': topics}
-        self.socket.send(json.dumps(data))
-        self.socket.disconnect(self, self.connect_str)
+    def register(self, role, ip, port):
+        socket = self.context.socket(zmq.REQ)
+        socket.connect(self.registry_connect_str)
+        data = {'role': role, 'ip': ip, 'port': port}
+        socket.send(json.dumps(data))
+        socket.disconnect(self, self.registry_connect_str)
 
     def wait(self):
-        self.socket.connect(self.connect_str)
-        self.socket.send(b"Waiting for start...")
-        message = self.socket.recv()  #does this need to be in a loop?
-        self.socket.disconnect(self, self.connect_str)
+        socket = self.context.socket(zmq.REP)
+        socket.bind("tcp://*:" + str(self.bind))
+        while self.pubs.count() < self.pub_quantity and self.subs.count() < self.sub_quantity and not self.broker:
+            message = json.loads(socket.recv())
+            if message['role'] == 'broker':
+                self.broker = {'ip': message['ip'], 'port': message['port']}
+            if message['role'] == 'publisher':
+                self.pubs.append({'ip': message['ip'], 'port': message['port'], 'topics': message['topics']})
+            if message['role'] == 'subscriber':
+                self.subs.append({'ip': message['ip'], 'port': message['port'], 'topics': message['topics']})
+                # TODO it may be better to setup a dictionary of topics with a list of subscribers to each topic?

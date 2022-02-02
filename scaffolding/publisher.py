@@ -13,6 +13,9 @@
 # defines the underlying abstract base class
 from abc import ABC, abstractmethod
 import zmq
+import datetime
+import json
+
 
 # define an abstract base class for the publisher
 class Publisher(ABC):
@@ -43,12 +46,15 @@ class DirectPublisher(Publisher):
         self.context = zmq.Context()
         self.socket = self.context.socket(zmq.PUB)
         self.socket.bind("tcp://*:" + str(args.bind))  # 5556
+        self.start = False
 
     # to be invoked by the publisher's application logic
     # to publish a value of a topic. 
     def publish(self, topic, value):
         # print("I am the direct send publisher's publish method")
-        self.socket.send_string("%s: %i" % (topic, value))
+        if self.start:
+            data = {'TS': datetime.datetime.now(), 'Topic': topic, 'Value': value }
+            self.socket.send_string(json.dumps(data))
 
     # to be invoked by a broker to kickstart the publisher
     # so it can start publishing.  This method is for Assignment #1
@@ -75,7 +81,8 @@ class ViaBrokerPublisher(Publisher):
     # to publish a value of a topic. 
     def publish(self, topic, value):
         if self.start:
-            self.socket.send_string("%s: %i" % (topic, value))
+            data = {'TS': datetime.datetime.now(), 'Topic': topic, 'Value': value }
+            self.socket.send_string(json.dumps(data))
 
     # to be invoked by a broker to kickstart the publisher
     # so it can start publishing.  This method is for Assignment #1
