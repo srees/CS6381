@@ -103,22 +103,23 @@ def main():
 
     # Ask the configurator to give us a random subset of topics that we can publish
     my_topics = config.get_interest()
+    print("Publisher interested in publishing on these topics: {}".format(my_topics))
 
     # get a handle to our publisher object
     pub = config.get_publisher()
 
-    # get a handle to our broker object (will be a proxy)
-    broker = config.get_broker()
-    print("Publisher interested in publishing on these topics: {}".format(my_topics))
+    # get a handle to our registry object (will be a proxy)
+    registry = config.get_registry()
 
-    # register with lookup/broker
-    ip = socket.gethostbyname(socket.gethostname())
-    # port = args.bind
-    # topics = my_topics
-    broker.register(args.role, ip, args.bind, my_topics)
+    # register with lookup
+    registry.register(my_topics)
 
-    # wait for kickstart event from broker
-    broker.wait()
+    # wait for kickstart event from registry
+    registry.wait()
+    # consider adding a check for if message exists (not a timeout) before proceeding
+
+    # this seems unnecessary?
+    pub.start()
 
     # now do the publication for as many iterations that we plan to do
     iters = config.get_iterations()

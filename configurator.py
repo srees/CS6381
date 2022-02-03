@@ -24,6 +24,8 @@ from subscriber import Subscriber
 from subproxy import SubscriberProxy
 from broker import Broker
 from brokerproxy import BrokerProxy
+from registry import Registry
+from registryproxy import RegistryProxy
 
 
 # define the system configurator class that will be used as a factory object
@@ -73,3 +75,9 @@ class Configurator:
 
     def get_iterations(self):
         return int(self.arguments.count)
+
+    def get_registry(self):
+        if self.arguments.role == "registry":
+            return Registry(self.arguments)
+        else:
+            return RegistryProxy(self.arguments)

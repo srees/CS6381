@@ -15,6 +15,7 @@ from abc import ABC, abstractmethod
 import zmq
 import datetime
 import json
+import time
 
 
 # define an abstract base class for the publisher
@@ -53,7 +54,7 @@ class DirectPublisher(Publisher):
     def publish(self, topic, value):
         # print("I am the direct send publisher's publish method")
         if self.start:
-            data = {'TS': datetime.datetime.now(), 'Topic': topic, 'Value': value }
+            data = {'TS': datetime.datetime.now(), 'Topic': topic, 'Value': value}
             self.socket.send_string(json.dumps(data))
 
     # to be invoked by a broker to kickstart the publisher
@@ -81,7 +82,7 @@ class ViaBrokerPublisher(Publisher):
     # to publish a value of a topic. 
     def publish(self, topic, value):
         if self.start:
-            data = {'TS': datetime.datetime.now(), 'Topic': topic, 'Value': value }
+            data = {'TS': datetime.datetime.now(), 'Topic': topic, 'Value': value}
             self.socket.send_string(json.dumps(data))
 
     # to be invoked by a broker to kickstart the publisher
@@ -90,4 +91,4 @@ class ViaBrokerPublisher(Publisher):
     # before the publishers can start publishing. 
     def start(self):
         print("Enabling publish")
-        self.start = True;
+        self.start = True

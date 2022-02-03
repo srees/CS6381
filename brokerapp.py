@@ -38,7 +38,7 @@ import socket
 
 def parseCmdLineArgs():
     # instantiate a ArgumentParser object
-    parser = argparse.ArgumentParser(description="Publisher Application")
+    parser = argparse.ArgumentParser(description="Broker Application")
 
     # Now specify all the optional arguments we support
     # At a minimum, you will need a way to specify the IP and port of the lookup
@@ -54,8 +54,8 @@ def parseCmdLineArgs():
     parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP Address of the registry")
     parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
     parser.add_argument("-b", "--bind", default="5560", help="Port to broker on")
-    parser.add_argument("-c", "--pubs", default="5", help="Number of publishers")
-    parser.add_argument("-s", "--subs", default="5", help="Number of subscribers")
+    parser.add_argument("-c", "--pubs", default=5, help="Number of publishers")
+    parser.add_argument("-s", "--subs", default=5, help="Number of subscribers")
 
     return parser.parse_args()
 
@@ -79,15 +79,13 @@ def main():
     broker = config.get_broker()
 
     # register with lookup/broker
-    ip = socket.gethostbyname(socket.gethostname())
-    broker.register(args.role, ip, args.bind)
+    registry = config.get_registry()
+    registry.register([])
 
     # wait for all pubs/subs to join
-    broker.wait()
+    pubs = registry.wait()
 
-    # TODO if we are using broker method, open up pub/sub connections as needed
-
-    # TODO notify publishers to proceed
+    # TODO: subscribe to all publishers with polling
 
 ###################################
 #

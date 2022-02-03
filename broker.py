@@ -27,6 +27,7 @@ class Broker:
         self.subs = []
         self.broker = {}
         self.bind = args.bind
+        self.pub_socket = None
 
     def register(self, role, ip, port):
         socket = self.context.socket(zmq.REQ)
@@ -39,7 +40,7 @@ class Broker:
         socket = self.context.socket(zmq.REP)
         socket.bind("tcp://*:" + str(self.bind))
         while self.pubs.count() < self.pub_quantity and self.subs.count() < self.sub_quantity and not self.broker:
-            message = json.loads(socket.recv())
+            message = json.loads(socket.recv_string())
             if message['role'] == 'broker':
                 self.broker = {'ip': message['ip'], 'port': message['port']}
             if message['role'] == 'publisher':
@@ -47,3 +48,6 @@ class Broker:
             if message['role'] == 'subscriber':
                 self.subs.append({'ip': message['ip'], 'port': message['port'], 'topics': message['topics']})
                 # TODO it may be better to setup a dictionary of topics with a list of subscribers to each topic?
+
+    def publish(self):
+        self.pub_socket.bind("tcp://*:" + str(self.bind))  # 5556
