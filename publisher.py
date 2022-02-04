@@ -15,6 +15,7 @@ from abc import ABC, abstractmethod
 import zmq
 import time
 import publicip
+import json
 
 
 # define an abstract base class for the publisher

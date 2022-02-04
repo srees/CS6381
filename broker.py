@@ -15,6 +15,7 @@
 # broker. Otherwise keep them in separate files.
 import zmq
 import publicip
+import json
 
 
 class Broker:
@@ -23,7 +24,6 @@ class Broker:
         self.pubs = []
         self.pub_sockets = []
         self.poller = zmq.Poller()
-        self.topic_publishers = {}
         self.context = zmq.Context()
         self.socket = self.context.socket(zmq.REP)
         self.bind_url = 'tcp://' + publicip.get_ip_address() + ':' + self.args.bind
@@ -32,64 +32,28 @@ class Broker:
         self.socket.setsockopt(zmq.LINGER, 0)
         self.socket.bind(self.bind_url)
 
-    # def wait(self):
-    #     socket = self.context.socket(zmq.REP)
-    #     socket.bind("tcp://" + publicip.get_ip_address() + ":" + str(self.bind))
-    #     while self.pubs.count() < self.pub_quantity and self.subs.count() < self.sub_quantity and not self.broker:
-    #         message = json.loads(socket.recv_string())
-    #         if message['role'] == 'broker':
-    #             self.broker = {'ip': message['ip'], 'port': message['port']}
-    #         if message['role'] == 'publisher':
-    #             self.pubs.append({'ip': message['ip'], 'port': message['port'], 'topics': message['topics']})
-    #             # Let's save the topics into a lookup dictionary
-    #             for topic in message['topics']:
-    #                 if topic in self.topic_publishers and isinstance(self.topic_publishers[topic], list):
-    #                     # add the IP address to it
-    #                     self.topic_publishers[topic].append(message['ip'])
-    #                 else:
-    #                     # create the topic and add the IP:port
-    #                     self.topic_publishers[topic] = [message['ip'] + ':' + message['port']]
-    #         if message['role'] == 'subscriber':
-    #             self.subs.append({'ip': message['ip'], 'port': message['port'], 'topics': message['topics']})
-
     def start(self):
         self.wait()  # wait for registry to give us the go
         # first subscribe to publishers
-        # for pub in self.pubs:
-        #     connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
-        #     print("Broker subscribing to " + connect_str)
-        #     temp_sock = self.context.socket(zmq.SUB)
-        #     temp_sock.connect(connect_str)
-        #     temp_sock.setsockopt_string(zmq.SUBSCRIBE, '')
-        #     self.pub_sockets.append(temp_sock)
-        # for i in range(0, len(self.pub_sockets)):
-        #     self.poller.register(self.pub_sockets[i], zmq.POLLIN)
-        connect_str = 'tcp://' + self.pubs[0]['ip'] + ':' + self.pubs[0]['port']
-        print("Broker subscribing to " + connect_str)
-        temp_sock = self.context.socket(zmq.SUB)
-        temp_sock.connect(connect_str)
-        temp_sock.setsockopt_string(zmq.SUBSCRIBE, '')
-        self.poller.register(temp_sock, zmq.POLLIN)
+        for pub in self.pubs:
+            connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
+            print("Broker subscribing to " + connect_str)
+            temp_sock = self.context.socket(zmq.SUB)
+            temp_sock.connect(connect_str)
+            temp_sock.setsockopt_string(zmq.SUBSCRIBE, '')
+            self.pub_sockets.append(temp_sock)
+        for i in range(0, len(self.pub_sockets)):
+            self.poller.register(self.pub_sockets[i], zmq.POLLIN)
         print("Starting broker listen loop...")
         while True:
             try:
-                print('getting events')
                 events = dict(self.poller.poll())
-                if temp_sock in events:
-                    print('match')
-                    data = temp_sock.recv_json()
-                    print("Broker received: ")
-                    print(data)
-                    self.republish(data)
-                # print('starting for')
-                # for sock in self.pub_sockets:
-                #     print('check if')
-                #     if sock in events:
-                #         print('match')
-                #         data = sock.recv_json()
-                #         print("Broker received: ")
-                #         print(data)
-                #         self.republish(data)
+                for sock in self.pub_sockets:
+                    if sock in events:
+                        data = sock.recv_json()
+                        print("Broker received: ")
+                        print(data)
+                        self.republish(data)
             except KeyboardInterrupt:
                 break
 

@@ -112,7 +112,7 @@ def main():
 
     # wait for kickstart event from registry
     print("Waiting for start from registry")
-    sub.start()
+    sub.start(my_topics)
     # consider adding a check for if message exists (not a timeout) before proceeding
 
     # now do the publication for as many iterations that we plan to do
