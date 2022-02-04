@@ -17,7 +17,6 @@
 # For the ViaBroker approach, the broker is our only publisher for everything.
 import zmq
 import publicip
-import json
 
 
 class Subscriber:

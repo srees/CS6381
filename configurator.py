@@ -18,10 +18,8 @@
 # I am assuming there will be all these individual elements that this configurator
 # is able to produce when asked by the caller
 from topiclist import TopicList
-from publisher import Publisher, DirectPublisher, ViaBrokerPublisher
-from pubproxy import PublisherProxy
+from publisher import Publisher
 from subscriber import Subscriber
-from subproxy import SubscriberProxy
 from broker import Broker
 from brokerproxy import BrokerProxy
 from registry import Registry
@@ -43,10 +41,7 @@ class Configurator:
         # check what our role is. If we are the publisher app, we get the concrete
         # publisher object else get a proxy. The publisher itself may be specialized
         # depending on the dissemination strategy
-        if self.arguments.disseminate == 'direct':
-            return DirectPublisher(self.arguments)
-        else:
-            return ViaBrokerPublisher(self.arguments)
+        return Publisher(self.arguments)
 
     # retrieve the right type of subscriber depending on the cmd line argument
     def get_subscriber(self):

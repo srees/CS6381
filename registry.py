@@ -1,5 +1,4 @@
 import zmq
-import publicip
 
 print("Current libzmq version is %s" % zmq.zmq_version())
 print("Current  pyzmq version is %s" % zmq.__version__)
@@ -51,10 +50,10 @@ class Registry:
                 for topic in message['topics']:
                     if topic in self.topics and isinstance(self.topics[topic], list):
                         # add the IP address to it
-                        self.topics[topic].append({'ip': message['ip'], 'port': message['port'], 'topics': message['topics']})
+                        self.topics[topic].append(message['ip'] + ':' + message['port'])
                     else:
                         # create the topic and add the IP:port
-                        self.topics[topic] = [{'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}]
+                        self.topics[topic] = [message['ip'] + ':' + message['port']]
             if message['role'] == 'subscriber':
                 self.subs.append({'ip': message['ip'], 'port': message['port'], 'topics': message['topics']})
                 print("Registered a subscriber")
@@ -82,13 +81,19 @@ class Registry:
                 socket.disconnect('tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1))
         else:
             print("Registry passing publisher information to subscribers")
-            temp_list = []
+            pub_ips = []
             socket = self.context.socket(zmq.REQ)
             for sub in self.subs:
                 for topic in sub['topics']:
-                    temp_list.extend(self.topics[topic])
+                    if topic in self.topics:
+                        pub_ips.extend(self.topics[topic])
+                pub_ips = set(pub_ips)
+                temp_list = []
+                for pub in self.pubs:
+                    if (pub['ip'] + ':' + pub['port']) in pub_ips:
+                        temp_list.append(pub)
                 socket.connect('tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1))
-                socket.send_json(set(temp_list))
+                socket.send_json(temp_list)
                 socket.recv_json()
                 socket.disconnect('tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1))
 

@@ -47,10 +47,8 @@
 # go ahead and clean up everything.
 
 import argparse  # for argument parsing
-import random
-from random import randrange
 from configurator import Configurator  # factory class
-import time
+
 
 # import any other packages you need.
 

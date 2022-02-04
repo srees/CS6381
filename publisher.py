@@ -9,50 +9,13 @@
 #
 ###############################################
 
-# ABC stands for abstract base class and this is how Python library
-# defines the underlying abstract base class
-from abc import ABC, abstractmethod
 import zmq
 import time
 import publicip
-import json
-
-
-# define an abstract base class for the publisher
-class Publisher(ABC):
-
-    # to be invoked by the publisher's application logic
-    # to publish a value of a topic. 
-    @abstractmethod
-    def publish(self, topic, value):
-        pass
-
-    # to be invoked by a broker to kickstart the publisher
-    # so it can start publishing.  This method is for Assignment #1
-    # where we want all publishers and subscribers deployed
-    # before the publishers can start publishing.
-    @abstractmethod
-    def start(self):
-        pass
-
-
-# a concrete class that disseminates info directly
-class DirectPublisher(Publisher):
-
-    def __init__(self, args):
-        pass
-
-    # to be invoked by the publisher's application logic
-    # to publish a value of a topic. 
-    def publish(self, topic, value):
-        pass
-
-    def start(self):
-        pass
 
 
 # A concrete class that disseminates info via the broker
-class ViaBrokerPublisher(Publisher):
+class Publisher:
 
     # constructor. Add whatever class members you need
     # for the assignment

@@ -15,7 +15,6 @@
 # broker. Otherwise keep them in separate files.
 import zmq
 import publicip
-import json
 
 
 class Broker:
