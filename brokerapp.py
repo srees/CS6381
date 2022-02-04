@@ -49,13 +49,10 @@ def parseCmdLineArgs():
     # Here I am showing one example of adding a command line
     # arg for the dissemination strategy. Feel free to modify. Add more
     # options for all the things you need.
-    parser.add_argument("-d", "--disseminate", choices=["direct", "broker"], default="direct",
-                        help="Dissemination strategy: direct or via broker; default is direct")
+
     parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP Address of the registry")
     parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
     parser.add_argument("-b", "--bind", default="5560", help="Port to broker on")
-    parser.add_argument("-c", "--pubs", default=5, help="Number of publishers")
-    parser.add_argument("-s", "--subs", default=5, help="Number of subscribers")
 
     return parser.parse_args()
 
@@ -76,16 +73,19 @@ def main():
     config = Configurator(args)
 
     # get a handle to our broker object
+    print("Getting broker object")
     broker = config.get_broker()
 
-    # register with lookup/broker
+    # get a handle to our registry proxy
+    print("Getting registry proxy")
     registry = config.get_registry()
-    registry.register([])
 
-    # wait for all pubs/subs to join
-    pubs = registry.wait()
+    # register with lookup
+    registry.register([])  # no topics for all topics
 
-    # TODO: subscribe to all publishers with polling
+    # wait for kickstart from registry
+    broker.start()
+
 
 ###################################
 #

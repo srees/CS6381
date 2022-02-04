@@ -1,6 +1,5 @@
 import argparse  # for argument parsing
 from configurator import Configurator  # factory class
-import socket
 
 
 # import any other packages you need.
@@ -27,9 +26,10 @@ def parseCmdLineArgs():
     # options for all the things you need.
     parser.add_argument("-d", "--disseminate", choices=["direct", "broker"], default="direct",
                         help="Dissemination strategy: direct or via broker; default is direct")
+    parser.add_argument("-l", "--listen", default="127.0.0.1", help="IP of the registry")
     parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
-    parser.add_argument("-c", "--pubs", default=5, help="Number of publishers")
-    parser.add_argument("-s", "--subs", default=5, help="Number of subscribers")
+    parser.add_argument("-c", "--pubs", default=5, type=int, help="Number of publishers")
+    parser.add_argument("-s", "--subs", default=5, type=int, help="Number of subscribers")
     return parser.parse_args()
 
 
@@ -39,6 +39,7 @@ def parseCmdLineArgs():
 #
 ###################################
 def main():
+
     # first parse the arguments
     print("Main: parse command line arguments")
     args = parseCmdLineArgs()
@@ -48,10 +49,12 @@ def main():
     # many kinds of artifacts for us
     config = Configurator(args)
 
-    # get a handle to our broker object
+    # get a handle to our registry object
+    print("Getting registry object")
     registry = config.get_registry()
 
     # start listening
+    print("Registry start requested")
     registry.start()
 
 

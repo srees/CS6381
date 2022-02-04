@@ -53,7 +53,7 @@ class Configurator:
         # check what our role is. If we are the subscriber app, we get the concrete
         # subscriber object else a proxy.  The subscriber itself may be specialized
         # depending on the dissemination strategy
-        pass
+        return Subscriber(self.arguments)
 
     # retrieve the right type of broker depending on the cmd line argument
     def get_broker(self):

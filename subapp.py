@@ -45,3 +45,84 @@
 #
 # (6) if you have logic that allows this forever loop to terminate, then
 # go ahead and clean up everything.
+
+import argparse  # for argument parsing
+import random
+from random import randrange
+from configurator import Configurator  # factory class
+import time
+
+# import any other packages you need.
+
+###################################
+#
+# Parse command line arguments
+#
+###################################
+def parseCmdLineArgs():
+    # instantiate a ArgumentParser object
+    parser = argparse.ArgumentParser(description="Subscriber Application")
+
+    # Now specify all the optional arguments we support
+    # At a minimum, you will need a way to specify the IP and port of the lookup
+    # service, the role we are playing, what dissemination approach are we
+    # using, what is our endpoint (i.e., port where we are going to bind at the
+    # ZMQ level)
+
+    # Here I am showing one example of adding a command line
+    # arg for the dissemination strategy. Feel free to modify. Add more
+    # options for all the things you need.
+    parser.add_argument("-d", "--disseminate", choices=["direct", "broker"], default="direct",
+                        help="Dissemination strategy: direct or via broker; default is direct")
+    parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP Address of the registry")
+    parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
+
+    return parser.parse_args()
+
+
+###################################
+#
+# Main program
+#
+###################################
+def main():
+    # first parse the arguments
+    print("Main: parse command line arguments")
+    args = parseCmdLineArgs()
+    args.role = "subscriber"
+
+    # get hold of the configurator, which is the factory that produces
+    # many kinds of artifacts for us
+    config = Configurator(args)
+
+    # Ask the configurator to give us a random subset of topics that we can publish
+    my_topics = config.get_interest()
+    print("Subscriber interested in listening for these topics: {}".format(my_topics))
+
+    # get a handle to our publisher object
+    print("Getting subscriber object")
+    sub = config.get_subscriber()
+
+    # get a handle to our registry object (will be a proxy)
+    print("Getting registry proxy")
+    registry = config.get_registry()
+
+    # register with lookup
+    registry.register(my_topics)
+
+    # wait for kickstart event from registry
+    print("Waiting for start from registry")
+    sub.start()
+    # consider adding a check for if message exists (not a timeout) before proceeding
+
+    # now do the publication for as many iterations that we plan to do
+    print("Start received.")
+    # TODO logic here
+
+###################################
+#
+# Main entry point
+#
+###################################
+if __name__ == "__main__":
+    main()

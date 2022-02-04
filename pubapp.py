@@ -53,7 +53,7 @@ import argparse  # for argument parsing
 import random
 from random import randrange
 from configurator import Configurator  # factory class
-import socket
+import time
 
 # import any other packages you need.
 
@@ -80,7 +80,6 @@ def parseCmdLineArgs():
     parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP Address of the registry")
     parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
     parser.add_argument("-b", "--bind", default="5560", help="Port to publish topic on")
-    parser.add_argument("-t", "--topic", help="Topic to publish to (optional)")
     parser.add_argument("-c", "--count", default="50", help="Number of publish iterations")
 
     return parser.parse_args()
@@ -106,27 +105,29 @@ def main():
     print("Publisher interested in publishing on these topics: {}".format(my_topics))
 
     # get a handle to our publisher object
+    print("Getting publisher object")
     pub = config.get_publisher()
 
     # get a handle to our registry object (will be a proxy)
+    print("Getting registry proxy")
     registry = config.get_registry()
 
     # register with lookup
     registry.register(my_topics)
 
     # wait for kickstart event from registry
-    registry.wait()
+    print("Waiting for start from registry")
+    pub.start()
     # consider adding a check for if message exists (not a timeout) before proceeding
 
-    # this seems unnecessary?
-    pub.start()
-
     # now do the publication for as many iterations that we plan to do
+    print("Start received.")
     iters = config.get_iterations()
     for x in range(iters):
         topic = random.sample(my_topics, 1)
         value = randrange(0, 500)
         pub.publish(topic, value)
+        time.sleep(2)
 
 ###################################
 #
