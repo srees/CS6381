@@ -69,7 +69,7 @@ class ViaBrokerPublisher(Publisher):
     # to be invoked by the publisher's application logic
     # to publish a value of a topic. 
     def publish(self, topic, value):
-        data = {'TS': str(time.time()), 'Topic': topic, 'Value': value}
+        data = {'Topic': topic, 'Value': value, 'TS': str(time.time())}
         print("Publish: ")
         print(data)
         self.socket.send_json(data)

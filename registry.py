@@ -15,7 +15,7 @@ class Registry:
             self.expected_brokers = 1
         else:
             self.expected_brokers = 0
-        self.broker = {}
+        self.broker = []
         self.pubs = []
         self.subs = []
         self.topics = {}
@@ -43,7 +43,7 @@ class Registry:
             print("Received message: ")
             print(message)
             if message['role'] == 'broker':
-                self.broker = {'ip': message['ip'], 'port': message['port']}
+                self.broker.append({'ip': message['ip'], 'port': message['port']})
                 print("Registered a broker")
             if message['role'] == 'publisher':
                 self.pubs.append({'ip': message['ip'], 'port': message['port'], 'topics': message['topics']})
@@ -64,10 +64,10 @@ class Registry:
     def start_broker(self):  # We'll start the broker by sending it the list of publishers to subscribe to
         print("Registry notifying broker to start")
         socket = self.context.socket(zmq.REQ)
-        socket.connect('tcp://' + self.broker.get('ip') + ':' + str(int(self.broker.get('port')) - 1))
+        socket.connect('tcp://' + self.broker[0].get('ip') + ':' + str(int(self.broker[0].get('port')) - 1))
         socket.send_json(self.pubs)
         socket.recv_json()
-        socket.disconnect('tcp://' + self.broker.get('ip') + ':' + str(int(self.broker.get('port')) - 1))
+        socket.disconnect('tcp://' + self.broker[0].get('ip') + ':' + str(int(self.broker[0].get('port')) - 1))
 
     def start_subscribers(self):
         print("Registry notifying subscribers to start")

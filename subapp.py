@@ -76,6 +76,7 @@ def parseCmdLineArgs():
                         help="Dissemination strategy: direct or via broker; default is direct")
     parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP Address of the registry")
     parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
+    parser.add_argument("-b", "--bind", default="5580", help="Port to bind for registry start")
 
     return parser.parse_args()
 
