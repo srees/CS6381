@@ -17,8 +17,11 @@ import publicip
 # A concrete class that disseminates info via the broker
 class Publisher:
 
-    # constructor. Add whatever class members you need
-    # for the assignment
+    # I struggled with trying to reuse the socket/port between the REP/REQ portion communicating
+    # with the registry, and then switching over to PUB/SUB for the broker. I ended up testing
+    # whether this was an issue with reusing the port by incrementing the bind port for the second
+    # part - this worked and is why there are +/- 1 in the code for binds and publish. I plan to go
+    # through and rework this into an argument at some point.
     def __init__(self, args):
         print("Utilizing broker send publish method")
         self.context = zmq.Context()
