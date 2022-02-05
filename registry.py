@@ -85,8 +85,8 @@ class Registry:
                 self.REQ_socket.disconnect(connection_string)
         else:
             print("Registry passing publisher information to subscribers:")
-            pub_ips = []
             for sub in self.subs:
+                pub_ips = []
                 for topic in sub['topics']:
                     if topic in self.topics:
                         pub_ips.extend(self.topics[topic])
