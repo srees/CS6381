@@ -14,7 +14,7 @@ def get_ip_address():
     sock_ip = s.getsockname()[0]
     print('socketname: ' + sock_ip)
     stream = os.popen("ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '$1 == \"inet\" {print $2}'")
-    os_ip = stream.read()
+    os_ip = strip(stream.read())
     print('ifconfig: ' + os_ip)
-    return sock_ip
+    return os_ip
                 
