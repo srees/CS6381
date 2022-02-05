@@ -21,7 +21,6 @@ from topiclist import TopicList
 from publisher import Publisher
 from subscriber import Subscriber
 from broker import Broker
-from brokerproxy import BrokerProxy
 from registry import Registry
 from registryproxy import RegistryProxy
 
@@ -55,10 +54,7 @@ class Configurator:
         # check what our role is. If we are the broker, we get the concrete
         # broker object else a proxy. The broker itself may be specialized
         # depending on the dissemination strategy
-        if self.arguments.role == "broker":
-            return Broker(self.arguments)
-        else:
-            return BrokerProxy(self.arguments)
+        return Broker(self.arguments)
 
     # A publisher and subscriber app may decide to publish or subscribe to,
     # respectively, a random set of topics. We provide such a helper in the

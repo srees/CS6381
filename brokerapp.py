@@ -84,6 +84,7 @@ def main():
     registry.register([])  # no topics for all topics
 
     # wait for kickstart from registry
+    print("Waiting for start from registry")
     broker.start()
 
 

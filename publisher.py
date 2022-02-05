@@ -26,11 +26,14 @@ class Publisher:
         print("Utilizing broker send publish method")
         self.context = zmq.Context()
         self.args = args
-        self.socket = self.context.socket(zmq.REP)
-        self.bind_url = 'tcp://' + publicip.get_ip_address() + ':' + self.args.bind
-        self.bind_url2 = 'tcp://' + publicip.get_ip_address() + ':' + str(int(self.args.bind) + 1)
-        print("Binding REP to " + self.bind_url)
-        self.socket.bind(self.bind_url)
+        self.REP_socket = self.context.socket(zmq.REP)
+        self.REP_url = 'tcp://' + publicip.get_ip_address() + ':' + self.args.bind
+        print("Binding REP to " + self.REP_url)
+        self.REP_socket.bind(self.REP_url)
+        self.PUB_socket = self.context.socket(zmq.PUB)
+        self.PUB_url = 'tcp://' + publicip.get_ip_address() + ':' + str(int(self.args.bind) + 1)
+        print("Binding PUB to " + self.PUB_url)
+        self.PUB_socket.bind(self.PUB_url)
 
     # to be invoked by the publisher's application logic
     # to publish a value of a topic. 
@@ -38,15 +41,13 @@ class Publisher:
         data = {'Topic': topic, 'Value': value, 'TS': str(time.time())}
         print("Publish: ")
         print(data)
-        self.socket.send_json(data)
+        self.PUB_socket.send_json(data)
 
     def start(self):
-        self.socket.recv_json()
+        self.REP_socket.recv_json()
         # TODO validation, ie while data != 'start', socket.recv_json()
-        self.socket.send_json('ACK')
-        # switch socket to publisher model
-        self.socket.close(0)
-        self.socket = self.context.socket(zmq.PUB)
-        print("Binding PUB to " + self.bind_url2)
-        self.socket.bind(self.bind_url2)
+        # We don't need to send anything back, but ZMQ requires us to reply
+        self.REP_socket.send_json('ACK')
+        # Allow time for things to settle before we start pumping data out.
+        # Might be unnecessary since reworking the sockets...
         time.sleep(2)
