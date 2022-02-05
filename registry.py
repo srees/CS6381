@@ -3,6 +3,7 @@ import zmq
 print("Current libzmq version is %s" % zmq.zmq_version())
 print("Current  pyzmq version is %s" % zmq.__version__)
 
+
 class Registry:
     def __init__(self, args):
         print("Initializing registry object")
