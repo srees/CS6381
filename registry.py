@@ -8,6 +8,10 @@ class Registry:
         print("Initializing registry object")
         self.args = args
         self.context = zmq.Context()
+        self.socket = self.context.socket(zmq.REP)
+        self.bind_url = "tcp://" + self.args.registry + ":" + str(self.args.port)
+        print("Binding REP to " + self.bind_url)
+        self.socket.bind(self.bind_url)
         self.expected_pubs = args.pubs
         self.expected_subs = args.subs
         if args.disseminate == "broker":
@@ -34,11 +38,8 @@ class Registry:
 
     def collect_registrations(self):
         print("Registry waiting for " + str(self.expected_pubs) + " pubs, " + str(self.expected_subs) + " subs, and " + str(self.expected_brokers) + " brokers.")
-        socket = self.context.socket(zmq.REP)
-        print("Binding REP to tcp://" + self.args.registry + ":" + str(self.args.port))
-        socket.bind("tcp://" + self.args.registry + ":" + str(self.args.port))
         while len(self.pubs) < self.expected_pubs or len(self.subs) < self.expected_subs or len(self.broker) < self.expected_brokers:
-            message = socket.recv_json()
+            message = self.socket.recv_json()
             print("Received message: ")
             print(message)
             if message['role'] == 'broker':
@@ -57,30 +58,33 @@ class Registry:
             if message['role'] == 'subscriber':
                 self.subs.append({'ip': message['ip'], 'port': message['port'], 'topics': message['topics']})
                 print("Registered a subscriber")
-            socket.send_json("Registered")
+            self.socket.send_json("Registered")
         print("All expected parties registered")
 
     def start_broker(self):  # We'll start the broker by sending it the list of publishers to subscribe to
-        print("Registry notifying broker to start")
         socket = self.context.socket(zmq.REQ)
-        socket.connect('tcp://' + self.broker[0].get('ip') + ':' + str(int(self.broker[0].get('port')) - 1))
+        connection_string = 'tcp://' + self.broker[0].get('ip') + ':' + str(int(self.broker[0].get('port')) - 1)
+        socket.connect(connection_string)
+        print("Registry sending start to broker: " + connection_string)
         socket.send_json(self.pubs)
         socket.recv_json()
-        socket.disconnect('tcp://' + self.broker[0].get('ip') + ':' + str(int(self.broker[0].get('port')) - 1))
+        socket.disconnect(connection_string)
 
     def start_subscribers(self):
-        print("Registry notifying subscribers to start")
         if self.args.disseminate == 'broker':
-            print("Registry passing broker information to subscribers")
+            print("Registry passing broker information to subscribers:")
+            print(self.broker)
             # send each subscriber the broker IP:Port
             socket = self.context.socket(zmq.REQ)
             for sub in self.subs:
-                socket.connect('tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1))
+                connection_string = 'tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1)
+                socket.connect(connection_string)
+                print("Registry sending broker to subscriber: " + connection_string)
                 socket.send_json(self.broker)
                 socket.recv_json()
-                socket.disconnect('tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1))
+                socket.disconnect(connection_string)
         else:
-            print("Registry passing publisher information to subscribers")
+            print("Registry passing publisher information to subscribers:")
             pub_ips = []
             socket = self.context.socket(zmq.REQ)
             for sub in self.subs:
@@ -92,17 +96,23 @@ class Registry:
                 for pub in self.pubs:
                     if (pub['ip'] + ':' + pub['port']) in pub_ips:
                         temp_list.append(pub)
-                socket.connect('tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1))
+                connection_string = 'tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1)
+                socket.connect(connection_string)
+                print("Sending: ")
+                print(temp_list)
+                print("To subscriber at: " + connection_string)
                 socket.send_json(temp_list)
                 socket.recv_json()
-                socket.disconnect('tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1))
+                socket.disconnect(connection_string)
 
     def start_publishers(self):
         print("Registry notifying publishers to start")
         # Iterate through list of publishers and issue a start
         socket = self.context.socket(zmq.REQ)
         for pub in self.pubs:
-            socket.connect('tcp://' + pub.get('ip') + ':' + str(int(pub.get('port')) - 1))
+            connection_string = 'tcp://' + pub.get('ip') + ':' + str(int(pub.get('port')) - 1)
+            socket.connect(connection_string)
+            print("Sending start to: " + connection_string)
             socket.send_json("start")
             socket.recv_json()
-            socket.disconnect('tcp://' + pub.get('ip') + ':' + str(int(pub.get('port')) - 1))
+            socket.disconnect(connection_string)
