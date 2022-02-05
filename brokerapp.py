@@ -26,7 +26,6 @@
 
 import argparse  # for argument parsing
 from configurator import Configurator  # factory class
-import socket
 # import any other packages you need.
 
 ###################################

@@ -64,6 +64,3 @@ class Subscriber:
         # TODO validation, ie while data != 'start', socket.recv_json()
         # We don't need to send anything back, but ZMQ requires us to reply
         self.REP_socket.send_json('ACK')
-        # Allow time for things to settle before we start pumping data out.
-        # Might be unnecessary since reworking the sockets...
-        time.sleep(2)
