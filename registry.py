@@ -35,8 +35,8 @@ class Registry:
     def collect_registrations(self):
         print("Registry waiting for " + str(self.expected_pubs) + " pubs, " + str(self.expected_subs) + " subs, and " + str(self.expected_brokers) + " brokers.")
         socket = self.context.socket(zmq.REP)
-        print("Binding REP to tcp://" + self.args.listen + ":" + str(self.args.port))
-        socket.bind("tcp://" + self.args.listen + ":" + str(self.args.port))
+        print("Binding REP to tcp://" + self.args.registry + ":" + str(self.args.port))
+        socket.bind("tcp://" + self.args.registry + ":" + str(self.args.port))
         while len(self.pubs) < self.expected_pubs or len(self.subs) < self.expected_subs or len(self.broker) < self.expected_brokers:
             message = socket.recv_json()
             print("Received message: ")
