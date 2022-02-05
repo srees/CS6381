@@ -48,6 +48,7 @@
 
 import argparse  # for argument parsing
 from configurator import Configurator  # factory class
+import time
 
 
 # import any other packages you need.
@@ -70,8 +71,6 @@ def parseCmdLineArgs():
     # Here I am showing one example of adding a command line
     # arg for the dissemination strategy. Feel free to modify. Add more
     # options for all the things you need.
-    parser.add_argument("-d", "--disseminate", choices=["direct", "broker"], default="direct",
-                        help="Dissemination strategy: direct or via broker; default is direct")
     parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP Address of the registry")
     parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
     parser.add_argument("-b", "--bind", default="5580", help="Port to bind for registry start")
@@ -119,7 +118,7 @@ def main():
 
 
 def data_callback(data):
-    print('Received:')
+    print('Received at ' + str(time.time()))
     print(data)
 
 ###################################
