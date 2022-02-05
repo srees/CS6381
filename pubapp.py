@@ -79,8 +79,8 @@ def parseCmdLineArgs():
                         help="Dissemination strategy: direct or via broker; default is direct")
     parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP Address of the registry")
     parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
-    parser.add_argument("-b", "--bind", default="5560", help="Port to publish topic on")
-    parser.add_argument("-c", "--count", default="50", help="Number of publish iterations")
+    parser.add_argument("-b", "--bind", default="5570", help="Port to publish topic on")
+    parser.add_argument("-c", "--count", default="60", help="Number of publish iterations")
 
     return parser.parse_args()
 
@@ -127,7 +127,7 @@ def main():
         topic = random.sample(my_topics, 1)
         value = randrange(0, 500)
         pub.publish(topic, value)
-        time.sleep(2)
+        time.sleep(1)
 
 ###################################
 #

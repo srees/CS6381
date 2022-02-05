@@ -116,7 +116,6 @@ def main():
 
     # now do the publication for as many iterations that we plan to do
     print("Start received.")
-    # TODO logic here
 
 
 def data_callback(data):
