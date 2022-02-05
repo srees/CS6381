@@ -17,6 +17,7 @@
 # For the ViaBroker approach, the broker is our only publisher for everything.
 import zmq
 import publicip
+import time
 
 
 class Subscriber:
@@ -34,7 +35,7 @@ class Subscriber:
         print("Binding REP to " + self.bind_url)
         self.socket.bind(self.bind_url)
 
-    def start(self, topics):
+    def start(self, topics, function):
         self.wait()  # registry will give us the go by sending us the list of publishers
         for pub in self.pubs:
             connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
@@ -53,8 +54,7 @@ class Subscriber:
                 for sock in self.pub_sockets:
                     if sock in events:
                         data = sock.recv_json()
-                        print("Subscriber received: ")
-                        print(data)
+                        function(data)
             except KeyboardInterrupt:
                 break
 
@@ -65,3 +65,4 @@ class Subscriber:
         self.socket.send_json('ACK')
         # switch socket to publisher model
         self.socket.close(0)
+        time.sleep(2)

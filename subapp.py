@@ -111,12 +111,17 @@ def main():
 
     # wait for kickstart event from registry
     print("Waiting for start from registry")
-    sub.start(my_topics)
+    sub.start(my_topics, lambda data: data_callback(data))
     # consider adding a check for if message exists (not a timeout) before proceeding
 
     # now do the publication for as many iterations that we plan to do
     print("Start received.")
     # TODO logic here
+
+
+def data_callback(data):
+    print('Received:')
+    print(data)
 
 ###################################
 #
