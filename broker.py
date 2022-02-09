@@ -55,6 +55,7 @@ class Broker:
                         data = SUB_sock.recv_json()
                         print("Broker received: ")
                         print(data)
+                        data["Brokered"] = time.time()
                         self.republish(data)
             except KeyboardInterrupt:
                 break

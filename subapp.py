@@ -48,7 +48,7 @@
 
 import argparse  # for argument parsing
 from configurator import Configurator  # factory class
-import time
+import csv
 
 
 # import any other packages you need.
@@ -118,8 +118,13 @@ def main():
 
 
 def data_callback(data):
-    print('Received at ' + str(time.time()))
-    print(data)
+    columns = []
+    with open('data.csv', 'a') as file1:
+        writer = csv.DictWriter(file1, fieldnames=columns)
+        writer.writerow(data)
+        # file1.write()
+    # print('Received at ' + str(time.time()))
+    # print(data)
 
 ###################################
 #

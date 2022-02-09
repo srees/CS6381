@@ -23,11 +23,11 @@ class Publisher:
     # part - this worked and is why there are +/- 1 in the code for binds and publish. I plan to go
     # through and rework this into an argument at some point.
     def __init__(self, args):
-        print("Utilizing broker send publish method")
         self.context = zmq.Context()
         self.args = args
         self.REP_socket = self.context.socket(zmq.REP)
-        self.REP_url = 'tcp://' + publicip.get_ip_address() + ':' + self.args.bind
+        self.ip = publicip.get_ip_address()
+        self.REP_url = 'tcp://' + self.ip + ':' + self.args.bind
         print("Binding REP to " + self.REP_url)
         self.REP_socket.bind(self.REP_url)
         self.PUB_socket = self.context.socket(zmq.PUB)
@@ -38,7 +38,7 @@ class Publisher:
     # to be invoked by the publisher's application logic
     # to publish a value of a topic. 
     def publish(self, topic, value):
-        data = {'Topic': topic, 'Value': value, 'TS': str(time.time())}
+        data = {'Topic': topic, 'Value': value, 'Sender': self.ip, 'Sent': time.time(), 'Brokered': 0}
         print("Publish: ")
         print(data)
         self.PUB_socket.send_json(data)

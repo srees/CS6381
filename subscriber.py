@@ -31,7 +31,8 @@ class Subscriber:
         self.poller = zmq.Poller()
         self.context = zmq.Context()
         self.REP_socket = self.context.socket(zmq.REP)
-        self.REP_url = 'tcp://' + publicip.get_ip_address() + ':' + self.args.bind
+        self.ip = publicip.get_ip_address()
+        self.REP_url = 'tcp://' + self.ip + ':' + self.args.bind
         print("Binding REP to " + self.REP_url)
         self.REP_socket.bind(self.REP_url)
 
@@ -54,6 +55,8 @@ class Subscriber:
                 for SUB_sock in self.SUB_sockets:
                     if SUB_sock in events:
                         data = SUB_sock.recv_json()
+                        data["Subscriber"] = self.ip
+                        data["Received"] = time.time()
                         function(data)
             except KeyboardInterrupt:
                 break
