@@ -118,7 +118,7 @@ def main():
 
 
 def data_callback(data):
-    columns = []
+    columns = ["Topic", "Value", "Sender", "Sent", "Brokered", "Subscriber", "Received"]
     with open('data.csv', 'a') as file1:
         writer = csv.DictWriter(file1, fieldnames=columns)
         writer.writerow(data)
