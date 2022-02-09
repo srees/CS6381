@@ -78,7 +78,7 @@ def parseCmdLineArgs():
     parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP Address of the registry")
     parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
     parser.add_argument("-b", "--bind", default="5570", help="Port to publish topic on")
-    parser.add_argument("-c", "--count", default="60", help="Number of publish iterations")
+    parser.add_argument("-c", "--count", default="100", help="Number of publish iterations")
 
     return parser.parse_args()
 
