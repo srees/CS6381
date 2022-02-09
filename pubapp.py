@@ -124,8 +124,8 @@ def main():
     for x in range(iters):
         topic = random.sample(my_topics, 1)
         value = randrange(0, 500)
-        pub.publish(topic, value)
-        time.sleep(1)
+        pub.publish(topic[0], value)
+        # time.sleep(1)
 
 ###################################
 #
