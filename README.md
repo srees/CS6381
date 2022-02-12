@@ -13,7 +13,7 @@ The system defaults to 100 publish calls per publisher with random topics and da
 For most experiments (unless otherwise noted) my mininet setup was:
 mn --topo=single,{num hosts} --link=tc,bw=100,delay=10ms
 
-#Results
+# Results
 I note that in every "single topology" case utilizing the broker, a greater percentage of time, on average, was spent delivering the message from publisher to broker than from broker to subscriber. The inverse was true for tree and linear topologies.
 
 Running with just 10 hosts gives expected results of very fast transmission times, and with the direct method outperforming the broker method due to the extra network hop.
@@ -32,6 +32,6 @@ The subscriber heavy load was the inverse, with the broker dissemination outperf
 
 When all this was done, I took the best single topology with 100 hosts (balanced broker) and tested this in the linear(102) and tree(depth=3,fanout=5) topologies. The tree topology had significantly faster performance, and the linear topology was by far the worst of the entire experiment.
 
-#Conclusion
+# Conclusion
 The performance characteristics of the system depend heavily on the composition and size of the system. With that in mind, however, the only time the broker method performed significantly worse was in a publisher heavy configuration, which is atypical for the purposes of pub/sub.
 
