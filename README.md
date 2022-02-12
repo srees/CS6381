@@ -30,7 +30,7 @@ Unsurprisingly, for a publisher heavy load, the broker performed much worse than
 
 The subscriber heavy load was the inverse, with the broker dissemination outperforming the direct, but only by a small margin.
 
-When all this was done, I took the best single topology with 100 hosts (balanced broker) and tested this in the linear(102) and tree(depth=3,fanout=5) topologies. The tree topology had significantly faster performance, and the linear topology was by far the worst of the entire experiment.
+When all this was done, I took the best single topology with 100 hosts (balanced broker) and tested this in the linear(102) and tree(depth=3,fanout=5) topologies. The tree topology had significantly faster performance, and the linear topology was by far the worst of the entire experiment. The reason for this poor peformance is most likely due to pegging out the virtual machines CPU and memory, and so this experiment should be repeated on a more powerful machine.
 
 # Conclusion
 The performance characteristics of the system depend heavily on the composition and size of the system. With that in mind, however, the only time the broker method performed significantly worse was in a publisher heavy configuration, which is atypical for the purposes of pub/sub.
