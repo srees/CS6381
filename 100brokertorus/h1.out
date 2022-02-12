@@ -1,0 +1,62 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Getting registry object
+Initializing registry object
+Binding REP to tcp://10.0.0.1:5550
+Registry start requested
+Registry starting
+Registry waiting for 5 pubs, 5 subs, and 0 brokers.
+Received message: 
+{'role': 'publisher', 'ip': '10.0.0.2', 'port': '5571', 'topics': ['sound', 'weather', 'temperature', 'location', 'weather', 'light', 'humidity', 'altitude']}
+Registered a publisher
+Received message: 
+{'role': 'publisher', 'ip': '10.0.0.3', 'port': '5571', 'topics': ['temperature']}
+Registered a publisher
+Received message: 
+{'role': 'publisher', 'ip': '10.0.0.4', 'port': '5571', 'topics': ['airquality', 'humidity', 'altitude', 'temperature', 'light', 'weather', 'sound']}
+Registered a publisher
+Received message: 
+{'role': 'subscriber', 'ip': '10.0.0.11', 'port': '5581', 'topics': ['location', 'pressure', 'airquality', 'weather', 'weather']}
+Registered a subscriber
+Received message: 
+{'role': 'subscriber', 'ip': '10.0.0.7', 'port': '5581', 'topics': ['location', 'light', 'weather']}
+Registered a subscriber
+Received message: 
+{'role': 'publisher', 'ip': '10.0.0.6', 'port': '5571', 'topics': ['temperature', 'light', 'weather', 'location', 'weather', 'airquality', 'altitude', 'humidity']}
+Registered a publisher
+Received message: 
+{'role': 'subscriber', 'ip': '10.0.0.9', 'port': '5581', 'topics': ['sound']}
+Registered a subscriber
+Received message: 
+{'role': 'publisher', 'ip': '10.0.0.5', 'port': '5571', 'topics': ['light', 'pressure', 'airquality', 'location', 'weather', 'altitude']}
+Registered a publisher
+Received message: 
+{'role': 'subscriber', 'ip': '10.0.0.8', 'port': '5581', 'topics': ['airquality', 'temperature', 'pressure', 'location', 'weather', 'sound', 'weather']}
+Registered a subscriber
+Received message: 
+{'role': 'subscriber', 'ip': '10.0.0.10', 'port': '5581', 'topics': ['weather', 'light', 'altitude', 'location', 'pressure']}
+Registered a subscriber
+All expected parties registered
+Registry passing publisher information to subscribers:
+Sending: 
+[{'ip': '10.0.0.2', 'port': '5571', 'topics': ['sound', 'weather', 'temperature', 'location', 'weather', 'light', 'humidity', 'altitude']}, {'ip': '10.0.0.4', 'port': '5571', 'topics': ['airquality', 'humidity', 'altitude', 'temperature', 'light', 'weather', 'sound']}, {'ip': '10.0.0.6', 'port': '5571', 'topics': ['temperature', 'light', 'weather', 'location', 'weather', 'airquality', 'altitude', 'humidity']}, {'ip': '10.0.0.5', 'port': '5571', 'topics': ['light', 'pressure', 'airquality', 'location', 'weather', 'altitude']}]
+To subscriber at: tcp://10.0.0.11:5580
+Sending: 
+[{'ip': '10.0.0.2', 'port': '5571', 'topics': ['sound', 'weather', 'temperature', 'location', 'weather', 'light', 'humidity', 'altitude']}, {'ip': '10.0.0.4', 'port': '5571', 'topics': ['airquality', 'humidity', 'altitude', 'temperature', 'light', 'weather', 'sound']}, {'ip': '10.0.0.6', 'port': '5571', 'topics': ['temperature', 'light', 'weather', 'location', 'weather', 'airquality', 'altitude', 'humidity']}, {'ip': '10.0.0.5', 'port': '5571', 'topics': ['light', 'pressure', 'airquality', 'location', 'weather', 'altitude']}]
+To subscriber at: tcp://10.0.0.7:5580
+Sending: 
+[{'ip': '10.0.0.2', 'port': '5571', 'topics': ['sound', 'weather', 'temperature', 'location', 'weather', 'light', 'humidity', 'altitude']}, {'ip': '10.0.0.4', 'port': '5571', 'topics': ['airquality', 'humidity', 'altitude', 'temperature', 'light', 'weather', 'sound']}]
+To subscriber at: tcp://10.0.0.9:5580
+Sending: 
+[{'ip': '10.0.0.2', 'port': '5571', 'topics': ['sound', 'weather', 'temperature', 'location', 'weather', 'light', 'humidity', 'altitude']}, {'ip': '10.0.0.3', 'port': '5571', 'topics': ['temperature']}, {'ip': '10.0.0.4', 'port': '5571', 'topics': ['airquality', 'humidity', 'altitude', 'temperature', 'light', 'weather', 'sound']}, {'ip': '10.0.0.6', 'port': '5571', 'topics': ['temperature', 'light', 'weather', 'location', 'weather', 'airquality', 'altitude', 'humidity']}, {'ip': '10.0.0.5', 'port': '5571', 'topics': ['light', 'pressure', 'airquality', 'location', 'weather', 'altitude']}]
+To subscriber at: tcp://10.0.0.8:5580
+Sending: 
+[{'ip': '10.0.0.2', 'port': '5571', 'topics': ['sound', 'weather', 'temperature', 'location', 'weather', 'light', 'humidity', 'altitude']}, {'ip': '10.0.0.4', 'port': '5571', 'topics': ['airquality', 'humidity', 'altitude', 'temperature', 'light', 'weather', 'sound']}, {'ip': '10.0.0.6', 'port': '5571', 'topics': ['temperature', 'light', 'weather', 'location', 'weather', 'airquality', 'altitude', 'humidity']}, {'ip': '10.0.0.5', 'port': '5571', 'topics': ['light', 'pressure', 'airquality', 'location', 'weather', 'altitude']}]
+To subscriber at: tcp://10.0.0.10:5580
+Registry notifying publishers to start
+Sending start to: tcp://10.0.0.2:5570
+Sending start to: tcp://10.0.0.3:5570
+Sending start to: tcp://10.0.0.4:5570
+Sending start to: tcp://10.0.0.6:5570
+Sending start to: tcp://10.0.0.5:5570
