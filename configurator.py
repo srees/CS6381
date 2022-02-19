@@ -22,6 +22,7 @@ from publisher import Publisher
 from subscriber import Subscriber
 from broker import Broker
 from registry import Registry
+from kademlia_reg import KademliaReg
 from registryproxy import RegistryProxy
 
 
@@ -69,6 +70,9 @@ class Configurator:
 
     def get_registry(self):
         if self.arguments.role == "registry":
-            return Registry(self.arguments)
+            if self.arguments.kademlia:
+                return KademliaReg(self.arguments)
+            else:
+                return Registry(self.arguments)
         else:
             return RegistryProxy(self.arguments)
