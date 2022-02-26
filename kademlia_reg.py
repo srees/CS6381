@@ -49,6 +49,7 @@ class KademliaReg:
                     # register with DHT
                     broker = {'ip': message['ip'], 'port': message['port']}
                     await self.kdht.set_value("*", json.dumps([broker]))
+                    await self.get_unique_publishers()
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     await self.start_broker(broker)
