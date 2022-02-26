@@ -1,6 +1,7 @@
 import argparse  # for argument parsing
 from configurator import Configurator  # factory class
 import logging
+import asyncio
 
 
 # import any other packages you need.
@@ -43,7 +44,7 @@ def parseCmdLineArgs():
 # Main program
 #
 ###################################
-def main():
+async def main():
 
     # first parse the arguments
     print("Main: parse command line arguments")
@@ -60,7 +61,7 @@ def main():
 
     # start listening
     print("Registry start requested")
-    registry.start()
+    await registry.start()
 
 
 ###################################
@@ -69,4 +70,4 @@ def main():
 #
 ###################################
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
