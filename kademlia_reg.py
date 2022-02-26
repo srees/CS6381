@@ -49,7 +49,7 @@ class KademliaReg:
                     # register with DHT
                     broker = {'ip': message['ip'], 'port': message['port']}
                     await self.kdht.set_value("*", json.dumps([broker]))
-                    print (await self.kdht.get_value("*"))
+                    print(json.loads(await self.kdht.get_value("*")))
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     await self.start_broker(broker)
@@ -82,7 +82,9 @@ class KademliaReg:
         if topics is None:
             topics = TopicList.topiclist
         for topic in topics:
-            topic_pubs = json.loads(await self.kdht.get_value(topic))
+            data = await self.kdht.get_value(topic)
+            if data:
+                topic_pubs = json.loads(await self.kdht.get_value(topic))
             if topic_pubs:
                 for pub in topic_pubs:
                     tmp_string = pub['ip'] + ':' + pub['port']
