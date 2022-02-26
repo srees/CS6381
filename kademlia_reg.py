@@ -72,7 +72,7 @@ class KademliaReg:
                     # DHT doesn't care about registering subscribers with my model...
                     self.REP_socket.send_json("Registered")
                     sub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
-                    self.start_subscriber(sub)
+                    await self.start_subscriber(sub)
         except KeyboardInterrupt:
             pass
 
