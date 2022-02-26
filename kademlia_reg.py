@@ -76,7 +76,7 @@ class KademliaReg:
         except KeyboardInterrupt:
             pass
 
-    async def get_unique_publishers(self, topics=None):
+    def get_unique_publishers(self, topics=None):
         pubs = []
         unique_strings = []
         if topics is None:
