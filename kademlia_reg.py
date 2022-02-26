@@ -47,7 +47,7 @@ class KademliaReg:
             print("Main: join some DHT node")
             self.kdht.connect_to_bootstrap_node()
 
-    def start(self):
+    async def start(self):
         print("Registry starting")
         try:
             print("Registry listening...")
@@ -84,7 +84,7 @@ class KademliaReg:
         except KeyboardInterrupt:
             pass
 
-    def get_unique_publishers(self, topics=None):
+    async def get_unique_publishers(self, topics=None):
         pubs = []
         unique_strings = []
         if topics is None:
@@ -107,7 +107,7 @@ class KademliaReg:
         self.REQ_socket.recv_json()
         self.REQ_socket.disconnect(connection_string)
 
-    def start_subscriber(self, sub):
+    async def start_subscriber(self, sub):
         if self.args.disseminate == 'broker':
             print("Registry passing broker information to subscribers:")
             broker = json.loads(await self.kdht.get_value("*"))
