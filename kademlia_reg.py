@@ -33,8 +33,8 @@ class KademliaReg:
 
         self.kdht = Kademlia_DHT()
         print("Initialize Kademlia DHT object")
-        args.ipaddr = args.registry
-        args.port = args.override_port
+        args.ipaddr = args.bootstrap
+        args.port = args.bootstrap_port
         if not self.kdht.initialize(args):
             print("Main: Initialization of Kademlia DHT failed")
             return

@@ -70,9 +70,9 @@ class Configurator:
 
     def get_registry(self):
         if self.arguments.role == "registry":
-            if self.arguments.kademlia:
-                return KademliaReg(self.arguments)
-            else:
-                return Registry(self.arguments)
+            # if self.arguments.kademlia:
+            return KademliaReg(self.arguments)
+            # else:
+                # return Registry(self.arguments)
         else:
             return RegistryProxy(self.arguments)
