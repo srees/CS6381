@@ -18,8 +18,6 @@ class KademliaReg:
         print("Binding REP to " + self.REP_url)
         self.REP_socket.bind(self.REP_url)
         self.REQ_socket = self.context.socket(zmq.REQ)
-        self.expected_pubs = args.pubs
-        self.expected_subs = args.subs
         if args.disseminate == "broker":
             self.expected_brokers = 1
         else:
