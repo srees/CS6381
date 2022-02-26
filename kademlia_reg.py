@@ -2,6 +2,7 @@ import zmq
 from kademlia_dht import Kademlia_DHT
 import json
 from topiclist import TopicList
+import publicip
 
 print("Current libzmq version is %s" % zmq.zmq_version())
 print("Current  pyzmq version is %s" % zmq.__version__)
@@ -12,7 +13,7 @@ class KademliaReg:
         self.args = args
         self.context = zmq.Context()
         self.REP_socket = self.context.socket(zmq.REP)
-        self.REP_url = "tcp://" + self.args.registry + ":" + str(self.args.port)
+        self.REP_url = "tcp://" + publicip.get_ip_address() + ":" + str(self.args.port)
         print("Binding REP to " + self.REP_url)
         self.REP_socket.bind(self.REP_url)
         self.REQ_socket = self.context.socket(zmq.REQ)

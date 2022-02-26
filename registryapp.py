@@ -34,7 +34,7 @@ def parseCmdLineArgs():
     parser.add_argument("-s", "--subs", default=5, type=int, help="Number of subscribers")
     parser.add_argument("-k", "--kademlia", action="store_true")
     parser.add_argument("-i", "--create", action="store_true")
-    parser.add_argument("-v", "--debug", default=logging.WARNING, action="store_true",help="Logging level (see logging package): default WARNING else DEBUG")
+    parser.add_argument("-v", "--debug", default=logging.WARNING, action="store_true", help="Logging level (see logging package): default WARNING else DEBUG")
     return parser.parse_args()
 
 
