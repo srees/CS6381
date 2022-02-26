@@ -51,7 +51,7 @@ class KademliaReg:
                     await self.kdht.set_value("*", json.dumps([broker]))
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
-                    pubs = await self.get_unique_publishers()
+                    pubs = self.get_unique_publishers()
                     self.start_broker(broker, pubs)
                 if message['role'] == 'publisher':
                     # register with DHT
