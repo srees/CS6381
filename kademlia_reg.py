@@ -91,7 +91,7 @@ class KademliaReg:
         return pubs
 
     async def start_broker(self, broker):  # We'll start the broker by sending it the list of publishers to subscribe to
-        pubs = await self.get_unique_publishers()
+        pubs = self.get_unique_publishers()
         connection_string = 'tcp://' + broker.get('ip') + ':' + str(int(broker.get('port')) - 1)
         self.REQ_socket.connect(connection_string)
         print("Registry sending start to broker: " + connection_string)
