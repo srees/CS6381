@@ -32,6 +32,7 @@ class Kademlia_DHT:
         self.my_port = None  # port num used by this node
         self.bootstrap_ipaddr = None  # IP addr of some other DHT node used to bootstrap to
         self.bootstrap_port = None  # port num used by some other DHT node used to bootstrap to
+        self.listening = False
 
     # initialization
     def initialize(self, args):
@@ -61,7 +62,6 @@ class Kademlia_DHT:
 
         # initialize the server object
         self.server = Server()
-        await self.server.listen(self.my_port)
 
         # initialize underlying logger
         handler = logging.StreamHandler()
@@ -112,7 +112,9 @@ class Kademlia_DHT:
     # set key value
     ######################################
     async def set_value(self, key, value):
-        # await self.server.listen(self.my_port)
+        if not self.listening:
+            await self.server.listen(self.my_port)
+            self.listening = True
         bootstrap_node = (self.bootstrap_ipaddr, int(self.bootstrap_port))
         await self.server.bootstrap([bootstrap_node])
         await self.server.set(key, value)
@@ -122,7 +124,9 @@ class Kademlia_DHT:
     # get value for the supplied key
     ######################################
     async def get_value(self, key):
-        await self.server.listen(self.my_port)
+        if not self.listening:
+            await self.server.listen(self.my_port)
+            self.listening = True
         bootstrap_node = (self.bootstrap_ipaddr, int(self.bootstrap_port))
         await self.server.bootstrap([bootstrap_node])
         result = await self.server.get(key)
