@@ -30,7 +30,7 @@ def parseCmdLineArgs():
     parser.add_argument("-b", "--bootstrap", default="127.0.0.1", help="IP of the DHT bootstrap")
     parser.add_argument("-p", "--port", default="5550", help="Port of this registry")
     parser.add_argument("-q", "--bootstrap_port", default="8468", help="Port of the bootstrap")
-    parser.add_argument("-o", "--override_port", default="8478", help="Port for kademlia DHT ring communications")
+    parser.add_argument("-o", "--override_port", default=None, help="Port for kademlia DHT ring communications")
     parser.add_argument("-c", "--create", action="store_true")
     parser.add_argument("-v", "--debug", default=logging.WARNING, action="store_true", help="Logging level (see logging package): default WARNING else DEBUG")
     return parser.parse_args()
