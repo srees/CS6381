@@ -3,6 +3,7 @@ from kademlia_dht import Kademlia_DHT
 import json
 from topiclist import TopicList
 import publicip
+import threading
 
 print("Current libzmq version is %s" % zmq.zmq_version())
 print("Current  pyzmq version is %s" % zmq.__version__)
@@ -42,12 +43,16 @@ class KademliaReg:
 
         # check if this is the first node of the ring or others joining
         # an existing one
+        self.ringThread = None
         if self.args.create:
             print("Main: create the first DHT node")
-            self.kdht.create_bootstrap_node()
+            self.ringThread = threading.Thread(self.kdht.create_bootstrap_node())
+            # self.kdht.create_bootstrap_node()
         else:
             print("Main: join some DHT node")
-            self.kdht.connect_to_bootstrap_node()
+            self.ringThread = threading.Thread(self.kdht.connect_to_bootstrap_node())
+            # self.kdht.connect_to_bootstrap_node()
+        self.ringThread.start()
 
     async def start(self):
         print("Registry starting")
@@ -84,7 +89,7 @@ class KademliaReg:
                     sub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
                     self.start_subscriber(sub)
         except KeyboardInterrupt:
-            pass
+            self.ringThread.join()
 
     async def get_unique_publishers(self, topics=None):
         pubs = []
