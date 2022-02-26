@@ -29,30 +29,15 @@ class KademliaReg:
         self.subs = []
         self.topics = {}
 
-        print("Initializing Kademlia registry object")
+        print("Instantiate Kademlia DHT object")
 
-        if self.args.create:
-            self.kdht = Kademlia_DHT(True)
-        else:
-            self.kdht = Kademlia_DHT()
+        self.kdht = Kademlia_DHT()
+        print("Initialize Kademlia DHT object")
         args.ipaddr = args.registry
         args.port = args.override_port
         if not self.kdht.initialize(args):
             print("Main: Initialization of Kademlia DHT failed")
             return
-
-        # check if this is the first node of the ring or others joining
-        # an existing one
-        self.ringThread = None
-        if self.args.create:
-            print("Main: create the first DHT node")
-            self.ringThread = threading.Thread(self.kdht.create_bootstrap_node())
-            # self.kdht.create_bootstrap_node()
-        else:
-            print("Main: join some DHT node")
-            self.ringThread = threading.Thread(self.kdht.connect_to_bootstrap_node())
-            # self.kdht.connect_to_bootstrap_node()
-        self.ringThread.start()
 
     async def start(self):
         print("Registry starting")
@@ -89,7 +74,7 @@ class KademliaReg:
                     sub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
                     self.start_subscriber(sub)
         except KeyboardInterrupt:
-            self.ringThread.join()
+            pass
 
     async def get_unique_publishers(self, topics=None):
         pubs = []

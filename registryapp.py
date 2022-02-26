@@ -29,7 +29,7 @@ def parseCmdLineArgs():
                         help="Dissemination strategy: direct or via broker; default is direct")
     parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP of the registry bootstrap")
     parser.add_argument("-p", "--port", default="5550", help="Port of this registry")
-    parser.add_argument("-o", "--override_port", default="5540", help="Port for kademlia DHT ring communications")
+    parser.add_argument("-o", "--override_port", default="8468", help="Port for kademlia DHT ring communications")
     parser.add_argument("-c", "--pubs", default=5, type=int, help="Number of publishers")
     parser.add_argument("-s", "--subs", default=5, type=int, help="Number of subscribers")
     parser.add_argument("-k", "--kademlia", action="store_true")
