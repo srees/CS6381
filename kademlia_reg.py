@@ -51,7 +51,8 @@ class KademliaReg:
                     await self.kdht.set_value("*", json.dumps([broker]))
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
-                    await self.start_broker(broker)
+                    pubs = await self.get_unique_publishers()
+                    self.start_broker(broker, pubs)
                 if message['role'] == 'publisher':
                     # register with DHT
                     for topic in message['topics']:
@@ -90,8 +91,7 @@ class KademliaReg:
                         pubs.append(pub)
         return pubs
 
-    async def start_broker(self, broker):  # We'll start the broker by sending it the list of publishers to subscribe to
-        pubs = self.get_unique_publishers()
+    def start_broker(self, broker, pubs):  # We'll start the broker by sending it the list of publishers to subscribe to
         connection_string = 'tcp://' + broker.get('ip') + ':' + str(int(broker.get('port')) - 1)
         self.REQ_socket.connect(connection_string)
         print("Registry sending start to broker: " + connection_string)
