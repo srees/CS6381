@@ -90,7 +90,7 @@ class KademliaReg:
                         pubs.append(pub)
         return pubs
 
-    def start_broker(self, broker):  # We'll start the broker by sending it the list of publishers to subscribe to
+    async def start_broker(self, broker):  # We'll start the broker by sending it the list of publishers to subscribe to
         connection_string = 'tcp://' + broker.get('ip') + ':' + str(int(broker.get('port')) - 1)
         pubs = await self.get_unique_publishers()
         self.REQ_socket.connect(connection_string)
