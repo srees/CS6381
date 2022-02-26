@@ -35,7 +35,6 @@ class KademliaReg:
         else:
             self.kdht = Kademlia_DHT()
         args.ipaddr = args.registry
-        args.port = args.ring_port
         if not self.kdht.initialize(args):
             print("Main: Initialization of Kademlia DHT failed")
             return
