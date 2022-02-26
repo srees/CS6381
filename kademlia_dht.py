@@ -61,6 +61,7 @@ class Kademlia_DHT:
 
         # initialize the server object
         self.server = Server()
+        await self.server.listen(self.my_port)
 
         # initialize underlying logger
         handler = logging.StreamHandler()
@@ -111,7 +112,7 @@ class Kademlia_DHT:
     # set key value
     ######################################
     async def set_value(self, key, value):
-        await self.server.listen(self.my_port)
+        # await self.server.listen(self.my_port)
         bootstrap_node = (self.bootstrap_ipaddr, int(self.bootstrap_port))
         await self.server.bootstrap([bootstrap_node])
         await self.server.set(key, value)
