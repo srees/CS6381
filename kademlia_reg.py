@@ -85,12 +85,12 @@ class KademliaReg:
             data = await self.kdht.get_value(topic)
             if data:
                 topic_pubs = json.loads(await self.kdht.get_value(topic))
-            if topic_pubs:
-                for pub in topic_pubs:
-                    tmp_string = pub['ip'] + ':' + pub['port']
-                    if tmp_string not in unique_strings:
-                        unique_strings.append(tmp_string)
-                        pubs.append(pub)
+                if topic_pubs:
+                    for pub in topic_pubs:
+                        tmp_string = pub['ip'] + ':' + pub['port']
+                        if tmp_string not in unique_strings:
+                            unique_strings.append(tmp_string)
+                            pubs.append(pub)
         return pubs
 
     async def start_broker(self, broker):  # We'll start the broker by sending it the list of publishers to subscribe to
