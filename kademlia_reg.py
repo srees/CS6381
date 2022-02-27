@@ -128,6 +128,7 @@ class KademliaReg:
         if self.args.disseminate == 'broker':
             print("Registry passing broker information to subscribers:")
             broker = json.loads(await self.kdht.get_value("*"))
+            print("Found broker " + broker)
             # send each subscriber the broker IP:Port
             connection_string = 'tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1)
             self.REQ_socket.connect(connection_string)

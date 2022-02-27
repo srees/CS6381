@@ -16,6 +16,7 @@
 import zmq
 import publicip
 import time
+import json
 
 
 class Broker:
@@ -59,6 +60,8 @@ class Broker:
                         data = SUB_sock.recv_json()
                         print("Broker received: ")
                         print(data)
+                        print("Raw: ")
+                        print(json.dumps(data))
                         data["Brokered"] = time.time()
                         self.republish(data)
             except KeyboardInterrupt:
