@@ -84,7 +84,7 @@ class Kademlia_DHT:
                 asyncio.set_event_loop(loop)
                 loop = asyncio.get_event_loop()
         loop.set_debug(True)
-
+        self.listening = True
         loop.run_until_complete(self.server.listen(self.my_port))
         bootstrap_node = (self.bootstrap_ipaddr, int(self.bootstrap_port))
         loop.run_until_complete(self.server.bootstrap([bootstrap_node]))
@@ -110,6 +110,7 @@ class Kademlia_DHT:
                 loop = asyncio.get_event_loop()
         loop.set_debug(True)
 
+        self.listening = True
         loop.run_until_complete(self.server.listen(self.my_port))
 
         try:
