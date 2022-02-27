@@ -26,7 +26,7 @@ class KademliaReg:
         self.pubs = []
         self.subs = []
         self.topics = {}
-
+        self.kdht = None
         # print("Instantiate Kademlia DHT object")
         # if args.create:
         #     self.kdht = Kademlia_DHT()
@@ -139,23 +139,24 @@ class KademliaReg:
     async def DHT_set(self, topic, content):
         args = self.args
         print("Instantiate Kademlia DHT object")
-        kdht = Kademlia_DHT()
+        self.kdht = Kademlia_DHT()
         print("Initialize Kademlia DHT object")
         args.ipaddr = args.bootstrap
         args.port = args.bootstrap_port
-        if not kdht.initialize(args):
+        if not self.kdht.initialize(args):
             print("Main: Initialization of Kademlia DHT failed")
             return
-        await kdht.set_value(topic, content)
+        await self.kdht.set_value(topic, content)
+
 
     async def DHT_get(self, topic):
         args = self.args
         print("Instantiate Kademlia DHT object")
-        kdht = Kademlia_DHT()
+        self.kdht = Kademlia_DHT()
         print("Initialize Kademlia DHT object")
         args.ipaddr = args.bootstrap
         args.port = args.bootstrap_port
-        if not kdht.initialize(args):
+        if not self.kdht.initialize(args):
             print("Main: Initialization of Kademlia DHT failed")
             return
-        await kdht.get_value(topic)
+        return await self.kdht.get_value(topic)
