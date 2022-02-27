@@ -58,7 +58,7 @@ class KademliaReg:
                     # register with DHT
                     for topic in message['topics']:
                         # here is where we could/should lock the DHT for changes
-                        result = await self.kdht.get_value(topic)
+                        result = self.DHT_get(topic)
                         if result:
                             publishers = json.loads(result)
                         else:
