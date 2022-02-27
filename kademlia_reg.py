@@ -39,7 +39,7 @@ class KademliaReg:
         #     print("Main: Initialization of Kademlia DHT failed")
         #     return
 
-    def start(self):
+    async def start(self):
         print("Registry starting")
         try:
             print("Registry listening...")
@@ -51,22 +51,22 @@ class KademliaReg:
                     # register with DHT
                     broker = {'ip': message['ip'], 'port': message['port']}
                     data = json.dumps([broker])
-                    self.DHT_set("*", data)
+                    await self.DHT_set("*", data)
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
-                    self.start_broker(broker)
+                    await self.start_broker(broker)
                 if message['role'] == 'publisher':
                     # register with DHT
                     for topic in message['topics']:
                         # here is where we could/should lock the DHT for changes
-                        result = self.DHT_get(topic)
+                        result = await self.DHT_get(topic)
                         if result:
                             publishers = json.loads(result)
                         else:
                             publishers = []
                         publishers.append({'ip': message['ip'], 'port': message['port']})
                         data = json.dumps(publishers)
-                        self.DHT_set(topic, data)
+                        await self.DHT_set(topic, data)
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     pub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
@@ -75,19 +75,19 @@ class KademliaReg:
                     # DHT doesn't care about registering subscribers with my model...
                     self.REP_socket.send_json("Registered")
                     sub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
-                    self.start_subscriber(sub)
+                    await self.start_subscriber(sub)
         except KeyboardInterrupt:
             pass
 
-    def get_unique_publishers(self, topics=None):
+    async def get_unique_publishers(self, topics=None):
         pubs = []
         unique_strings = []
         if topics is None:
             topics = TopicList.topiclist
         for topic in topics:
-            data = self.DHT_get(topic)
+            data = await self.DHT_get(topic)
             if data:
-                topic_pubs = json.loads(self.DHT_get(topic))
+                topic_pubs = json.loads(data)
                 if topic_pubs:
                     for pub in topic_pubs:
                         tmp_string = pub['ip'] + ':' + pub['port']
@@ -96,19 +96,19 @@ class KademliaReg:
                             pubs.append(pub)
         return pubs
 
-    def start_broker(self, broker):  # We'll start the broker by sending it the list of publishers to subscribe to
+    async def start_broker(self, broker):  # We'll start the broker by sending it the list of publishers to subscribe to
         connection_string = 'tcp://' + broker.get('ip') + ':' + str(int(broker.get('port')) - 1)
-        pubs = self.get_unique_publishers()
+        pubs = await self.get_unique_publishers()
         self.REQ_socket.connect(connection_string)
         print("Registry sending start to broker: " + connection_string)
         self.REQ_socket.send_json(pubs)
         self.REQ_socket.recv_json()
         self.REQ_socket.disconnect(connection_string)
 
-    def start_subscriber(self, sub):
+    async def start_subscriber(self, sub):
         if self.args.disseminate == 'broker':
             print("Registry passing broker information to subscribers:")
-            broker = json.loads(self.DHT_get("*"))
+            broker = json.loads(await self.DHT_get("*"))
             # send each subscriber the broker IP:Port
             connection_string = 'tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1)
             self.REQ_socket.connect(connection_string)
@@ -118,7 +118,7 @@ class KademliaReg:
             self.REQ_socket.disconnect(connection_string)
         else:
             print("Registry passing publisher information to subscribers:")
-            temp_list = self.get_unique_publishers(sub.get('topics'))
+            temp_list = await self.get_unique_publishers(sub.get('topics'))
             connection_string = 'tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1)
             self.REQ_socket.connect(connection_string)
             print("Sending: ")
@@ -136,7 +136,7 @@ class KademliaReg:
         self.REQ_socket.recv_json()
         self.REQ_socket.disconnect(connection_string)
 
-    def DHT_set(self, topic, content):
+    async def DHT_set(self, topic, content):
         args = self.args
         print("Instantiate Kademlia DHT object")
         kdht = Kademlia_DHT()
@@ -148,7 +148,7 @@ class KademliaReg:
             return
         await kdht.set_value(topic, content)
 
-    def DHT_get(self, topic):
+    async def DHT_get(self, topic):
         args = self.args
         print("Instantiate Kademlia DHT object")
         kdht = Kademlia_DHT()
