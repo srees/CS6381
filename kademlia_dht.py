@@ -112,23 +112,23 @@ class Kademlia_DHT:
     # set key value
     ######################################
     async def set_value(self, key, value):
-        if not self.listening:
-            await self.server.listen(self.my_port)
-            self.listening = True
+        # if not self.listening:
+        await self.server.listen(self.my_port)
+        #     self.listening = True
         bootstrap_node = (self.bootstrap_ipaddr, int(self.bootstrap_port))
         await self.server.bootstrap([bootstrap_node])
         await self.server.set(key, value)
-        # self.server.stop()
+        self.server.stop()
 
     ######################################
     # get value for the supplied key
     ######################################
     async def get_value(self, key):
-        if not self.listening:
-            await self.server.listen(self.my_port)
-            self.listening = True
+         #if not self.listening:
+        await self.server.listen(self.my_port)
+        #     self.listening = True
         bootstrap_node = (self.bootstrap_ipaddr, int(self.bootstrap_port))
         await self.server.bootstrap([bootstrap_node])
         result = await self.server.get(key)
-        # self.server.stop()
+        self.server.stop()
         return result
