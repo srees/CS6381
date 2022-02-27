@@ -26,31 +26,18 @@ class KademliaReg:
         self.pubs = []
         self.subs = []
         self.topics = {}
-
-        print("Initializing Kademlia registry object")
-
-        if self.args.create:
-            self.kdht = Kademlia_DHT(True)
-        else:
-            self.kdht = Kademlia_DHT()
-        args.ipaddr = args.bootstrap
-        args.port = args.bootstrap_port
-        if not self.kdht.initialize(args):
-            print("Main: Initialization of Kademlia DHT failed")
-            return
-
-        # check if this is the first node of the ring or others joining
-        # an existing one
-        self.ringThread = None
-        if self.args.create:
-            print("Main: create the first DHT node")
-            self.ringThread = threading.Thread(target=self.kdht.create_bootstrap_node)
-            # self.kdht.create_bootstrap_node()
-        else:
-            print("Main: join some DHT node")
-            self.ringThread = threading.Thread(target=self.kdht.connect_to_bootstrap_node)
-            # self.kdht.connect_to_bootstrap_node()
-        self.ringThread.start()
+        self.kdht = None
+        # print("Instantiate Kademlia DHT object")
+        # if args.create:
+        #     self.kdht = Kademlia_DHT()
+        # else:
+        #     self.kdht = Kademlia_DHT(True)
+        # print("Initialize Kademlia DHT object")
+        # args.ipaddr = args.bootstrap
+        # args.port = args.bootstrap_port
+        # if not self.kdht.initialize(args):
+        #     print("Main: Initialization of Kademlia DHT failed")
+        #     return
 
     async def start(self):
         print("Registry starting")
@@ -62,21 +49,24 @@ class KademliaReg:
                 print(message)
                 if message['role'] == 'broker':
                     # register with DHT
-                    await self.kdht.set_value("*", json.dumps([{'ip': message['ip'], 'port': message['port']}]))
+                    broker = {'ip': message['ip'], 'port': message['port']}
+                    data = json.dumps([broker])
+                    await self.DHT_set("*", data)
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
-                    self.start_broker(await self.get_unique_publishers())
+                    await self.start_broker(broker)
                 if message['role'] == 'publisher':
                     # register with DHT
                     for topic in message['topics']:
                         # here is where we could/should lock the DHT for changes
-                        result = await self.kdht.get_value(topic)
+                        result = await self.DHT_get(topic)
                         if result:
                             publishers = json.loads(result)
                         else:
                             publishers = []
                         publishers.append({'ip': message['ip'], 'port': message['port']})
-                        await self.kdht.set_value(topic, json.dumps(publishers))
+                        data = json.dumps(publishers)
+                        await self.DHT_set(topic, data)
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     pub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
@@ -87,7 +77,7 @@ class KademliaReg:
                     sub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
                     await self.start_subscriber(sub)
         except KeyboardInterrupt:
-            self.ringThread.join()
+            pass
 
     async def get_unique_publishers(self, topics=None):
         pubs = []
@@ -95,7 +85,7 @@ class KademliaReg:
         if topics is None:
             topics = TopicList.topiclist
         for topic in topics:
-            data = await self.kdht.get_value(topic)
+            data = await self.DHT_get(topic)
             if data:
                 topic_pubs = json.loads(data)
                 if topic_pubs:
@@ -106,8 +96,9 @@ class KademliaReg:
                             pubs.append(pub)
         return pubs
 
-    def start_broker(self, pubs):  # We'll start the broker by sending it the list of publishers to subscribe to
-        connection_string = 'tcp://' + self.broker[0].get('ip') + ':' + str(int(self.broker[0].get('port')) - 1)
+    async def start_broker(self, broker):  # We'll start the broker by sending it the list of publishers to subscribe to
+        connection_string = 'tcp://' + broker.get('ip') + ':' + str(int(broker.get('port')) - 1)
+        pubs = await self.get_unique_publishers()
         self.REQ_socket.connect(connection_string)
         print("Registry sending start to broker: " + connection_string)
         self.REQ_socket.send_json(pubs)
@@ -117,7 +108,7 @@ class KademliaReg:
     async def start_subscriber(self, sub):
         if self.args.disseminate == 'broker':
             print("Registry passing broker information to subscribers:")
-            broker = json.loads(await self.kdht.get_value("*"))
+            broker = json.loads(await self.DHT_get("*"))
             # send each subscriber the broker IP:Port
             connection_string = 'tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1)
             self.REQ_socket.connect(connection_string)
@@ -144,3 +135,27 @@ class KademliaReg:
         self.REQ_socket.send_json("start")
         self.REQ_socket.recv_json()
         self.REQ_socket.disconnect(connection_string)
+
+    async def DHT_set(self, topic, content):
+        args = self.args
+        print("Instantiate Kademlia DHT object")
+        self.kdht = Kademlia_DHT()
+        print("Initialize Kademlia DHT object")
+        args.ipaddr = args.bootstrap
+        args.port = args.bootstrap_port
+        if not self.kdht.initialize(args):
+            print("Main: Initialization of Kademlia DHT failed")
+            return
+        await self.kdht.set_value(topic, content)
+
+    async def DHT_get(self, topic):
+        args = self.args
+        print("Instantiate Kademlia DHT object")
+        self.kdht = Kademlia_DHT()
+        print("Initialize Kademlia DHT object")
+        args.ipaddr = args.bootstrap
+        args.port = args.bootstrap_port
+        if not self.kdht.initialize(args):
+            print("Main: Initialization of Kademlia DHT failed")
+            return
+        return await self.kdht.get_value(topic)
