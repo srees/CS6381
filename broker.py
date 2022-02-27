@@ -33,10 +33,10 @@ class Broker:
         self.PUB_url = 'tcp://' + publicip.get_ip_address() + ':' + str(int(self.args.bind) + 1)
         print("Binding PUB to " + self.PUB_url)
         self.PUB_socket.bind(self.PUB_url)
-        self.REQ_socket = self.context.socket(zmq.REQ)
-        self.REQ_url = 'tcp://' + self.args.registry + ':' + str(int(self.args.port))
-        print("Binding REQ to " + self.REQ_url)
-        self.REQ_socket.bind(self.REQ_url)
+        # self.REQ_socket = self.context.socket(zmq.REQ)
+        # self.REQ_url = 'tcp://' + self.args.registry + ':' + str(int(self.args.port))
+        # print("Binding REQ to " + self.REQ_url)
+        # self.REQ_socket.bind(self.REQ_url)
 
     def start(self):
         self.wait()  # wait for registry to give us the go
