@@ -50,7 +50,8 @@ class KademliaReg:
                 if message['role'] == 'broker':
                     # register with DHT
                     broker = {'ip': message['ip'], 'port': message['port']}
-                    self.DHT_set("*", json.dumps([broker]))
+                    data = json.dumps([broker])
+                    self.DHT_set("*", data)
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     self.start_broker(broker)
@@ -64,7 +65,8 @@ class KademliaReg:
                         else:
                             publishers = []
                         publishers.append({'ip': message['ip'], 'port': message['port']})
-                        self.DHT_set(topic, json.dumps(publishers))
+                        data = json.dumps(publishers)
+                        self.DHT_set(topic, data)
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     pub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
@@ -134,7 +136,7 @@ class KademliaReg:
         self.REQ_socket.recv_json()
         self.REQ_socket.disconnect(connection_string)
 
-    async def DHT_set(self, topic, content):
+    def DHT_set(self, topic, content):
         args = self.args
         print("Instantiate Kademlia DHT object")
         kdht = Kademlia_DHT()
@@ -146,7 +148,7 @@ class KademliaReg:
             return
         await kdht.set_value(topic, content)
 
-    async def DHT_get(self, topic):
+    def DHT_get(self, topic):
         args = self.args
         print("Instantiate Kademlia DHT object")
         kdht = Kademlia_DHT()
