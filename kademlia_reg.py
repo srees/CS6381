@@ -91,20 +91,27 @@ class KademliaReg:
             self.ringThread.join()
 
     async def get_unique_publishers(self, topics=None):
+        print("Getting unique publishers...")
         pubs = []
         unique_strings = []
         if topics is None:
             topics = TopicList.topiclist
+            print("Using full topic list")
         for topic in topics:
+            print("Getting data for " + topic)
             data = await self.kdht.get_value(topic)
             if data:
+                print("Received data...")
                 topic_pubs = json.loads(data)
                 if topic_pubs:
                     for pub in topic_pubs:
+                        print(pub)
                         tmp_string = pub['ip'] + ':' + pub['port']
                         if tmp_string not in unique_strings:
                             unique_strings.append(tmp_string)
                             pubs.append(pub)
+            else:
+                print("No data found")
         return pubs
 
     async def start_broker(self, broker):  # We'll start the broker by sending it the list of publishers to subscribe to
@@ -112,6 +119,7 @@ class KademliaReg:
         self.REQ_socket.connect(connection_string)
         print("Registry sending start to broker: " + connection_string)
         pubs = await self.get_unique_publishers()
+        print("Sending pubs to broker...")
         self.REQ_socket.send_json(pubs)
         self.REQ_socket.recv_json()
         self.REQ_socket.disconnect(connection_string)
