@@ -134,7 +134,8 @@ class KademliaReg:
         self.REQ_socket.recv_json()
         self.REQ_socket.disconnect(connection_string)
 
-    async def DHT_set(self, args, topic, content):
+    async def DHT_set(self, topic, content):
+        args = self.args
         print("Instantiate Kademlia DHT object")
         kdht = Kademlia_DHT()
         print("Initialize Kademlia DHT object")
@@ -145,7 +146,8 @@ class KademliaReg:
             return
         await kdht.set_value(topic, content)
 
-    async def DHT_get(self, args, topic):
+    async def DHT_get(self, topic):
+        args = self.args
         print("Instantiate Kademlia DHT object")
         kdht = Kademlia_DHT()
         print("Initialize Kademlia DHT object")
