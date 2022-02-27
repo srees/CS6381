@@ -85,7 +85,7 @@ class KademliaReg:
         for topic in topics:
             data = self.DHT_get(topic)
             if data:
-                topic_pubs = json.loads(await self.kdht.get_value(topic))
+                topic_pubs = json.loads(self.DHT_get(topic))
                 if topic_pubs:
                     for pub in topic_pubs:
                         tmp_string = pub['ip'] + ':' + pub['port']
