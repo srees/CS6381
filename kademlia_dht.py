@@ -130,5 +130,5 @@ class Kademlia_DHT:
         bootstrap_node = (self.bootstrap_ipaddr, int(self.bootstrap_port))
         await self.server.bootstrap([bootstrap_node])
         result = await self.server.get(key)
-        self.server.stop()
+        # self.server.stop()
         return result
