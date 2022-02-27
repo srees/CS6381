@@ -101,7 +101,13 @@ class Kademlia_DHT:
     # This is the first node of this DHT ring
     ###################################
     def create_bootstrap_node(self):
-        loop = asyncio.get_event_loop()
+        try:
+            loop = asyncio.get_event_loop()
+        except RuntimeError as ex:
+            if "There is no current event loop in thread" in str(ex):
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                loop = asyncio.get_event_loop()
         loop.set_debug(True)
 
         loop.run_until_complete(self.server.listen(self.my_port))
