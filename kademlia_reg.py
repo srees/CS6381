@@ -55,7 +55,6 @@ class KademliaReg:
                 if message['role'] == 'publisher':
                     # register with DHT
                     for topic in message['topics']:
-                        # here is where we could/should lock the DHT for changes
                         result = self.kad_client.get(topic)
                         if result:
                             publishers = json.loads(result)
@@ -67,6 +66,15 @@ class KademliaReg:
                     self.REP_socket.send_json("Registered")
                     pub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
                     self.start_publisher(pub)
+                if message['role'] == 'stoppublisher':
+                    # unregister with DHT
+                    for topic in message['topics']:
+                        result = self.kad_client.get(topic)
+                        if result:
+                            publishers = json.loads(result)
+                            publishers.remove({'ip': message['ip'], 'port': message['port']})
+                            self.kad_client.set(topic, json.dumps(publishers))
+                    self.REP_socket.send_json("Unregistered")
                 if message['role'] == 'subscriber':
                     # DHT doesn't care about registering subscribers with my model...
                     self.REP_socket.send_json("Registered")

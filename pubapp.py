@@ -121,11 +121,16 @@ def main():
     # now do the publication for as many iterations that we plan to do
     print("Start received.")
     iters = config.get_iterations()
-    for x in range(iters):
-        topic = random.sample(my_topics, 1)
-        value = randrange(0, 500)
-        pub.publish(topic[0], value)
-        time.sleep(1)
+    try:
+        for x in range(iters):
+            topic = random.sample(my_topics, 1)
+            value = randrange(0, 500)
+            pub.publish(topic[0], value)
+            time.sleep(1)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        registry.stop()
 
 ###################################
 #
