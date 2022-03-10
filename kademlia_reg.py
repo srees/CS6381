@@ -3,6 +3,7 @@ import json
 from topiclist import TopicList
 import publicip
 from kademlia_client import KademliaClient
+import time
 
 print("Current libzmq version is %s" % zmq.zmq_version())
 print("Current  pyzmq version is %s" % zmq.__version__)
@@ -47,7 +48,10 @@ class KademliaReg:
                 print(message)
                 if message['role'] == 'broker':
                     # register with DHT
-                    self.kad_client.set("*", json.dumps([{'ip': message['ip'], 'port': message['port']}]))
+                    msg = [{'ip': message['ip'], 'port': message['port']}]
+                    while msg not in json.loads(self.kad_client.get("broker")):
+                        self.kad_client.set("broker", json.dumps(msg))
+                        # time.sleep(1)
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     broker = {'ip': message['ip'], 'port': message['port']}
@@ -60,9 +64,13 @@ class KademliaReg:
                             publishers = json.loads(result)
                         else:
                             publishers = []
-                        publishers.append({'ip': message['ip'], 'port': message['port']})
+                        pub = {'ip': message['ip'], 'port': message['port']}
+                        publishers.append(pub)
                         print("Adding " + message['ip'] + " to " + topic)
-                        self.kad_client.set(topic, json.dumps(publishers))
+                        msg = json.dumps(publishers)
+                        while pub not in json.loads(self.kad_client.get(topic)):
+                            self.kad_client.set(topic, json.dumps(publishers))
+                            # time.sleep(1)
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     pub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
@@ -76,8 +84,11 @@ class KademliaReg:
                             publishers = json.loads(result)
                             print("Removing " + message['ip'] + " from topic " + topic + ":")
                             print(publishers)
-                            publishers.remove({'ip': message['ip'], 'port': message['port']})
-                            self.kad_client.set(topic, json.dumps(publishers))
+                            pub = {'ip': message['ip'], 'port': message['port']}
+                            publishers.remove(pub)
+                            while pub in self.kad_client.get(topic):
+                                self.kad_client.set(topic, json.dumps(publishers))
+                                # time.sleep(1)
                     self.REP_socket.send_json("Unregistered")
                 if message['role'] == 'subscriber':
                     # DHT doesn't care about registering subscribers with my model...
@@ -127,7 +138,7 @@ class KademliaReg:
     def start_subscriber(self, sub):
         if self.args.disseminate == 'broker':
             print("Registry passing broker information to subscribers:")
-            broker = json.loads(self.kad_client.get("*"))
+            broker = json.loads(self.kad_client.get("broker"))
             print("Found broker ")
             print(broker)
             # send each subscriber the broker IP:Port
