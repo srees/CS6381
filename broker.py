@@ -54,8 +54,9 @@ class Broker:
         print("Starting broker listen loop...")
         while True:
             if int(time.time()) % 10 == 0:
-                updates = threading.Thread(target=self.get_updates)
-                updates.start()
+                # updates = threading.Thread(target=self.get_updates)
+                # updates.start()
+                self.get_updates()
             try:
                 if self.poller and self.SUB_sockets:
                     events = dict(self.poller.poll())
