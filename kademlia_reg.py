@@ -31,7 +31,8 @@ class KademliaReg:
         nodes = []
         count = 1
         port = int(self.args.bootstrap_port)
-        while count <= self.args.num_nodes:
+        node_count = int(self.args.num_nodes)
+        while count <= node_count:
             nodes.append(("10.0.0." + count, port))
             count += 1
         self.kad_client = KademliaClient(port, nodes)
