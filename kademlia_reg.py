@@ -61,6 +61,7 @@ class KademliaReg:
                         else:
                             publishers = []
                         publishers.append({'ip': message['ip'], 'port': message['port']})
+                        print("Adding " + message['ip'] + " to " + topic)
                         self.kad_client.set(topic, json.dumps(publishers))
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
