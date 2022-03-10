@@ -72,6 +72,9 @@ class KademliaReg:
                     self.REP_socket.send_json("Registered")
                     sub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
                     self.start_subscriber(sub)
+                if message['role'] == 'update':
+                    pubs = self.get_unique_publishers(message['topics'])
+                    self.REP_socket.send_json(pubs)
         except KeyboardInterrupt:
             pass
 
@@ -79,7 +82,7 @@ class KademliaReg:
         print("Getting unique publishers...")
         pubs = []
         unique_strings = []
-        if topics is None:
+        if topics is None or not topics:
             topics = TopicList.topiclist
             print("Using full topic list")
         for topic in topics:

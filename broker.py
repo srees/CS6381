@@ -52,7 +52,7 @@ class Broker:
             self.poller.register(self.SUB_sockets[i], zmq.POLLIN)
         print("Starting broker listen loop...")
         while True:
-            if int(time.time()) % 60 == 0:
+            if int(time.time()) % 10 == 0:
                 updates = threading.Thread(target=self.get_updates)
                 updates.start()
             try:
@@ -82,7 +82,7 @@ class Broker:
 
     def get_updates(self):
         print("Fetching updates from registry...")
-        data = {'role': 'update', 'topics': ['*']}
+        data = {'role': 'update', 'topics': []}
         self.REQ_socket.send_json(data)
         print("Request sent")
         updates = self.REQ_socket.recv_json()
