@@ -130,7 +130,7 @@ def main():
     except KeyboardInterrupt:
         pass
     finally:
-        registry.stop()
+        registry.stop(my_topics)
 
 ###################################
 #
