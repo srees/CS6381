@@ -66,6 +66,7 @@ class KademliaReg:
                     self.REP_socket.send_json("Registered")
                     pub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
                     self.start_publisher(pub)
+                    self.print_registry()
                 if message['role'] == 'stoppublisher':
                     # unregister with DHT
                     for topic in message['topics']:
@@ -154,3 +155,9 @@ class KademliaReg:
         self.REQ_socket.send_json("start")
         self.REQ_socket.recv_json()
         self.REQ_socket.disconnect(connection_string)
+
+    def print_registry(self):
+        for topic in TopicList.topiclist:
+            data = self.kad_client.get(topic)
+            print(topic)
+            print(data)
