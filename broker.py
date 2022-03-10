@@ -16,7 +16,7 @@
 import zmq
 import publicip
 import time
-import json
+import threading
 
 
 class Broker:
@@ -34,10 +34,9 @@ class Broker:
         self.PUB_url = 'tcp://' + publicip.get_ip_address() + ':' + str(int(self.args.bind) + 1)
         print("Binding PUB to " + self.PUB_url)
         self.PUB_socket.bind(self.PUB_url)
-        # self.REQ_socket = self.context.socket(zmq.REQ)
-        # self.REQ_url = 'tcp://' + self.args.registry + ':' + str(int(self.args.port))
-        # print("Binding REQ to " + self.REQ_url)
-        # self.REQ_socket.bind(self.REQ_url)
+        self.REQ_socket = self.context.socket(zmq.REQ)
+        self.REQ_url = 'tcp://' + self.args.registry + ':' + self.args.port
+        self.REQ_socket.connect(self.REQ_url)
 
     def start(self):
         self.wait()  # wait for registry to give us the go
@@ -53,6 +52,9 @@ class Broker:
             self.poller.register(self.SUB_sockets[i], zmq.POLLIN)
         print("Starting broker listen loop...")
         while True:
+            if int(time.time()) % 60 == 0:
+                updates = threading.Thread(target=self.get_updates)
+                updates.start()
             try:
                 events = dict(self.poller.poll())
                 for SUB_sock in self.SUB_sockets:
@@ -60,8 +62,6 @@ class Broker:
                         data = SUB_sock.recv_json()
                         print("Broker received: ")
                         print(data)
-                        print("Raw: ")
-                        print(json.dumps(data))
                         data["Brokered"] = time.time()
                         self.republish(data)
             except KeyboardInterrupt:
@@ -80,6 +80,12 @@ class Broker:
     def republish(self, data):
         self.PUB_socket.send_json(data)
 
-    def get_update(self, topic):
-        data = None
+    def get_updates(self):
+        print("Fetching updates from registry...")
+        data = {'role': 'update', 'topics': ['*']}
         self.REQ_socket.send_json(data)
+        print("Request sent")
+        updates = self.REQ_socket.recv_json()
+        print("Reply received")
+        print(updates)
+        # compare to self.pubs...add/remove poll sockets as needed

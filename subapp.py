@@ -124,7 +124,7 @@ def data_callback(data):
         writer.writerow(data)
         # file1.write()
     # print('Received at ' + str(time.time()))
-    # print(data)
+    print(data)
 
 ###################################
 #
