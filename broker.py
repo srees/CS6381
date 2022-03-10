@@ -96,7 +96,10 @@ class Broker:
             if connect_str not in self.SUB_sockets:
                 # It isn't yet in our list of pubs, we need to add it!
                 print("Broker subscribing to " + connect_str)
-                self.SUB_sockets[connect_str] = self.context.socket(zmq.SUB).connect(connect_str).setsockopt_string(zmq.SUBSCRIBE, '')
+                temp_sock = self.context.socket(zmq.SUB)
+                temp_sock.connect(connect_str)
+                temp_sock.setsockopt_string(zmq.SUBSCRIBE, '')
+                self.SUB_sockets[connect_str] = temp_sock
                 self.poller.register(self.SUB_sockets[connect_str], zmq.POLLIN)
         for pub in self.pubs:
             connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
