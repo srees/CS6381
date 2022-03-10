@@ -54,6 +54,7 @@ class Broker:
         print("Starting broker listen loop...")
         while True:
             if int(time.time()) % 10 == 0:
+                print(int(time.time()))
                 # updates = threading.Thread(target=self.get_updates)
                 # updates.start()
                 self.get_updates()
