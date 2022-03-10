@@ -23,7 +23,7 @@ class Broker:
     def __init__(self, args):
         self.args = args
         self.pubs = []
-        self.SUB_sockets = []
+        self.SUB_sockets = {}
         self.poller = zmq.Poller()
         self.context = zmq.Context()
         self.REP_socket = self.context.socket(zmq.REP)
@@ -47,9 +47,9 @@ class Broker:
             temp_sock = self.context.socket(zmq.SUB)
             temp_sock.connect(connect_str)
             temp_sock.setsockopt_string(zmq.SUBSCRIBE, '')
-            self.SUB_sockets.append(temp_sock)
-        for i in range(0, len(self.SUB_sockets)):
-            self.poller.register(self.SUB_sockets[i], zmq.POLLIN)
+            self.SUB_sockets[connect_str] = temp_sock
+        for sock in self.SUB_sockets.values():
+            self.poller.register(sock, zmq.POLLIN)
         print("Starting broker listen loop...")
         while True:
             if int(time.time()) % 10 == 0:
@@ -57,9 +57,9 @@ class Broker:
                 updates.start()
             try:
                 events = dict(self.poller.poll())
-                for SUB_sock in self.SUB_sockets:
-                    if SUB_sock in events:
-                        data = SUB_sock.recv_json()
+                for sock in self.SUB_sockets.values():
+                    if sock in events:
+                        data = sock.recv_json()
                         print("Broker received: ")
                         print(data)
                         data["Brokered"] = time.time()
@@ -88,4 +88,21 @@ class Broker:
         updates = self.REQ_socket.recv_json()
         print("Reply received")
         print(updates)
-        # compare to self.pubs...add/remove poll sockets as needed
+        # add in any new publishers
+        update_strings = []
+        for pub in updates:
+            connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
+            update_strings.append(connect_str)
+            if connect_str not in self.SUB_sockets:
+                # It isn't yet in our list of pubs, we need to add it!
+                print("Broker subscribing to " + connect_str)
+                self.SUB_sockets[connect_str] = self.context.socket(zmq.SUB).connect(connect_str).setsockopt_string(zmq.SUBSCRIBE, '')
+                self.poller.register(self.SUB_sockets[connect_str], zmq.POLLIN)
+        for pub in self.pubs:
+            connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
+            if connect_str not in update_strings:
+                # This publisher has been dropped from ones we should listen to, remove it!
+                self.poller.unregister(self.SUB_sockets[connect_str])
+                self.SUB_sockets[connect_str].disconnect(connect_str)
+                self.SUB_sockets[connect_str].close()
+                del self.SUB_sockets[connect_str]
