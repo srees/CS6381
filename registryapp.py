@@ -59,7 +59,8 @@ def main():
 
     # start listening
     print("Registry start requested")
-    asyncio.run(registry.start())
+    #asyncio.run(registry.start())
+    registry.start()
 
 
 ###################################

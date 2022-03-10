@@ -102,6 +102,7 @@ class Broker:
                 temp_sock.setsockopt_string(zmq.SUBSCRIBE, '')
                 self.SUB_sockets[connect_str] = temp_sock
                 self.poller.register(self.SUB_sockets[connect_str], zmq.POLLIN)
+                self.pubs.append(pub)
         for pub in self.pubs:
             connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
             if connect_str not in update_strings:
@@ -110,3 +111,4 @@ class Broker:
                 self.SUB_sockets[connect_str].disconnect(connect_str)
                 self.SUB_sockets[connect_str].close()
                 del self.SUB_sockets[connect_str]
+                self.pubs.remove(pub)
