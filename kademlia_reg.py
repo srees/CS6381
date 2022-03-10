@@ -72,6 +72,8 @@ class KademliaReg:
                         result = self.kad_client.get(topic)
                         if result:
                             publishers = json.loads(result)
+                            print("Removing " + message['ip'] + " from topic " + topic + ":")
+                            print(publishers)
                             publishers.remove({'ip': message['ip'], 'port': message['port']})
                             self.kad_client.set(topic, json.dumps(publishers))
                     self.REP_socket.send_json("Unregistered")
