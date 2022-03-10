@@ -56,14 +56,15 @@ class Broker:
                 updates = threading.Thread(target=self.get_updates)
                 updates.start()
             try:
-                events = dict(self.poller.poll())
-                for sock in self.SUB_sockets.values():
-                    if sock in events:
-                        data = sock.recv_json()
-                        print("Broker received: ")
-                        print(data)
-                        data["Brokered"] = time.time()
-                        self.republish(data)
+                if self.poller and self.SUB_sockets:
+                    events = dict(self.poller.poll())
+                    for sock in self.SUB_sockets.values():
+                        if sock in events:
+                            data = sock.recv_json()
+                            print("Broker received: ")
+                            print(data)
+                            data["Brokered"] = time.time()
+                            self.republish(data)
             except KeyboardInterrupt:
                 break
 
