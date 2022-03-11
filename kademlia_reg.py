@@ -95,9 +95,15 @@ class KademliaReg:
                             print(publishers)
                             pub = {'ip': message['ip'], 'port': message['port']}
                             publishers.remove(pub)
-                            while pub in self.kad_client.get(topic):
+                            resp = self.kad_client.get(topic)
+                            if not resp:
+                                resp = '[]'
+                            while pub in json.loads(resp):
                                 self.kad_client.set(topic, json.dumps(publishers))
-                                # time.sleep(1)
+                                time.sleep(1)
+                                resp = self.kad_client.get(topic)
+                                if not resp:
+                                    resp = '[]'
                     self.REP_socket.send_json("Unregistered")
                 if message['role'] == 'subscriber':
                     # DHT doesn't care about registering subscribers with my model...
