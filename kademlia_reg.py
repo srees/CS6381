@@ -71,24 +71,22 @@ class KademliaReg:
                             publishers = json.loads(result)
                         else:
                             publishers = []
+                        dht_value = publishers
                         pub = {'ip': message['ip'], 'port': message['port']}
                         publishers.append(pub)
                         print("Adding " + message['ip'] + " to " + topic)
-                        msg = json.dumps(publishers)
-                        check = self.kad_client.get(topic)
-                        if not check:
-                            check = '[]'
+                        to_save = json.dumps(publishers)
                         retry = 1
-                        while pub not in json.loads(check):
+                        while pub not in dht_value:
                             print(pub)
-                            debug = json.loads(check)
-                            print(debug)
+                            print(dht_value)
                             print("Attempting to set value with Kademlia..." + str(retry))
-                            self.kad_client.set(topic, msg)
+                            self.kad_client.set(topic, to_save)
                             time.sleep(5)
-                            check = self.kad_client.get(topic)
-                            if not check:
-                                check = '[]'
+                            dht_value = self.kad_client.get(topic)
+                            if not dht_value:
+                                dht_value = '[]'
+                            dht_value = json.loads(dht_value)
                             retry += 1
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
