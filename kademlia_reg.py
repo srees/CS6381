@@ -80,9 +80,12 @@ class KademliaReg:
                             check = '[]'
                         retry = 1
                         while pub not in json.loads(check):
+                            print(pub)
+                            debug = json.loads(check)
+                            print(debug)
                             print("Attempting to set value with Kademlia..." + str(retry))
                             self.kad_client.set(topic, msg)
-                            time.sleep(1)
+                            time.sleep(5)
                             check = self.kad_client.get(topic)
                             if not check:
                                 check = '[]'
