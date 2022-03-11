@@ -71,12 +71,15 @@ class KademliaReg:
                         check = self.kad_client.get(topic)
                         if not check:
                             check = '[]'
+                        retry = 1
                         while pub not in json.loads(check):
+                            print("Attempting to set value with Kademlia..." + retry)
                             self.kad_client.set(topic, msg)
-                            # time.sleep(1)
+                            time.sleep(1)
                             check = self.kad_client.get(topic)
                             if not check:
                                 check = '[]'
+                            retry += 1
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     pub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
