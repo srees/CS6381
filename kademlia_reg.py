@@ -4,9 +4,16 @@ from topiclist import TopicList
 import publicip
 from kademlia_client import KademliaClient
 import time
+import logging
 
 print("Current libzmq version is %s" % zmq.zmq_version())
 print("Current  pyzmq version is %s" % zmq.__version__)
+handler = logging.StreamHandler()
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+log = logging.getLogger('kademlia')
+log.addHandler(handler)
+log.setLevel(logging.DEBUG)
 
 
 class KademliaReg:
