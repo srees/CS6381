@@ -68,9 +68,15 @@ class KademliaReg:
                         publishers.append(pub)
                         print("Adding " + message['ip'] + " to " + topic)
                         msg = json.dumps(publishers)
-                        while pub not in json.loads(self.kad_client.get(topic)):
-                            self.kad_client.set(topic, json.dumps(publishers))
+                        check = self.kad_client.get(topic)
+                        if not check:
+                            check = '[]'
+                        while pub not in json.loads(check):
+                            self.kad_client.set(topic, msg)
                             # time.sleep(1)
+                            check = self.kad_client.get(topic)
+                            if not check:
+                                check = '[]'
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     pub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
