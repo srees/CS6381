@@ -131,7 +131,7 @@ class KademliaReg:
                 dht_value = json.loads(dht_value)
                 if data in dht_value:
                     dht_value.remove(data)
-                    self.store_info(topic, data, True)
+                    self.store_info([topic], data, True)
 
     def get_unique_publishers(self, topics=None):
         print("Getting unique publishers...")
