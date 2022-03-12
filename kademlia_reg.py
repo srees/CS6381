@@ -54,46 +54,16 @@ class KademliaReg:
                 message = self.REP_socket.recv_json()
                 print("Received message: ")
                 print(message)
-                if message['role'] == 'broker':
+                if message['role'] == 'broker': # assuming only one broker at this point in the code
                     # register with DHT
-                    msg = [{'ip': message['ip'], 'port': message['port']}]
-                    while msg not in json.loads(self.kad_client.get("broker")):
-                        self.kad_client.set("broker", json.dumps(msg))
-                        # time.sleep(1)
+                    self.store_info(['broker'], {'ip': message['ip'], 'port': message['port']}, True)
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     broker = {'ip': message['ip'], 'port': message['port']}
                     self.start_broker(broker)
                 if message['role'] == 'publisher':
                     # register with DHT
-                    for topic in message['topics']:
-                        dht_value = self.kad_client.get(topic)
-                        print("Raw contents for " + topic)
-                        print(dht_value)
-                        if dht_value:
-                            dht_value = json.loads(dht_value)
-                        else:
-                            dht_value = []
-                        publishers = copy.deepcopy(dht_value)
-                        pub = {'ip': message['ip'], 'port': message['port']}
-                        print("Adding:")
-                        print(pub)
-                        publishers.append(pub)
-                        # print("Adding " + message['ip'] + " to " + topic)
-                        to_save = json.dumps(publishers)
-                        print("Full data to save: " + to_save)
-                        retry = 1
-                        while pub not in dht_value:
-                            print("Attempting to set value with Kademlia..." + str(retry))
-                            self.kad_client.set(topic, to_save)
-                            time.sleep(2)
-                            dht_value = self.kad_client.get(topic)
-                            print("Raw contents for " + topic)
-                            print(dht_value)
-                            if not dht_value:
-                                dht_value = '[]'
-                            dht_value = json.loads(dht_value)
-                            retry += 1
+                    self.store_info(message['topics'], {'ip': message['ip'], 'port': message['port']})
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     pub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
@@ -101,25 +71,8 @@ class KademliaReg:
                     # self.print_registry()
                 if message['role'] == 'stoppublisher':
                     # unregister with DHT
-                    for topic in message['topics']:
-                        result = self.kad_client.get(topic)
-                        if result:
-                            publishers = json.loads(result)
-                            print("Removing " + message['ip'] + " from topic " + topic + ":")
-                            print(publishers)
-                            dht_value = copy.deepcopy(publishers)
-                            pub = {'ip': message['ip'], 'port': message['port']}
-                            publishers.remove(pub)
-                            to_save = json.dumps(publishers)
-                            retry = 1
-                            while pub in dht_value:
-                                self.kad_client.set(topic, to_save)
-                                time.sleep(2)
-                                dht_value = self.kad_client.get(topic)
-                                if not dht_value:
-                                    dht_value = '[]'
-                                dht_value = json.loads(dht_value)
-                                retry += 1
+                    self.remove_info(message['topics'], {'ip': message['ip'], 'port': message['port']})
+                    # reply
                     self.REP_socket.send_json("Unregistered")
                 if message['role'] == 'subscriber':
                     # DHT doesn't care about registering subscribers with my model...
@@ -131,6 +84,54 @@ class KademliaReg:
                     self.REP_socket.send_json(pubs)
         except KeyboardInterrupt:
             pass
+
+    # store_info: topics [s], data {} or [{}], replace bool
+    def store_info(self, topics, data, replace=False):
+        retry_delay = 2
+        for topic in topics:
+            print("Topic: " + topic)
+            print("Storing:")
+            print(data)
+            attempt = 1
+            if replace:
+                dht_value = []
+                if type(data) is list:
+                    to_save = data
+                else:
+                    to_save = [data]
+            else:
+                dht_value = self.kad_client.get(topic)
+                print("Raw pre-existing DHT value:")
+                print(dht_value)
+                if not dht_value:
+                    dht_value = '[]'
+                dht_value = json.loads(dht_value)
+                to_save = copy.deepcopy(dht_value)
+                if type(data) is list:
+                    to_save.extend(data)
+                else:
+                    to_save.append(data)
+            while data not in dht_value:
+                print("Attempting to write:")
+                print(to_save)
+                self.kad_client.set(topic, json.dumps(to_save))
+                time.sleep(retry_delay)
+                dht_value = self.kad_client.get(topic)
+                if not dht_value:
+                    dht_value = '[]'
+                dht_value = json.loads(dht_value)
+                print("Post-write DHT value:")
+                print(dht_value)
+                attempt += 1
+
+    def remove_info(self, topics, data):
+        for topic in topics:
+            dht_value = self.kad_client.get(topic)
+            if dht_value: # caveat: if the value was never set, this will never throw an error
+                dht_value = json.loads(dht_value)
+                if data in dht_value:
+                    dht_value.remove(data)
+                    self.store_info(topic, data, True)
 
     def get_unique_publishers(self, topics=None):
         print("Getting unique publishers...")
