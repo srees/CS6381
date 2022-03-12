@@ -83,7 +83,7 @@ class KademliaReg:
                             print(dht_value)
                             print("Attempting to set value with Kademlia..." + str(retry))
                             self.kad_client.set(topic, to_save)
-                            time.sleep(5)
+                            time.sleep(2)
                             dht_value = self.kad_client.get(topic)
                             if not dht_value:
                                 dht_value = '[]'
@@ -102,17 +102,19 @@ class KademliaReg:
                             publishers = json.loads(result)
                             print("Removing " + message['ip'] + " from topic " + topic + ":")
                             print(publishers)
+                            dht_value = copy.deepcopy(publishers)
                             pub = {'ip': message['ip'], 'port': message['port']}
                             publishers.remove(pub)
-                            resp = self.kad_client.get(topic)
-                            if not resp:
-                                resp = '[]'
-                            while pub in json.loads(resp):
-                                self.kad_client.set(topic, json.dumps(publishers))
-                                time.sleep(1)
-                                resp = self.kad_client.get(topic)
-                                if not resp:
-                                    resp = '[]'
+                            to_save = json.dumps(publishers)
+                            retry = 1
+                            while pub in dht_value:
+                                self.kad_client.set(topic, to_save)
+                                time.sleep(2)
+                                dht_value = self.kad_client.get(topic)
+                                if not dht_value:
+                                    dht_value = '[]'
+                                dht_value = json.loads(dht_value)
+                                retry += 1
                     self.REP_socket.send_json("Unregistered")
                 if message['role'] == 'subscriber':
                     # DHT doesn't care about registering subscribers with my model...
