@@ -85,6 +85,8 @@ class KademliaReg:
                             self.kad_client.set(topic, to_save)
                             time.sleep(2)
                             dht_value = self.kad_client.get(topic)
+                            print("raw DHT value:")
+                            print(dht_value)
                             if not dht_value:
                                 dht_value = '[]'
                             dht_value = json.loads(dht_value)
