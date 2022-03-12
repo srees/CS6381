@@ -69,9 +69,9 @@ class KademliaReg:
                     for topic in message['topics']:
                         dht_value = self.kad_client.get(topic)
                         print("Raw contents for " + topic)
-                        print(result)
+                        print(dht_value)
                         if dht_value:
-                            dht_value = json.loads(result)
+                            dht_value = json.loads(dht_value)
                         else:
                             dht_value = []
                         publishers = copy.deepcopy(dht_value)
