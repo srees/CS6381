@@ -5,6 +5,7 @@ import publicip
 from kademlia_client import KademliaClient
 import time
 import logging
+import copy
 
 print("Current libzmq version is %s" % zmq.zmq_version())
 print("Current  pyzmq version is %s" % zmq.__version__)
@@ -71,7 +72,7 @@ class KademliaReg:
                             publishers = json.loads(result)
                         else:
                             publishers = []
-                        dht_value = publishers
+                        dht_value = copy.deepcopy(publishers)
                         pub = {'ip': message['ip'], 'port': message['port']}
                         publishers.append(pub)
                         print("Adding " + message['ip'] + " to " + topic)
@@ -92,7 +93,7 @@ class KademliaReg:
                     self.REP_socket.send_json("Registered")
                     pub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
                     self.start_publisher(pub)
-                    self.print_registry()
+                    # self.print_registry()
                 if message['role'] == 'stoppublisher':
                     # unregister with DHT
                     for topic in message['topics']:
