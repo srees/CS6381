@@ -67,25 +67,28 @@ class KademliaReg:
                 if message['role'] == 'publisher':
                     # register with DHT
                     for topic in message['topics']:
-                        result = self.kad_client.get(topic)
-                        if result:
-                            publishers = json.loads(result)
+                        dht_value = self.kad_client.get(topic)
+                        print("Raw contents for " + topic)
+                        print(result)
+                        if dht_value:
+                            dht_value = json.loads(result)
                         else:
-                            publishers = []
-                        dht_value = copy.deepcopy(publishers)
+                            dht_value = []
+                        publishers = copy.deepcopy(dht_value)
                         pub = {'ip': message['ip'], 'port': message['port']}
+                        print("Adding:")
+                        print(pub)
                         publishers.append(pub)
-                        print("Adding " + message['ip'] + " to " + topic)
+                        # print("Adding " + message['ip'] + " to " + topic)
                         to_save = json.dumps(publishers)
+                        print("Full data to save: " + to_save)
                         retry = 1
                         while pub not in dht_value:
-                            print(pub)
-                            print(dht_value)
                             print("Attempting to set value with Kademlia..." + str(retry))
                             self.kad_client.set(topic, to_save)
                             time.sleep(2)
                             dht_value = self.kad_client.get(topic)
-                            print("raw DHT value:")
+                            print("Raw contents for " + topic)
                             print(dht_value)
                             if not dht_value:
                                 dht_value = '[]'
