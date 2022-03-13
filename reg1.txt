@@ -14,8 +14,14 @@ Initializing Kademlia registry object
 Registry start requested
 Registry starting
 Registry listening...
+
+**** Here is where Registry 2 is started ****
+
 2022-03-13 14:32:32,389 - kademlia.protocol - INFO - never seen 10.0.0.2:8468 before, adding to router
 2022-03-13 14:32:32,391 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+
+**** Here is where Publisher 1 is started (connecting to this registry) ****
+
 Received message: 
 {'role': 'publisher', 'ip': '10.0.0.3', 'port': '5571', 'topics': ['temperature', 'airquality', 'location', 'light', 'smell', 'pressure', 'humidity', 'altitude']}
 Topic: temperature
@@ -191,6 +197,9 @@ Attempting to write:
 Post-write DHT value:
 [{'ip': '10.0.0.3', 'port': '5571'}]
 Sending start to: tcp://10.0.0.3:5570
+
+**** Here is where Publisher 2 is started on the Registry 2 -- you can see the first value get stored, then the second value repeats ****
+
 2022-03-13 14:33:17,872 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
 2022-03-13 14:33:17,873 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing '3b4c0c6565e036a82beef4cf4d00366af668111f'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
 2022-03-13 14:33:19,883 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
@@ -215,6 +224,9 @@ Sending start to: tcp://10.0.0.3:5570
 2022-03-13 14:33:37,934 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
 2022-03-13 14:33:39,949 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
 2022-03-13 14:33:39,950 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+
+**** I killed it here ****
+
 Exception ignored in: <module 'threading' from '/usr/lib/python3.8/threading.py'>
 Traceback (most recent call last):
   File "/usr/lib/python3.8/threading.py", line 1388, in _shutdown
