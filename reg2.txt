@@ -16,6 +16,9 @@ Initializing Kademlia registry object
 Registry start requested
 Registry starting
 Registry listening...
+
+**** Registry 2 is now connected to Registry 1. Now Producer 1 connects to Registry 1. ****
+
 2022-03-13 14:32:46,698 - kademlia.protocol - INFO - finding neighbors of 1144557740750934308236905555432889654814284917957 in local table
 2022-03-13 14:32:46,700 - kademlia.protocol - INFO - finding neighbors of 1144557740750934308236905555432889654814284917957 in local table
 2022-03-13 14:32:46,700 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing '7033e90fcdda169d2f5d08da17507b0c5db52029'='[{"ip": "10.0.0.3", "port": "5571"}]'
@@ -40,6 +43,9 @@ Registry listening...
 2022-03-13 14:33:00,755 - kademlia.protocol - INFO - finding neighbors of 1144557740750934308236905555432889654814284917957 in local table
 2022-03-13 14:33:00,757 - kademlia.protocol - INFO - finding neighbors of 1144557740750934308236905555432889654814284917957 in local table
 2022-03-13 14:33:00,758 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'e4c1a71b066bed67f705260636e0539ee05bec6c'='[{"ip": "10.0.0.3", "port": "5571"}]'
+
+**** Producer 1 is now running. Next Producer 2 connects to Registry 2 (this one). You can see the first update works, and the second one repeats due to failure. ****
+
 Received message: 
 {'role': 'publisher', 'ip': '10.0.0.4', 'port': '5571', 'topics': ['pressure', 'airquality', 'smell']}
 Topic: pressure
