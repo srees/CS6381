@@ -146,6 +146,7 @@ class Broker:
             print("Event: {}".format(evt))
             if evt['event'] == zmq.EVENT_DISCONNECTED:
                 connected = False
+                self.REQ_socket.disconnect(self.REQ_url)
                 tries = 1
                 print("Registry failure! Checking other registries...")
                 while connected is False:
