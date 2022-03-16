@@ -150,7 +150,7 @@ class Broker:
                 print("Registry failure! Checking other registries...")
                 while connected is False:
                     tries += 1
-                    if self.current_registry < self.args.registries:
+                    if self.current_registry < int(self.args.registries):
                         self.current_registry += 1
                     else:
                         self.current_registry = 1
@@ -158,7 +158,7 @@ class Broker:
                     print("Trying " + self.REQ_url)
                     if self.REQ_socket.connect(self.REQ_url):
                         connected = True
-                    if tries == self.args.registries:
+                    if tries == int(self.args.registries):
                         print("All registries exhausted!")
                         break
                 # break
