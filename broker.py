@@ -62,7 +62,7 @@ class Broker:
         updates = threading.Thread(target=self.get_updates)
         updates.start()
         print("Starting monitor loop thread")
-        monitoring = threading.Thread(target=self.do_monitor, args=(self.monitor,))
+        monitoring = threading.Thread(target=self.do_monitor)
         monitoring.start()
         print("Starting broker listen loop...")
         while True:
@@ -132,7 +132,7 @@ class Broker:
                     self.pubs.remove(pub)
             time.sleep(10)
 
-    def do_monitor(self, monitor):
+    def do_monitor(self):
         EVENT_MAP = {}
         # print("Event names:")
         for name in dir(zmq):
@@ -140,8 +140,8 @@ class Broker:
                 value = getattr(zmq, name)
                 # print("%21s : %4i" % (name, value))
                 EVENT_MAP[value] = name
-        while monitor.poll():
-            evt = recv_monitor_message(monitor)
+        while self.monitor.poll():
+            evt = recv_monitor_message(self.monitor)
             evt.update({'description': EVENT_MAP[evt['event']]})
             print("Event: {}".format(evt))
             if evt['event'] == zmq.EVENT_DISCONNECTED:
@@ -161,6 +161,7 @@ class Broker:
                     self.REQ_url = 'tcp://' + self.args.registry + ':' + self.args.port
                     print("Trying " + self.REQ_url)
                     if self.REQ_socket.connect(self.REQ_url):
+                        self.monitor = self.REQ_socket.get_monitor_socket()
                         connected = True
                     else:
                         if tries == int(self.args.registries):
