@@ -38,8 +38,13 @@ class Broker:
         self.REQ_socket = self.context.socket(zmq.REQ)
         self.monitor = self.REQ_socket.get_monitor_socket()
         self.REQ_url = 'tcp://' + self.args.registry + ':' + self.args.port
-        self.REQ_socket.connect(self.REQ_url)
+        success = self.REQ_socket.connect(self.REQ_url)
+        if success:
+            print("Success")
+        else:
+            print("Failed")
         self.last_update = 0
+        self.current_registry = 1
 
     def start(self):
         self.wait()  # wait for registry to give us the go
@@ -129,16 +134,32 @@ class Broker:
 
     def do_monitor(self, monitor):
         EVENT_MAP = {}
-        print("Event names:")
+        # print("Event names:")
         for name in dir(zmq):
             if name.startswith('EVENT_'):
                 value = getattr(zmq, name)
-                print("%21s : %4i" % (name, value))
+                # print("%21s : %4i" % (name, value))
                 EVENT_MAP[value] = name
         while monitor.poll():
             evt = recv_monitor_message(monitor)
             evt.update({'description': EVENT_MAP[evt['event']]})
             print("Event: {}".format(evt))
-            if evt['event'] == zmq.EVENT_MONITOR_STOPPED:
-                break
-        monitor.close()
+            if evt['event'] == zmq.EVENT_DISCONNECTED:
+                connected = False
+                tries = 1
+                print("Registry failure! Checking other registries...")
+                while connected is False:
+                    tries += 1
+                    if self.current_registry < self.args.registries:
+                        self.current_registry += 1
+                    else:
+                        self.current_registry = 1
+                    self.REQ_url = self.REQ_url[:-1] + str(self.current_registry)
+                    print("Trying " + self.REQ_url)
+                    if self.REQ_socket.connect(self.REQ_url):
+                        connected = True
+                    if tries == self.args.registries:
+                        print("All registries exhausted!")
+                        break
+                # break
+        # monitor.close()
