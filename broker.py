@@ -159,8 +159,9 @@ class Broker:
                     print("Trying " + self.REQ_url)
                     if self.REQ_socket.connect(self.REQ_url):
                         connected = True
-                    if tries == int(self.args.registries):
-                        print("All registries exhausted!")
-                        break
+                    else:
+                        if tries == int(self.args.registries):
+                            print("All registries exhausted!")
+                            break
                 # break
         # monitor.close()
