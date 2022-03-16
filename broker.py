@@ -38,12 +38,7 @@ class Broker:
         self.REQ_socket = self.context.socket(zmq.REQ)
         self.monitor = self.REQ_socket.get_monitor_socket()
         self.REQ_url = 'tcp://' + self.args.registry + ':' + self.args.port
-        success = self.REQ_socket.connect(self.REQ_url)
-        if success:
-            print("Success")
-        else:
-            print("Failed")
-        self.last_update = 0
+        self.REQ_socket.connect(self.REQ_url)
         self.current_registry = 1
 
     def start(self):
@@ -66,11 +61,6 @@ class Broker:
         monitoring.start()
         print("Starting broker listen loop...")
         while True:
-            if int(time.time()) % 10 == 0 and not self.last_update == int(time.time()):
-                # updates = threading.Thread(target=self.get_updates)
-                # updates.start()
-                # self.get_updates()
-                pass
             try:
                 if self.poller and self.SUB_sockets:
                     events = dict(self.poller.poll())
@@ -99,7 +89,6 @@ class Broker:
 
     def get_updates(self):
         while True:
-            self.last_update = int(time.time())
             print("Fetching updates from registry...")
             data = {'role': 'update', 'topics': []}
             self.REQ_socket.send_json(data)
@@ -166,6 +155,6 @@ class Broker:
                     else:
                         if tries == int(self.args.registries):
                             print("All registries exhausted!")
+                            self.REQ_socket.close(0)
+                            self.monitor.close()
                             break
-                # break
-        # monitor.close()
