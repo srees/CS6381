@@ -1,0 +1,234 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Getting registry object
+Binding REP to tcp://10.0.0.1:5550
+Initializing Kademlia registry object
+2022-03-13 14:32:18,264 - kademlia.network - INFO - Node 1144557740750934308236905555432889654814284917957 listening on 0.0.0.0:8468
+2022-03-13 14:32:18,264 - kademlia.network - DEBUG - Refreshing routing table
+2022-03-13 14:32:18,264 - kademlia.network - DEBUG - Attempting to bootstrap node with 0 initial contacts
+2022-03-13 14:32:18,264 - kademlia.crawling - INFO - creating spider with peers: []
+2022-03-13 14:32:18,265 - kademlia.crawling - INFO - crawling network with nearest: ()
+Registry start requested
+Registry starting
+Registry listening...
+
+**** Here is where Registry 2 is started ****
+
+2022-03-13 14:32:32,389 - kademlia.protocol - INFO - never seen 10.0.0.2:8468 before, adding to router
+2022-03-13 14:32:32,391 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+
+**** Here is where Publisher 1 is started (connecting to this registry) ****
+
+Received message: 
+{'role': 'publisher', 'ip': '10.0.0.3', 'port': '5571', 'topics': ['temperature', 'airquality', 'location', 'light', 'smell', 'pressure', 'humidity', 'altitude']}
+Topic: temperature
+Storing:
+{'ip': '10.0.0.3', 'port': '5571'}
+2022-03-13 14:32:46,698 - kademlia.network - INFO - Looking up key temperature
+2022-03-13 14:32:46,698 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:46,698 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:46,699 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Raw pre-existing DHT value:
+None
+Attempting to write:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+2022-03-13 14:32:46,699 - kademlia.network - INFO - setting 'temperature' = '[{"ip": "10.0.0.3", "port": "5571"}]' on network
+2022-03-13 14:32:46,699 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:46,699 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:46,700 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:46,700 - kademlia.network - INFO - setting '7033e90fcdda169d2f5d08da17507b0c5db52029' on ['10.0.0.2:8468']
+2022-03-13 14:32:46,701 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:48,704 - kademlia.network - INFO - Looking up key temperature
+2022-03-13 14:32:48,704 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:48,704 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:48,706 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Post-write DHT value:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+Topic: airquality
+Storing:
+{'ip': '10.0.0.3', 'port': '5571'}
+2022-03-13 14:32:48,706 - kademlia.network - INFO - Looking up key airquality
+2022-03-13 14:32:48,706 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:48,707 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:48,708 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Raw pre-existing DHT value:
+None
+Attempting to write:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+2022-03-13 14:32:48,708 - kademlia.network - INFO - setting 'airquality' = '[{"ip": "10.0.0.3", "port": "5571"}]' on network
+2022-03-13 14:32:48,708 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:48,708 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:48,709 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:48,709 - kademlia.network - INFO - setting 'c4a09fdcddec35a65aa97e0697b918681a3f4861' on ['10.0.0.2:8468']
+2022-03-13 14:32:48,710 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:50,713 - kademlia.network - INFO - Looking up key airquality
+Post-write DHT value:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+Topic: location
+Storing:
+{'ip': '10.0.0.3', 'port': '5571'}
+2022-03-13 14:32:50,714 - kademlia.network - INFO - Looking up key location
+2022-03-13 14:32:50,715 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:50,715 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:50,716 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Raw pre-existing DHT value:
+None
+Attempting to write:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+2022-03-13 14:32:50,717 - kademlia.network - INFO - setting 'location' = '[{"ip": "10.0.0.3", "port": "5571"}]' on network
+2022-03-13 14:32:50,717 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:50,717 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:50,718 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:50,718 - kademlia.network - INFO - setting '6469ac84a89748bb67b923c833ed0c778a17aea3' on ['10.0.0.2:8468']
+2022-03-13 14:32:50,719 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:52,721 - kademlia.network - INFO - Looking up key location
+2022-03-13 14:32:52,722 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:52,722 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:52,723 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Post-write DHT value:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+Topic: light
+Storing:
+{'ip': '10.0.0.3', 'port': '5571'}
+2022-03-13 14:32:52,724 - kademlia.network - INFO - Looking up key light
+2022-03-13 14:32:52,724 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:52,724 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:52,725 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Raw pre-existing DHT value:
+None
+Attempting to write:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+2022-03-13 14:32:52,725 - kademlia.network - INFO - setting 'light' = '[{"ip": "10.0.0.3", "port": "5571"}]' on network
+2022-03-13 14:32:52,725 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:52,725 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:52,726 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:52,726 - kademlia.network - INFO - setting 'dfccc06f14414bff5a59be7fc90abf4404b47fc8' on ['10.0.0.2:8468']
+2022-03-13 14:32:52,727 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:54,730 - kademlia.network - INFO - Looking up key light
+Post-write DHT value:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+Topic: smell
+Storing:
+{'ip': '10.0.0.3', 'port': '5571'}
+2022-03-13 14:32:54,731 - kademlia.network - INFO - Looking up key smell
+2022-03-13 14:32:54,731 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:54,731 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:54,733 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Raw pre-existing DHT value:
+None
+Attempting to write:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+2022-03-13 14:32:54,733 - kademlia.network - INFO - setting 'smell' = '[{"ip": "10.0.0.3", "port": "5571"}]' on network
+2022-03-13 14:32:54,733 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:54,733 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:54,734 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:54,734 - kademlia.network - INFO - setting '410acf5ec68df095da22759e4084f8df52c834c6' on ['10.0.0.2:8468']
+2022-03-13 14:32:54,735 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:56,737 - kademlia.network - INFO - Looking up key smell
+2022-03-13 14:32:56,737 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:56,737 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:56,739 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Post-write DHT value:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+Topic: pressure
+Storing:
+{'ip': '10.0.0.3', 'port': '5571'}
+2022-03-13 14:32:56,739 - kademlia.network - INFO - Looking up key pressure
+2022-03-13 14:32:56,739 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:56,740 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:56,740 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Raw pre-existing DHT value:
+None
+Attempting to write:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+2022-03-13 14:32:56,741 - kademlia.network - INFO - setting 'pressure' = '[{"ip": "10.0.0.3", "port": "5571"}]' on network
+2022-03-13 14:32:56,741 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:56,741 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:56,742 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:56,742 - kademlia.network - INFO - setting '3b4c0c6565e036a82beef4cf4d00366af668111f' on ['10.0.0.2:8468']
+2022-03-13 14:32:56,743 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:58,745 - kademlia.network - INFO - Looking up key pressure
+2022-03-13 14:32:58,745 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:58,745 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:58,746 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Post-write DHT value:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+Topic: humidity
+Storing:
+{'ip': '10.0.0.3', 'port': '5571'}
+2022-03-13 14:32:58,746 - kademlia.network - INFO - Looking up key humidity
+2022-03-13 14:32:58,747 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:58,747 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:58,747 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Raw pre-existing DHT value:
+None
+Attempting to write:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+2022-03-13 14:32:58,748 - kademlia.network - INFO - setting 'humidity' = '[{"ip": "10.0.0.3", "port": "5571"}]' on network
+2022-03-13 14:32:58,748 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:32:58,748 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:32:58,749 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:32:58,749 - kademlia.network - INFO - setting 'a85df8270dcc374f90049a5ec9cdd449da2ed838' on ['10.0.0.2:8468']
+2022-03-13 14:32:58,750 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:33:00,752 - kademlia.network - INFO - Looking up key humidity
+Post-write DHT value:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+Topic: altitude
+Storing:
+{'ip': '10.0.0.3', 'port': '5571'}
+2022-03-13 14:33:00,754 - kademlia.network - INFO - Looking up key altitude
+2022-03-13 14:33:00,754 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:33:00,754 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:33:00,755 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Raw pre-existing DHT value:
+None
+Attempting to write:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+2022-03-13 14:33:00,756 - kademlia.network - INFO - setting 'altitude' = '[{"ip": "10.0.0.3", "port": "5571"}]' on network
+2022-03-13 14:33:00,756 - kademlia.crawling - INFO - creating spider with peers: [[428592976622771900758966254610853844237424362783, '10.0.0.2', 8468]]
+2022-03-13 14:33:00,756 - kademlia.crawling - INFO - crawling network with nearest: ([428592976622771900758966254610853844237424362783, '10.0.0.2', 8468],)
+2022-03-13 14:33:00,757 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:33:00,757 - kademlia.network - INFO - setting 'e4c1a71b066bed67f705260636e0539ee05bec6c' on ['10.0.0.2:8468']
+2022-03-13 14:33:00,758 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-13 14:33:02,761 - kademlia.network - INFO - Looking up key altitude
+Post-write DHT value:
+[{'ip': '10.0.0.3', 'port': '5571'}]
+Sending start to: tcp://10.0.0.3:5570
+
+**** Here is where Publisher 2 is started on the Registry 2 -- you can see the first value get stored, then the second value repeats ****
+
+2022-03-13 14:33:17,872 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:17,873 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing '3b4c0c6565e036a82beef4cf4d00366af668111f'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-13 14:33:19,883 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:19,884 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-13 14:33:21,891 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:21,892 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-13 14:33:23,896 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:23,897 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-13 14:33:25,901 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:25,902 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-13 14:33:27,906 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:27,907 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-13 14:33:29,911 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:29,912 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-13 14:33:31,917 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:31,917 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-13 14:33:33,921 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:33,922 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-13 14:33:35,926 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:35,927 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-13 14:33:37,934 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:37,934 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-13 14:33:39,949 - kademlia.protocol - INFO - finding neighbors of 428592976622771900758966254610853844237424362783 in local table
+2022-03-13 14:33:39,950 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.3", "port": "5571"}, {"ip": "10.0.0.4", "port": "5571"}]'
+
+**** I killed it here ****
+
+Exception ignored in: <module 'threading' from '/usr/lib/python3.8/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 1388, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
