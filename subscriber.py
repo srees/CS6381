@@ -42,9 +42,11 @@ class Subscriber:
         self.REQ_url = 'tcp://' + self.args.registry + ':' + self.args.port
         self.REQ_socket.connect(self.REQ_url)
         self.current_registry = 1
+        self.topics = []
 
     def start(self, topics, function):
         self.wait()  # registry will give us the go by sending us the list of publishers
+        self.topics = topics
         for pub in self.pubs:
             connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
             print("Subscribing to " + connect_str)
@@ -56,7 +58,7 @@ class Subscriber:
         for i in range(0, len(self.SUB_sockets)):
             self.poller.register(self.SUB_sockets[i], zmq.POLLIN)
         print("Starting update loop thread")
-        updates = threading.Thread(target=self.get_updates, args=(topics,))
+        updates = threading.Thread(target=self.get_updates)
         updates.start()
         print("Starting monitor loop thread")
         monitoring = threading.Thread(target=self.do_monitor)
@@ -81,7 +83,7 @@ class Subscriber:
         # We don't need to send anything back, but ZMQ requires us to reply
         self.REP_socket.send_json('ACK')
 
-    def get_updates(self, topics):
+    def get_updates(self):
         while True:
             print("Fetching updates from registry...")
             data = {'role': 'update', 'topics': []}
@@ -100,7 +102,7 @@ class Subscriber:
                     print("Broker subscribing to " + connect_str)
                     temp_sock = self.context.socket(zmq.SUB)
                     temp_sock.connect(connect_str)
-                    for topic in topics:
+                    for topic in self.topics:
                         temp_sock.setsockopt_string(zmq.SUBSCRIBE, '{"Topic": "' + topic)
                     self.SUB_sockets[connect_str] = temp_sock
                     self.poller.register(self.SUB_sockets[connect_str], zmq.POLLIN)
