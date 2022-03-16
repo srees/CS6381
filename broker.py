@@ -154,7 +154,8 @@ class Broker:
                         self.current_registry += 1
                     else:
                         self.current_registry = 1
-                    self.REQ_url = self.REQ_url[:-1] + str(self.current_registry)
+                    self.args.registry = self.args.registry[:-1] + str(self.current_registry)
+                    self.REQ_url = 'tcp://' + self.args.registry + ':' + self.args.port
                     print("Trying " + self.REQ_url)
                     if self.REQ_socket.connect(self.REQ_url):
                         connected = True
