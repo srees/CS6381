@@ -111,6 +111,7 @@ class Subscriber:
                 connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
                 if connect_str not in update_strings:
                     # This publisher has been dropped from ones we should listen to, remove it!
+                    print("Removing publisher from poller")
                     self.poller.unregister(self.SUB_sockets[connect_str])
                     self.SUB_sockets[connect_str].disconnect(connect_str)
                     self.SUB_sockets[connect_str].close()
