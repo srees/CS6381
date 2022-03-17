@@ -66,8 +66,7 @@ class Subscriber:
         print("Starting subscriber listen loop...")
         while True:
             try:
-                if len(self.SUB_sockets) > 0:
-                    print(self.SUB_sockets)
+                if self.poller and self.SUB_sockets:
                     events = dict(self.poller.poll())
                     for sock in self.SUB_sockets.values():
                         if sock in events:
@@ -113,12 +112,10 @@ class Subscriber:
                 connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
                 if connect_str not in update_strings:
                     # This publisher has been dropped from ones we should listen to, remove it!
-                    print("Removing publisher from poller")
-                    temp_sock = self.SUB_sockets[connect_str]
+                    self.poller.unregister(self.SUB_sockets[connect_str])
+                    self.SUB_sockets[connect_str].disconnect(connect_str)
+                    self.SUB_sockets[connect_str].close()
                     del self.SUB_sockets[connect_str]
-                    self.poller.unregister(temp_sock)
-                    temp_sock.disconnect(connect_str)
-                    temp_sock.close()
                     self.pubs.remove(pub)
             time.sleep(10)
 
