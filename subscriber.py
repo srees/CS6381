@@ -66,13 +66,14 @@ class Subscriber:
         print("Starting subscriber listen loop...")
         while True:
             try:
-                events = dict(self.poller.poll())
-                for sock in self.SUB_sockets.values():
-                    if sock in events:
-                        data = sock.recv_json()
-                        data["Subscriber"] = self.ip
-                        data["Received"] = time.time()
-                        function(data)
+                if self.SUB_sockets:
+                    events = dict(self.poller.poll())
+                    for sock in self.SUB_sockets.values():
+                        if sock in events:
+                            data = sock.recv_json()
+                            data["Subscriber"] = self.ip
+                            data["Received"] = time.time()
+                            function(data)
             except KeyboardInterrupt:
                 break
 
