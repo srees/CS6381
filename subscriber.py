@@ -114,10 +114,11 @@ class Subscriber:
                 if connect_str not in update_strings:
                     # This publisher has been dropped from ones we should listen to, remove it!
                     print("Removing publisher from poller")
-                    self.poller.unregister(self.SUB_sockets[connect_str])
-                    self.SUB_sockets[connect_str].disconnect(connect_str)
-                    self.SUB_sockets[connect_str].close()
+                    temp_sock = self.SUB_sockets[connect_str]
                     del self.SUB_sockets[connect_str]
+                    self.poller.unregister(temp_sock)
+                    temp_sock.disconnect(connect_str)
+                    temp_sock.close()
                     self.pubs.remove(pub)
             time.sleep(10)
 
