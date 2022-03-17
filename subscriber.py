@@ -54,9 +54,9 @@ class Subscriber:
             temp_sock.connect(connect_str)
             for topic in topics:
                 temp_sock.setsockopt_string(zmq.SUBSCRIBE, '{"Topic": "' + topic)
-            self.SUB_sockets.append(temp_sock)
-        for i in range(0, len(self.SUB_sockets)):
-            self.poller.register(self.SUB_sockets[i], zmq.POLLIN)
+            self.SUB_sockets[connect_str] = temp_sock
+        for sock in self.SUB_sockets.values():
+            self.poller.register(sock, zmq.POLLIN)
         print("Starting update loop thread")
         updates = threading.Thread(target=self.get_updates)
         updates.start()
@@ -67,9 +67,9 @@ class Subscriber:
         while True:
             try:
                 events = dict(self.poller.poll())
-                for SUB_sock in self.SUB_sockets:
-                    if SUB_sock in events:
-                        data = SUB_sock.recv_json()
+                for sock in self.SUB_sockets.values():
+                    if sock in events:
+                        data = sock.recv_json()
                         data["Subscriber"] = self.ip
                         data["Received"] = time.time()
                         function(data)
