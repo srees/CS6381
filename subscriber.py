@@ -67,6 +67,7 @@ class Subscriber:
         while True:
             try:
                 if len(self.SUB_sockets) > 0:
+                    print(self.SUB_sockets)
                     events = dict(self.poller.poll())
                     for sock in self.SUB_sockets.values():
                         if sock in events:
