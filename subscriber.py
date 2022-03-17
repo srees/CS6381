@@ -29,7 +29,7 @@ class Subscriber:
     def __init__(self, args):
         self.args = args
         self.pubs = []
-        self.SUB_sockets = []
+        self.SUB_sockets = {}
         self.poller = zmq.Poller()
         self.context = zmq.Context()
         self.REP_socket = self.context.socket(zmq.REP)

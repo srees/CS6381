@@ -127,7 +127,7 @@ class KademliaReg:
     def remove_info(self, topics, data):
         for topic in topics:
             dht_value = self.kad_client.get(topic)
-            if dht_value: # caveat: if the value was never set, this will never throw an error
+            if dht_value:  # caveat: if the value was never set, this will never throw an error
                 dht_value = json.loads(dht_value)
                 if data in dht_value:
                     dht_value.remove(data)
