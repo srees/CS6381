@@ -111,7 +111,8 @@ class KademliaReg:
                     to_save.extend(data)
                 else:
                     to_save.append(data)
-            while data not in dht_value:
+            success = False
+            while not success:
                 print("Attempting to write:")
                 print(to_save)
                 self.kad_client.set(topic, json.dumps(to_save))
@@ -123,6 +124,8 @@ class KademliaReg:
                 print("Post-write DHT value:")
                 print(dht_value)
                 attempt += 1
+                if data in dht_value or data == dht_value:
+                    success = True
 
     def remove_info(self, topics, data):
         for topic in topics:
