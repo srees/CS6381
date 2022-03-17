@@ -39,7 +39,7 @@ class Broker:
         self.monitor = self.REQ_socket.get_monitor_socket()
         self.REQ_url = 'tcp://' + self.args.registry + ':' + self.args.port
         self.REQ_socket.connect(self.REQ_url)
-        self.current_registry = 1
+        self.current_registry = int(self.args.registry[-1])
 
     def start(self):
         self.wait()  # wait for registry to give us the go
