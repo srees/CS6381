@@ -66,7 +66,7 @@ class Subscriber:
         print("Starting subscriber listen loop...")
         while True:
             try:
-                if self.SUB_sockets:
+                if len(self.SUB_sockets) > 0:
                     events = dict(self.poller.poll())
                     for sock in self.SUB_sockets.values():
                         if sock in events:
