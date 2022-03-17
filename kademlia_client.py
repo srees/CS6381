@@ -87,7 +87,7 @@ class KademliaClient:
     # Performs a Kademlia get
     def get(self, name):
         # Lock to make sure there is only one pending get or set
-        # self.kad_lock.acquire()
+        self.kad_lock.acquire()
         try:
             # Get the current event loop
             loop = asyncio.get_event_loop()
@@ -102,11 +102,11 @@ class KademliaClient:
             return loop.run_until_complete(resp_future)
         finally:
             # Release the lock when finished
-            pass  # self.kad_lock.release()
+            self.kad_lock.release()
 
     def set(self, name, value):
         # Lock to make sure there is only one pending get or set
-        # self.kad_lock.acquire()
+        self.kad_lock.acquire()
         try:
             # Get the current event loop
             loop = asyncio.get_event_loop()
@@ -123,7 +123,7 @@ class KademliaClient:
             return
         finally:
             # Release the lock when finished
-            pass  # self.kad_lock.release()
+            self.kad_lock.release()
 
     async def init_server(self):
         try:
