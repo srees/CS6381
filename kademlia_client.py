@@ -85,6 +85,7 @@ class KademliaClient:
             print(e, flush=True)
 
     def kad_stop(self):
+        self.kademlia_node.stop()
         self.kad_loop.stop()
         self.kad_loop.close()
 
