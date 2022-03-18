@@ -80,6 +80,7 @@ class Subscriber:
             except KeyboardInterrupt:
                 self.die = True
                 break
+        print("Exiting polling.")
 
     # Wait for registry to give us the start signal
     def wait(self):
@@ -126,6 +127,7 @@ class Subscriber:
             except KeyboardInterrupt:
                 self.die = True
                 break
+        print("Exiting update loop.")
 
     def do_monitor(self):
         EVENT_MAP = {}
@@ -164,3 +166,4 @@ class Subscriber:
                             self.REQ_socket.close(0)
                             self.monitor.close()
                             break
+        print("Exiting monitor.")
