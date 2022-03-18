@@ -137,7 +137,8 @@ class Subscriber:
                 value = getattr(zmq, name)
                 # print("%21s : %4i" % (name, value))
                 EVENT_MAP[value] = name
-        while self.monitor.poll() and not self.die:
+        while not self.die and self.monitor.poll():
+            print("poll")
             evt = recv_monitor_message(self.monitor)
             evt.update({'description': EVENT_MAP[evt['event']]})
             print("Event: {}".format(evt))

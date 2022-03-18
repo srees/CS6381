@@ -115,7 +115,7 @@ def main():
     # consider adding a check for if message exists (not a timeout) before proceeding
 
     # now do the publication for as many iterations that we plan to do
-    print("Exiting app...")
+    print("Exiting app.")
     sub.die = True
 
 
