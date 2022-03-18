@@ -84,6 +84,7 @@ class KademliaReg:
                     pubs = self.get_unique_publishers(message['topics'])
                     self.REP_socket.send_json(pubs)
         except KeyboardInterrupt:
+            print("Exiting listen loop.")
             self.die = True
             self.kad_client.kad_stop()
 
