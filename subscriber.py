@@ -137,11 +137,10 @@ class Subscriber:
                 value = getattr(zmq, name)
                 # print("%21s : %4i" % (name, value))
                 EVENT_MAP[value] = name
-        while not self.die and self.monitor.poll():
+        while not self.die and self.monitor.poll(5000):
             print("poll")
             evt = recv_monitor_message(self.monitor)
             evt.update({'description': EVENT_MAP[evt['event']]})
-            print("Event: {}".format(evt))
             if evt['event'] == zmq.EVENT_DISCONNECTED:
                 connected = False
                 self.REQ_socket.disconnect(self.REQ_url)
