@@ -62,6 +62,9 @@ def main():
     #asyncio.run(registry.start())
     registry.start()
 
+    print("Exiting registry.")
+    registry.die = True
+
 
 ###################################
 #

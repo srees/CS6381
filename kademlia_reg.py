@@ -34,6 +34,7 @@ class KademliaReg:
         self.pubs = []
         self.subs = []
         self.topics = {}
+        self.die = False
 
         print("Initializing Kademlia registry object")
 
@@ -50,7 +51,7 @@ class KademliaReg:
         print("Registry starting")
         try:
             print("Registry listening...")
-            while True:
+            while not self.die:
                 message = self.REP_socket.recv_json()
                 print("Received message: ")
                 print(message)
@@ -83,7 +84,7 @@ class KademliaReg:
                     pubs = self.get_unique_publishers(message['topics'])
                     self.REP_socket.send_json(pubs)
         except KeyboardInterrupt:
-            pass
+            self.die = True
 
     # store_info: topics [s], data {} or [{}], replace bool
     def store_info(self, topics, data, replace=False):
