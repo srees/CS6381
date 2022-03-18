@@ -67,7 +67,7 @@ class Subscriber:
         print("Starting subscriber listen loop...")
         while True:
             try:
-                if self.poller and self.SUB_sockets and not self.updating:
+                if self.poller and self.SUB_sockets:
                     events = dict(self.poller.poll())
                     for sock in self.SUB_sockets.values():
                         if sock in events:
@@ -76,7 +76,7 @@ class Subscriber:
                             data["Received"] = time.time()
                             function(data)
             except zmq.error.ZMQError:
-                print("socket error most likely")
+                pass  # this is needed because unregistering from the poller during an update often results in a socket error
             except KeyboardInterrupt:
                 break
 
