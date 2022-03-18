@@ -43,6 +43,7 @@ class Subscriber:
         self.REQ_socket.connect(self.REQ_url)
         self.current_registry = int(self.args.registry[-1])
         self.topics = []
+        self.updating = False
 
     def start(self, topics, function):
         self.wait()  # registry will give us the go by sending us the list of publishers
@@ -66,7 +67,7 @@ class Subscriber:
         print("Starting subscriber listen loop...")
         while True:
             try:
-                if self.poller and self.SUB_sockets:
+                if self.poller and self.SUB_sockets and not self.updating:
                     events = dict(self.poller.poll())
                     for sock in self.SUB_sockets.values():
                         if sock in events:
@@ -86,6 +87,7 @@ class Subscriber:
 
     def get_updates(self):
         while True:
+            self.updating = True
             print("Fetching updates from registry...")
             data = {'role': 'update', 'topics': []}
             self.REQ_socket.send_json(data)
@@ -117,6 +119,7 @@ class Subscriber:
                     self.SUB_sockets[connect_str].close()
                     del self.SUB_sockets[connect_str]
                     self.pubs.remove(pub)
+            self.updating = False
             time.sleep(10)
 
     def do_monitor(self):
