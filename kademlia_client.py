@@ -87,7 +87,7 @@ class KademliaClient:
     def kad_stop(self):
         self.kademlia_node.stop()
         self.kad_loop.stop()
-        self.kad_loop.close()
+        # self.kad_loop.close()
 
     # Performs a Kademlia get
     def get(self, name):
