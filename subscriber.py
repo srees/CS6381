@@ -76,6 +76,7 @@ class Subscriber:
                             data["Received"] = time.time()
                             function(data)
             except zmq.error.ZMQError:
+                print("error")
                 pass  # this is needed because unregistering from the poller during an update often results in a socket error
             except KeyboardInterrupt:
                 break
