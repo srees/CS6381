@@ -40,6 +40,7 @@ class Broker:
         self.REQ_url = 'tcp://' + self.args.registry + ':' + self.args.port
         self.REQ_socket.connect(self.REQ_url)
         self.current_registry = int(self.args.registry[-1])
+        self.die = False
 
     def start(self):
         self.wait()  # wait for registry to give us the go
@@ -60,7 +61,7 @@ class Broker:
         monitoring = threading.Thread(target=self.do_monitor)
         monitoring.start()
         print("Starting broker listen loop...")
-        while True:
+        while True and not self.die:
             try:
                 if self.poller and self.SUB_sockets:
                     events = dict(self.poller.poll())
@@ -74,7 +75,10 @@ class Broker:
             except zmq.error.ZMQError:
                 pass  # this is needed because unregistering from the poller during an update often results in a socket error
             except KeyboardInterrupt:
+                self.die = True
                 break
+        self.REQ_socket.disable_monitor()
+        print("Exiting polling.")
 
     # Wait for registry to give us the start signal
     def wait(self):
@@ -90,38 +94,43 @@ class Broker:
         self.PUB_socket.send_json(data)
 
     def get_updates(self):
-        while True:
-            print("Fetching updates from registry...")
-            data = {'role': 'update', 'topics': []}
-            self.REQ_socket.send_json(data)
-            print("Request sent")
-            updates = self.REQ_socket.recv_json()
-            print("Reply received")
-            print(updates)
-            # add in any new publishers
-            update_strings = []
-            for pub in updates:
-                connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
-                update_strings.append(connect_str)
-                if connect_str not in self.SUB_sockets:
-                    # It isn't yet in our list of pubs, we need to add it!
-                    print("Broker subscribing to " + connect_str)
-                    temp_sock = self.context.socket(zmq.SUB)
-                    temp_sock.connect(connect_str)
-                    temp_sock.setsockopt_string(zmq.SUBSCRIBE, '')
-                    self.SUB_sockets[connect_str] = temp_sock
-                    self.poller.register(self.SUB_sockets[connect_str], zmq.POLLIN)
-                    self.pubs.append(pub)
-            for pub in self.pubs:
-                connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
-                if connect_str not in update_strings:
-                    # This publisher has been dropped from ones we should listen to, remove it!
-                    self.poller.unregister(self.SUB_sockets[connect_str])
-                    self.SUB_sockets[connect_str].disconnect(connect_str)
-                    self.SUB_sockets[connect_str].close()
-                    del self.SUB_sockets[connect_str]
-                    self.pubs.remove(pub)
-            time.sleep(10)
+        while not self.die:
+            try:
+                print("Fetching updates from registry...")
+                data = {'role': 'update', 'topics': []}
+                self.REQ_socket.send_json(data)
+                print("Request sent")
+                updates = self.REQ_socket.recv_json()
+                print("Reply received")
+                print(updates)
+                # add in any new publishers
+                update_strings = []
+                for pub in updates:
+                    connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
+                    update_strings.append(connect_str)
+                    if connect_str not in self.SUB_sockets:
+                        # It isn't yet in our list of pubs, we need to add it!
+                        print("Broker subscribing to " + connect_str)
+                        temp_sock = self.context.socket(zmq.SUB)
+                        temp_sock.connect(connect_str)
+                        temp_sock.setsockopt_string(zmq.SUBSCRIBE, '')
+                        self.SUB_sockets[connect_str] = temp_sock
+                        self.poller.register(self.SUB_sockets[connect_str], zmq.POLLIN)
+                        self.pubs.append(pub)
+                for pub in self.pubs:
+                    connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
+                    if connect_str not in update_strings:
+                        # This publisher has been dropped from ones we should listen to, remove it!
+                        self.poller.unregister(self.SUB_sockets[connect_str])
+                        self.SUB_sockets[connect_str].disconnect(connect_str)
+                        self.SUB_sockets[connect_str].close()
+                        del self.SUB_sockets[connect_str]
+                        self.pubs.remove(pub)
+                time.sleep(10)
+            except KeyboardInterrupt:
+                self.die = True
+                break
+        print("Exiting update loop.")
 
     def do_monitor(self):
         EVENT_MAP = {}
@@ -131,7 +140,7 @@ class Broker:
                 value = getattr(zmq, name)
                 # print("%21s : %4i" % (name, value))
                 EVENT_MAP[value] = name
-        while self.monitor.poll():
+        while not self.die and self.monitor.poll():
             evt = recv_monitor_message(self.monitor)
             evt.update({'description': EVENT_MAP[evt['event']]})
             print("Event: {}".format(evt))
@@ -160,3 +169,5 @@ class Broker:
                             self.REQ_socket.close(0)
                             self.monitor.close()
                             break
+        self.monitor.close()
+        print("Exiting monitor.")

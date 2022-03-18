@@ -86,6 +86,9 @@ def main():
     print("Waiting for start from registry")
     broker.start()
 
+    print("Exiting app.")
+    broker.die = True
+
 
 ###################################
 #
