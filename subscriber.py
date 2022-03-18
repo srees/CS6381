@@ -138,7 +138,7 @@ class Subscriber:
                 # print("%21s : %4i" % (name, value))
                 EVENT_MAP[value] = name
         while not self.die:
-            self.monitor.poll(5000)
+            self.monitor.poll(500)
             print("poll")
             evt = recv_monitor_message(self.monitor)
             evt.update({'description': EVENT_MAP[evt['event']]})
