@@ -80,6 +80,7 @@ class Subscriber:
             except KeyboardInterrupt:
                 self.die = True
                 break
+        self.REQ_socket.disable_monitor()
         print("Exiting polling.")
 
     # Wait for registry to give us the start signal
