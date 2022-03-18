@@ -116,7 +116,8 @@ class KademliaReg:
                 print("Attempting to write:")
                 print(to_save)
                 self.kad_client.set(topic, json.dumps(to_save))
-                time.sleep(retry_delay)
+                if attempt > 1:
+                    time.sleep(retry_delay)
                 dht_value = self.kad_client.get(topic)
                 if not dht_value:
                     dht_value = '[]'

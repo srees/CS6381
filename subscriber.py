@@ -119,6 +119,7 @@ class Subscriber:
                     self.SUB_sockets[connect_str].close()
                     del self.SUB_sockets[connect_str]
                     self.pubs.remove(pub)
+            time.sleep(1)
             self.updating = False
             time.sleep(10)
 
