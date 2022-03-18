@@ -79,8 +79,6 @@ class Subscriber:
                 pass  # this is needed because unregistering from the poller during an update often results in a socket error
             except KeyboardInterrupt:
                 self.die = True
-                updates.join()
-                monitoring.join()
                 break
 
     # Wait for registry to give us the start signal
