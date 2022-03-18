@@ -85,6 +85,7 @@ class KademliaReg:
                     self.REP_socket.send_json(pubs)
         except KeyboardInterrupt:
             self.die = True
+            self.kad_client.kad_stop()
 
     # store_info: topics [s], data {} or [{}], replace bool
     def store_info(self, topics, data, replace=False):

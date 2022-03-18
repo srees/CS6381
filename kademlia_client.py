@@ -84,6 +84,9 @@ class KademliaClient:
         except Exception as e:
             print(e, flush=True)
 
+    def kad_stop(self):
+        self.kad_loop.stop()
+
     # Performs a Kademlia get
     def get(self, name):
         # Lock to make sure there is only one pending get or set
