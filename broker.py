@@ -40,7 +40,6 @@ class Broker:
         self.REQ_url = 'tcp://' + self.args.registry + ':' + self.args.port
         self.REQ_socket.connect(self.REQ_url)
         self.current_registry = int(self.args.registry[-1])
-        self.updating = False
 
     def start(self):
         self.wait()  # wait for registry to give us the go
@@ -63,7 +62,7 @@ class Broker:
         print("Starting broker listen loop...")
         while True:
             try:
-                if self.poller and self.SUB_sockets and not self.updating:
+                if self.poller and self.SUB_sockets:
                     events = dict(self.poller.poll())
                     for sock in self.SUB_sockets.values():
                         if sock in events:
@@ -72,6 +71,8 @@ class Broker:
                             print(data)
                             data["Brokered"] = time.time()
                             self.republish(data)
+            except zmq.error.ZMQError:
+                pass  # this is needed because unregistering from the poller during an update often results in a socket error
             except KeyboardInterrupt:
                 break
 
@@ -90,7 +91,6 @@ class Broker:
 
     def get_updates(self):
         while True:
-            self.updating = True
             print("Fetching updates from registry...")
             data = {'role': 'update', 'topics': []}
             self.REQ_socket.send_json(data)
@@ -121,7 +121,6 @@ class Broker:
                     self.SUB_sockets[connect_str].close()
                     del self.SUB_sockets[connect_str]
                     self.pubs.remove(pub)
-            self.updating = False
             time.sleep(10)
 
     def do_monitor(self):

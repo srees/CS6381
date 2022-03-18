@@ -43,7 +43,7 @@ class Subscriber:
         self.REQ_socket.connect(self.REQ_url)
         self.current_registry = int(self.args.registry[-1])
         self.topics = []
-        self.updating = False
+        self.die = False
 
     def start(self, topics, function):
         self.wait()  # registry will give us the go by sending us the list of publishers
@@ -76,9 +76,11 @@ class Subscriber:
                             data["Received"] = time.time()
                             function(data)
             except zmq.error.ZMQError:
-                print("error")
                 pass  # this is needed because unregistering from the poller during an update often results in a socket error
             except KeyboardInterrupt:
+                self.die = True
+                updates.join()
+                monitoring.join()
                 break
 
     # Wait for registry to give us the start signal
@@ -89,8 +91,7 @@ class Subscriber:
         self.REP_socket.send_json('ACK')
 
     def get_updates(self):
-        while True:
-            self.updating = True
+        while not self.die:
             print("Fetching updates from registry...")
             data = {'role': 'update', 'topics': []}
             self.REQ_socket.send_json(data)
@@ -122,7 +123,6 @@ class Subscriber:
                     self.SUB_sockets[connect_str].close()
                     del self.SUB_sockets[connect_str]
                     self.pubs.remove(pub)
-            self.updating = False
             time.sleep(10)
 
     def do_monitor(self):
@@ -133,7 +133,7 @@ class Subscriber:
                 value = getattr(zmq, name)
                 # print("%21s : %4i" % (name, value))
                 EVENT_MAP[value] = name
-        while self.monitor.poll():
+        while self.monitor.poll() and not self.die:
             evt = recv_monitor_message(self.monitor)
             evt.update({'description': EVENT_MAP[evt['event']]})
             print("Event: {}".format(evt))
