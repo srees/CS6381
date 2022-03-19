@@ -1,0 +1,1549 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Getting registry object
+Binding REP to tcp://10.0.0.3:5550
+Initializing Kademlia registry object
+2022-03-18 23:37:01,349 - kademlia.network - INFO - Node 746191563944497402874270577277732865132015689468 listening on 0.0.0.0:8468
+2022-03-18 23:37:01,349 - kademlia.network - DEBUG - Refreshing routing table
+2022-03-18 23:37:01,349 - kademlia.network - DEBUG - Attempting to bootstrap node with 2 initial contacts
+2022-03-18 23:37:01,448 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:01,448 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:01,490 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:01,490 - kademlia.protocol - INFO - never seen 10.0.0.1:8468 before, adding to router
+2022-03-18 23:37:01,491 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:01,491 - kademlia.protocol - INFO - never seen 10.0.0.2:8468 before, adding to router
+Registry start requested
+Registry starting
+Registry listening...
+2022-03-18 23:37:01,550 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:01,595 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:01,637 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'e4c1a71b066bed67f705260636e0539ee05bec6c'='[{"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-18 23:37:01,682 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+Received message: 
+{'role': 'subscriber', 'ip': '10.0.0.11', 'port': '5581', 'topics': ['sound', 'altitude', 'weather', 'humidity', 'pressure', 'location']}
+Registry passing publisher information to subscribers:
+Getting unique publishers...
+Getting data for sound
+2022-03-18 23:37:01,686 - kademlia.network - INFO - Looking up key sound
+2022-03-18 23:37:01,686 - kademlia.crawling - INFO - creating spider with peers: [[1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468]]
+2022-03-18 23:37:01,686 - kademlia.crawling - INFO - crawling network with nearest: ([1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468])
+2022-03-18 23:37:01,725 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:01,732 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:01,732 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for altitude
+2022-03-18 23:37:01,732 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for weather
+2022-03-18 23:37:01,733 - kademlia.network - INFO - Looking up key weather
+2022-03-18 23:37:01,733 - kademlia.crawling - INFO - creating spider with peers: [[1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468]]
+2022-03-18 23:37:01,733 - kademlia.crawling - INFO - crawling network with nearest: ([1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468])
+2022-03-18 23:37:01,734 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:01,772 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-18 23:37:01,782 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:01,782 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for humidity
+2022-03-18 23:37:01,783 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:01,783 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:01,783 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:01,825 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:01,830 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for pressure
+2022-03-18 23:37:01,830 - kademlia.network - INFO - Looking up key pressure
+2022-03-18 23:37:01,830 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:01,830 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:01,862 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:01,873 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:01,874 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:01,874 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+No data found
+Getting data for location
+2022-03-18 23:37:01,876 - kademlia.network - INFO - Looking up key location
+2022-03-18 23:37:01,876 - kademlia.crawling - INFO - creating spider with peers: [[1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468]]
+2022-03-18 23:37:01,876 - kademlia.crawling - INFO - crawling network with nearest: ([1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468])
+2022-03-18 23:37:01,905 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:01,918 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:01,923 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:01,923 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Sending: 
+[{'ip': '10.0.0.4', 'port': '5571'}]
+To subscriber at: tcp://10.0.0.11:5580
+2022-03-18 23:37:01,953 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-18 23:37:02,045 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:02,094 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+Received message: 
+{'role': 'subscriber', 'ip': '10.0.0.13', 'port': '5581', 'topics': ['temperature', 'pressure', 'location', 'smell']}
+Registry passing publisher information to subscribers:
+Getting unique publishers...
+Getting data for temperature
+2022-03-18 23:37:02,102 - kademlia.network - INFO - Looking up key temperature
+2022-03-18 23:37:02,102 - kademlia.crawling - INFO - creating spider with peers: [[1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468]]
+2022-03-18 23:37:02,102 - kademlia.crawling - INFO - crawling network with nearest: ([1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468])
+2022-03-18 23:37:02,137 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,142 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing '7033e90fcdda169d2f5d08da17507b0c5db52029'='[{"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-18 23:37:02,144 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:02,147 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:02,180 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,187 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:02,189 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:02,190 - kademlia.network - INFO - Looking up key pressure
+2022-03-18 23:37:02,190 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:02,190 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:02,223 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,231 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:02,233 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:02,233 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for location
+2022-03-18 23:37:02,233 - kademlia.network - INFO - Looking up key location
+2022-03-18 23:37:02,234 - kademlia.crawling - INFO - creating spider with peers: [[1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468]]
+2022-03-18 23:37:02,234 - kademlia.crawling - INFO - crawling network with nearest: ([1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468])
+2022-03-18 23:37:02,266 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,276 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:02,276 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-18 23:37:02,277 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:02,309 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,320 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:02,320 - kademlia.network - INFO - Looking up key smell
+2022-03-18 23:37:02,320 - kademlia.crawling - INFO - creating spider with peers: [[1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468]]
+2022-03-18 23:37:02,320 - kademlia.crawling - INFO - crawling network with nearest: ([1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468])
+2022-03-18 23:37:02,321 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:02,364 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:02,365 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Sending: 
+[{'ip': '10.0.0.4', 'port': '5571'}]
+To subscriber at: tcp://10.0.0.13:5580
+2022-03-18 23:37:02,367 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:02,409 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing '5e2e97c3c7ba3035c6e6fc3a17e1bc22029c0c3e'='[{"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-18 23:37:02,527 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:02,565 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,588 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:02,589 - kademlia.network - INFO - Looking up key weather
+2022-03-18 23:37:02,589 - kademlia.crawling - INFO - creating spider with peers: [[1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468]]
+2022-03-18 23:37:02,589 - kademlia.crawling - INFO - crawling network with nearest: ([1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468])
+2022-03-18 23:37:02,611 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,632 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:02,632 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:02,632 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.4", "port": "5571"}]'
+2022-03-18 23:37:02,656 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,674 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:02,675 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:02,675 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:02,675 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:02,704 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,736 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:02,736 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:02,737 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:02,737 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:02,738 - kademlia.network - INFO - Looking up key pressure
+2022-03-18 23:37:02,738 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:02,738 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:02,760 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,780 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:02,782 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for temperature
+2022-03-18 23:37:02,782 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:02,783 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:02,783 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:02,783 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:02,783 - kademlia.network - INFO - Looking up key smell
+2022-03-18 23:37:02,784 - kademlia.crawling - INFO - creating spider with peers: [[1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468]]
+2022-03-18 23:37:02,784 - kademlia.crawling - INFO - crawling network with nearest: ([1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468])
+2022-03-18 23:37:02,808 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,830 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:02,841 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:02,842 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:02,843 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:02,843 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:02,843 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:02,865 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+2022-03-18 23:37:02,875 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:02,885 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:02,885 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:02,886 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:02,887 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:02,888 - kademlia.network - INFO - Looking up key pressure
+2022-03-18 23:37:02,888 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:02,888 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:03,026 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:03,026 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for temperature
+2022-03-18 23:37:03,026 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:03,027 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:03,027 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:03,027 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:03,027 - kademlia.network - INFO - Looking up key smell
+2022-03-18 23:37:03,028 - kademlia.crawling - INFO - creating spider with peers: [[1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468]]
+2022-03-18 23:37:03,028 - kademlia.crawling - INFO - crawling network with nearest: ([1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468], [1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468])
+2022-03-18 23:37:03,071 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:03,072 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+2022-03-18 23:37:03,220 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:03,262 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:03,321 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:03,367 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:03,413 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing '410acf5ec68df095da22759e4084f8df52c834c6'='[{"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:03,642 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:03,709 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing '7033e90fcdda169d2f5d08da17507b0c5db52029'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:03,864 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:03,961 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:04,025 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing '3b4c0c6565e036a82beef4cf4d00366af668111f'='[{"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:04,161 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:04,237 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:04,344 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:04,396 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:04,531 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:04,600 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:04,647 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:04,697 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:06,775 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:06,837 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:08,892 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:08,939 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:11,014 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:11,094 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:12,828 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:12,893 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:12,893 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:12,894 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:12,894 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:12,937 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:12,937 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:12,938 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:12,938 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:12,938 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:37:12,939 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:12,939 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:12,940 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:12,940 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:12,941 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:37:13,072 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:13,133 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:13,133 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:13,133 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:13,133 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:13,151 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:13,178 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:13,179 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:13,179 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:13,180 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:13,180 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:37:13,180 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:13,181 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:13,181 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:13,182 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:13,182 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:37:13,196 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:15,249 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:15,297 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:17,357 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:17,476 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:19,524 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:19,566 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:21,610 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:21,652 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:22,932 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:22,993 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:22,994 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:22,994 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:22,994 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:23,042 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:23,042 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:23,043 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:23,043 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:23,044 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:37:23,044 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:23,045 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:23,045 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:23,046 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:23,047 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:37:23,169 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:23,236 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:23,236 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:23,236 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:23,236 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:23,278 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:23,278 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:23,278 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:23,279 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:23,279 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:37:23,280 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:23,280 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:23,280 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:23,281 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:23,281 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:37:23,697 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:23,740 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:25,784 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:25,831 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:27,876 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:27,918 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:29,995 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:30,037 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:32,083 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:32,129 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:33,026 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:33,100 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:33,100 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:33,100 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:33,101 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:33,145 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:33,146 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:33,146 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:33,146 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:33,147 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:37:33,147 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:33,148 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:33,148 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:33,149 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:33,149 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:37:33,284 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:33,335 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:33,335 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:33,336 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:33,336 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:33,385 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:33,385 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:33,386 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:33,386 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:33,387 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:37:33,387 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:33,387 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:33,388 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:33,388 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:33,388 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:37:34,179 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:34,239 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:36,287 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:36,333 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:38,387 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:38,440 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:40,498 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:40,547 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:42,596 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:42,640 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:43,126 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:43,203 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:43,203 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:43,203 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:43,203 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:43,246 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:43,253 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:43,253 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:43,254 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:43,254 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:37:43,254 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:43,255 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:43,255 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:43,255 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:43,256 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:37:43,391 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:43,443 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:43,443 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:43,444 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:43,444 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:43,486 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:43,486 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:43,487 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:43,487 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:43,488 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:37:43,488 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:43,488 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:43,489 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:43,489 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:43,489 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:37:44,687 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:44,733 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:46,784 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:46,843 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:48,893 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:48,936 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:51,012 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:51,062 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:53,117 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:53,172 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:53,254 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:53,318 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:53,318 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:53,318 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:53,318 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:53,366 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:37:53,366 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:53,366 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:53,366 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:53,367 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:37:53,367 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:53,367 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:53,367 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:53,368 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:53,368 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:37:53,541 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:37:53,551 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:37:53,552 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:37:53,552 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:37:53,552 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:37:53,601 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:37:53,601 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:37:53,602 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:37:53,602 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:37:53,602 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:37:53,603 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:37:53,603 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:37:53,603 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:37:53,604 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:37:53,604 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:37:55,221 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:55,269 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:57,330 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:57,397 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:37:59,454 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:37:59,497 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:01,545 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:01,604 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:03,382 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:03,423 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:03,424 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:03,424 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:03,424 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:03,478 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:38:03,478 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:03,479 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:03,479 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:03,479 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:03,480 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:03,480 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:03,480 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:03,480 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:03,481 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:03,638 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:03,648 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:03,648 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:03,648 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:03,648 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:03,657 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:03,690 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:38:03,691 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:03,692 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:03,692 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:03,693 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:03,693 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:03,693 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:03,694 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:03,694 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:03,694 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:03,700 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:05,746 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:05,796 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:07,856 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:07,899 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:09,988 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:10,032 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:12,079 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:12,130 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:13,590 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:13,601 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:13,602 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:13,602 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:13,602 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:13,648 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:38:13,648 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:13,649 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:13,649 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:13,650 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:13,650 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:13,651 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:13,651 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:13,651 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:13,652 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:13,736 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:13,748 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:13,748 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:13,749 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:13,749 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:13,798 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:38:13,799 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:13,799 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:13,800 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:13,801 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:13,801 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:13,801 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:13,801 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:13,802 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:13,802 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:14,192 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:14,236 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:16,280 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:16,324 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:18,370 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:18,412 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:20,462 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:20,512 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:22,559 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:22,648 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:23,714 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:23,714 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:23,715 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:23,715 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:23,715 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:23,759 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:38:23,759 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:23,759 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:23,760 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:23,760 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:23,760 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:23,761 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:23,761 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:23,762 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:23,762 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:23,836 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:23,857 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:23,858 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:23,858 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:23,858 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:23,899 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:38:23,899 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:23,900 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:23,900 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:23,901 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:23,901 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:23,901 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:23,902 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:23,902 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:23,903 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:24,756 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:24,806 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:26,865 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:26,931 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:28,979 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:29,030 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:31,136 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:31,178 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:33,225 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:33,288 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:33,807 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:33,815 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:33,815 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:33,815 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:33,815 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:33,860 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:38:33,861 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:33,861 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:33,861 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:33,862 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:33,862 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:33,863 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:33,863 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:33,863 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:33,863 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:33,935 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:33,961 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:33,961 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:33,962 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:33,962 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:34,057 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:38:34,057 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:34,058 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:34,058 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:34,058 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:34,059 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:34,059 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:34,059 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:34,059 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:34,060 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:35,355 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:35,407 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:37,454 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:37,518 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:39,595 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:39,652 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:41,713 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:41,756 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:43,804 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:43,847 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:43,909 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:43,920 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:43,920 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:43,920 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:43,920 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:43,962 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:38:43,962 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:43,963 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:43,963 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:43,963 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:43,963 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:43,964 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:43,964 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:43,964 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:43,964 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:44,103 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:44,117 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:44,117 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:44,117 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:44,118 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:44,163 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:38:44,167 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:44,168 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:44,168 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:44,169 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:44,169 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:44,169 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:44,170 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:44,170 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:44,171 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:45,894 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:45,977 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:48,032 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:48,081 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:50,150 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:50,198 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:52,280 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:52,361 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:54,142 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:54,143 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:54,143 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:54,143 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:54,143 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:54,193 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+2022-03-18 23:38:54,194 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:54,194 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:54,195 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:54,195 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:54,196 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:54,196 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:54,196 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:54,197 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:54,197 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:54,256 - kademlia.protocol - INFO - finding neighbors of 1118910996703542213837343773813863568071957037334 in local table
+Received message: 
+{'role': 'update', 'topics': []}
+Getting unique publishers...
+Using full topic list
+Getting data for weather
+2022-03-18 23:38:54,257 - kademlia.network - INFO - Looking up key weather
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for humidity
+2022-03-18 23:38:54,257 - kademlia.network - INFO - Looking up key humidity
+2022-03-18 23:38:54,258 - kademlia.crawling - INFO - creating spider with peers: [[1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468]]
+2022-03-18 23:38:54,258 - kademlia.crawling - INFO - crawling network with nearest: ([1066115660005657993918553291786560480139020666092, '10.0.0.1', 8468], [1118910996703542213837343773813863568071957037334, '10.0.0.2', 8468])
+2022-03-18 23:38:54,301 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+2022-03-18 23:38:54,301 - kademlia.protocol - INFO - got successful response from 10.0.0.1:8468
+No data found
+Getting data for airquality
+2022-03-18 23:38:54,301 - kademlia.network - INFO - Looking up key airquality
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for light
+2022-03-18 23:38:54,302 - kademlia.network - INFO - Looking up key light
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for pressure
+2022-03-18 23:38:54,302 - kademlia.network - INFO - Looking up key pressure
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for temperature
+2022-03-18 23:38:54,303 - kademlia.network - INFO - Looking up key temperature
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for sound
+2022-03-18 23:38:54,303 - kademlia.network - INFO - Looking up key sound
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for altitude
+2022-03-18 23:38:54,304 - kademlia.network - INFO - Looking up key altitude
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+Getting data for location
+2022-03-18 23:38:54,304 - kademlia.network - INFO - Looking up key location
+Received data...
+{'ip': '10.0.0.4', 'port': '5571'}
+{'ip': '10.0.0.5', 'port': '5571'}
+Getting data for smell
+2022-03-18 23:38:54,304 - kademlia.network - INFO - Looking up key smell
+Received data...
+{'ip': '10.0.0.5', 'port': '5571'}
+2022-03-18 23:38:54,422 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:54,479 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:56,544 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:56,589 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:38:58,644 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:38:58,693 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:39:00,750 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:39:00,803 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
+2022-03-18 23:39:02,906 - kademlia.protocol - INFO - finding neighbors of 1066115660005657993918553291786560480139020666092 in local table
+2022-03-18 23:39:03,055 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.1', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.4", "port": "5571"}, {"ip": "10.0.0.5", "port": "5571"}]'
