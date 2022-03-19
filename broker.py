@@ -97,7 +97,7 @@ class Broker:
         while not self.die:
             try:
                 print("Fetching updates from registry...")
-                data = {'role': 'update', 'topics': []}
+                data = {'role': 'updatebroker', 'topics': []}
                 self.REQ_socket.send_json(data)
                 print("Request sent")
                 updates = self.REQ_socket.recv_json()

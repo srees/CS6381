@@ -80,9 +80,13 @@ class KademliaReg:
                     self.REP_socket.send_json("Registered")
                     sub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
                     self.start_subscriber(sub)
-                if message['role'] == 'update':
+                if message['role'] == 'updatebroker':
                     pubs = self.get_unique_publishers(message['topics'])
                     self.REP_socket.send_json(pubs)
+                if message['role'] == 'updatesub':
+                    data = self.fetch_for_sub(message['topics'])
+                    self.REP_socket.send_json(data)
+
         except KeyboardInterrupt:
             print("Exiting listen loop.")
             self.die = True
@@ -175,33 +179,13 @@ class KademliaReg:
         self.REQ_socket.disconnect(connection_string)
 
     def start_subscriber(self, sub):
-        if self.args.disseminate == 'broker':
-            print("Registry passing broker information to subscribers:")
-            result = self.kad_client.get("broker")
-            while not result:
-                time.sleep(1)
-                result = self.kad_client.get("broker")
-            broker = json.loads(self.kad_client.get("broker"))
-            print("Found broker ")
-            print(broker)
-            # send each subscriber the broker IP:Port
-            connection_string = 'tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1)
-            self.REQ_socket.connect(connection_string)
-            print("Registry sending broker to subscriber: " + connection_string)
-            self.REQ_socket.send_json(broker)
-            self.REQ_socket.recv_json()
-            self.REQ_socket.disconnect(connection_string)
-        else:
-            print("Registry passing publisher information to subscribers:")
-            temp_list = self.get_unique_publishers(sub.get('topics'))
-            connection_string = 'tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1)
-            self.REQ_socket.connect(connection_string)
-            print("Sending: ")
-            print(temp_list)
-            print("To subscriber at: " + connection_string)
-            self.REQ_socket.send_json(temp_list)
-            self.REQ_socket.recv_json()
-            self.REQ_socket.disconnect(connection_string)
+        data = self.fetch_for_sub(sub.get('topics'))
+        connection_string = 'tcp://' + sub.get('ip') + ':' + str(int(sub.get('port')) - 1)
+        self.REQ_socket.connect(connection_string)
+        print("Registry sending info to subscriber: " + connection_string)
+        self.REQ_socket.send_json(data)
+        self.REQ_socket.recv_json()
+        self.REQ_socket.disconnect(connection_string)
 
     def start_publisher(self, pub):
         connection_string = 'tcp://' + pub.get('ip') + ':' + str(int(pub.get('port')) - 1)
@@ -216,3 +200,21 @@ class KademliaReg:
             data = self.kad_client.get(topic)
             print(topic)
             print(data)
+
+    def fetch_for_sub(self, topics):
+        if self.args.disseminate == 'broker':
+            print("Registry passing broker information to subscribers:")
+            result = self.kad_client.get("broker")
+            while not result:
+                time.sleep(1)
+                result = self.kad_client.get("broker")
+            broker = json.loads(self.kad_client.get("broker"))
+            print("Found broker: ")
+            print(broker)
+            return broker
+        else:
+            print("Registry passing publisher information to subscribers:")
+            temp_list = self.get_unique_publishers(topics)
+            print("Found publishers: ")
+            print(temp_list)
+            return temp_list
