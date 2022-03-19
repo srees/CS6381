@@ -177,6 +177,10 @@ class KademliaReg:
     def start_subscriber(self, sub):
         if self.args.disseminate == 'broker':
             print("Registry passing broker information to subscribers:")
+            result = self.kad_client.get("broker")
+            while not result:
+                time.sleep(1)
+                result = self.kad_client.get("broker")
             broker = json.loads(self.kad_client.get("broker"))
             print("Found broker ")
             print(broker)
