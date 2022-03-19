@@ -1,0 +1,64 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Subscriber interested in listening for these topics: ['airquality', 'smell', 'weather', 'humidity', 'altitude', 'location', 'pressure']
+Getting subscriber object
+Binding REP to tcp://10.0.0.61:5580
+Getting registry proxy
+Registering with tcp://10.0.0.7:5550...
+Registration sent
+Registration received
+Waiting for start from registry
+Subscribing to tcp://10.0.0.11:5561
+Starting update loop thread
+Fetching updates from registry...
+Starting monitor loop thread
+Request sent
+Starting subscriber listen loop...
+{'Topic': 'location', 'Value': 296, 'Sender': '10.0.0.12', 'Sent': 1647668124.5977676, 'Brokered': 1647668124.620829, 'Subscriber': '10.0.0.61', 'Received': 1647668124.6457884}
+{'Topic': 'pressure', 'Value': 179, 'Sender': '10.0.0.12', 'Sent': 1647668124.6982884, 'Brokered': 1647668124.719498, 'Subscriber': '10.0.0.61', 'Received': 1647668124.7458389}
+Reply received
+[{'ip': '10.0.0.12', 'port': '5571'}, {'ip': '10.0.0.18', 'port': '5571'}, {'ip': '10.0.0.13', 'port': '5571'}]
+Broker subscribing to tcp://10.0.0.12:5571
+Broker subscribing to tcp://10.0.0.18:5571
+Broker subscribing to tcp://10.0.0.13:5571
+{'Topic': 'weather', 'Value': 142, 'Sender': '10.0.0.12', 'Sent': 1647668124.798926, 'Brokered': 1647668124.8199806, 'Subscriber': '10.0.0.61', 'Received': 1647668124.8439155}
+Traceback (most recent call last):
+  File "subapp.py", line 137, in <module>
+    main()
+  File "subapp.py", line 114, in main
+    sub.start(my_topics, lambda data: data_callback(data))
+  File "/home/srees/CS6381/subscriber.py", line 72, in start
+    for sock in self.SUB_sockets.values():
+RuntimeError: dictionary changed size during iteration
+Fetching updates from registry...
+Request sent
+Reply received
+[{'ip': '10.0.0.12', 'port': '5571'}, {'ip': '10.0.0.18', 'port': '5571'}, {'ip': '10.0.0.15', 'port': '5571'}, {'ip': '10.0.0.17', 'port': '5571'}, {'ip': '10.0.0.20', 'port': '5571'}, {'ip': '10.0.0.19', 'port': '5571'}, {'ip': '10.0.0.21', 'port': '5571'}, {'ip': '10.0.0.16', 'port': '5571'}, {'ip': '10.0.0.14', 'port': '5571'}, {'ip': '10.0.0.13', 'port': '5571'}]
+Broker subscribing to tcp://10.0.0.15:5571
+Broker subscribing to tcp://10.0.0.17:5571
+Broker subscribing to tcp://10.0.0.20:5571
+Broker subscribing to tcp://10.0.0.19:5571
+Broker subscribing to tcp://10.0.0.21:5571
+Broker subscribing to tcp://10.0.0.16:5571
+Broker subscribing to tcp://10.0.0.14:5571
+Fetching updates from registry...
+Request sent
+Reply received
+[{'ip': '10.0.0.12', 'port': '5571'}, {'ip': '10.0.0.18', 'port': '5571'}, {'ip': '10.0.0.15', 'port': '5571'}, {'ip': '10.0.0.17', 'port': '5571'}, {'ip': '10.0.0.20', 'port': '5571'}, {'ip': '10.0.0.19', 'port': '5571'}, {'ip': '10.0.0.21', 'port': '5571'}, {'ip': '10.0.0.16', 'port': '5571'}, {'ip': '10.0.0.14', 'port': '5571'}, {'ip': '10.0.0.13', 'port': '5571'}]
+Fetching updates from registry...
+Request sent
+Reply received
+[{'ip': '10.0.0.12', 'port': '5571'}, {'ip': '10.0.0.18', 'port': '5571'}, {'ip': '10.0.0.15', 'port': '5571'}, {'ip': '10.0.0.17', 'port': '5571'}, {'ip': '10.0.0.20', 'port': '5571'}, {'ip': '10.0.0.19', 'port': '5571'}, {'ip': '10.0.0.21', 'port': '5571'}, {'ip': '10.0.0.16', 'port': '5571'}, {'ip': '10.0.0.14', 'port': '5571'}, {'ip': '10.0.0.13', 'port': '5571'}]
+Fetching updates from registry...
+Request sent
+Reply received
+[{'ip': '10.0.0.12', 'port': '5571'}, {'ip': '10.0.0.18', 'port': '5571'}, {'ip': '10.0.0.15', 'port': '5571'}, {'ip': '10.0.0.17', 'port': '5571'}, {'ip': '10.0.0.20', 'port': '5571'}, {'ip': '10.0.0.19', 'port': '5571'}, {'ip': '10.0.0.21', 'port': '5571'}, {'ip': '10.0.0.16', 'port': '5571'}, {'ip': '10.0.0.14', 'port': '5571'}, {'ip': '10.0.0.13', 'port': '5571'}]
+Fetching updates from registry...
+Request sent
+Reply received
+[{'ip': '10.0.0.12', 'port': '5571'}, {'ip': '10.0.0.18', 'port': '5571'}, {'ip': '10.0.0.15', 'port': '5571'}, {'ip': '10.0.0.17', 'port': '5571'}, {'ip': '10.0.0.20', 'port': '5571'}, {'ip': '10.0.0.19', 'port': '5571'}, {'ip': '10.0.0.21', 'port': '5571'}, {'ip': '10.0.0.16', 'port': '5571'}, {'ip': '10.0.0.14', 'port': '5571'}, {'ip': '10.0.0.13', 'port': '5571'}]
+Fetching updates from registry...
+Request sent
