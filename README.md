@@ -43,4 +43,4 @@ When all this was done, I took the single topology with 100 hosts (balanced brok
 # Conclusion
 The performance characteristics of the system depend heavily on the composition and size of the system. With that in mind, however, the only time the broker method performed significantly worse was in a publisher heavy configuration, which is atypical for the purposes of pub/sub.
 
-Video can be found until the end of May, 2022 at https://vanderbilt.zoom.us/rec/share/Zr4sK-wqt1fz_l5t3jbUd80Q5h-L_ABtbH79IM0Fk6U16V68YIKNkJPQjbGnl_0h.mloyGTCtpYMCZxA2?startTime=1644643504000
+Video demonstration can be found until the end of June, 2022 at https://vanderbilt.zoom.us/rec/share/LygSlvANYf5G1QMFhW8cEchJovpGGyFhB1QBLUrNzPAUlz6Y-WLdSVuL912p3IPE.9ojv6vI1ddEn-8ay?startTime=1647740786000
