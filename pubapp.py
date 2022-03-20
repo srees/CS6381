@@ -126,7 +126,7 @@ def main():
             topic = random.sample(my_topics, 1)
             value = randrange(0, 500)
             pub.publish(topic[0], value)
-            time.sleep(0.1)
+            time.sleep(1)
     except KeyboardInterrupt:
         pass
     finally:
