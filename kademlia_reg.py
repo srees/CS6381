@@ -47,7 +47,7 @@ class KademliaReg:
 
         # retrieve from zookeeper list of other registries for DHT init
         nodes = []
-        registries = zk.get_children('registries', include_data=True)
+        registries = zk.get_children('registries')
         for registry in registries:
             print(registry)
             parts = registry[1].split(':')
