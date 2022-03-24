@@ -22,43 +22,39 @@ log.setLevel(logging.DEBUG)
 
 class KademliaReg:
     def __init__(self, args):
+        print("Initializing registry object")
         self.args = args
         self.context = zmq.Context()
         self.REP_socket = self.context.socket(zmq.REP)
-        self.REP_url = "tcp://" + publicip.get_ip_address() + ":" + str(self.args.port)
+        ip = publicip.get_ip_address()
+        reg_ip_port = ip + ":" + str(self.args.registry_port)
+        self.REP_url = "tcp://" + reg_ip_port
         print("Binding REP to " + self.REP_url)
         self.REP_socket.bind(self.REP_url)
         self.REQ_socket = self.context.socket(zmq.REQ)
-        if args.disseminate == "broker":
-            self.expected_brokers = 1
-        else:
-            self.expected_brokers = 0
-        self.broker = []
-        self.pubs = []
-        self.subs = []
-        self.topics = {}
         self.die = False
 
+        print("Initializing Zookeeper connection")
         zkargs = types.SimpleNamespace()
-        zkargs.zkIPAddr = args.bootstrap
-        zkargs.zkPort = '2181' # args.bootstrap_port
+        zkargs.zkIPAddr = args.zookeeper
+        zkargs.zkPort = args.zookeeper_port
         zk = ZKDriver(zkargs)
         zk.init_driver()
         zk.start_session()
-        segments = publicip.get_ip_address().split('.')
-        zk.create_znode('registries/registry'+segments[3], self.REP_url)
+        # store our information with zookeeper
+        segments = ip.split('.')
+        zk.create_znode('registries/registry'+segments[3], reg_ip_port)
 
-
-        print("Initializing Kademlia registry object")
-
+        # retrieve from zookeeper list of other registries for DHT init
         nodes = []
-        count = 1
-        port = int(self.args.bootstrap_port)
-        node_count = int(self.args.num_nodes)
-        while count <= node_count:
-            nodes.append(("10.0.0." + str(count), port))
-            count += 1
-        self.kad_client = KademliaClient(port, nodes)
+        registries = zk.get_children('registries', include_data=True)
+        for registry in registries:
+            parts = registry[1].split(':')
+            if ip not in parts[0]:
+                nodes.append((parts[0], parts[1]))
+
+        print("Initializing Kademlia connection")
+        self.kad_client = KademliaClient(self.args.dht_port, nodes)
 
     def start(self):
         print("Registry starting")

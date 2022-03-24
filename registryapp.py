@@ -27,12 +27,10 @@ def parseCmdLineArgs():
     # options for all the things you need.
     parser.add_argument("-d", "--disseminate", choices=["direct", "broker"], default="direct",
                         help="Dissemination strategy: direct or via broker; default is direct")
-    parser.add_argument("-b", "--bootstrap", default="10.0.0.1", help="IP of the DHT bootstrap")
-    parser.add_argument("-p", "--port", default="5550", help="Port of this registry")
-    parser.add_argument("-q", "--bootstrap_port", default="8468", help="Port of the bootstrap")
-    parser.add_argument("-n", "--num_nodes", default=0, help="Number of other already running registry nodes")
-    parser.add_argument("-o", "--override_port", default=None, help="Port for kademlia DHT ring communications")
-    parser.add_argument("-c", "--create", action="store_true")
+    parser.add_argument("-z", "--zookeeper", default="10.0.0.1", help="IP of Zookeeper")
+    parser.add_argument("-k", "--zookeeper_port", default="2181", help="Port of Zookeeper")
+    parser.add_argument("-p", "--registry_port", default="5550", help="Port of this registry")
+    parser.add_argument("-r", "--dht_port", default="8468", help="Port of the DHT ring")
     parser.add_argument("-v", "--debug", default=logging.WARNING, action="store_true", help="Logging level (see logging package): default WARNING else DEBUG")
     return parser.parse_args()
 

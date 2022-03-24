@@ -228,3 +228,6 @@ class ZKDriver:
         except:
             print("Exception thrown checking for exists/set: ", sys.exc_info()[0])
             return
+
+    def get_children(self, path, include_data=False):
+        return self.zk.get_children(path, include_data)
