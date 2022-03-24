@@ -192,7 +192,7 @@ class ZKDriver:
                 # Now acquire the value and stats of that znode
                 # value,stat = self.zk.get (self.zkName, watch=self.watch)
                 value, stat = self.zk.get(zkName)
-                print(("Details of znode {}: value = {}, stat = {}".format(zkName, value, stat)))
+                # print(("Details of znode {}: value = {}, stat = {}".format(zkName, value, stat)))
                 return value, stat
             else:
                 print("{} znode does not exist, why?".format(zkName))

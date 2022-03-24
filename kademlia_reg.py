@@ -48,16 +48,14 @@ class KademliaReg:
         # retrieve from zookeeper list of other registries for DHT init
         nodes = []
         registries = zk.get_children('registries')
-        print(registries)
         for registry in registries:
-            print(registry)
             data = zk.get_value('registries/'+registry)
-            print(data)
             parts = data.split(':')
             if ip not in parts[0]:
                 nodes.append((parts[0], int(parts[1])))
 
         print("Initializing Kademlia connection")
+        print(nodes)
         self.kad_client = KademliaClient(int(self.args.dht_port), nodes)
 
     def start(self):
