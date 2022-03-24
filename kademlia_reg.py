@@ -55,14 +55,10 @@ class KademliaReg:
             print(data)
             parts = data.split(':')
             if ip not in parts[0]:
-                nodes.append((parts[0], parts[1]))
+                nodes.append((parts[0], int(parts[1])))
 
         print("Initializing Kademlia connection")
-        if len(nodes) > 0:
-            print(nodes)
-            self.kad_client = KademliaClient(self.args.dht_port, nodes)
-        else:
-            self.kad_client = KademliaClient(self.args.dht_port)
+        self.kad_client = KademliaClient(int(self.args.dht_port), nodes)
 
     def start(self):
         print("Registry starting")
