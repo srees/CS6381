@@ -44,7 +44,7 @@ class KademliaReg:
         # store our information with zookeeper
         segments = ip.split('.')
         zk.create_znode('registries/registry'+segments[3], reg_ip_port)
-
+        time.sleep(1)
         # retrieve from zookeeper list of other registries for DHT init
         nodes = []
         registries = zk.get_children('registries')
