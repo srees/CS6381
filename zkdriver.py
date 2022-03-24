@@ -233,5 +233,5 @@ class ZKDriver:
         return self.zk.get_children(path)
 
     def get_value(self, name):
-        data, stat = self.zk.get_znode_value(name)
+        data, stat = self.get_znode_value(name)
         return format(data)
