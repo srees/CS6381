@@ -45,7 +45,8 @@ class KademliaReg:
         zk = ZKDriver(zkargs)
         zk.init_driver()
         zk.start_session()
-        zk.create_znode('registries/registry', self.REP_url)
+        segments = publicip.get_ip_address().split('.')
+        zk.create_znode('registries/registry'+segments[3], self.REP_url)
 
 
         print("Initializing Kademlia registry object")
