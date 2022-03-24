@@ -47,7 +47,7 @@ class KademliaReg:
         time.sleep(10)
         # retrieve from zookeeper list of other registries for DHT init
         nodes = []
-        registries = zk.get_children('registries')  # for some reason we can't get the data with this call. :/
+        registries = zk.get_children('registries')
         print(registries)
         for registry in registries:
             data = zk.get_znode_value('registries/'+registry)

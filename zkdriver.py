@@ -230,4 +230,4 @@ class ZKDriver:
             return
 
     def get_children(self, path):
-        return self.zk.get_children(path, include_data=True)
+        return self.zk.get_children(path)
