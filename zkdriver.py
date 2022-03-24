@@ -234,4 +234,4 @@ class ZKDriver:
 
     def get_value(self, name):
         data, stat = self.get_znode_value(name)
-        return format(data)
+        return data.decode('utf-8')
