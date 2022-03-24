@@ -1,3 +1,5 @@
+import types
+
 import zmq
 import json
 from topiclist import TopicList
@@ -37,7 +39,9 @@ class KademliaReg:
         self.topics = {}
         self.die = False
 
-        zkargs = {'zkIPAddr': args.bootstrap, 'zkPort': args.bootstrap_port}
+        zkargs = types.SimpleNamespace()
+        zkargs.zkIPAddr = args.bootstrap
+        zkargs.zkPort = args.bootstrap_port
         zk = ZKDriver(zkargs)
         zk.init_driver()
         zk.start_session()
