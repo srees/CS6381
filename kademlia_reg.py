@@ -6,6 +6,7 @@ from kademlia_client import KademliaClient
 import time
 import logging
 import copy
+from zkdriver import ZKDriver
 
 print("Current libzmq version is %s" % zmq.zmq_version())
 print("Current  pyzmq version is %s" % zmq.__version__)
@@ -35,6 +36,13 @@ class KademliaReg:
         self.subs = []
         self.topics = {}
         self.die = False
+
+        zkargs = {'zkIPAddr': args.bootstrap, 'zkPort': args.bootstrap_port}
+        zk = ZKDriver(zkargs)
+        zk.init_driver()
+        zk.start_session()
+        zk.create_znode('registries/registry', self.REP_url)
+
 
         print("Initializing Kademlia registry object")
 
