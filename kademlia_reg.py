@@ -49,6 +49,7 @@ class KademliaReg:
         nodes = []
         registries = zk.get_children('registries', include_data=True)
         for registry in registries:
+            print(registry)
             parts = registry[1].split(':')
             if ip not in parts[0]:
                 nodes.append((parts[0], parts[1]))
