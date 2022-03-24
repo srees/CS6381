@@ -169,7 +169,7 @@ class ZKDriver:
             # Note that we do not check here if the node already exists. If it does,
             # then we will get an exception
             print("Creating an ephemeral znode {} with value {}".format(zkName, zkVal))
-            self.zk.create(zkName, value=bytes(zkVal,'utf-8'), ephemeral=True, makepath=True, timeout=1)
+            self.zk.create(zkName, value=bytes(zkVal, 'utf-8'), ephemeral=True, makepath=True, timeout=1)
 
         except:
             print("Exception thrown in create (): ", sys.exc_info()[0])
