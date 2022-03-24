@@ -18,7 +18,6 @@
 import zmq
 import publicip
 import time
-from zmq.utils.monitor import recv_monitor_message
 import threading
 
 
@@ -30,20 +29,18 @@ class Subscriber:
         self.args = args
         self.pubs = []
         self.SUB_sockets = {}
+        self.ip = publicip.get_ip_address()
         self.poller = zmq.Poller()
         self.context = zmq.Context()
+
         self.REP_socket = self.context.socket(zmq.REP)
-        self.ip = publicip.get_ip_address()
         self.REP_url = 'tcp://' + self.ip + ':' + self.args.bind
         print("Binding REP to " + self.REP_url)
         self.REP_socket.bind(self.REP_url)
-        self.REQ_socket = self.context.socket(zmq.REQ)
-        self.monitor = self.REQ_socket.get_monitor_socket()
-        self.REQ_url = 'tcp://' + self.args.registry + ':' + self.args.port
-        self.REQ_socket.connect(self.REQ_url)
-        self.current_registry = int(self.args.registry[-1])
+
         self.topics = []
         self.die = False
+        self.registry = None
 
     def start(self, topics, function):
         self.wait()  # registry will give us the go by sending us the list of publishers
@@ -61,9 +58,6 @@ class Subscriber:
         print("Starting update loop thread")
         updates = threading.Thread(target=self.get_updates)
         updates.start()
-        print("Starting monitor loop thread")
-        monitoring = threading.Thread(target=self.do_monitor)
-        monitoring.start()
         print("Starting subscriber listen loop...")
         while True and not self.die:
             try:
@@ -93,13 +87,7 @@ class Subscriber:
     def get_updates(self):
         while not self.die:
             try:
-                print("Fetching updates from registry...")
-                data = {'role': 'updatesub', 'topics': []}
-                self.REQ_socket.send_json(data)
-                print("Request sent")
-                updates = self.REQ_socket.recv_json()
-                print("Reply received")
-                print(updates)
+                updates = self.registry.get_updates()
                 # add in any new publishers
                 update_strings = []
                 for pub in updates:
@@ -130,43 +118,5 @@ class Subscriber:
                 break
         print("Exiting update loop.")
 
-    def do_monitor(self):
-        EVENT_MAP = {}
-        # print("Event names:")
-        for name in dir(zmq):
-            if name.startswith('EVENT_'):
-                value = getattr(zmq, name)
-                # print("%21s : %4i" % (name, value))
-                EVENT_MAP[value] = name
-        while not self.die and self.monitor.poll():
-            evt = recv_monitor_message(self.monitor)
-            evt.update({'description': EVENT_MAP[evt['event']]})
-            if evt['event'] == zmq.EVENT_MONITOR_STOPPED:
-                break
-            if evt['event'] == zmq.EVENT_DISCONNECTED:
-                connected = False
-                self.REQ_socket.disconnect(self.REQ_url)
-                self.REQ_socket.close(0)
-                self.REQ_socket = self.context.socket(zmq.REQ)
-                tries = 1
-                print("Registry failure! Checking other registries...")
-                while connected is False:
-                    tries += 1
-                    if self.current_registry < int(self.args.registries):
-                        self.current_registry += 1
-                    else:
-                        self.current_registry = 1
-                    self.args.registry = self.args.registry[:-1] + str(self.current_registry)
-                    self.REQ_url = 'tcp://' + self.args.registry + ':' + self.args.port
-                    print("Trying " + self.REQ_url)
-                    if self.REQ_socket.connect(self.REQ_url):
-                        self.monitor = self.REQ_socket.get_monitor_socket()
-                        connected = True
-                    else:
-                        if tries == int(self.args.registries):
-                            print("All registries exhausted!")
-                            self.REQ_socket.close(0)
-                            self.monitor.close()
-                            break
-        self.monitor.close()
-        print("Exiting monitor.")
+    def set_registry(self, registry):
+        self.registry = registry

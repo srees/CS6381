@@ -16,7 +16,6 @@
 import zmq
 import publicip
 import time
-from zmq.utils.monitor import recv_monitor_message
 import threading
 
 
@@ -25,16 +24,17 @@ class Broker:
         self.args = args
         self.pubs = []
         self.SUB_sockets = {}
+        self.ip = publicip.get_ip_address()
         self.poller = zmq.Poller()
         self.context = zmq.Context()
 
         self.REP_socket = self.context.socket(zmq.REP)
-        self.REP_url = 'tcp://' + publicip.get_ip_address() + ':' + self.args.bind
+        self.REP_url = 'tcp://' + self.ip + ':' + self.args.bind
         print("Binding REP to " + self.REP_url)
         self.REP_socket.bind(self.REP_url)
 
         self.PUB_socket = self.context.socket(zmq.PUB)
-        self.PUB_url = 'tcp://' + publicip.get_ip_address() + ':' + str(int(self.args.bind) + 1)
+        self.PUB_url = 'tcp://' + self.ip + ':' + str(int(self.args.bind) + 1)
         print("Binding PUB to " + self.PUB_url)
         self.PUB_socket.bind(self.PUB_url)
 

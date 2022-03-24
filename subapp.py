@@ -71,10 +71,9 @@ def parseCmdLineArgs():
     # Here I am showing one example of adding a command line
     # arg for the dissemination strategy. Feel free to modify. Add more
     # options for all the things you need.
-    parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP Address of the registry")
-    parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
+    parser.add_argument("-r", "--zookeeper", default="10.0.0.1", help="IP Address of Zookeeper")
+    parser.add_argument("-p", "--zookeeper_port", default="2181", help="Port of Zookeeper")
     parser.add_argument("-b", "--bind", default="5580", help="Port to bind for registry start")
-    parser.add_argument("-n", "--registries", default=1, help="Number of registry nodes")
 
     return parser.parse_args()
 
@@ -108,6 +107,10 @@ def main():
 
     # register with lookup
     registry.register(my_topics)
+
+    # broker needs to have access to the registry to get updates
+    # yeah, there are cleaner ways to do this...
+    sub.set_registry(registry)
 
     # wait for kickstart event from registry
     print("Waiting for start from registry")

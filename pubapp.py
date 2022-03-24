@@ -75,8 +75,8 @@ def parseCmdLineArgs():
     # Here I am showing one example of adding a command line
     # arg for the dissemination strategy. Feel free to modify. Add more
     # options for all the things you need.
-    parser.add_argument("-r", "--registry", default="127.0.0.1", help="IP Address of the registry")
-    parser.add_argument("-p", "--port", default="5550", help="Port of the registry")
+    parser.add_argument("-r", "--zookeeper", default="10.0.0.1", help="IP Address of Zookeeper")
+    parser.add_argument("-p", "--zookeeper_port", default="2181", help="Port of Zookeeper")
     parser.add_argument("-b", "--bind", default="5570", help="Port to publish topic on")
     parser.add_argument("-c", "--count", default="1000", help="Number of publish iterations")
 
