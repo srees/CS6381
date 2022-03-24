@@ -41,7 +41,7 @@ class KademliaReg:
 
         zkargs = types.SimpleNamespace()
         zkargs.zkIPAddr = args.bootstrap
-        zkargs.zkPort = args.bootstrap_port
+        zkargs.zkPort = '2181' # args.bootstrap_port
         zk = ZKDriver(zkargs)
         zk.init_driver()
         zk.start_session()
