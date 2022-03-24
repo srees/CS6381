@@ -193,7 +193,7 @@ class ZKDriver:
                 # value,stat = self.zk.get (self.zkName, watch=self.watch)
                 value, stat = self.zk.get(zkName)
                 print(("Details of znode {}: value = {}, stat = {}".format(zkName, value, stat)))
-                return format(value)
+                return value, stat
             else:
                 print("{} znode does not exist, why?".format(zkName))
 
@@ -231,3 +231,7 @@ class ZKDriver:
 
     def get_children(self, path):
         return self.zk.get_children(path)
+
+    def get_value(self, name):
+        data, stat = self.zk.get_znode_value(name)
+        return format(data)

@@ -51,7 +51,7 @@ class KademliaReg:
         print(registries)
         for registry in registries:
             print(registry)
-            data, stat = zk.get_znode_value('registries/'+registry)
+            data = zk.get_value('registries/'+registry)
             print(data)
             parts = data.split(':')
             if ip not in parts[0]:
