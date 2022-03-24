@@ -47,10 +47,11 @@ class KademliaReg:
         time.sleep(10)
         # retrieve from zookeeper list of other registries for DHT init
         nodes = []
-        registries = zk.get_children('registries')
+        registries = zk.get_children('registries')  # for some reason we can't get the data with this call. :/
+        print(registries)
         for registry in registries:
-            print(registry)
-            parts = registry[1].split(':')
+            data = zk.get_znode_value('registries/'+registry)
+            parts = data.split(':')
             if ip not in parts[0]:
                 nodes.append((parts[0], parts[1]))
 
