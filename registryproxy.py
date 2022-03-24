@@ -41,7 +41,7 @@ class RegistryProxy:
 
     def register(self, topics):
         self.topics = topics
-        print("Registering with " + self.connection_string + '...')
+        print("Registering with " + self.REQ_url + '...')
         data = {'role': self.args.role, 'ip': publicip.get_ip_address(), 'port': str(int(self.args.bind) + 1), 'topics': topics}
         self.REQ_socket.send_json(data)
         print("Registration sent")
@@ -60,7 +60,7 @@ class RegistryProxy:
     def get_updates(self):
         if self.connected:
             print("Fetching updates from registry...")
-            if self.args.role is 'broker':
+            if self.args.role == 'broker':
                 role = 'updatebroker'
             else:
                 role = 'updatesub'
