@@ -58,7 +58,11 @@ class KademliaReg:
                 nodes.append((parts[0], parts[1]))
 
         print("Initializing Kademlia connection")
-        self.kad_client = KademliaClient(self.args.dht_port, nodes)
+        if len(nodes) > 0:
+            print(nodes)
+            self.kad_client = KademliaClient(self.args.dht_port, nodes)
+        else:
+            self.kad_client = KademliaClient(self.args.dht_port)
 
     def start(self):
         print("Registry starting")
