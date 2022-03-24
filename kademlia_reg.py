@@ -52,7 +52,7 @@ class KademliaReg:
             data = zk.get_value('registries/'+registry)
             parts = data.split(':')
             if ip not in parts[0]:
-                nodes.append((parts[0], int(parts[1])))
+                nodes.append((parts[0], int(self.args.dht_port)))
 
         print("Initializing Kademlia connection")
         print(nodes)
