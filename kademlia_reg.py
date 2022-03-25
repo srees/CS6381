@@ -216,19 +216,17 @@ class KademliaReg:
     def fetch_for_sub(self, topics):
         if self.args.disseminate == 'broker':
             # check zookeeper for elected broker
-            leader = None
-            while not leader:
-                response = self.election.contenders()
-                if response:
-                    leader = response[0]
-                    print(leader)
-                else:
-                    time.sleep(1)
-                    print("Waiting for broker")
+            response = self.election.contenders()
+            if response:
+                leader = response[0]
+                print("Leader found:")
+                print(leader)
+                parts = leader.split(':')
+                broker = {'ip': parts[0], 'port': parts[1]}
+            else:
+                print("No broker/leader found.")
+                broker = {}
             print("Registry passing broker information to subscribers:")
-            parts = leader.split(':')
-            broker = {'ip': parts[0], 'port': parts[1]}
-            print("Found broker: ")
             print(broker)
             return broker
         else:
