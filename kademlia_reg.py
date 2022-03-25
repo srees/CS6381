@@ -222,10 +222,10 @@ class KademliaReg:
                 print("Leader found:")
                 print(leader)
                 parts = leader.split(':')
-                broker = {'ip': parts[0], 'port': parts[1]}
+                broker = [{'ip': parts[0], 'port': parts[1]}]
             else:
                 print("No broker/leader found.")
-                broker = {}
+                broker = []
             print("Registry passing broker information to subscribers:")
             print(broker)
             return broker
