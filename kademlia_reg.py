@@ -44,6 +44,7 @@ class KademliaReg:
         # store our information with zookeeper
         segments = ip.split('.')
         self.zk.create_znode('registries/registry'+segments[3], reg_ip_port)
+        self.election = self.zk.zk.Election('brokers/broker', reg_ip_port)
 
         # retrieve from zookeeper list of other registries for DHT init
         nodes = []
@@ -215,7 +216,8 @@ class KademliaReg:
     def fetch_for_sub(self, topics):
         if self.args.disseminate == 'broker':
             # check zookeeper for elected broker
-            # self.zk.
+            leader = self.election.contenders[0]
+            print(leader)
             print("Registry passing broker information to subscribers:")
             result = self.kad_client.get("broker")
             while not result:

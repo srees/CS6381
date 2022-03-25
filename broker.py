@@ -19,7 +19,6 @@ import time
 import threading
 from zkdriver import ZKDriver
 import types
-import kazoo.recipe.election
 
 
 class Broker:
@@ -52,7 +51,6 @@ class Broker:
         self.zk.init_driver()
         self.zk.start_session()
         self.election = self.zk.zk.Election('brokers/broker', publish_ip_port)
-        # self.zk.create_znode('brokers/broker'+segments[3], publish_ip_port)
 
         self.die = False
         self.registry = None
