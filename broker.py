@@ -56,10 +56,10 @@ class Broker:
         self.registry = None
 
     def start(self):
+        self.wait()
         self.election.run(self.leader_start)
 
     def leader_start(self):
-        self.wait()  # wait for registry to give us the go
         # first subscribe to publishers
         for pub in self.pubs:
             connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
