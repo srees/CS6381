@@ -17,6 +17,9 @@ import zmq
 import publicip
 import time
 import threading
+from zkdriver import ZKDriver
+import types
+import kazoo.recipe.election
 
 
 class Broker:
@@ -38,10 +41,26 @@ class Broker:
         print("Binding PUB to " + self.PUB_url)
         self.PUB_socket.bind(self.PUB_url)
 
+        # add self to zookeeper for broker election
+        print("Initializing Zookeeper connection")
+        zkargs = types.SimpleNamespace()
+        zkargs.zkIPAddr = args.zookeeper
+        zkargs.zkPort = args.zookeeper_port
+        segments = self.ip.split('.')
+        publish_ip_port = self.ip + ":" + str(int(self.args.bind) + 1)
+        self.zk = ZKDriver(zkargs)
+        self.zk.init_driver()
+        self.zk.start_session()
+        self.election = self.zk.zk.Election('brokers/broker'+segments[3], publish_ip_port)
+        # self.zk.create_znode('brokers/broker'+segments[3], publish_ip_port)
+
         self.die = False
         self.registry = None
 
     def start(self):
+        self.election.run(self.leader_start)
+
+    def leader_start(self):
         self.wait()  # wait for registry to give us the go
         # first subscribe to publishers
         for pub in self.pubs:

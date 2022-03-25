@@ -38,18 +38,18 @@ class KademliaReg:
         zkargs = types.SimpleNamespace()
         zkargs.zkIPAddr = args.zookeeper
         zkargs.zkPort = args.zookeeper_port
-        zk = ZKDriver(zkargs)
-        zk.init_driver()
-        zk.start_session()
+        self.zk = ZKDriver(zkargs)
+        self.zk.init_driver()
+        self.zk.start_session()
         # store our information with zookeeper
         segments = ip.split('.')
-        zk.create_znode('registries/registry'+segments[3], reg_ip_port)
+        self.zk.create_znode('registries/registry'+segments[3], reg_ip_port)
 
         # retrieve from zookeeper list of other registries for DHT init
         nodes = []
-        registries = zk.get_children('registries')
+        registries = self.zk.get_children('registries')
         for registry in registries:
-            data = zk.get_value('registries/'+registry)
+            data = self.zk.get_value('registries/'+registry)
             parts = data.split(':')
             if ip not in parts[0]:
                 nodes.append((parts[0], int(self.args.dht_port)))
@@ -214,6 +214,8 @@ class KademliaReg:
 
     def fetch_for_sub(self, topics):
         if self.args.disseminate == 'broker':
+            # check zookeeper for elected broker
+            # self.zk.
             print("Registry passing broker information to subscribers:")
             result = self.kad_client.get("broker")
             while not result:
