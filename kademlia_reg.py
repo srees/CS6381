@@ -216,7 +216,7 @@ class KademliaReg:
     def fetch_for_sub(self, topics):
         if self.args.disseminate == 'broker':
             # check zookeeper for elected broker
-            leader = self.election.contenders[0]
+            leader = self.election.contenders()[0]
             print(leader)
             print("Registry passing broker information to subscribers:")
             result = self.kad_client.get("broker")
