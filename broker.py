@@ -51,7 +51,7 @@ class Broker:
         self.zk = ZKDriver(zkargs)
         self.zk.init_driver()
         self.zk.start_session()
-        self.election = self.zk.zk.Election('brokers/broker'+segments[3], publish_ip_port)
+        self.election = self.zk.zk.Election('brokers/broker', publish_ip_port)
         # self.zk.create_znode('brokers/broker'+segments[3], publish_ip_port)
 
         self.die = False
