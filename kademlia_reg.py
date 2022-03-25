@@ -69,7 +69,7 @@ class KademliaReg:
                 print(message)
                 if message['role'] == 'broker': # assuming only one broker at this point in the code
                     # register with DHT
-                    self.store_info(['broker'], {'ip': message['ip'], 'port': message['port']}, True)
+                    self.store_info(['broker'], {'ip': message['ip'], 'port': message['port']})
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     broker = {'ip': message['ip'], 'port': message['port']}
@@ -216,14 +216,18 @@ class KademliaReg:
     def fetch_for_sub(self, topics):
         if self.args.disseminate == 'broker':
             # check zookeeper for elected broker
-            leader = self.election.contenders()[0]
-            print(leader)
+            leader = None
+            while not leader:
+                response = self.election.contenders()
+                if response:
+                    leader = response[0]
+                    print(leader)
+                else:
+                    time.sleep(1)
+                    print("Waiting for broker")
             print("Registry passing broker information to subscribers:")
-            result = self.kad_client.get("broker")
-            while not result:
-                time.sleep(1)
-                result = self.kad_client.get("broker")
-            broker = json.loads(self.kad_client.get("broker"))
+            parts = leader.split(':')
+            broker = {'ip': parts[0], 'port': parts[1]}
             print("Found broker: ")
             print(broker)
             return broker
