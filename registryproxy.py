@@ -23,7 +23,8 @@ class RegistryProxy:
         self.zk.init_driver()
         self.zk.start_session()
         registries = self.zk.get_children('registries')
-        self.current_registry = self.zk.get_value('registries/'+registries[0])
+        while registries.count() < 1:
+            self.current_registry = self.zk.get_value('registries/'+registries[0])
 
         # Connect to registry
         print("Connecting to " + self.current_registry)
