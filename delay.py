@@ -16,6 +16,7 @@ def parseCmdLineArgs():
 ###################################
 def main():
     args = parseCmdLineArgs()
+    print("Adding " + args.delay + " seconds...")
     time.sleep(int(args.delay))
 
 
