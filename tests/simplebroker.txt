@@ -3,7 +3,7 @@ h2 python3 -u registryapp.py -d broker &> h2.out &
 h3 python3 -u registryapp.py -d broker &> h3.out &
 h4 python3 -u registryapp.py -d broker &> h4.out &
 h5 python3 -u registryapp.py -d broker &> h5.out &
-h6 python3 -u registryapp.py -d broker &> h6.out &
+h6 python3 -u brokerapp.py -d broker &> h6.out &
 h7 python3 -u brokerapp.py &> h7.out &
 h8 python3 -u brokerapp.py &> h8.out &
 h9 python3 -u brokerapp.py &> h9.out &
@@ -16,7 +16,7 @@ h15 python3 -u pubapp.py &> h15.out &
 h16 python3 -u pubapp.py &> h16.out &
 h17 python3 -u pubapp.py &> h17.out &
 h18 python3 -u pubapp.py &> h18.out &
-h19 python3 -u pubapp.py &> h19.out &
+h19 python3 -u subapp.py &> h19.out &
 h20 python3 -u subapp.py &> h20.out &
 h21 python3 -u subapp.py &> h21.out &
 h22 python3 -u subapp.py &> h22.out &
@@ -25,5 +25,16 @@ h24 python3 -u subapp.py &> h24.out &
 h25 python3 -u subapp.py &> h25.out &
 h26 python3 -u subapp.py &> h26.out &
 h27 python3 -u subapp.py &> h27.out &
-h28 python3 -u subapp.py &> h28.out &
-h29 python3 -u subapp.py &> h29.out &
+h1 python3 -u delay.py -d 5
+h2 kill %python3
+h1 python3 -u delay.py -d 3
+h6 kill %python3
+h1 python3 -u delay.py -d 3
+h10 kill %python3
+h19 kill %python3
+h28 python3 -u registryapp.py &> h28.out &
+h1 python3 -u delay.py -d 3
+h29 python3 -u brokerapp.py &> h29.out &
+h1 python3 -u delay.py -d 3
+h30 python3 -u pubapp.py &> h30.out &
+h31 python3 -u subapp.py &> h31.out &
