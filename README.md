@@ -1,46 +1,31 @@
-# CS6381 Programming Assignment 2
+# CS6381 Programming Assignment 3
 
-The tests folder contains a file named 'sourcegen.xlsx' - this was used to generate the command source files for mininet consistent with my applications. The tests in the same folder are the ones I ran for PA2 (and PA1), though I did not report on the ones with only two pub/sub hosts.
+The tests folder contains a file named 'sourcegen.xlsx' - this was used to generate the command source files for mininet consistent with my applications. The tests are essentially the same as for PA1 and 2, however there are fundamental differences from attempting to embed delays and failures. As this required some customization of the generated tests, I limited my output to three cases this time - direct, broker, and one with an explicit fail of the primary broker.
 
-Execution of this system can be accomplished by running these apps in any order, concurrently:
-- registryapp.py (must specify dissemination method number of other registries)
-- brokerapp.py (if desired, requires registry IP, number of registries)
-- subapp.py (as many of these as desired, requires registry IP and number of registries)
-- pubapp.py (as many of these as desired, requires registry IP)
+Execution of this system can be accomplished by running zookeeper, then these apps in any order, concurrently:
+- registryapp.py (must specify dissemination method if using broker)
+- brokerapp.py (if desired)
+- subapp.py
+- pubapp.py
 
-The system defaults to 1000 publish calls per publisher with random topics and data. The system assumes the registry IP addresses are the first [x] IPs starting at 10.0.0.1 for the number of registries provided.
+The system defaults to 1000 publish calls per publisher with random topics and data. The system assumes the zookeeper is at 10.0.0.1 and queries zookeeper for registries and brokers.
 
 Initial start should see all publishers registered with the same registry. They will detect loss of registry and compensate after startup.
 Publisher stop requests are not coded to detect loss of registry at this time. There is a known issue where writes to the registry from secondary nodes do not function, though reads seem fine.
 
 For most experiments (unless otherwise noted) my mininet setup was:
-mn --topo=single,{num hosts} --link=tc,bw=100,delay=10ms
+mn --topo=single,{num hosts}
 
 # Results
 Comparisons between time to broker vs time to subscriber were not examined in this assignment.
 
-Running with just 10 hosts gives expected results of very fast transmission times, and with the direct method outperforming the broker method due to the extra network hop.
+Link modifications were not included in this time, as I was more interested in seeing how failures impacted the system. I ran with approximately 30 hosts for each run - a few registries, a few brokers, and several each of publishers and subscribers.
 
-I loaded the system with 100 pub/sub hosts, and tested these in a balanced configuration (50/50), a publisher heavy configuration (90/10) and a subscriber heavy configuration (90/10).
+<img src="PA3Graph.png" title="Tail Latencies" caption="Tail Latencies"/>
 
-<img src="PA2GraphWide.png" title="Tail Latencies" caption="Tail Latencies"/>
-
-<img src="PA2GraphZoom.png" title="Tail Latencies" caption="Tail Latencies"/>
-
-For a loaded system, the worst performers were similar:
-- A balanced system with a broker using a linear network configuration
-- A balanced system with direct dissemination on a single topology
-
-We had some intermediate results from a publisher heavy system with direct dissemination.
-We had significant outliers with the publisher heavy system with broker dissemination that took an otherwise good performance and trashed the curve.
-
-The best performer was a subscriber heavy load using direct dissemination.
-
-I expected the results from PA2 to mirror PA1, and they didn't at all. There is a lot of variability in the number of rows of data collected for each experiment, and I believe that may make the comparisons harder. Memory and CPU limitations also reduce the reliability of the data collected.
-
-When all this was done, I took the single topology with 100 hosts (balanced broker) and tested this in the linear(102) and tree(depth=3,fanout=5) topologies. The tree topology had significantly faster performance, and the linear topology was by far the worst of the entire experiment. The reason for this poor peformance is most likely due to pegging out the virtual machines CPU and memory, and so this experiment should be repeated on a more powerful machine.
+Each case ran very quickly, in the order of 5 milliseconds on average. The latency curves were very smooth with the broker taking a little longer as expected. I expected to see bumps in the graphs for the broker failures especially. However, there were none! The reason for this is the architecture of my system. When a broker fails, there is nothing transmitted to the subscriber, and therefore no measurable time distortion. The data is simply lost while the subscriber waits to discover the new broker information.
 
 # Conclusion
-The performance characteristics of the system depend heavily on the composition and size of the system. With that in mind, however, the only time the broker method performed significantly worse was in a publisher heavy configuration, which is atypical for the purposes of pub/sub.
+Interruptions in the flow of data affected the success of data delivery, not the transmission times.
 
-Video demonstration can be found until the end of June, 2022 at https://vanderbilt.zoom.us/rec/share/LygSlvANYf5G1QMFhW8cEchJovpGGyFhB1QBLUrNzPAUlz6Y-WLdSVuL912p3IPE.9ojv6vI1ddEn-8ay?startTime=1647740786000
+Video demonstration can be found until the middle of July, 2022 at https://vanderbilt.zoom.us/rec/share/ds2Za2bUAD7S8kDvtSXfccfbBwji2kmcIwh-E0AwW38fz56sCfHGiRS01GO_zE_W.KPnl3KWt7HL4cNON?startTime=1649756057000
