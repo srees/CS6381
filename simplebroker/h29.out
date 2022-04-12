@@ -1,0 +1,82 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Getting broker object
+Binding REP to tcp://10.0.0.29:5560
+Binding PUB to tcp://10.0.0.29:5561
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+Current state is now = CONNECTED
+Getting registry proxy
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+Current state is now = CONNECTED
+['registry5', 'registry28', 'registry4', 'registry3']
+Checking if registries/registry5 exists (it better be)
+registries/registry5 znode indeed exists; get value
+Connecting to 10.0.0.5:5550
+Starting registry monitor loop thread
+Registering with tcp://10.0.0.5:5550...
+Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
+Event: {'event': 1, 'value': 27, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
+Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
+Registration sent
+Registration received
+Waiting for start from registry
+Traceback (most recent call last):
+  File "brokerapp.py", line 102, in <module>
+    main()
+  File "brokerapp.py", line 90, in main
+    broker.start()
+  File "/home/srees/CS6381/broker.py", line 60, in start
+    self.election.run(self.leader_start)
+  File "/usr/local/lib/python3.8/dist-packages/kazoo/recipe/election.py", line 53, in run
+    with self.lock:
+  File "/usr/local/lib/python3.8/dist-packages/kazoo/recipe/lock.py", line 409, in __enter__
+    self.acquire()
+  File "/usr/local/lib/python3.8/dist-packages/kazoo/recipe/lock.py", line 216, in acquire
+    six.reraise(exc_info[0], exc_info[1], exc_info[2])
+  File "/usr/lib/python3/dist-packages/six.py", line 703, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/kazoo/recipe/lock.py", line 202, in acquire
+    gotten = retry(
+  File "/usr/local/lib/python3.8/dist-packages/kazoo/retry.py", line 126, in __call__
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/kazoo/recipe/lock.py", line 243, in _inner_acquire
+    node = self._find_node()
+  File "/usr/local/lib/python3.8/dist-packages/kazoo/recipe/lock.py", line 327, in _find_node
+    children = self.client.get_children(self.path)
+  File "/usr/local/lib/python3.8/dist-packages/kazoo/client.py", line 1218, in get_children
+    return self.get_children_async(path, watch=watch,
+  File "/usr/local/lib/python3.8/dist-packages/kazoo/handlers/utils.py", line 75, in get
+    raise self._exception
+kazoo.exceptions.NoNodeError
+WARNING:kazoo.client:Connection dropped: socket connection broken
+WARNING:kazoo.client:Transition to CONNECTING
+Current state is now = SUSPENDED
+WARNING:kazoo.client:Connection dropped: socket connection broken
+WARNING:kazoo.client:Transition to CONNECTING
+Current state is now = SUSPENDED
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused

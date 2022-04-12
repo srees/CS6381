@@ -1,0 +1,35 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Subscriber interested in listening for these topics: ['pressure', 'sound', 'smell', 'light']
+Getting subscriber object
+Binding REP to tcp://10.0.0.25:5580
+Getting registry proxy
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+Current state is now = CONNECTED
+Traceback (most recent call last):
+  File "subapp.py", line 140, in <module>
+    main()
+  File "subapp.py", line 106, in main
+    registry = config.get_registry()
+  File "/home/srees/CS6381/configurator.py", line 78, in get_registry
+    return RegistryProxy(self.arguments)
+  File "/home/srees/CS6381/registryproxy.py", line 25, in __init__
+    registries = self.zk.get_children('registries')
+  File "/home/srees/CS6381/zkdriver.py", line 233, in get_children
+    return self.zk.get_children(path)
+  File "/usr/local/lib/python3.8/dist-packages/kazoo/client.py", line 1218, in get_children
+    return self.get_children_async(path, watch=watch,
+  File "/usr/local/lib/python3.8/dist-packages/kazoo/handlers/utils.py", line 75, in get
+    raise self._exception
+kazoo.exceptions.NoNodeError

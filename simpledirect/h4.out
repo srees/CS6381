@@ -1,0 +1,306 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Getting registry object
+Initializing registry object
+Binding REP to tcp://10.0.0.4:5550
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+Current state is now = CONNECTED
+Creating an ephemeral znode registries/registry4 with value 10.0.0.4:5550
+Checking if registries/registry2 exists (it better be)
+registries/registry2 znode indeed exists; get value
+Checking if registries/registry4 exists (it better be)
+registries/registry4 znode indeed exists; get value
+Checking if registries/registry3 exists (it better be)
+registries/registry3 znode indeed exists; get value
+Initializing Kademlia connection
+[('10.0.0.2', 8468), ('10.0.0.3', 8468)]
+2022-04-12 02:41:00,179 - kademlia.network - INFO - Node 1104987261588206267906142251313783394459429099969 listening on 0.0.0.0:8468
+INFO:kademlia.network:Node 1104987261588206267906142251313783394459429099969 listening on 0.0.0.0:8468
+2022-04-12 02:41:00,179 - kademlia.network - DEBUG - Refreshing routing table
+DEBUG:kademlia.network:Refreshing routing table
+2022-04-12 02:41:00,179 - kademlia.network - DEBUG - Attempting to bootstrap node with 2 initial contacts
+DEBUG:kademlia.network:Attempting to bootstrap node with 2 initial contacts
+2022-04-12 02:41:00,188 - kademlia.protocol - INFO - never seen 10.0.0.2:8468 before, adding to router
+INFO:kademlia.protocol:never seen 10.0.0.2:8468 before, adding to router
+2022-04-12 02:41:00,191 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.13", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.2', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.13", "port": "5571"}]'
+2022-04-12 02:41:00,200 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing '7033e90fcdda169d2f5d08da17507b0c5db52029'='[{"ip": "10.0.0.13", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.2', 8468), storing '7033e90fcdda169d2f5d08da17507b0c5db52029'='[{"ip": "10.0.0.13", "port": "5571"}]'
+2022-04-12 02:41:00,208 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.2', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}]'
+2022-04-12 02:41:00,215 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing '3b4c0c6565e036a82beef4cf4d00366af668111f'='[{"ip": "10.0.0.13", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.2', 8468), storing '3b4c0c6565e036a82beef4cf4d00366af668111f'='[{"ip": "10.0.0.13", "port": "5571"}]'
+2022-04-12 02:41:00,234 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.8", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.2', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.8", "port": "5571"}]'
+2022-04-12 02:41:00,235 - kademlia.protocol - INFO - never seen 10.0.0.3:8468 before, adding to router
+INFO:kademlia.protocol:never seen 10.0.0.3:8468 before, adding to router
+2022-04-12 02:41:00,237 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.3', 8468), storing 'e4c1a71b066bed67f705260636e0539ee05bec6c'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.8", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.3', 8468), storing 'e4c1a71b066bed67f705260636e0539ee05bec6c'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.8", "port": "5571"}]'
+2022-04-12 02:41:00,258 - kademlia.crawling - INFO - creating spider with peers: [[273618200090302338860287519260169572944621735212, '10.0.0.2', 8468], [246925312235356436071548382087707783958051923366, '10.0.0.3', 8468]]
+INFO:kademlia.crawling:creating spider with peers: [[273618200090302338860287519260169572944621735212, '10.0.0.2', 8468], [246925312235356436071548382087707783958051923366, '10.0.0.3', 8468]]
+2022-04-12 02:41:00,259 - kademlia.crawling - INFO - crawling network with nearest: ([246925312235356436071548382087707783958051923366, '10.0.0.3', 8468], [273618200090302338860287519260169572944621735212, '10.0.0.2', 8468])
+INFO:kademlia.crawling:crawling network with nearest: ([246925312235356436071548382087707783958051923366, '10.0.0.3', 8468], [273618200090302338860287519260169572944621735212, '10.0.0.2', 8468])
+2022-04-12 02:41:00,260 - kademlia.protocol - INFO - got successful response from 10.0.0.3:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.3:8468
+2022-04-12 02:41:00,261 - kademlia.protocol - INFO - got successful response from 10.0.0.2:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.2:8468
+Registry start requested
+Registry starting
+Registry listening...
+2022-04-12 02:41:00,547 - kademlia.protocol - INFO - never seen 10.0.0.5:8468 before, adding to router
+INFO:kademlia.protocol:never seen 10.0.0.5:8468 before, adding to router
+2022-04-12 02:41:00,551 - kademlia.protocol - INFO - got successful response from 10.0.0.5:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.5:8468
+2022-04-12 02:41:00,551 - kademlia.protocol - INFO - got successful response from 10.0.0.5:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.5:8468
+2022-04-12 02:41:00,551 - kademlia.protocol - INFO - got successful response from 10.0.0.5:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.5:8468
+2022-04-12 02:41:00,555 - kademlia.protocol - INFO - got successful response from 10.0.0.5:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.5:8468
+2022-04-12 02:41:00,557 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,624 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,626 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,627 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '410acf5ec68df095da22759e4084f8df52c834c6'='[{"ip": "10.0.0.10", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '410acf5ec68df095da22759e4084f8df52c834c6'='[{"ip": "10.0.0.10", "port": "5571"}]'
+2022-04-12 02:41:00,629 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,631 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,632 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '5e2e97c3c7ba3035c6e6fc3a17e1bc22029c0c3e'='[{"ip": "10.0.0.10", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '5e2e97c3c7ba3035c6e6fc3a17e1bc22029c0c3e'='[{"ip": "10.0.0.10", "port": "5571"}]'
+2022-04-12 02:41:00,635 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,636 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+2022-04-12 02:41:00,638 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,639 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,641 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.10", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.10", "port": "5571"}]'
+2022-04-12 02:41:00,645 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,647 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '3b4c0c6565e036a82beef4cf4d00366af668111f'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '3b4c0c6565e036a82beef4cf4d00366af668111f'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+2022-04-12 02:41:00,650 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,651 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+2022-04-12 02:41:00,655 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,663 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '7033e90fcdda169d2f5d08da17507b0c5db52029'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '7033e90fcdda169d2f5d08da17507b0c5db52029'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+2022-04-12 02:41:00,665 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,667 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+2022-04-12 02:41:00,669 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,670 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'e4c1a71b066bed67f705260636e0539ee05bec6c'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'e4c1a71b066bed67f705260636e0539ee05bec6c'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}]'
+2022-04-12 02:41:00,672 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,675 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,679 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'a85df8270dcc374f90049a5ec9cdd449da2ed838'='[{"ip": "10.0.0.10", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'a85df8270dcc374f90049a5ec9cdd449da2ed838'='[{"ip": "10.0.0.10", "port": "5571"}]'
+2022-04-12 02:41:00,742 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,744 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'a85df8270dcc374f90049a5ec9cdd449da2ed838'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.12", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'a85df8270dcc374f90049a5ec9cdd449da2ed838'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.12", "port": "5571"}]'
+2022-04-12 02:41:00,960 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,961 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:41:00,963 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,964 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:41:00,966 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,967 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'e4c1a71b066bed67f705260636e0539ee05bec6c'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'e4c1a71b066bed67f705260636e0539ee05bec6c'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:41:00,970 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,971 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:41:00,972 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,973 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '7033e90fcdda169d2f5d08da17507b0c5db52029'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '7033e90fcdda169d2f5d08da17507b0c5db52029'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:41:00,975 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,976 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '3b4c0c6565e036a82beef4cf4d00366af668111f'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '3b4c0c6565e036a82beef4cf4d00366af668111f'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:41:00,982 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,983 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'a85df8270dcc374f90049a5ec9cdd449da2ed838'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.12", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'a85df8270dcc374f90049a5ec9cdd449da2ed838'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.12", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:41:00,986 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,987 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '5e2e97c3c7ba3035c6e6fc3a17e1bc22029c0c3e'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '5e2e97c3c7ba3035c6e6fc3a17e1bc22029c0c3e'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:41:00,988 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,989 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '410acf5ec68df095da22759e4084f8df52c834c6'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '410acf5ec68df095da22759e4084f8df52c834c6'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:41:00,991 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:00,992 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:41:02,043 - kademlia.protocol - INFO - finding neighbors of 273618200090302338860287519260169572944621735212 in local table
+INFO:kademlia.protocol:finding neighbors of 273618200090302338860287519260169572944621735212 in local table
+2022-04-12 02:41:02,044 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.2', 8468), storing '7033e90fcdda169d2f5d08da17507b0c5db52029'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.8", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.2', 8468), storing '7033e90fcdda169d2f5d08da17507b0c5db52029'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.8", "port": "5571"}]'
+2022-04-12 02:41:03,106 - kademlia.protocol - INFO - never seen 10.0.0.24:8468 before, adding to router
+INFO:kademlia.protocol:never seen 10.0.0.24:8468 before, adding to router
+2022-04-12 02:41:03,118 - kademlia.protocol - INFO - got successful response from 10.0.0.24:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.24:8468
+2022-04-12 02:41:03,118 - kademlia.protocol - INFO - got successful response from 10.0.0.24:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.24:8468
+2022-04-12 02:41:03,118 - kademlia.protocol - INFO - got successful response from 10.0.0.24:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.24:8468
+2022-04-12 02:41:03,119 - kademlia.protocol - INFO - got successful response from 10.0.0.24:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.24:8468
+2022-04-12 02:41:03,119 - kademlia.protocol - INFO - got successful response from 10.0.0.24:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.24:8468
+2022-04-12 02:41:03,119 - kademlia.protocol - INFO - got successful response from 10.0.0.24:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.24:8468
+2022-04-12 02:41:03,119 - kademlia.protocol - INFO - got successful response from 10.0.0.24:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.24:8468
+2022-04-12 02:41:03,119 - kademlia.protocol - INFO - got successful response from 10.0.0.24:8468
+INFO:kademlia.protocol:got successful response from 10.0.0.24:8468
+2022-04-12 02:41:05,468 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:08,107 - kademlia.protocol - INFO - finding neighbors of 1335591183856184309379940132361874780090147565338 in local table
+INFO:kademlia.protocol:finding neighbors of 1335591183856184309379940132361874780090147565338 in local table
+2022-04-12 02:41:10,476 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:41:15,485 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:20,491 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '5e2e97c3c7ba3035c6e6fc3a17e1bc22029c0c3e'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '5e2e97c3c7ba3035c6e6fc3a17e1bc22029c0c3e'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:41:20,493 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:25,499 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:41:25,501 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:30,514 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:41:30,517 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:41:35,527 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:42:43,754 - kademlia.protocol - INFO - finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+INFO:kademlia.protocol:finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+2022-04-12 02:42:44,479 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:42:48,762 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:42:48,764 - kademlia.protocol - INFO - finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+INFO:kademlia.protocol:finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+2022-04-12 02:42:49,483 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '410acf5ec68df095da22759e4084f8df52c834c6'='[{"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '410acf5ec68df095da22759e4084f8df52c834c6'='[{"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:42:49,487 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:42:53,783 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:42:54,491 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '5e2e97c3c7ba3035c6e6fc3a17e1bc22029c0c3e'='[{"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '5e2e97c3c7ba3035c6e6fc3a17e1bc22029c0c3e'='[{"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:42:54,492 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:42:55,790 - kademlia.protocol - INFO - finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+INFO:kademlia.protocol:finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+2022-04-12 02:42:59,499 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'c4a09fdcddec35a65aa97e0697b918681a3f4861'='[{"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:42:59,501 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:43:00,807 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:43:02,811 - kademlia.protocol - INFO - finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+INFO:kademlia.protocol:finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+2022-04-12 02:43:04,514 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:43:04,518 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:43:07,819 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:43:09,523 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '3b4c0c6565e036a82beef4cf4d00366af668111f'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '3b4c0c6565e036a82beef4cf4d00366af668111f'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:43:09,525 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:43:09,824 - kademlia.protocol - INFO - finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+INFO:kademlia.protocol:finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+2022-04-12 02:43:14,531 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:43:14,534 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:43:14,827 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:43:16,831 - kademlia.protocol - INFO - finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+INFO:kademlia.protocol:finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+2022-04-12 02:43:19,541 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:43:19,544 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:43:21,838 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:43:23,844 - kademlia.protocol - INFO - finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+INFO:kademlia.protocol:finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+2022-04-12 02:43:24,557 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'e4c1a71b066bed67f705260636e0539ee05bec6c'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'e4c1a71b066bed67f705260636e0539ee05bec6c'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.8", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:43:24,562 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:43:28,852 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:43:29,567 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'a85df8270dcc374f90049a5ec9cdd449da2ed838'='[{"ip": "10.0.0.12", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'a85df8270dcc374f90049a5ec9cdd449da2ed838'='[{"ip": "10.0.0.12", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:43:29,571 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:43:30,859 - kademlia.protocol - INFO - finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+INFO:kademlia.protocol:finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+2022-04-12 02:43:34,579 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:43:34,582 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:43:35,863 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:43:37,866 - kademlia.protocol - INFO - finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+INFO:kademlia.protocol:finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+2022-04-12 02:43:39,589 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '5e2e97c3c7ba3035c6e6fc3a17e1bc22029c0c3e'='[{"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '5e2e97c3c7ba3035c6e6fc3a17e1bc22029c0c3e'='[{"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:43:39,592 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:43:42,872 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:43:44,599 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing 'f98669cc9b81fea7bd27f04b1d03b400f511a9df'='[{"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:43:44,602 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:43:44,875 - kademlia.protocol - INFO - finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+INFO:kademlia.protocol:finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+2022-04-12 02:43:49,609 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.5', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.5', 8468), storing '6469ac84a89748bb67b923c833ed0c778a17aea3'='[{"ip": "10.0.0.13", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}]'
+2022-04-12 02:43:49,611 - kademlia.protocol - INFO - finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+INFO:kademlia.protocol:finding neighbors of 590591899930465397512534439985177301346352586191 in local table
+2022-04-12 02:43:49,879 - kademlia.protocol - DEBUG - got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+DEBUG:kademlia.protocol:got a store request from ('10.0.0.3', 8468), storing 'dfccc06f14414bff5a59be7fc90abf4404b47fc8'='[{"ip": "10.0.0.10", "port": "5571"}, {"ip": "10.0.0.14", "port": "5571"}, {"ip": "10.0.0.25", "port": "5571"}]'
+2022-04-12 02:43:51,884 - kademlia.protocol - INFO - finding neighbors of 246925312235356436071548382087707783958051923366 in local table
+INFO:kademlia.protocol:finding neighbors of 246925312235356436071548382087707783958051923366 in local table
