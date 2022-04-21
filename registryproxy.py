@@ -13,6 +13,7 @@ class RegistryProxy:
         self.topics = []
         self.connected = False
         self.pubs = []
+        self.latency = []
 
         # Get registry from zookeeper
         print("Initializing Zookeeper connection")
@@ -63,12 +64,18 @@ class RegistryProxy:
 
     def get_updates(self):
         if self.connected:
+            latency = 0
             print("Fetching updates from registry...")
             if self.args.role == 'broker':
-                role = 'updatebroker'
+                if self.args.broker_role == 'primary':
+                    role = 'updatebroker'
+                else:
+                    role = 'updatebackup'
             else:
+                latency = round(sum(self.latency)/len(self.latency), 0)
+                self.latency = []  # reset latency list for next round
                 role = 'updatesub'
-            data = {'role': role, 'topics': self.topics}
+            data = {'role': role, 'topics': self.topics, 'latency': latency}  # latency ignored if not updatesub
             self.REQ_socket.send_json(data)
             print("Request sent")
             self.pubs = self.REQ_socket.recv_json()

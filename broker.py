@@ -29,6 +29,7 @@ class Broker:
         self.ip = publicip.get_ip_address()
         self.poller = zmq.Poller()
         self.context = zmq.Context()
+        self.role = 'standby'
 
         self.REP_socket = self.context.socket(zmq.REP)
         self.REP_url = 'tcp://' + self.ip + ':' + self.args.bind
@@ -51,15 +52,29 @@ class Broker:
         self.zk.init_driver()
         self.zk.start_session()
         self.election = self.zk.zk.Election('brokers/broker', publish_ip_port)
+        self.election_backup = self.zk.zk.Election('brokers/backup', publish_ip_port)
 
         self.die = False
         self.registry = None
 
     def start(self):
         self.wait()
-        self.election.run(self.leader_start)
+        primary_contenders = self.election.contenders()
+        backup_contenders = self.election_backup.contenders()
+        if len(primary_contenders) <= len(backup_contenders):
+            self.set_role('primary')
+            self.election.run(self.leader_start)
+        else:
+            self.set_role('backup')
+            self.election_backup.run(self.leader_start)
+
+    def set_role(self, role):
+        self.role = role
+        self.registry.args.broker_role = role
 
     def leader_start(self):
+        if self.role == 'backup':
+            self.pubs = []  # we only want to start polling if requested during an update
         # first subscribe to publishers
         for pub in self.pubs:
             connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']

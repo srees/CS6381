@@ -33,6 +33,8 @@ class KademliaReg:
         self.REP_socket.bind(self.REP_url)
         self.REQ_socket = self.context.socket(zmq.REQ)
         self.die = False
+        self.balance = False
+        self.balance_latency = 3
 
         print("Initializing Zookeeper connection")
         zkargs = types.SimpleNamespace()
@@ -45,6 +47,7 @@ class KademliaReg:
         segments = ip.split('.')
         self.zk.create_znode('registries/registry'+segments[3], reg_ip_port)
         self.election = self.zk.zk.Election('brokers/broker', reg_ip_port)
+        self.election_backup = self.zk.zk.Election('brokers/backup', reg_ip_port)
 
         # retrieve from zookeeper list of other registries for DHT init
         nodes = []
@@ -67,7 +70,7 @@ class KademliaReg:
                 message = self.REP_socket.recv_json()
                 print("Received message: ")
                 print(message)
-                if message['role'] == 'broker': # assuming only one broker at this point in the code
+                if message['role'] == 'broker':  # assuming only one broker at this point in the code
                     # register with DHT
                     self.store_info(['broker'], {'ip': message['ip'], 'port': message['port']})
                     # 10-4 then inform of publishers
@@ -94,8 +97,17 @@ class KademliaReg:
                     self.start_subscriber(sub)
                 if message['role'] == 'updatebroker':
                     pubs = self.get_unique_publishers(message['topics'])
+                    if self.balance:
+                        pubs = pubs[:len(pubs)//2]
+                    self.REP_socket.send_json(pubs)
+                if message['role'] == 'updatebackup':
+                    pubs = []
+                    if self.balance:
+                        pubs = self.get_unique_publishers(message['topics'])
+                        pubs = pubs[len(pubs)//2:]
                     self.REP_socket.send_json(pubs)
                 if message['role'] == 'updatesub':
+                    self.load_balance(int(message['latency']))
                     data = self.fetch_for_sub(message['topics'])
                     self.REP_socket.send_json(data)
 
@@ -103,6 +115,12 @@ class KademliaReg:
             print("Exiting listen loop.")
             self.die = True
             self.kad_client.kad_stop()
+
+    def load_balance(self, latency):
+        if latency > self.balance_latency:
+            self.balance = True
+        else:
+            self.balance = False
 
     # store_info: topics [s], data {} or [{}], replace bool
     def store_info(self, topics, data, replace=False):
@@ -226,6 +244,16 @@ class KademliaReg:
             else:
                 print("No broker/leader found.")
                 broker = []
+            if self.balance:
+                response = self.election_backup.contenders()
+                if response:
+                    leader = response[0]
+                    print("Backup Leader found:")
+                    print(leader)
+                    parts = leader.split(':')
+                    broker.append({'ip': parts[0], 'port': parts[1]})
+                else:
+                    print("No backup broker/leader found.")
             print("Registry passing broker information to subscribers:")
             print(broker)
             return broker
