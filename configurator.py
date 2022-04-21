@@ -21,7 +21,7 @@ from topiclist import TopicList
 from publisher import Publisher
 from subscriber import Subscriber
 from broker import Broker
-from registry import Registry
+# from registry import Registry
 from kademlia_reg import KademliaReg
 from registryproxy import RegistryProxy
 
