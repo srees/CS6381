@@ -72,7 +72,8 @@ class RegistryProxy:
                 else:
                     role = 'updatebackup'
             else:
-                latency = round(sum(self.latency)/len(self.latency), 0)
+                if len(self.latency) > 0:
+                    latency = round(sum(self.latency)/len(self.latency), 0)
                 self.latency = []  # reset latency list for next round
                 role = 'updatesub'
             data = {'role': role, 'topics': self.topics, 'latency': latency}  # latency ignored if not updatesub
