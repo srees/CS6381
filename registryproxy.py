@@ -65,7 +65,7 @@ class RegistryProxy:
     def get_updates(self):
         if self.connected:
             latency = 0
-            print("Fetching updates from registry...")
+            print("Fetching updates from registry " + self.current_registry)
             if self.args.role == 'broker':
                 if self.args.broker_role == 'primary':
                     role = 'updatebroker'
@@ -80,7 +80,7 @@ class RegistryProxy:
             self.REQ_socket.send_json(data)
             print("Request sent")
             self.pubs = self.REQ_socket.recv_json()
-            print("Reply received")
+            print("Reply received as " + role)
             print(self.pubs)
         return self.pubs
 

@@ -41,6 +41,7 @@ class Subscriber:
         self.topics = []
         self.die = False
         self.registry = None
+        self.poll_lock = False
 
     def start(self, topics, function):
         self.wait()  # registry will give us the go by sending us the list of publishers
@@ -61,7 +62,7 @@ class Subscriber:
         print("Starting subscriber listen loop...")
         while True and not self.die:
             try:
-                if self.poller and self.SUB_sockets:
+                if self.poller and self.SUB_sockets and not self.poll_lock:
                     events = dict(self.poller.poll())
                     for sock in self.SUB_sockets.values():
                         if sock in events:
@@ -95,8 +96,9 @@ class Subscriber:
                     connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
                     update_strings.append(connect_str)
                     if connect_str not in self.SUB_sockets:
+                        self.poll_lock = True
                         # It isn't yet in our list of pubs, we need to add it!
-                        print("Broker subscribing to " + connect_str)
+                        print("Subscribing to " + connect_str)
                         temp_sock = self.context.socket(zmq.SUB)
                         temp_sock.connect(connect_str)
                         for topic in self.topics:
@@ -107,12 +109,14 @@ class Subscriber:
                 for pub in self.pubs:
                     connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
                     if connect_str not in update_strings:
+                        self.poll_lock = True
                         # This publisher has been dropped from ones we should listen to, remove it!
                         self.poller.unregister(self.SUB_sockets[connect_str])
                         self.SUB_sockets[connect_str].disconnect(connect_str)
                         self.SUB_sockets[connect_str].close()
                         del self.SUB_sockets[connect_str]
                         self.pubs.remove(pub)
+                self.poll_lock = False
                 time.sleep(10)
             except KeyboardInterrupt:
                 self.die = True
