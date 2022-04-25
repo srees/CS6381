@@ -68,7 +68,7 @@ class Subscriber:
                             data = sock.recv_json()
                             data["Subscriber"] = self.ip
                             data["Received"] = time.time()
-                            latency = int(data["Received"]) - int(data["Sent"])
+                            latency = float(data["Received"]) - float(data["Sent"])
                             self.registry.record_latency(latency)
                             function(data)
             except zmq.error.ZMQError:

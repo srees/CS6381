@@ -34,7 +34,7 @@ class KademliaReg:
         self.REQ_socket = self.context.socket(zmq.REQ)
         self.die = False
         self.balance = False
-        self.balance_latency = 3
+        self.balance_latency = 2.0
 
         print("Initializing Zookeeper connection")
         zkargs = types.SimpleNamespace()
