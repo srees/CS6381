@@ -34,7 +34,9 @@ class KademliaReg:
         self.REQ_socket = self.context.socket(zmq.REQ)
         self.die = False
         self.balance = False
-        self.balance_latency = 2.0
+        self.balance_latency = 0.07  # Balance test seems to move around this number
+        self.balance_hysteresis = 10.0  # Chosen because registry updates are requested every 10 seconds
+        self.balance_begin = None
 
         print("Initializing Zookeeper connection")
         zkargs = types.SimpleNamespace()
@@ -117,12 +119,18 @@ class KademliaReg:
             self.kad_client.kad_stop()
 
     def load_balance(self, latency):
-        if latency > self.balance_latency:
-            self.balance = True
-            print("Balance enabled")
+        if not self.balance:
+            if latency > self.balance_latency:
+                self.balance = True
+                self.balance_begin = time.time()
+                print("Balance enabled")
         else:
-            self.balance = False
-            print("Balance disabled")
+            if time.time() - self.balance_begin > self.balance_hysteresis:
+                if latency < self.balance_latency:
+                    self.balance = False
+                    print("Balance disabled")
+                else:
+                    self.balance_begin = time.time()
 
     # store_info: topics [s], data {} or [{}], replace bool
     def store_info(self, topics, data, replace=False):
