@@ -118,6 +118,7 @@ class Subscriber:
                         lock = self.request_poll_lock()
                         if lock:
                             # This publisher has been dropped from ones we should listen to, remove it!
+                            print("Unsubscribing from " + connect_str)
                             self.poller.unregister(self.SUB_sockets[connect_str])
                             self.SUB_sockets[connect_str].disconnect(connect_str)
                             self.SUB_sockets[connect_str].close()
