@@ -69,7 +69,7 @@ class Subscriber:
                             data["Subscriber"] = self.ip
                             data["Received"] = time.time()
                             latency = int(data["Received"]) - int(data["Sent"])
-                            self.registry.latency.append(latency)
+                            self.registry.record_latency(latency)
                             function(data)
             except zmq.error.ZMQError:
                 pass  # this is needed because unregistering from the poller during an update often results in a socket error

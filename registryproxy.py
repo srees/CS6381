@@ -117,3 +117,6 @@ class RegistryProxy:
                     if not self.connected:
                         print("No new registry available, continuing to search...")
                         time.sleep(5)
+
+    def record_latency(self, latency):
+        self.latency.append(latency)
