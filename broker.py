@@ -102,6 +102,7 @@ class Broker:
                             data = sock.recv_json()
                             print("Broker received: ")
                             print(data)
+                            data["Broker"] = self.ip
                             data["Brokered"] = time.time()
                             self.republish(data)
             except zmq.error.ZMQError:

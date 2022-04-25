@@ -73,6 +73,7 @@ class Subscriber:
                             data["Subscriber"] = self.ip
                             data["Received"] = time.time()
                             latency = float(data["Received"]) - float(data["Sent"])
+                            data["Latency"] = latency
                             self.registry.record_latency(latency)
                             function(data)
             except zmq.error.ZMQError:

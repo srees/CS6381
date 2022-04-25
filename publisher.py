@@ -38,7 +38,7 @@ class Publisher:
     # to be invoked by the publisher's application logic
     # to publish a value of a topic. 
     def publish(self, topic, value):
-        data = {'Topic': topic, 'Value': value, 'Sender': self.ip, 'Sent': time.time(), 'Brokered': 0}
+        data = {'Topic': topic, 'Value': value, 'Sender': self.ip, 'Sent': time.time(), 'Broker': 'None', 'Brokered': 0}
         print("Publish: ")
         print(data)
         self.PUB_socket.send_json(data)
