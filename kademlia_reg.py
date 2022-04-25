@@ -107,7 +107,7 @@ class KademliaReg:
                         pubs = pubs[len(pubs)//2:]
                     self.REP_socket.send_json(pubs)
                 if message['role'] == 'updatesub':
-                    self.load_balance(int(message['latency']))
+                    self.load_balance(float(message['latency']))
                     data = self.fetch_for_sub(message['topics'])
                     self.REP_socket.send_json(data)
 
@@ -119,8 +119,10 @@ class KademliaReg:
     def load_balance(self, latency):
         if latency > self.balance_latency:
             self.balance = True
+            print("Balance enabled")
         else:
             self.balance = False
+            print("Balance disabled")
 
     # store_info: topics [s], data {} or [{}], replace bool
     def store_info(self, topics, data, replace=False):
