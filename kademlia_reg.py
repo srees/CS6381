@@ -34,8 +34,8 @@ class KademliaReg:
         self.REQ_socket = self.context.socket(zmq.REQ)
         self.die = False
         self.balance = False
-        self.balance_latency = 0.07  # Balance test seems to move around this number
-        self.balance_hysteresis = 10.0  # Chosen because registry updates are requested every 10 seconds
+        self.balance_latency = 0.075  # Balance test seems to move around this number
+        self.balance_hysteresis = 5.0  # Chosen because registry updates are requested every 10 seconds
         self.balance_begin = None
 
         print("Initializing Zookeeper connection")
