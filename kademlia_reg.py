@@ -17,7 +17,7 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 handler.setFormatter(formatter)
 log = logging.getLogger('kademlia')
 log.addHandler(handler)
-log.setLevel(logging.DEBUG)
+log.setLevel(logging.ERROR)
 
 
 class KademliaReg:
@@ -209,9 +209,10 @@ class KademliaReg:
         return pubs
 
     def get_unique_publishers(self, topics=None):
+        # we store a list of publishers per topic
+        # we need to return a list of topics per publisher
         print("Getting unique publishers...")
-        pubs = []
-        unique_strings = []
+        pubs = {}
         if topics is None or not topics:
             topics = TopicList.topiclist
             print("Using full topic list")
@@ -225,9 +226,10 @@ class KademliaReg:
                     pub = topic_pubs[0]
                     print(pub)
                     tmp_string = pub['ip'] + ':' + pub['port']
-                    if tmp_string not in unique_strings:
-                        unique_strings.append(tmp_string)
-                        pubs.append(pub)
+                    if pubs[tmp_string]:
+                        pubs[tmp_string]['topics'].extend(topic)
+                    else:
+                        pubs[tmp_string] = {'ip': pub['ip'], 'port': pub['port'], 'topics': [topic]}
             else:
                 print("No data found")
         return pubs

@@ -52,7 +52,7 @@ class Subscriber:
             print("Subscribing to " + connect_str)
             temp_sock = self.context.socket(zmq.SUB)
             temp_sock.connect(connect_str)
-            for topic in topics:
+            for topic in pub['topics']:
                 temp_sock.setsockopt_string(zmq.SUBSCRIBE, '{"Topic": "' + topic)
             self.SUB_sockets[connect_str] = temp_sock
         for sock in self.SUB_sockets.values():
@@ -106,7 +106,7 @@ class Subscriber:
                             print("Subscribing to " + connect_str)
                             temp_sock = self.context.socket(zmq.SUB)
                             temp_sock.connect(connect_str)
-                            for topic in self.topics:
+                            for topic in pub['topics']:
                                 temp_sock.setsockopt_string(zmq.SUBSCRIBE, '{"Topic": "' + topic)
                             self.SUB_sockets[connect_str] = temp_sock
                             self.poller.register(self.SUB_sockets[connect_str], zmq.POLLIN)
