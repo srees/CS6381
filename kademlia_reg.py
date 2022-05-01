@@ -47,7 +47,7 @@ class KademliaReg:
         self.zk.start_session()
         # store our information with zookeeper
         segments = ip.split('.')
-        self.zk.create_znode('registries/registry'+segments[3], reg_ip_port)
+        self.zk.create_znode('registries/registry' + segments[3], reg_ip_port)
         self.election = self.zk.zk.Election('brokers/broker', reg_ip_port)
         self.election_backup = self.zk.zk.Election('brokers/backup', reg_ip_port)
 
@@ -55,7 +55,7 @@ class KademliaReg:
         nodes = []
         registries = self.zk.get_children('registries')
         for registry in registries:
-            data = self.zk.get_value('registries/'+registry)
+            data = self.zk.get_value('registries/' + registry)
             parts = data.split(':')
             if ip not in parts[0]:
                 nodes.append((parts[0], int(self.args.dht_port)))
@@ -100,13 +100,13 @@ class KademliaReg:
                 if message['role'] == 'updatebroker':
                     pubs = self.get_unique_publishers(message['topics'])
                     if self.balance:
-                        pubs = pubs[:len(pubs)//2]
+                        pubs = pubs[:len(pubs) // 2]
                     self.REP_socket.send_json(pubs)
                 if message['role'] == 'updatebackup':
                     pubs = []
                     if self.balance:
                         pubs = self.get_unique_publishers(message['topics'])
-                        pubs = pubs[len(pubs)//2:]
+                        pubs = pubs[len(pubs) // 2:]
                     self.REP_socket.send_json(pubs)
                 if message['role'] == 'updatesub':
                     self.load_balance(float(message['latency']))
@@ -226,7 +226,7 @@ class KademliaReg:
                     pub = topic_pubs[0]
                     print(pub)
                     tmp_string = pub['ip'] + ':' + pub['port']
-                    if pubs[tmp_string]:
+                    if tmp_string in pubs.keys():
                         pubs[tmp_string]['topics'].extend(topic)
                     else:
                         pubs[tmp_string] = {'ip': pub['ip'], 'port': pub['port'], 'topics': [topic]}
