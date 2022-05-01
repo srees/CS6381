@@ -84,7 +84,7 @@ class Broker:
             temp_sock = self.context.socket(zmq.SUB)
             temp_sock.connect(connect_str)
             for topic in pub['topics']:
-                temp_sock.setsockopt_string(zmq.SUBSCRIBE, topic)
+                temp_sock.setsockopt_string(zmq.SUBSCRIBE, '{"Topic": "' + topic)
             self.SUB_sockets[connect_str] = temp_sock
         for sock in self.SUB_sockets.values():
             self.poller.register(sock, zmq.POLLIN)
@@ -136,7 +136,6 @@ class Broker:
                     connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
                     update_strings.append(connect_str)
                     if connect_str not in self.SUB_sockets:
-                        # there is a case here that will fail - existing connection gets a new topic added to it
                         lock = self.request_poll_lock()
                         if lock:
                             # It isn't yet in our list of pubs, we need to add it!
@@ -144,15 +143,18 @@ class Broker:
                             temp_sock = self.context.socket(zmq.SUB)
                             temp_sock.connect(connect_str)
                             for topic in pub['topics']:
-                                temp_sock.setsockopt_string(zmq.SUBSCRIBE, topic)
+                                temp_sock.setsockopt_string(zmq.SUBSCRIBE, '{"Topic": "' + topic)
                             self.SUB_sockets[connect_str] = temp_sock
                             self.poller.register(self.SUB_sockets[connect_str], zmq.POLLIN)
                             self.pubs.append(pub)
                         else:
                             print("Error: unable to lock polling for updates")
-                    else:  # double-check our subscriptions
-                        topics_subscribed = self.SUB_sockets[connect_str].getsockopt_string(zmq.SUBSCRIBE)
-                        print(topics_subscribed)
+                    # there is a case here that will fail - existing connection gets a new topic added to it
+                    # else:  # double-check our subscriptions
+                        # apparently this is invalid
+                        # topics_subscribed = self.SUB_sockets[connect_str].getsockopt_string(zmq.SUBSCRIBE)
+                        # print(topics_subscribed)
+                        # so we need to track topics per connect_str and check our update against those.
                 for pub in self.pubs:
                     connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
                     if connect_str not in update_strings:
