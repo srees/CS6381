@@ -184,7 +184,7 @@ class KademliaReg:
                     dht_value.remove(data)
                     self.store_info([topic], dht_value, True)
 
-    def get_unique_publishers(self, topics=None):
+    def get_unique_publishers_no_strength(self, topics=None):
         print("Getting unique publishers...")
         pubs = []
         unique_strings = []
@@ -204,6 +204,30 @@ class KademliaReg:
                         if tmp_string not in unique_strings:
                             unique_strings.append(tmp_string)
                             pubs.append(pub)
+            else:
+                print("No data found")
+        return pubs
+
+    def get_unique_publishers(self, topics=None):
+        print("Getting unique publishers...")
+        pubs = []
+        unique_strings = []
+        if topics is None or not topics:
+            topics = TopicList.topiclist
+            print("Using full topic list")
+        for topic in topics:
+            print("Getting data for " + topic)
+            data = self.kad_client.get(topic)
+            if data:
+                print("Received data...")
+                topic_pubs = json.loads(data)
+                if topic_pubs:
+                    pub = topic_pubs[0]
+                    print(pub)
+                    tmp_string = pub['ip'] + ':' + pub['port']
+                    if tmp_string not in unique_strings:
+                        unique_strings.append(tmp_string)
+                        pubs.append(pub)
             else:
                 print("No data found")
         return pubs
