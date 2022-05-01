@@ -227,7 +227,7 @@ class KademliaReg:
                     print(pub)
                     tmp_string = pub['ip'] + ':' + pub['port']
                     if tmp_string in pubs.keys():
-                        pubs[tmp_string]['topics'].extend(topic)
+                        pubs[tmp_string]['topics'].append(topic)
                     else:
                         pubs[tmp_string] = {'ip': pub['ip'], 'port': pub['port'], 'topics': [topic]}
             else:
