@@ -276,7 +276,8 @@ class KademliaReg:
                 print("Leader found:")
                 print(leader)
                 parts = leader.split(':')
-                broker = [{'ip': parts[0], 'port': parts[1]}]
+                # we don't have to split the topics out for strength because the broker subscription already does that.
+                broker = [{'ip': parts[0], 'port': parts[1], 'topics': topics}]
             else:
                 print("No broker/leader found.")
                 broker = []
@@ -287,7 +288,8 @@ class KademliaReg:
                     print("Backup Leader found:")
                     print(leader)
                     parts = leader.split(':')
-                    broker.append({'ip': parts[0], 'port': parts[1]})
+                    # we don't have to split the topics out for strength because the broker subscription already does that.
+                    broker.append({'ip': parts[0], 'port': parts[1], 'topics': topics})
                 else:
                     print("No backup broker/leader found.")
             print("Registry passing broker information to subscribers:")
