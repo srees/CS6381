@@ -149,12 +149,13 @@ class Broker:
                             self.pubs.append(pub)
                         else:
                             print("Error: unable to lock polling for updates")
-                    # there is a case here that will fail - existing connection gets a new topic added to it
-                    # else:  # double-check our subscriptions
-                        # apparently this is invalid
-                        # topics_subscribed = self.SUB_sockets[connect_str].getsockopt_string(zmq.SUBSCRIBE)
-                        # print(topics_subscribed)
-                        # so we need to track topics per connect_str and check our update against those.
+                    else:  # double-check our existing subscriptions haven't increased
+                        for s_pub in self.pubs:
+                            if s_pub['ip'] == pub['ip'] and s_pub['port'] == pub['port']:
+                                for update_topic in pub['topics']:
+                                    if update_topic not in s_pub['topics']:
+                                        # add a subscription to the topic -- these should never be reduced however
+                                        self.SUB_sockets[connect_str].setsockopt_string(zmq.SUBSCRIBE, '{"Topic": "' + update_topic)
                 for pub in self.pubs:
                     connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
                     if connect_str not in update_strings:
