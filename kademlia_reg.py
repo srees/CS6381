@@ -232,7 +232,7 @@ class KademliaReg:
                         pubs[tmp_string] = {'ip': pub['ip'], 'port': pub['port'], 'topics': [topic]}
             else:
                 print("No data found")
-        return pubs
+        return list(pubs.values())
 
     def start_broker(self, broker):  # We'll start the broker by sending it the list of publishers to subscribe to
         connection_string = 'tcp://' + broker.get('ip') + ':' + str(int(broker.get('port')) - 1)
