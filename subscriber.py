@@ -172,7 +172,9 @@ class Subscriber:
 
     def request_history(self, connection_string, topic):
         quantity = random.randint(1, 10) * 5
+        print("Requesting " + quantity + " historical records from " + connection_string + " for " + topic)
         self.REQ_socket.connect(connection_string)
         data = {"message": "history", "topic": topic, "quantity": quantity}
         history = self. REQ_socket.send_json(data)
+        print("Received " + len(history) + " items in response.")
         return history
