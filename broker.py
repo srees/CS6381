@@ -225,6 +225,8 @@ class Broker:
                     self.REQ_socket.send_json(data)
                     # wait for reply
                     history = self.REQ_socket.recv_json()
+                    history["Broker"] = self.ip
+                    history["Brokered"] = time.time()
                     # forward the history reply back to the original requester
                     self.REP_socket.send_json(history)
                 else:

@@ -58,6 +58,11 @@ class Subscriber:
             for topic in pub['topics']:
                 history = self.request_history(connect_str, topic)
                 for item in history:
+                    item["Subscriber"] = self.ip
+                    item["Received"] = time.time()
+                    latency = float(item["Received"]) - float(item["Sent"])
+                    item["Latency"] = latency
+                    self.registry.record_latency(latency)
                     function(item)
                 temp_sock.setsockopt_string(zmq.SUBSCRIBE, '{"Topic": "' + topic)
             self.SUB_sockets[connect_str] = temp_sock
@@ -172,9 +177,9 @@ class Subscriber:
 
     def request_history(self, connection_string, topic):
         quantity = random.randint(1, 10) * 5
-        print("Requesting " + quantity + " historical records from " + connection_string + " for " + topic)
+        print("Requesting " + str(quantity) + " historical records from " + connection_string + " for " + topic)
         self.REQ_socket.connect(connection_string)
         data = {"message": "history", "topic": topic, "quantity": quantity}
         history = self. REQ_socket.send_json(data)
-        print("Received " + len(history) + " items in response.")
+        print("Received " + str(len(history)) + " items in response.")
         return history
