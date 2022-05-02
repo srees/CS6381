@@ -85,13 +85,20 @@ class Publisher:
         return history
 
     def history_listen(self):
+        print("History request listener started")
         die = False
         while True and not die:
             try:
                 data = self.REP_socket.recv_json()
                 if data["message"] == "history":
-                    self.REP_socket.send_json(self.fetch_queue(data["topic"], int(data["quantity"])))
+                    print("Received history request for " + str(data["quantity"]) + " items from " + data["topic"])
+                    to_send = self.fetch_queue(data["topic"], int(data["quantity"]))
+                    print("Sending:")
+                    print(to_send)
+                    self.REP_socket.send_json(to_send)
                 else:
+                    print("Received data message that was not 'history':")
+                    print(data["message"])
                     self.REP_socket.send_json([])
             except KeyboardInterrupt:
                 die = True

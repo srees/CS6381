@@ -206,12 +206,14 @@ class Broker:
         self.poll_lock = False
 
     def history_listen(self):
+        print("History request listener started")
         die = False
         while True and not die:
             try:
                 data = self.REP_socket.recv_json()
                 target_pub = None
                 if data["message"] == "history":
+                    print("Received history request for " + str(data["quantity"]) + " items from " + data["topic"])
                     # lookup host for this topic -- there should be only one for PA4 MS3
                     for pub in self.pubs:
                         for topic in pub['topics']:
@@ -222,14 +224,20 @@ class Broker:
                     self.REQ_socket.connect(REQ_url)
                     # pass the history request on to the strongest publisher
                     data = {"message": data["message"], "topic": data["topic"], "quantity": data["quantity"]}  # latency ignored if not updatesub
+                    print("Forwarding history request to " + REQ_url)
                     self.REQ_socket.send_json(data)
                     # wait for reply
                     history = self.REQ_socket.recv_json()
+                    print("Received history reply:")
+                    print(history)
                     history["Broker"] = self.ip
                     history["Brokered"] = time.time()
                     # forward the history reply back to the original requester
+                    print("Forwarding history to original requester")
                     self.REP_socket.send_json(history)
                 else:
+                    print("Received data message that was not 'history':")
+                    print(data["message"])
                     self.REP_socket.send_json([])
             except KeyboardInterrupt:
                 die = True

@@ -181,5 +181,6 @@ class Subscriber:
         self.REQ_socket.connect(connection_string)
         data = {"message": "history", "topic": topic, "quantity": quantity}
         history = self. REQ_socket.send_json(data)
-        print("Received " + str(len(history)) + " items in response.")
+        print("Received response:")
+        print(history)
         return history
