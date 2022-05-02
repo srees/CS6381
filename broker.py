@@ -118,6 +118,7 @@ class Broker:
     # Wait for registry to give us the start signal
     def wait(self):
         self.pubs = self.REP_socket.recv_json()  # load our list of pubs with the data from registry
+        print("Received message during wait to start...starting.")
         # TODO validation, ie while data != 'start', socket.recv_json()
         # We don't need to send anything back, but ZMQ requires us to reply
         self.REP_socket.send_json('ACK')
@@ -210,6 +211,7 @@ class Broker:
         die = False
         while True and not die:
             try:
+                print("History listening...")
                 data = self.REP_socket.recv_json()
                 target_pub = None
                 if data["message"] == "history":

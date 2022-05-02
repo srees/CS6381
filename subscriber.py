@@ -183,4 +183,6 @@ class Subscriber:
         history = self. REQ_socket.send_json(data)
         print("Received response:")
         print(history)
+        if not history:
+            history = []
         return history
