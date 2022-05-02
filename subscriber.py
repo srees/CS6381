@@ -181,6 +181,7 @@ class Subscriber:
         self.REQ_socket.connect(connection_string)
         data = {"message": "history", "topic": topic, "quantity": quantity}
         history = self. REQ_socket.send_json(data)
+        self.REQ_socket.disconnect(connection_string)
         print("Received response:")
         print(history)
         if not history:

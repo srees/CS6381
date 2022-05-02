@@ -230,6 +230,7 @@ class Broker:
                     self.REQ_socket.send_json(data)
                     # wait for reply
                     history = self.REQ_socket.recv_json()
+                    self.REQ_socket.disconnect(REQ_url)
                     print("Received history reply:")
                     print(history)
                     history["Broker"] = self.ip
