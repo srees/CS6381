@@ -105,6 +105,7 @@ def main():
     # get a handle to our publisher object
     print("Getting publisher object")
     pub = config.get_publisher()
+    pub.set_topics(my_topics)
 
     # get a handle to our registry object (will be a proxy)
     print("Getting registry proxy")

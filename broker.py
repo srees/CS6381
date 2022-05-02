@@ -36,6 +36,8 @@ class Broker:
         print("Binding REP to " + self.REP_url)
         self.REP_socket.bind(self.REP_url)
 
+        self.REQ_socket = self.context.socket(zmq.REQ)
+
         self.PUB_socket = self.context.socket(zmq.PUB)
         self.PUB_url = 'tcp://' + self.ip + ':' + str(int(self.args.bind) + 1)
         print("Binding PUB to " + self.PUB_url)
@@ -119,6 +121,9 @@ class Broker:
         # TODO validation, ie while data != 'start', socket.recv_json()
         # We don't need to send anything back, but ZMQ requires us to reply
         self.REP_socket.send_json('ACK')
+        # start thread to listen for history requests
+        history_thread = threading.Thread(target=self.history_listen)
+        history_thread.start()
         # Allow time for things to settle before we start pumping data out.
         # Might be unnecessary since reworking the sockets...
         time.sleep(2)
@@ -199,3 +204,32 @@ class Broker:
     def release_poll_lock(self):
         self.request_lock = False
         self.poll_lock = False
+
+    def history_listen(self):
+        die = False
+        while True and not die:
+            try:
+                data = self.REP_socket.recv_json()
+                target_pub = None
+                if data["message"] == "history":
+                    # lookup host for this topic -- there should be only one for PA4 MS3
+                    for pub in self.pubs:
+                        for topic in pub['topics']:
+                            if topic == data["topic"]:
+                                target_pub = 'tcp://' + pub['ip'] + ':' + pub['port']
+                                break
+                    REQ_url = target_pub
+                    self.REQ_socket.connect(REQ_url)
+                    # pass the history request on to the strongest publisher
+                    data = {"message": data["message"], "topic": data["topic"], "quantity": data["quantity"]}  # latency ignored if not updatesub
+                    self.REQ_socket.send_json(data)
+                    # wait for reply
+                    history = self.REQ_socket.recv_json()
+                    # forward the history reply back to the original requester
+                    self.REP_socket.send_json(history)
+                else:
+                    self.REP_socket.send_json([])
+            except KeyboardInterrupt:
+                die = True
+                break
+        print("Exiting history.")

@@ -19,6 +19,7 @@ import zmq
 import publicip
 import time
 import threading
+import random
 
 
 class Subscriber:
@@ -38,6 +39,8 @@ class Subscriber:
         print("Binding REP to " + self.REP_url)
         self.REP_socket.bind(self.REP_url)
 
+        self.REQ_socket = self.context.socket(zmq.REQ)
+
         self.topics = []
         self.die = False
         self.registry = None
@@ -53,6 +56,9 @@ class Subscriber:
             temp_sock = self.context.socket(zmq.SUB)
             temp_sock.connect(connect_str)
             for topic in pub['topics']:
+                history = self.request_history(connect_str, topic)
+                for item in history:
+                    function(item)
                 temp_sock.setsockopt_string(zmq.SUBSCRIBE, '{"Topic": "' + topic)
             self.SUB_sockets[connect_str] = temp_sock
         for sock in self.SUB_sockets.values():
@@ -163,3 +169,10 @@ class Subscriber:
     def release_poll_lock(self):
         self.request_lock = False
         self.poll_lock = False
+
+    def request_history(self, connection_string, topic):
+        quantity = random.randint(1, 10) * 5
+        self.REQ_socket.connect(connection_string)
+        data = {"message": "history", "topic": topic, "quantity": quantity}
+        history = self. REQ_socket.send_json(data)
+        return history
