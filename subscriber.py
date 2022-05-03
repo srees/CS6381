@@ -58,7 +58,7 @@ class Subscriber:
                 self.HIST_socket.connect(HIST_url)
                 self.HIST_socket.send_json({"message": "history", "topic": topic})
                 history = self.HIST_socket.recv_json()
-                self.HIST_socket.disconnect(connect_str)
+                self.HIST_socket.disconnect(HIST_url)
                 if not history:
                     history = []
                 for record in history:
