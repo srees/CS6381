@@ -233,8 +233,10 @@ class Broker:
                         history = self.HIST_REQ_socket.recv_json()
                         self.HIST_REQ_socket.disconnect(HIST_REQ_url)
                     if not history:
-                        print(self.pubs)
                         history = []
+                    for record in history:
+                        record["Broker"] = self.ip
+                        record["Brokered"] = time.time()
                     print("Sending:")
                     print(history)
                     self.HIST_REP_socket.send_json(history)
