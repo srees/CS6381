@@ -181,7 +181,7 @@ class Broker:
                         else:
                             print("Error: unable to lock polling for updates")
                 self.release_poll_lock()
-                time.sleep(10)
+                time.sleep(5)
             except KeyboardInterrupt:
                 self.die = True
                 break
@@ -232,6 +232,7 @@ class Broker:
                         history = self.HIST_REQ_socket.recv_json()
                         self.HIST_REQ_socket.disconnect(HIST_REQ_url)
                     if not history:
+                        print(self.pubs)
                         history = []
                     print("Sending:")
                     print(history)
