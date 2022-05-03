@@ -211,7 +211,7 @@ class Broker:
         self.poll_lock = False
 
     def history_listen(self):
-        print("History request listener started")
+        print("History request listener started at " + self.HIST_REP_url)
         while True:
             try:
                 data = self.HIST_REP_socket.recv_json()
@@ -226,6 +226,7 @@ class Broker:
                             HIST_REQ_url = 'tcp://' + pub['ip'] + ':' + str(int(pub['port']) + 1)
                             break
                     if HIST_REQ_url:
+                        print("Found history target: " + HIST_REQ_url)
                         self.HIST_REQ_socket.connect(HIST_REQ_url)
                         self.HIST_REQ_socket.send_json({"message": "history", "topic": data["topic"]})
                         history = self.HIST_REQ_socket.recv_json()

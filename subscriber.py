@@ -55,6 +55,7 @@ class Subscriber:
             print("Retrieving history...")
             for topic in topics:
                 HIST_url = 'tcp://' + pub['ip'] + ':' + str(int(pub['port']) + 1)
+                print("Getting " + topic + " from " + HIST_url)
                 self.HIST_socket.connect(HIST_url)
                 self.HIST_socket.send_json({"message": "history", "topic": topic})
                 history = self.HIST_socket.recv_json()

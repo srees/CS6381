@@ -82,7 +82,7 @@ class Publisher:
         return history
 
     def history_listen(self):
-        print("History request listener started")
+        print("History request listener started at " + self.HIST_url)
         while True:
             try:
                 data = self.HIST_socket.recv_json()
