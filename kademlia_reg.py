@@ -34,7 +34,7 @@ class KademliaReg:
         self.REQ_socket = self.context.socket(zmq.REQ)
         self.die = False
         self.balance = False
-        self.balance_latency = 0.05  # Balance test seems to move around this number
+        self.balance_latency = 0.049  # Balance test seems to move around this number
         self.balance_hysteresis = 5.0  # Chosen because registry updates are requested every 10 seconds
         self.balance_begin = None
         self.topic_list = []
