@@ -77,9 +77,10 @@ class Publisher:
     def fetch_queue(self, topic):
         history = []
         # get copy of current state of queue, as it is constantly in flux
-        duplicate = copy.deepcopy(self.topics_history[topic])
-        while duplicate:
-            history.append(duplicate.popleft())
+        if topic in self.topics_history.keys():
+            duplicate = copy.deepcopy(self.topics_history[topic])
+            while duplicate:
+                history.append(duplicate.popleft())
         return history
 
     def history_listen(self):
