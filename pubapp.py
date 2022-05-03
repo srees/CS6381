@@ -105,7 +105,7 @@ def main():
     # let's assign a QoS number to each topic. Since this is a hard requirement it
     # can be part of the topic name
     for topic in raw_topics:
-        qos = random.randint(1, 5) * 5
+        qos = random.randint(1, 2) * 10
         my_topics.append(topic + "|" + str(qos))
     print("Publisher interested in publishing on these topics: {}".format(my_topics))
 
