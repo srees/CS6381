@@ -8,11 +8,11 @@
 # Created: Spring 2022
 #
 ###############################################
+import collections
 
 import zmq
 import time
 import publicip
-import queue
 import copy
 import threading
 
@@ -70,15 +70,16 @@ class Publisher:
 
     def queue_history(self, topic, value):
         if topic not in self.topics_history:
-            self.topics_history[topic] = queue.Queue(maxsize=self.qos)
-        self.topics_history[topic].put(value)
+            # self.topics_history[topic] = queue.Queue(maxsize=self.qos)
+            self.topics_history[topic] = collections.deque([], self.qos)
+        self.topics_history[topic].append(value)
 
     def fetch_queue(self, topic):
         history = []
         # get copy of current state of queue, as it is constantly in flux
         duplicate = copy.deepcopy(self.topics_history[topic])
-        while not duplicate.empty():
-            history.append(duplicate.get())
+        while duplicate:
+            history.append(duplicate.popleft())
         return history
 
     def history_listen(self):
