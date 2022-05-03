@@ -1,7 +1,7 @@
 Current libzmq version is 4.3.4
 Current  pyzmq version is 22.3.0
 Main: parse command line arguments
-Subscriber interested in listening for these topics: ['airquality|20', 'pressure|20', 'location|10']
+Subscriber interested in listening for these topics: ['humidity|20', 'temperature|10', 'airquality|20', 'altitude|10', 'location|10', 'light|10']
 Getting subscriber object
 Binding REP to tcp://10.0.0.50:5580
 Getting registry proxy
@@ -25,36 +25,33 @@ Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'descript
 Registration received
 Waiting for start from registry
 Retrieving history...
-Getting airquality|20 from tcp://10.0.0.11:5572
-{'Topic': 'airquality|20', 'Value': 401, 'Sender': '10.0.0.11', 'Sent': 1651548260.1984313, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.212558, 'Latency': 9.014126777648926}
-{'Topic': 'airquality|20', 'Value': 44, 'Sender': '10.0.0.11', 'Sent': 1651548260.80636, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.212789, 'Latency': 8.406429052352905}
-{'Topic': 'airquality|20', 'Value': 260, 'Sender': '10.0.0.11', 'Sent': 1651548262.2168033, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.2128463, 'Latency': 6.996042966842651}
-{'Topic': 'airquality|20', 'Value': 82, 'Sender': '10.0.0.11', 'Sent': 1651548262.8228605, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.2128928, 'Latency': 6.3900322914123535}
-{'Topic': 'airquality|20', 'Value': 194, 'Sender': '10.0.0.11', 'Sent': 1651548262.924998, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.2129352, 'Latency': 6.287937164306641}
-{'Topic': 'airquality|20', 'Value': 94, 'Sender': '10.0.0.11', 'Sent': 1651548263.0254493, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.212978, 'Latency': 6.187528610229492}
-{'Topic': 'airquality|20', 'Value': 399, 'Sender': '10.0.0.11', 'Sent': 1651548263.5302327, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.2131543, 'Latency': 5.682921648025513}
-{'Topic': 'airquality|20', 'Value': 403, 'Sender': '10.0.0.11', 'Sent': 1651548266.8524666, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.2134063, 'Latency': 2.3609397411346436}
-{'Topic': 'airquality|20', 'Value': 306, 'Sender': '10.0.0.11', 'Sent': 1651548267.355853, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.213648, 'Latency': 1.857795000076294}
-{'Topic': 'airquality|20', 'Value': 432, 'Sender': '10.0.0.11', 'Sent': 1651548267.6578724, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.213871, 'Latency': 1.5559985637664795}
-Getting pressure|20 from tcp://10.0.0.11:5572
-{'Topic': 'pressure|20', 'Value': 452, 'Sender': '10.0.0.11', 'Sent': 1651548258.3888054, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.388079, 'Latency': 10.999273538589478}
-{'Topic': 'pressure|20', 'Value': 327, 'Sender': '10.0.0.11', 'Sent': 1651548260.6032076, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3882291, 'Latency': 8.785021543502808}
-{'Topic': 'pressure|20', 'Value': 348, 'Sender': '10.0.0.11', 'Sent': 1651548260.7044945, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3882968, 'Latency': 8.683802366256714}
-{'Topic': 'pressure|20', 'Value': 81, 'Sender': '10.0.0.11', 'Sent': 1651548262.5180626, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3884454, 'Latency': 6.870382785797119}
-{'Topic': 'pressure|20', 'Value': 156, 'Sender': '10.0.0.11', 'Sent': 1651548263.9317417, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.388508, 'Latency': 5.456766366958618}
-{'Topic': 'pressure|20', 'Value': 165, 'Sender': '10.0.0.11', 'Sent': 1651548264.1325815, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3887923, 'Latency': 5.256210803985596}
-{'Topic': 'pressure|20', 'Value': 408, 'Sender': '10.0.0.11', 'Sent': 1651548264.5343277, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3888528, 'Latency': 4.854525089263916}
-{'Topic': 'pressure|20', 'Value': 349, 'Sender': '10.0.0.11', 'Sent': 1651548264.6348746, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3889003, 'Latency': 4.75402569770813}
-{'Topic': 'pressure|20', 'Value': 167, 'Sender': '10.0.0.11', 'Sent': 1651548265.7438855, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3889472, 'Latency': 3.645061731338501}
-{'Topic': 'pressure|20', 'Value': 317, 'Sender': '10.0.0.11', 'Sent': 1651548268.976614, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3889933, 'Latency': 0.41237926483154297}
-Getting location|10 from tcp://10.0.0.11:5572
-WARNING:kazoo.client:Connection dropped: socket connection broken
+Getting humidity|20 from tcp://10.0.0.12:5572
+{'Topic': 'humidity|20', 'Value': 366, 'Sender': '10.0.0.12', 'Sent': 1651553737.351261, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.48608, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 98, 'Sender': '10.0.0.12', 'Sent': 1651553737.4515774, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4863849, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 152, 'Sender': '10.0.0.12', 'Sent': 1651553737.6532278, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4865718, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 224, 'Sender': '10.0.0.12', 'Sent': 1651553737.753469, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4866443, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 377, 'Sender': '10.0.0.12', 'Sent': 1651553737.853772, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4867024, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 373, 'Sender': '10.0.0.12', 'Sent': 1651553737.954383, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.486757, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 48, 'Sender': '10.0.0.12', 'Sent': 1651553738.054774, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.486812, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 362, 'Sender': '10.0.0.12', 'Sent': 1651553738.1559005, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4868658, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 161, 'Sender': '10.0.0.12', 'Sent': 1651553738.256345, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4869196, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 438, 'Sender': '10.0.0.12', 'Sent': 1651553738.4571693, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4869742, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 417, 'Sender': '10.0.0.12', 'Sent': 1651553738.5582438, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4870272, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 113, 'Sender': '10.0.0.12', 'Sent': 1651553738.660138, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4870813, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 485, 'Sender': '10.0.0.12', 'Sent': 1651553738.9613504, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4871347, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 371, 'Sender': '10.0.0.12', 'Sent': 1651553739.2624135, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4871874, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 156, 'Sender': '10.0.0.12', 'Sent': 1651553739.3628647, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4872518, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 274, 'Sender': '10.0.0.12', 'Sent': 1651553739.463072, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4873066, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 96, 'Sender': '10.0.0.12', 'Sent': 1651553739.6637733, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4873598, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 45, 'Sender': '10.0.0.12', 'Sent': 1651553739.7641547, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.487413, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 24, 'Sender': '10.0.0.12', 'Sent': 1651553739.9667776, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4874656, 'Latency': 0.0}
+{'Topic': 'humidity|20', 'Value': 43, 'Sender': '10.0.0.12', 'Sent': 1651553740.269258, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651553740.4875193, 'Latency': 0.0}
+Getting temperature|10 from tcp://10.0.0.12:5572
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection reset by peer
 WARNING:kazoo.client:Transition to CONNECTING
 Current state is now = SUSPENDED
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Network is unreachable
+WARNING:kazoo.client:Connection dropped: socket connection error: None

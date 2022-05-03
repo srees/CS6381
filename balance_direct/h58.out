@@ -1,7 +1,7 @@
 Current libzmq version is 4.3.4
 Current  pyzmq version is 22.3.0
 Main: parse command line arguments
-Subscriber interested in listening for these topics: ['weather|20', 'altitude|20', 'light|10', 'humidity|10', 'location|20', 'airquality|20', 'smell|10']
+Subscriber interested in listening for these topics: ['location|20', 'temperature|10', 'weather|10', 'light|20', 'altitude|20', 'sound|20', 'pressure|10', 'airquality|20', 'smell|20', 'humidity|10']
 Getting subscriber object
 Binding REP to tcp://10.0.0.58:5580
 Getting registry proxy
@@ -19,27 +19,28 @@ Connecting to 10.0.0.5:5550
 Starting registry monitor loop thread
 Registering with tcp://10.0.0.5:5550...
 Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
-Event: {'event': 1, 'value': 23, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
 Registration sent
+Event: {'event': 1, 'value': 23, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
 Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
 Registration received
 Waiting for start from registry
 Retrieving history...
-Getting weather|20 from tcp://10.0.0.12:5572
-{'Topic': 'weather|20', 'Value': 496, 'Sender': '10.0.0.12', 'Sent': 1651548262.8252485, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651548267.2739189, 'Latency': 4.448670387268066}
-{'Topic': 'weather|20', 'Value': 78, 'Sender': '10.0.0.12', 'Sent': 1651548263.0266964, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651548267.2743235, 'Latency': 4.247627019882202}
-{'Topic': 'weather|20', 'Value': 486, 'Sender': '10.0.0.12', 'Sent': 1651548263.4302263, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651548267.2744164, 'Latency': 3.8441901206970215}
-{'Topic': 'weather|20', 'Value': 169, 'Sender': '10.0.0.12', 'Sent': 1651548264.2327883, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651548267.2745419, 'Latency': 3.0417535305023193}
-{'Topic': 'weather|20', 'Value': 1, 'Sender': '10.0.0.12', 'Sent': 1651548264.5342753, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651548267.2746847, 'Latency': 2.7404093742370605}
-{'Topic': 'weather|20', 'Value': 235, 'Sender': '10.0.0.12', 'Sent': 1651548265.3389077, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651548267.2747605, 'Latency': 1.9358527660369873}
-{'Topic': 'weather|20', 'Value': 44, 'Sender': '10.0.0.12', 'Sent': 1651548266.0486724, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651548267.2748306, 'Latency': 1.2261581420898438}
-{'Topic': 'weather|20', 'Value': 277, 'Sender': '10.0.0.12', 'Sent': 1651548266.2492833, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651548267.2748988, 'Latency': 1.0256154537200928}
-{'Topic': 'weather|20', 'Value': 466, 'Sender': '10.0.0.12', 'Sent': 1651548266.4499297, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651548267.2749667, 'Latency': 0.8250370025634766}
-{'Topic': 'weather|20', 'Value': 480, 'Sender': '10.0.0.12', 'Sent': 1651548266.550535, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651548267.2750359, 'Latency': 0.7245008945465088}
-Getting altitude|20 from tcp://10.0.0.12:5572
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection reset by peer
+Getting location|20 from tcp://10.0.0.19:5572
+{'Topic': 'location|20', 'Value': 207, 'Sender': '10.0.0.19', 'Sent': 1651553737.136353, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651553740.3141122, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 412, 'Sender': '10.0.0.19', 'Sent': 1651553737.2367198, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651553740.316361, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 373, 'Sender': '10.0.0.19', 'Sent': 1651553737.4380796, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651553740.3164456, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 205, 'Sender': '10.0.0.19', 'Sent': 1651553737.5384743, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651553740.316512, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 256, 'Sender': '10.0.0.19', 'Sent': 1651553737.740091, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651553740.3165755, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 205, 'Sender': '10.0.0.19', 'Sent': 1651553737.8404472, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651553740.3166995, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 333, 'Sender': '10.0.0.19', 'Sent': 1651553737.942123, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651553740.3167646, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 161, 'Sender': '10.0.0.19', 'Sent': 1651553738.347071, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651553740.3168736, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 175, 'Sender': '10.0.0.19', 'Sent': 1651553738.949394, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651553740.3169303, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 109, 'Sender': '10.0.0.19', 'Sent': 1651553739.7535539, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.58', 'Received': 1651553740.3169887, 'Latency': 0.0}
+Getting temperature|10 from tcp://10.0.0.19:5572
+WARNING:kazoo.client:Connection dropped: socket connection broken
 WARNING:kazoo.client:Transition to CONNECTING
 Current state is now = SUSPENDED
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused

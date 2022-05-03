@@ -1,7 +1,7 @@
 Current libzmq version is 4.3.4
 Current  pyzmq version is 22.3.0
 Main: parse command line arguments
-Subscriber interested in listening for these topics: ['smell|10', 'pressure|10', 'location|10', 'airquality|20', 'light|10']
+Subscriber interested in listening for these topics: ['light|20', 'smell|10', 'temperature|20', 'location|10']
 Getting subscriber object
 Binding REP to tcp://10.0.0.67:5580
 Getting registry proxy
@@ -17,26 +17,36 @@ Checking if registries/registry5 exists (it better be)
 registries/registry5 znode indeed exists; get value
 Connecting to 10.0.0.5:5550
 Starting registry monitor loop thread
-Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
 Registering with tcp://10.0.0.5:5550...
+Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
 Event: {'event': 1, 'value': 23, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
 Registration sent
 Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
 Registration received
 Waiting for start from registry
 Retrieving history...
-Getting smell|10 from tcp://10.0.0.16:5572
-{'Topic': 'smell|10', 'Value': 412, 'Sender': '10.0.0.16', 'Sent': 1651548254.0022182, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651548269.9895918, 'Latency': 15.98737359046936}
-{'Topic': 'smell|10', 'Value': 391, 'Sender': '10.0.0.16', 'Sent': 1651548254.4067144, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651548269.9897866, 'Latency': 15.583072185516357}
-{'Topic': 'smell|10', 'Value': 365, 'Sender': '10.0.0.16', 'Sent': 1651548260.2666144, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651548269.989852, 'Latency': 9.72323751449585}
-{'Topic': 'smell|10', 'Value': 243, 'Sender': '10.0.0.16', 'Sent': 1651548260.5725017, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651548269.989904, 'Latency': 9.417402267456055}
-{'Topic': 'smell|10', 'Value': 154, 'Sender': '10.0.0.16', 'Sent': 1651548261.3762624, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651548269.9899526, 'Latency': 8.61369013786316}
-{'Topic': 'smell|10', 'Value': 345, 'Sender': '10.0.0.16', 'Sent': 1651548263.693098, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651548269.9899988, 'Latency': 6.296900749206543}
-{'Topic': 'smell|10', 'Value': 71, 'Sender': '10.0.0.16', 'Sent': 1651548263.8944466, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651548269.9901514, 'Latency': 6.095704793930054}
-{'Topic': 'smell|10', 'Value': 155, 'Sender': '10.0.0.16', 'Sent': 1651548263.9965146, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651548269.9902017, 'Latency': 5.993687152862549}
-{'Topic': 'smell|10', 'Value': 449, 'Sender': '10.0.0.16', 'Sent': 1651548265.7079856, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651548269.9902642, 'Latency': 4.282278537750244}
-{'Topic': 'smell|10', 'Value': 399, 'Sender': '10.0.0.16', 'Sent': 1651548266.112653, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651548269.9903302, 'Latency': 3.8776772022247314}
-Getting pressure|10 from tcp://10.0.0.16:5572
+Getting light|20 from tcp://10.0.0.13:5572
+{'Topic': 'light|20', 'Value': 328, 'Sender': '10.0.0.13', 'Sent': 1651553733.147958, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8644595, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 18, 'Sender': '10.0.0.13', 'Sent': 1651553733.2482734, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8647294, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 43, 'Sender': '10.0.0.13', 'Sent': 1651553733.4489214, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8647914, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 298, 'Sender': '10.0.0.13', 'Sent': 1651553733.750011, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8648412, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 106, 'Sender': '10.0.0.13', 'Sent': 1651553734.1526806, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.864887, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 334, 'Sender': '10.0.0.13', 'Sent': 1651553734.2534444, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.864931, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 33, 'Sender': '10.0.0.13', 'Sent': 1651553734.7551003, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8649755, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 249, 'Sender': '10.0.0.13', 'Sent': 1651553735.2577233, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8650188, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 5, 'Sender': '10.0.0.13', 'Sent': 1651553736.2629828, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8650622, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 479, 'Sender': '10.0.0.13', 'Sent': 1651553736.5639384, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.865105, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 413, 'Sender': '10.0.0.13', 'Sent': 1651553736.7643871, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8651488, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 243, 'Sender': '10.0.0.13', 'Sent': 1651553736.9654253, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8651924, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 363, 'Sender': '10.0.0.13', 'Sent': 1651553737.3674624, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.865275, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 365, 'Sender': '10.0.0.13', 'Sent': 1651553737.5723104, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8653252, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 8, 'Sender': '10.0.0.13', 'Sent': 1651553738.3760397, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8653686, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 210, 'Sender': '10.0.0.13', 'Sent': 1651553738.4769528, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8654196, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 219, 'Sender': '10.0.0.13', 'Sent': 1651553739.1850247, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8654642, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 173, 'Sender': '10.0.0.13', 'Sent': 1651553740.1946187, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.865507, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 243, 'Sender': '10.0.0.13', 'Sent': 1651553740.3952916, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8655486, 'Latency': 0.0}
+{'Topic': 'light|20', 'Value': 399, 'Sender': '10.0.0.13', 'Sent': 1651553740.7967374, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.67', 'Received': 1651553740.8655906, 'Latency': 0.0}
+Getting smell|10 from tcp://10.0.0.13:5572
 WARNING:kazoo.client:Connection dropped: socket connection broken
 WARNING:kazoo.client:Transition to CONNECTING
 Current state is now = SUSPENDED
@@ -44,6 +54,4 @@ WARNING:kazoo.client:Connection dropped: socket connection error: Connection ref
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Network is unreachable
+WARNING:kazoo.client:Connection dropped: socket connection error: None

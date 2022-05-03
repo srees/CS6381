@@ -1,7 +1,7 @@
 Current libzmq version is 4.3.4
 Current  pyzmq version is 22.3.0
 Main: parse command line arguments
-Subscriber interested in listening for these topics: ['airquality|20', 'humidity|10']
+Subscriber interested in listening for these topics: ['light|10', 'airquality|10', 'humidity|20', 'sound|10', 'location|20', 'pressure|20']
 Getting subscriber object
 Binding REP to tcp://10.0.0.64:5580
 Getting registry proxy
@@ -25,12 +25,23 @@ Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'descript
 Registration received
 Waiting for start from registry
 Retrieving history...
-Getting airquality|20 from tcp://10.0.0.11:5572
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection reset by peer
+Getting light|10 from tcp://10.0.0.11:5572
+{'Topic': 'light|10', 'Value': 183, 'Sender': '10.0.0.11', 'Sent': 1651553741.4758568, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.64', 'Received': 1651553742.4146469, 'Latency': 0.0}
+{'Topic': 'light|10', 'Value': 206, 'Sender': '10.0.0.11', 'Sent': 1651553741.5760226, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.64', 'Received': 1651553742.414909, 'Latency': 0.0}
+{'Topic': 'light|10', 'Value': 244, 'Sender': '10.0.0.11', 'Sent': 1651553741.6767356, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.64', 'Received': 1651553742.4149778, 'Latency': 0.0}
+{'Topic': 'light|10', 'Value': 489, 'Sender': '10.0.0.11', 'Sent': 1651553741.7789161, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.64', 'Received': 1651553742.4150393, 'Latency': 0.0}
+{'Topic': 'light|10', 'Value': 377, 'Sender': '10.0.0.11', 'Sent': 1651553741.8803418, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.64', 'Received': 1651553742.4151382, 'Latency': 0.0}
+{'Topic': 'light|10', 'Value': 54, 'Sender': '10.0.0.11', 'Sent': 1651553741.9806914, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.64', 'Received': 1651553742.4151986, 'Latency': 0.0}
+{'Topic': 'light|10', 'Value': 172, 'Sender': '10.0.0.11', 'Sent': 1651553742.0810816, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.64', 'Received': 1651553742.415256, 'Latency': 0.0}
+{'Topic': 'light|10', 'Value': 268, 'Sender': '10.0.0.11', 'Sent': 1651553742.1829383, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.64', 'Received': 1651553742.4153202, 'Latency': 0.0}
+{'Topic': 'light|10', 'Value': 128, 'Sender': '10.0.0.11', 'Sent': 1651553742.2839239, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.64', 'Received': 1651553742.4153705, 'Latency': 0.0}
+{'Topic': 'light|10', 'Value': 159, 'Sender': '10.0.0.11', 'Sent': 1651553742.3840785, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.64', 'Received': 1651553742.4154742, 'Latency': 0.0}
+Getting airquality|10 from tcp://10.0.0.11:5572
+WARNING:kazoo.client:Connection dropped: socket connection broken
 WARNING:kazoo.client:Transition to CONNECTING
 Current state is now = SUSPENDED
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: None

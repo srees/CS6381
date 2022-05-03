@@ -1,7 +1,7 @@
 Current libzmq version is 4.3.4
 Current  pyzmq version is 22.3.0
 Main: parse command line arguments
-Subscriber interested in listening for these topics: ['temperature|20', 'humidity|20', 'sound|20', 'airquality|20', 'smell|10']
+Subscriber interested in listening for these topics: ['temperature|10', 'altitude|20', 'sound|10', 'smell|10', 'humidity|10', 'airquality|20', 'light|20']
 Getting subscriber object
 Binding REP to tcp://10.0.0.79:5580
 Getting registry proxy
@@ -17,18 +17,53 @@ Checking if registries/registry5 exists (it better be)
 registries/registry5 znode indeed exists; get value
 Connecting to 10.0.0.5:5550
 Starting registry monitor loop thread
-Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
 Registering with tcp://10.0.0.5:5550...
-Registration sent
+Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
 Event: {'event': 1, 'value': 23, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
+Registration sent
 Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
 Registration received
 Waiting for start from registry
 Retrieving history...
-Getting temperature|20 from tcp://10.0.0.13:5572
+Getting temperature|10 from tcp://10.0.0.21:5572
+{'Topic': 'temperature|10', 'Value': 89, 'Sender': '10.0.0.21', 'Sent': 1651553740.3110237, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.1887646, 'Latency': 0.0}
+{'Topic': 'temperature|10', 'Value': 222, 'Sender': '10.0.0.21', 'Sent': 1651553740.7123399, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.1889763, 'Latency': 0.0}
+{'Topic': 'temperature|10', 'Value': 297, 'Sender': '10.0.0.21', 'Sent': 1651553742.0179155, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.1890368, 'Latency': 0.0}
+{'Topic': 'temperature|10', 'Value': 250, 'Sender': '10.0.0.21', 'Sent': 1651553742.8237877, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.1890874, 'Latency': 0.0}
+{'Topic': 'temperature|10', 'Value': 347, 'Sender': '10.0.0.21', 'Sent': 1651553743.1248558, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.189134, 'Latency': 0.0}
+{'Topic': 'temperature|10', 'Value': 130, 'Sender': '10.0.0.21', 'Sent': 1651553743.5267394, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.1891792, 'Latency': 0.0}
+{'Topic': 'temperature|10', 'Value': 157, 'Sender': '10.0.0.21', 'Sent': 1651553743.8282511, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.189224, 'Latency': 0.0}
+{'Topic': 'temperature|10', 'Value': 67, 'Sender': '10.0.0.21', 'Sent': 1651553744.3302004, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.1892693, 'Latency': 0.0}
+{'Topic': 'temperature|10', 'Value': 494, 'Sender': '10.0.0.21', 'Sent': 1651553744.4305758, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.1893132, 'Latency': 0.0}
+{'Topic': 'temperature|10', 'Value': 227, 'Sender': '10.0.0.21', 'Sent': 1651553744.9340432, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.1893566, 'Latency': 0.0}
+Getting altitude|20 from tcp://10.0.0.21:5572
+{'Topic': 'altitude|20', 'Value': 98, 'Sender': '10.0.0.21', 'Sent': 1651553737.5943344, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.3549063, 'Latency': 0.0}
+{'Topic': 'altitude|20', 'Value': 288, 'Sender': '10.0.0.21', 'Sent': 1651553738.3983335, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.3550467, 'Latency': 0.0}
+{'Topic': 'altitude|20', 'Value': 132, 'Sender': '10.0.0.21', 'Sent': 1651553738.8998115, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.3551104, 'Latency': 0.0}
+{'Topic': 'altitude|20', 'Value': 207, 'Sender': '10.0.0.21', 'Sent': 1651553739.2006252, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.3551667, 'Latency': 0.0}
+{'Topic': 'altitude|20', 'Value': 176, 'Sender': '10.0.0.21', 'Sent': 1651553739.3010137, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.3552318, 'Latency': 0.0}
+{'Topic': 'altitude|20', 'Value': 6, 'Sender': '10.0.0.21', 'Sent': 1651553741.1141813, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.3552856, 'Latency': 0.0}
+{'Topic': 'altitude|20', 'Value': 206, 'Sender': '10.0.0.21', 'Sent': 1651553741.2146995, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.3553393, 'Latency': 0.0}
+{'Topic': 'altitude|20', 'Value': 383, 'Sender': '10.0.0.21', 'Sent': 1651553741.9174118, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.3553913, 'Latency': 0.0}
+{'Topic': 'altitude|20', 'Value': 442, 'Sender': '10.0.0.21', 'Sent': 1651553745.6374443, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.3554404, 'Latency': 0.0}
+{'Topic': 'altitude|20', 'Value': 391, 'Sender': '10.0.0.21', 'Sent': 1651553746.1396635, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.3554912, 'Latency': 0.0}
+Getting sound|10 from tcp://10.0.0.21:5572
+{'Topic': 'sound|10', 'Value': 316, 'Sender': '10.0.0.21', 'Sent': 1651553742.118312, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.5208023, 'Latency': 0.0}
+{'Topic': 'sound|10', 'Value': 134, 'Sender': '10.0.0.21', 'Sent': 1651553742.5197186, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.5209427, 'Latency': 0.0}
+{'Topic': 'sound|10', 'Value': 411, 'Sender': '10.0.0.21', 'Sent': 1651553742.6199281, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.5210104, 'Latency': 0.0}
+{'Topic': 'sound|10', 'Value': 123, 'Sender': '10.0.0.21', 'Sent': 1651553743.024558, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.5210712, 'Latency': 0.0}
+{'Topic': 'sound|10', 'Value': 374, 'Sender': '10.0.0.21', 'Sent': 1651553743.7276874, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.52115, 'Latency': 0.0}
+{'Topic': 'sound|10', 'Value': 66, 'Sender': '10.0.0.21', 'Sent': 1651553744.2297812, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.5212266, 'Latency': 0.0}
+{'Topic': 'sound|10', 'Value': 415, 'Sender': '10.0.0.21', 'Sent': 1651553744.8333368, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.521307, 'Latency': 0.0}
+{'Topic': 'sound|10', 'Value': 462, 'Sender': '10.0.0.21', 'Sent': 1651553745.0345285, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.5213745, 'Latency': 0.0}
+{'Topic': 'sound|10', 'Value': 45, 'Sender': '10.0.0.21', 'Sent': 1651553745.2353556, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.5214436, 'Latency': 0.0}
+{'Topic': 'sound|10', 'Value': 367, 'Sender': '10.0.0.21', 'Sent': 1651553745.435975, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.79', 'Received': 1651553746.521509, 'Latency': 0.0}
+Getting smell|10 from tcp://10.0.0.21:5572
 WARNING:kazoo.client:Connection dropped: socket connection broken
 WARNING:kazoo.client:Transition to CONNECTING
 Current state is now = SUSPENDED
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
