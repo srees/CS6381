@@ -49,6 +49,7 @@
 import argparse  # for argument parsing
 from configurator import Configurator  # factory class
 import csv
+import random
 
 
 # import any other packages you need.
@@ -95,6 +96,13 @@ def main():
 
     # Ask the configurator to give us a random subset of topics that we can publish
     my_topics = config.get_interest()
+
+    # let's assign a QoS number to each topic. Since this is a hard requirement it
+    # can be part of the topic name
+    for topic in my_topics:
+        qos = random.randint(1,5) * 5
+        topic = topic + "|" + str(qos)
+
     print("Subscriber interested in listening for these topics: {}".format(my_topics))
 
     # get a handle to our publisher object

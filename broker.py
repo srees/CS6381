@@ -36,6 +36,15 @@ class Broker:
         print("Binding REP to " + self.REP_url)
         self.REP_socket.bind(self.REP_url)
 
+        # setup sockets for history requests
+        # requests forwarded to publishers
+        self.HIST_REQ_socket = self.context.socket(zmq.REQ)
+        # listen for requests from subscribers
+        self.HIST_REP_socket = self.context.socket(zmq.REP)
+        self.HIST_REP_url = 'tcp://' + self.ip + ':' + str(int(self.args.bind) + 2)
+        print("Binding HIST_REP to " + self.HIST_REP_url)
+        self.HIST_REP_socket.bind(self.HIST_REP_url)
+
         self.PUB_socket = self.context.socket(zmq.PUB)
         self.PUB_url = 'tcp://' + self.ip + ':' + str(int(self.args.bind) + 1)
         print("Binding PUB to " + self.PUB_url)
@@ -46,7 +55,6 @@ class Broker:
         zkargs = types.SimpleNamespace()
         zkargs.zkIPAddr = args.zookeeper
         zkargs.zkPort = args.zookeeper_port
-        segments = self.ip.split('.')
         publish_ip_port = self.ip + ":" + str(int(self.args.bind) + 1)
         self.zk = ZKDriver(zkargs)
         self.zk.init_driver()
@@ -61,6 +69,8 @@ class Broker:
 
     def start(self):
         self.wait()
+        history_thread = threading.Thread(target=self.history_listen)
+        history_thread.start()
         primary_contenders = self.election.contenders()
         backup_contenders = self.election_backup.contenders()
         if len(primary_contenders) <= len(backup_contenders):
@@ -199,3 +209,35 @@ class Broker:
     def release_poll_lock(self):
         self.request_lock = False
         self.poll_lock = False
+
+    def history_listen(self):
+        print("History request listener started")
+        while True:
+            try:
+                data = self.HIST_REP_socket.recv_json()
+                if data["message"] == "history":
+                    print("Received history request for " + data["topic"])
+                    # get information from actual publisher as opposed to keeping a store within the broker
+                    # do lookup in self.pubs for the topic publisher info
+                    HIST_REQ_url = ''
+                    for pub in self.pubs:
+                        if data["topic"] in pub["topics"]:
+                            HIST_REQ_url = 'tcp://' + pub['ip'] + ':' + str(int(pub['port']) + 1)
+                            break
+                    if HIST_REQ_url:
+                        self.HIST_REQ_socket.connect(HIST_REQ_url)
+                        self.HIST_REQ_socket.send_json({"message": "history", "topic": data["topic"]})
+                        history = self.HIST_REQ_socket.recv_json()
+                        self.HIST_REQ_socket.disconnect(HIST_REQ_url)
+                    if not history:
+                        history = []
+                    print("Sending:")
+                    print(history)
+                    self.HIST_REP_socket.send_json(history)
+                else:
+                    print("Received data message that was not 'history':")
+                    print(data["message"])
+                    self.HIST_REP_socket.send_json([])
+            except KeyboardInterrupt:
+                break
+        print("Exiting history.")

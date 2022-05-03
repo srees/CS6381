@@ -38,6 +38,9 @@ class Subscriber:
         print("Binding REP to " + self.REP_url)
         self.REP_socket.bind(self.REP_url)
 
+        # setup socket for retrieving history from publisher/broker
+        self.HIST_socket = self.context.socket(zmq.REQ)
+
         self.topics = []
         self.die = False
         self.registry = None
@@ -49,6 +52,22 @@ class Subscriber:
         self.topics = topics
         for pub in self.pubs:
             connect_str = 'tcp://' + pub['ip'] + ':' + pub['port']
+            print("Retrieving history...")
+            for topic in topics:
+                HIST_url = 'tcp://' + pub['ip'] + ':' + str(int(pub['port']) + 1)
+                self.HIST_socket.connect(HIST_url)
+                self.HIST_socket.send_json({"message": "history", "topic": topic})
+                history = self.HIST_socket.recv_json()
+                self.HIST_socket.disconnect(connect_str)
+                if not history:
+                    history = []
+                for record in history:
+                    record["Subscriber"] = self.ip
+                    record["Received"] = time.time()
+                    latency = float(record["Received"]) - float(record["Sent"])
+                    record["Latency"] = latency
+                    self.registry.record_latency(latency)
+                    function(record)
             print("Subscribing to " + connect_str)
             temp_sock = self.context.socket(zmq.SUB)
             temp_sock.connect(connect_str)

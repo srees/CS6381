@@ -100,11 +100,20 @@ def main():
 
     # Ask the configurator to give us a random subset of topics that we can publish
     my_topics = config.get_interest()
+
+    # let's assign a QoS number to each topic. Since this is a hard requirement it
+    # can be part of the topic name
+    for topic in my_topics:
+        qos = random.randint(1,5) * 5
+        topic = topic + "|" + str(qos)
     print("Publisher interested in publishing on these topics: {}".format(my_topics))
 
     # get a handle to our publisher object
     print("Getting publisher object")
     pub = config.get_publisher()
+
+    # set our QoS number
+    pub.setQoS(qos)
 
     # get a handle to our registry object (will be a proxy)
     print("Getting registry proxy")
