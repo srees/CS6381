@@ -65,9 +65,9 @@ class Subscriber:
                 for record in history:
                     record["Subscriber"] = self.ip
                     record["Received"] = time.time()
-                    latency = float(record["Received"]) - float(record["Sent"])
+                    latency = 0.0
                     record["Latency"] = latency
-                    self.registry.record_latency(latency)
+                    # self.registry.record_latency(latency)
                     function(record)
             print("Subscribing to " + connect_str)
             temp_sock = self.context.socket(zmq.SUB)
