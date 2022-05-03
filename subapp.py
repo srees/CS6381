@@ -95,13 +95,14 @@ def main():
     config = Configurator(args)
 
     # Ask the configurator to give us a random subset of topics that we can publish
-    my_topics = config.get_interest()
+    raw_topics = config.get_interest()
+    my_topics = []
 
     # let's assign a QoS number to each topic. Since this is a hard requirement it
     # can be part of the topic name
-    for topic in my_topics:
-        qos = random.randint(1,5) * 5
-        topic = topic + "|" + str(qos)
+    for topic in raw_topics:
+        qos = random.randint(1, 5) * 5
+        my_topics.append(topic + "|" + str(qos))
 
     print("Subscriber interested in listening for these topics: {}".format(my_topics))
 

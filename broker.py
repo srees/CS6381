@@ -216,6 +216,7 @@ class Broker:
             try:
                 data = self.HIST_REP_socket.recv_json()
                 if data["message"] == "history":
+                    history = []
                     print("Received history request for " + data["topic"])
                     # get information from actual publisher as opposed to keeping a store within the broker
                     # do lookup in self.pubs for the topic publisher info
