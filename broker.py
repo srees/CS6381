@@ -224,6 +224,7 @@ class Broker:
                     for pub in self.pubs:
                         if data["topic"] in pub["topics"]:
                             HIST_REQ_url = 'tcp://' + pub['ip'] + ':' + str(int(pub['port']) + 1)
+                            print(HIST_REQ_url)
                             break
                     if HIST_REQ_url:
                         print("Found history target: " + HIST_REQ_url)
