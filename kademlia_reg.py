@@ -37,6 +37,7 @@ class KademliaReg:
         self.balance_latency = 0.075  # Balance test seems to move around this number
         self.balance_hysteresis = 5.0  # Chosen because registry updates are requested every 10 seconds
         self.balance_begin = None
+        self.topic_list = []
 
         print("Initializing Zookeeper connection")
         zkargs = types.SimpleNamespace()
@@ -82,6 +83,9 @@ class KademliaReg:
                 if message['role'] == 'publisher':
                     # register with DHT
                     self.store_info(message['topics'], {'ip': message['ip'], 'port': message['port']})
+                    for topic in message['topics']:
+                        if topic not in self.topic_list:
+                            self.topic_list.append(topic)
                     # 10-4 then inform of publishers
                     self.REP_socket.send_json("Registered")
                     pub = {'ip': message['ip'], 'port': message['port'], 'topics': message['topics']}
@@ -189,7 +193,7 @@ class KademliaReg:
         pubs = []
         unique_strings = []
         if topics is None or not topics:
-            topics = TopicList.topiclist
+            topics = self.topic_list
             print("Using full topic list")
         for topic in topics:
             print("Getting data for " + topic)
@@ -214,7 +218,7 @@ class KademliaReg:
         print("Getting unique publishers...")
         pubs = {}
         if topics is None or not topics:
-            topics = TopicList.topiclist
+            topics = self.topic_list
             print("Using full topic list")
         for topic in topics:
             print("Getting data for " + topic)
