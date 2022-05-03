@@ -1,0 +1,89 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Subscriber interested in listening for these topics: ['humidity|20']
+Getting subscriber object
+Binding REP to tcp://10.0.0.82:5580
+Getting registry proxy
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+Current state is now = CONNECTED
+['registry5', 'registry2', 'registry4', 'registry3']
+Checking if registries/registry5 exists (it better be)
+registries/registry5 znode indeed exists; get value
+Connecting to 10.0.0.5:5550
+Starting registry monitor loop thread
+Registering with tcp://10.0.0.5:5550...
+Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
+Registration sent
+Event: {'event': 1, 'value': 24, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
+Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
+Registration received
+Waiting for start from registry
+Retrieving history...
+Getting humidity|20 from tcp://10.0.0.6:5562
+Subscribing to tcp://10.0.0.6:5561
+Starting update loop thread
+Starting subscriber listen loop...
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['humidity|20']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['humidity|20']}]
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['humidity|20']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['humidity|20']}]
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['humidity|20']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['humidity|20']}]
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['humidity|20']}]
+{'Topic': 'humidity|20', 'Value': 244, 'Sender': '10.0.0.13', 'Sent': 1651548038.8698304, 'Broker': '10.0.0.6', 'Brokered': 1651548038.8932874, 'Subscriber': '10.0.0.82', 'Received': 1651548038.9162018, 'Latency': 0.0463714599609375}
+{'Topic': 'humidity|20', 'Value': 352, 'Sender': '10.0.0.13', 'Sent': 1651548039.1714795, 'Broker': '10.0.0.6', 'Brokered': 1651548039.1918273, 'Subscriber': '10.0.0.82', 'Received': 1651548039.2139149, 'Latency': 0.042435407638549805}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+{'Topic': 'humidity|20', 'Value': 30, 'Sender': '10.0.0.13', 'Sent': 1651548042.3898635, 'Broker': '10.0.0.6', 'Brokered': 1651548042.4116452, 'Subscriber': '10.0.0.82', 'Received': 1651548042.4354715, 'Latency': 0.0456080436706543}
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['humidity|20']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['humidity|20']}]
+Error: unable to lock polling for updates
+{'Topic': 'humidity|20', 'Value': 372, 'Sender': '10.0.0.13', 'Sent': 1651548050.1410341, 'Broker': '10.0.0.6', 'Brokered': 1651548050.1616995, 'Subscriber': '10.0.0.82', 'Received': 1651548050.182409, 'Latency': 0.041374921798706055}
+{'Topic': 'humidity|20', 'Value': 204, 'Sender': '10.0.0.13', 'Sent': 1651548050.7426455, 'Broker': '10.0.0.6', 'Brokered': 1651548050.7648795, 'Subscriber': '10.0.0.82', 'Received': 1651548050.7884548, 'Latency': 0.045809268951416016}
+{'Topic': 'humidity|20', 'Value': 46, 'Sender': '10.0.0.13', 'Sent': 1651548051.2459302, 'Broker': '10.0.0.6', 'Brokered': 1651548051.2689807, 'Subscriber': '10.0.0.82', 'Received': 1651548051.2912095, 'Latency': 0.04527926445007324}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['humidity|20']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['humidity|20']}]
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['humidity|20']}]
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['humidity|20']}]
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['humidity|20']}]
+WARNING:kazoo.client:Connection dropped: socket connection broken
+WARNING:kazoo.client:Transition to CONNECTING
+Current state is now = SUSPENDED
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Network is unreachable

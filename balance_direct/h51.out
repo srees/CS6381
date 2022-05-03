@@ -1,0 +1,48 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Subscriber interested in listening for these topics: ['pressure|10', 'sound|20', 'weather|20', 'altitude|10', 'light|20', 'location|20', 'humidity|20', 'smell|20', 'airquality|20', 'temperature|10']
+Getting subscriber object
+Binding REP to tcp://10.0.0.51:5580
+Getting registry proxy
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+Current state is now = CONNECTED
+['registry5', 'registry2', 'registry4', 'registry3']
+Checking if registries/registry5 exists (it better be)
+registries/registry5 znode indeed exists; get value
+Connecting to 10.0.0.5:5550
+Starting registry monitor loop thread
+Registering with tcp://10.0.0.5:5550...
+Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
+Event: {'event': 1, 'value': 23, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
+Registration sent
+Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
+Registration received
+Waiting for start from registry
+Retrieving history...
+Getting pressure|10 from tcp://10.0.0.18:5572
+{'Topic': 'pressure|10', 'Value': 443, 'Sender': '10.0.0.18', 'Sent': 1651548255.1588016, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.51', 'Received': 1651548260.1176274, 'Latency': 4.9588258266448975}
+{'Topic': 'pressure|10', 'Value': 230, 'Sender': '10.0.0.18', 'Sent': 1651548255.5645757, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.51', 'Received': 1651548260.1178746, 'Latency': 4.5532989501953125}
+{'Topic': 'pressure|10', 'Value': 283, 'Sender': '10.0.0.18', 'Sent': 1651548256.77269, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.51', 'Received': 1651548260.1179411, 'Latency': 3.3452510833740234}
+{'Topic': 'pressure|10', 'Value': 366, 'Sender': '10.0.0.18', 'Sent': 1651548257.1742997, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.51', 'Received': 1651548260.1179924, 'Latency': 2.943692684173584}
+{'Topic': 'pressure|10', 'Value': 335, 'Sender': '10.0.0.18', 'Sent': 1651548257.9864607, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.51', 'Received': 1651548260.11804, 'Latency': 2.1315793991088867}
+{'Topic': 'pressure|10', 'Value': 423, 'Sender': '10.0.0.18', 'Sent': 1651548258.388744, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.51', 'Received': 1651548260.1180925, 'Latency': 1.7293484210968018}
+{'Topic': 'pressure|10', 'Value': 191, 'Sender': '10.0.0.18', 'Sent': 1651548258.690393, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.51', 'Received': 1651548260.1182232, 'Latency': 1.4278302192687988}
+{'Topic': 'pressure|10', 'Value': 232, 'Sender': '10.0.0.18', 'Sent': 1651548258.8921924, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.51', 'Received': 1651548260.118304, 'Latency': 1.226111650466919}
+{'Topic': 'pressure|10', 'Value': 473, 'Sender': '10.0.0.18', 'Sent': 1651548259.0934033, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.51', 'Received': 1651548260.1183538, 'Latency': 1.0249505043029785}
+{'Topic': 'pressure|10', 'Value': 315, 'Sender': '10.0.0.18', 'Sent': 1651548259.59724, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.51', 'Received': 1651548260.1183994, 'Latency': 0.5211594104766846}
+Getting sound|20 from tcp://10.0.0.18:5572
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection reset by peer
+WARNING:kazoo.client:Transition to CONNECTING
+Current state is now = SUSPENDED
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused

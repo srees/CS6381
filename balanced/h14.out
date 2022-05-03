@@ -1,0 +1,2069 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Publisher interested in publishing on these topics: ['pressure|20', 'weather|20', 'location|20', 'temperature|10', 'smell|10', 'altitude|20', 'airquality|20', 'light|10', 'humidity|10']
+Getting publisher object
+Binding REP to tcp://10.0.0.14:5570
+Binding HIST to tcp://10.0.0.14:5572
+Binding PUB to tcp://10.0.0.14:5571
+Getting registry proxy
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+Current state is now = CONNECTED
+['registry5', 'registry2', 'registry4', 'registry3']
+Checking if registries/registry5 exists (it better be)
+registries/registry5 znode indeed exists; get value
+Connecting to 10.0.0.5:5550
+Starting registry monitor loop thread
+Registering with tcp://10.0.0.5:5550...
+Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
+Registration sent
+Event: {'event': 1, 'value': 26, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
+Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
+Registration received
+Waiting for start from registry
+History request listener started at tcp://10.0.0.14:5572
+Start received.
+Publish: 
+{'Topic': 'light|10', 'Value': 6, 'Sender': '10.0.0.14', 'Sent': 1651547949.5427954, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 390, 'Sender': '10.0.0.14', 'Sent': 1651547949.6433973, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 387, 'Sender': '10.0.0.14', 'Sent': 1651547949.743679, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 311, 'Sender': '10.0.0.14', 'Sent': 1651547949.8442626, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 263, 'Sender': '10.0.0.14', 'Sent': 1651547949.9447873, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 382, 'Sender': '10.0.0.14', 'Sent': 1651547950.0458498, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 488, 'Sender': '10.0.0.14', 'Sent': 1651547950.1460752, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 239, 'Sender': '10.0.0.14', 'Sent': 1651547950.2463102, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 200, 'Sender': '10.0.0.14', 'Sent': 1651547950.3469245, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 162, 'Sender': '10.0.0.14', 'Sent': 1651547950.4481726, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 418, 'Sender': '10.0.0.14', 'Sent': 1651547950.5485122, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 51, 'Sender': '10.0.0.14', 'Sent': 1651547950.6490488, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 97, 'Sender': '10.0.0.14', 'Sent': 1651547950.750764, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 430, 'Sender': '10.0.0.14', 'Sent': 1651547950.8509214, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 83, 'Sender': '10.0.0.14', 'Sent': 1651547950.9519424, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 251, 'Sender': '10.0.0.14', 'Sent': 1651547951.0523493, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 463, 'Sender': '10.0.0.14', 'Sent': 1651547951.1623383, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 145, 'Sender': '10.0.0.14', 'Sent': 1651547951.262673, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 403, 'Sender': '10.0.0.14', 'Sent': 1651547951.3629735, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 153, 'Sender': '10.0.0.14', 'Sent': 1651547951.4633522, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 404, 'Sender': '10.0.0.14', 'Sent': 1651547951.5638707, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 98, 'Sender': '10.0.0.14', 'Sent': 1651547951.6642916, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 195, 'Sender': '10.0.0.14', 'Sent': 1651547951.7644746, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 371, 'Sender': '10.0.0.14', 'Sent': 1651547951.864834, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 63, 'Sender': '10.0.0.14', 'Sent': 1651547951.9656568, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 479, 'Sender': '10.0.0.14', 'Sent': 1651547952.0662107, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 102, 'Sender': '10.0.0.14', 'Sent': 1651547952.1664922, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 303, 'Sender': '10.0.0.14', 'Sent': 1651547952.2667496, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 159, 'Sender': '10.0.0.14', 'Sent': 1651547952.3669457, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 232, 'Sender': '10.0.0.14', 'Sent': 1651547952.4672136, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 413, 'Sender': '10.0.0.14', 'Sent': 1651547952.5676434, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 380, 'Sender': '10.0.0.14', 'Sent': 1651547952.6680324, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 340, 'Sender': '10.0.0.14', 'Sent': 1651547952.7684178, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 176, 'Sender': '10.0.0.14', 'Sent': 1651547952.8688896, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 102, 'Sender': '10.0.0.14', 'Sent': 1651547952.9722357, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 220, 'Sender': '10.0.0.14', 'Sent': 1651547953.0728624, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 253, 'Sender': '10.0.0.14', 'Sent': 1651547953.1758838, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 111, 'Sender': '10.0.0.14', 'Sent': 1651547953.2762864, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 155, 'Sender': '10.0.0.14', 'Sent': 1651547953.3764455, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 45, 'Sender': '10.0.0.14', 'Sent': 1651547953.4766376, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 122, 'Sender': '10.0.0.14', 'Sent': 1651547953.577204, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 136, 'Sender': '10.0.0.14', 'Sent': 1651547953.677578, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 436, 'Sender': '10.0.0.14', 'Sent': 1651547953.778275, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 192, 'Sender': '10.0.0.14', 'Sent': 1651547953.8791516, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 108, 'Sender': '10.0.0.14', 'Sent': 1651547953.9795246, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 158, 'Sender': '10.0.0.14', 'Sent': 1651547954.0804784, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 330, 'Sender': '10.0.0.14', 'Sent': 1651547954.1812427, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 280, 'Sender': '10.0.0.14', 'Sent': 1651547954.2814608, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 230, 'Sender': '10.0.0.14', 'Sent': 1651547954.3817134, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 416, 'Sender': '10.0.0.14', 'Sent': 1651547954.4839015, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 483, 'Sender': '10.0.0.14', 'Sent': 1651547954.5847216, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 29, 'Sender': '10.0.0.14', 'Sent': 1651547954.68489, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 305, 'Sender': '10.0.0.14', 'Sent': 1651547954.787326, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 312, 'Sender': '10.0.0.14', 'Sent': 1651547954.8875966, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 15, 'Sender': '10.0.0.14', 'Sent': 1651547954.9877715, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 106, 'Sender': '10.0.0.14', 'Sent': 1651547955.0878875, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 168, 'Sender': '10.0.0.14', 'Sent': 1651547955.1882057, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 42, 'Sender': '10.0.0.14', 'Sent': 1651547955.2895653, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 51, 'Sender': '10.0.0.14', 'Sent': 1651547955.3899543, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 459, 'Sender': '10.0.0.14', 'Sent': 1651547955.4915905, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 53, 'Sender': '10.0.0.14', 'Sent': 1651547955.59245, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 168, 'Sender': '10.0.0.14', 'Sent': 1651547955.6932323, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 280, 'Sender': '10.0.0.14', 'Sent': 1651547955.7966497, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 399, 'Sender': '10.0.0.14', 'Sent': 1651547955.8990777, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 313, 'Sender': '10.0.0.14', 'Sent': 1651547956.001866, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 201, 'Sender': '10.0.0.14', 'Sent': 1651547956.1027713, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 216, 'Sender': '10.0.0.14', 'Sent': 1651547956.2029793, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 35, 'Sender': '10.0.0.14', 'Sent': 1651547956.3031387, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 37, 'Sender': '10.0.0.14', 'Sent': 1651547956.404621, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 262, 'Sender': '10.0.0.14', 'Sent': 1651547956.5048435, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 452, 'Sender': '10.0.0.14', 'Sent': 1651547956.6066859, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 476, 'Sender': '10.0.0.14', 'Sent': 1651547956.7069674, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 307, 'Sender': '10.0.0.14', 'Sent': 1651547956.8081186, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 289, 'Sender': '10.0.0.14', 'Sent': 1651547956.9082756, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 428, 'Sender': '10.0.0.14', 'Sent': 1651547957.0085723, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 246, 'Sender': '10.0.0.14', 'Sent': 1651547957.1093802, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 156, 'Sender': '10.0.0.14', 'Sent': 1651547957.2096484, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 485, 'Sender': '10.0.0.14', 'Sent': 1651547957.313425, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 174, 'Sender': '10.0.0.14', 'Sent': 1651547957.4167242, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 442, 'Sender': '10.0.0.14', 'Sent': 1651547957.516965, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 497, 'Sender': '10.0.0.14', 'Sent': 1651547957.6225114, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 173, 'Sender': '10.0.0.14', 'Sent': 1651547957.7231488, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 356, 'Sender': '10.0.0.14', 'Sent': 1651547957.8243737, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 54, 'Sender': '10.0.0.14', 'Sent': 1651547957.9246092, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 287, 'Sender': '10.0.0.14', 'Sent': 1651547958.0253618, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 253, 'Sender': '10.0.0.14', 'Sent': 1651547958.1257079, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 197, 'Sender': '10.0.0.14', 'Sent': 1651547958.2259805, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 193, 'Sender': '10.0.0.14', 'Sent': 1651547958.3266068, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 192, 'Sender': '10.0.0.14', 'Sent': 1651547958.4292078, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 392, 'Sender': '10.0.0.14', 'Sent': 1651547958.5294263, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 261, 'Sender': '10.0.0.14', 'Sent': 1651547958.6296358, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 378, 'Sender': '10.0.0.14', 'Sent': 1651547958.7299223, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 18, 'Sender': '10.0.0.14', 'Sent': 1651547958.830318, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 284, 'Sender': '10.0.0.14', 'Sent': 1651547958.930579, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 252, 'Sender': '10.0.0.14', 'Sent': 1651547959.0320604, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 252, 'Sender': '10.0.0.14', 'Sent': 1651547959.1323366, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 229, 'Sender': '10.0.0.14', 'Sent': 1651547959.2344306, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 240, 'Sender': '10.0.0.14', 'Sent': 1651547959.3353925, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 273, 'Sender': '10.0.0.14', 'Sent': 1651547959.4356592, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 102, 'Sender': '10.0.0.14', 'Sent': 1651547959.5360434, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 352, 'Sender': '10.0.0.14', 'Sent': 1651547959.6362188, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 444, 'Sender': '10.0.0.14', 'Sent': 1651547959.7365746, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 253, 'Sender': '10.0.0.14', 'Sent': 1651547959.8418705, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 243, 'Sender': '10.0.0.14', 'Sent': 1651547959.942226, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 228, 'Sender': '10.0.0.14', 'Sent': 1651547960.0424678, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 112, 'Sender': '10.0.0.14', 'Sent': 1651547960.1427062, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 17, 'Sender': '10.0.0.14', 'Sent': 1651547960.242967, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 16, 'Sender': '10.0.0.14', 'Sent': 1651547960.3435118, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 246, 'Sender': '10.0.0.14', 'Sent': 1651547960.4437976, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 222, 'Sender': '10.0.0.14', 'Sent': 1651547960.544069, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 73, 'Sender': '10.0.0.14', 'Sent': 1651547960.6442542, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 431, 'Sender': '10.0.0.14', 'Sent': 1651547960.744555, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 479, 'Sender': '10.0.0.14', 'Sent': 1651547960.8449159, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 55, 'Sender': '10.0.0.14', 'Sent': 1651547960.9451346, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 224, 'Sender': '10.0.0.14', 'Sent': 1651547961.0458362, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 47, 'Sender': '10.0.0.14', 'Sent': 1651547961.146187, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 232, 'Sender': '10.0.0.14', 'Sent': 1651547961.2465005, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 240, 'Sender': '10.0.0.14', 'Sent': 1651547961.3470383, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 28, 'Sender': '10.0.0.14', 'Sent': 1651547961.449961, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 290, 'Sender': '10.0.0.14', 'Sent': 1651547961.5510035, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 342, 'Sender': '10.0.0.14', 'Sent': 1651547961.6521273, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 436, 'Sender': '10.0.0.14', 'Sent': 1651547961.7524555, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 101, 'Sender': '10.0.0.14', 'Sent': 1651547961.853193, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 22, 'Sender': '10.0.0.14', 'Sent': 1651547961.9534621, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 211, 'Sender': '10.0.0.14', 'Sent': 1651547962.054281, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 275, 'Sender': '10.0.0.14', 'Sent': 1651547962.1547146, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 225, 'Sender': '10.0.0.14', 'Sent': 1651547962.254991, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 229, 'Sender': '10.0.0.14', 'Sent': 1651547962.3562334, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 331, 'Sender': '10.0.0.14', 'Sent': 1651547962.45649, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 237, 'Sender': '10.0.0.14', 'Sent': 1651547962.5566237, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 86, 'Sender': '10.0.0.14', 'Sent': 1651547962.6568096, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 161, 'Sender': '10.0.0.14', 'Sent': 1651547962.7569516, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 101, 'Sender': '10.0.0.14', 'Sent': 1651547962.8574831, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 400, 'Sender': '10.0.0.14', 'Sent': 1651547962.9622116, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 153, 'Sender': '10.0.0.14', 'Sent': 1651547963.0624568, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 312, 'Sender': '10.0.0.14', 'Sent': 1651547963.1627603, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 382, 'Sender': '10.0.0.14', 'Sent': 1651547963.266294, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 438, 'Sender': '10.0.0.14', 'Sent': 1651547963.3665311, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 182, 'Sender': '10.0.0.14', 'Sent': 1651547963.4668012, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 133, 'Sender': '10.0.0.14', 'Sent': 1651547963.566926, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 153, 'Sender': '10.0.0.14', 'Sent': 1651547963.6671808, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 390, 'Sender': '10.0.0.14', 'Sent': 1651547963.7674139, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 203, 'Sender': '10.0.0.14', 'Sent': 1651547963.8684046, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 409, 'Sender': '10.0.0.14', 'Sent': 1651547963.9692197, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 151, 'Sender': '10.0.0.14', 'Sent': 1651547964.069416, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 78, 'Sender': '10.0.0.14', 'Sent': 1651547964.1717505, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 170, 'Sender': '10.0.0.14', 'Sent': 1651547964.2721756, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 155, 'Sender': '10.0.0.14', 'Sent': 1651547964.3726861, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 23, 'Sender': '10.0.0.14', 'Sent': 1651547964.4729624, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 284, 'Sender': '10.0.0.14', 'Sent': 1651547964.573077, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 104, 'Sender': '10.0.0.14', 'Sent': 1651547964.6733325, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 438, 'Sender': '10.0.0.14', 'Sent': 1651547964.7735214, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 427, 'Sender': '10.0.0.14', 'Sent': 1651547964.8736336, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 342, 'Sender': '10.0.0.14', 'Sent': 1651547964.9762921, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 138, 'Sender': '10.0.0.14', 'Sent': 1651547965.0768054, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 138, 'Sender': '10.0.0.14', 'Sent': 1651547965.1806314, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 172, 'Sender': '10.0.0.14', 'Sent': 1651547965.2810724, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 379, 'Sender': '10.0.0.14', 'Sent': 1651547965.3813071, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 119, 'Sender': '10.0.0.14', 'Sent': 1651547965.4815512, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 47, 'Sender': '10.0.0.14', 'Sent': 1651547965.5817761, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 290, 'Sender': '10.0.0.14', 'Sent': 1651547965.6824336, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 262, 'Sender': '10.0.0.14', 'Sent': 1651547965.782583, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 369, 'Sender': '10.0.0.14', 'Sent': 1651547965.8835454, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 369, 'Sender': '10.0.0.14', 'Sent': 1651547965.983822, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 292, 'Sender': '10.0.0.14', 'Sent': 1651547966.0844052, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 292, 'Sender': '10.0.0.14', 'Sent': 1651547966.1845999, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 432, 'Sender': '10.0.0.14', 'Sent': 1651547966.285129, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 138, 'Sender': '10.0.0.14', 'Sent': 1651547966.3853428, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 64, 'Sender': '10.0.0.14', 'Sent': 1651547966.485609, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 194, 'Sender': '10.0.0.14', 'Sent': 1651547966.5858202, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 378, 'Sender': '10.0.0.14', 'Sent': 1651547966.6860662, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 213, 'Sender': '10.0.0.14', 'Sent': 1651547966.7863007, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 426, 'Sender': '10.0.0.14', 'Sent': 1651547966.8872542, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 480, 'Sender': '10.0.0.14', 'Sent': 1651547966.9875064, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 24, 'Sender': '10.0.0.14', 'Sent': 1651547967.0876906, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 56, 'Sender': '10.0.0.14', 'Sent': 1651547967.1886103, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 204, 'Sender': '10.0.0.14', 'Sent': 1651547967.2890372, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 240, 'Sender': '10.0.0.14', 'Sent': 1651547967.3897138, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 126, 'Sender': '10.0.0.14', 'Sent': 1651547967.4898825, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 56, 'Sender': '10.0.0.14', 'Sent': 1651547967.5905118, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 245, 'Sender': '10.0.0.14', 'Sent': 1651547967.6909053, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 296, 'Sender': '10.0.0.14', 'Sent': 1651547967.7915847, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 454, 'Sender': '10.0.0.14', 'Sent': 1651547967.8940365, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 253, 'Sender': '10.0.0.14', 'Sent': 1651547967.9945362, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 185, 'Sender': '10.0.0.14', 'Sent': 1651547968.0947764, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 247, 'Sender': '10.0.0.14', 'Sent': 1651547968.1951287, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 481, 'Sender': '10.0.0.14', 'Sent': 1651547968.29539, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 410, 'Sender': '10.0.0.14', 'Sent': 1651547968.395503, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 210, 'Sender': '10.0.0.14', 'Sent': 1651547968.4957552, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 83, 'Sender': '10.0.0.14', 'Sent': 1651547968.5959735, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 84, 'Sender': '10.0.0.14', 'Sent': 1651547968.6964083, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 57, 'Sender': '10.0.0.14', 'Sent': 1651547968.797054, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 311, 'Sender': '10.0.0.14', 'Sent': 1651547968.8984354, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 75, 'Sender': '10.0.0.14', 'Sent': 1651547968.9986603, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 337, 'Sender': '10.0.0.14', 'Sent': 1651547969.0990825, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 331, 'Sender': '10.0.0.14', 'Sent': 1651547969.1993694, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 311, 'Sender': '10.0.0.14', 'Sent': 1651547969.2996929, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 177, 'Sender': '10.0.0.14', 'Sent': 1651547969.4004276, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 385, 'Sender': '10.0.0.14', 'Sent': 1651547969.5036685, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 84, 'Sender': '10.0.0.14', 'Sent': 1651547969.6038938, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 491, 'Sender': '10.0.0.14', 'Sent': 1651547969.7039933, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 480, 'Sender': '10.0.0.14', 'Sent': 1651547969.8041492, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 93, 'Sender': '10.0.0.14', 'Sent': 1651547969.904385, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 111, 'Sender': '10.0.0.14', 'Sent': 1651547970.004626, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 199, 'Sender': '10.0.0.14', 'Sent': 1651547970.105049, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 359, 'Sender': '10.0.0.14', 'Sent': 1651547970.2052138, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 175, 'Sender': '10.0.0.14', 'Sent': 1651547970.3062654, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 176, 'Sender': '10.0.0.14', 'Sent': 1651547970.406603, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 125, 'Sender': '10.0.0.14', 'Sent': 1651547970.5068934, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 472, 'Sender': '10.0.0.14', 'Sent': 1651547970.6070228, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 76, 'Sender': '10.0.0.14', 'Sent': 1651547970.70716, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 93, 'Sender': '10.0.0.14', 'Sent': 1651547970.807829, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 23, 'Sender': '10.0.0.14', 'Sent': 1651547970.9079576, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 437, 'Sender': '10.0.0.14', 'Sent': 1651547971.0090632, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 404, 'Sender': '10.0.0.14', 'Sent': 1651547971.1108155, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 358, 'Sender': '10.0.0.14', 'Sent': 1651547971.2110617, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 91, 'Sender': '10.0.0.14', 'Sent': 1651547971.312153, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 144, 'Sender': '10.0.0.14', 'Sent': 1651547971.4124207, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 327, 'Sender': '10.0.0.14', 'Sent': 1651547971.5126412, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 424, 'Sender': '10.0.0.14', 'Sent': 1651547971.612879, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 85, 'Sender': '10.0.0.14', 'Sent': 1651547971.7135239, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 70, 'Sender': '10.0.0.14', 'Sent': 1651547971.813727, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 24, 'Sender': '10.0.0.14', 'Sent': 1651547971.913943, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 307, 'Sender': '10.0.0.14', 'Sent': 1651547972.0145943, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 497, 'Sender': '10.0.0.14', 'Sent': 1651547972.114926, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 497, 'Sender': '10.0.0.14', 'Sent': 1651547972.2154899, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 496, 'Sender': '10.0.0.14', 'Sent': 1651547972.316367, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 219, 'Sender': '10.0.0.14', 'Sent': 1651547972.416642, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 132, 'Sender': '10.0.0.14', 'Sent': 1651547972.516887, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 433, 'Sender': '10.0.0.14', 'Sent': 1651547972.619825, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 342, 'Sender': '10.0.0.14', 'Sent': 1651547964.9762921, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 262, 'Sender': '10.0.0.14', 'Sent': 1651547965.782583, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 426, 'Sender': '10.0.0.14', 'Sent': 1651547966.8872542, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 56, 'Sender': '10.0.0.14', 'Sent': 1651547967.1886103, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 204, 'Sender': '10.0.0.14', 'Sent': 1651547967.2890372, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 491, 'Sender': '10.0.0.14', 'Sent': 1651547969.7039933, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 199, 'Sender': '10.0.0.14', 'Sent': 1651547970.105049, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 76, 'Sender': '10.0.0.14', 'Sent': 1651547970.70716, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 144, 'Sender': '10.0.0.14', 'Sent': 1651547971.4124207, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 433, 'Sender': '10.0.0.14', 'Sent': 1651547972.619825, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'location|20', 'Value': 240, 'Sender': '10.0.0.14', 'Sent': 1651547972.7200787, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 280, 'Sender': '10.0.0.14', 'Sent': 1651547972.8206196, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 255, 'Sender': '10.0.0.14', 'Sent': 1651547972.9208755, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 199, 'Sender': '10.0.0.14', 'Sent': 1651547973.0226119, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 448, 'Sender': '10.0.0.14', 'Sent': 1651547973.1228528, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 473, 'Sender': '10.0.0.14', 'Sent': 1651547973.2231832, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 248, 'Sender': '10.0.0.14', 'Sent': 1651547973.3234632, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 47, 'Sender': '10.0.0.14', 'Sent': 1651547973.4244184, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 118, 'Sender': '10.0.0.14', 'Sent': 1651547973.5246484, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 143, 'Sender': '10.0.0.14', 'Sent': 1651547973.6248605, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 208, 'Sender': '10.0.0.14', 'Sent': 1651547973.7250607, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 342, 'Sender': '10.0.0.14', 'Sent': 1651547964.9762921, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 262, 'Sender': '10.0.0.14', 'Sent': 1651547965.782583, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 426, 'Sender': '10.0.0.14', 'Sent': 1651547966.8872542, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 56, 'Sender': '10.0.0.14', 'Sent': 1651547967.1886103, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 204, 'Sender': '10.0.0.14', 'Sent': 1651547967.2890372, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 491, 'Sender': '10.0.0.14', 'Sent': 1651547969.7039933, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 199, 'Sender': '10.0.0.14', 'Sent': 1651547970.105049, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 76, 'Sender': '10.0.0.14', 'Sent': 1651547970.70716, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 144, 'Sender': '10.0.0.14', 'Sent': 1651547971.4124207, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 433, 'Sender': '10.0.0.14', 'Sent': 1651547972.619825, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'location|20', 'Value': 460, 'Sender': '10.0.0.14', 'Sent': 1651547973.8252854, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 493, 'Sender': '10.0.0.14', 'Sent': 1651547973.925417, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 447, 'Sender': '10.0.0.14', 'Sent': 1651547974.0256042, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 341, 'Sender': '10.0.0.14', 'Sent': 1651547974.125759, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 105, 'Sender': '10.0.0.14', 'Sent': 1651547974.2262673, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 464, 'Sender': '10.0.0.14', 'Sent': 1651547974.3264477, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 432, 'Sender': '10.0.0.14', 'Sent': 1651547974.4291925, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 256, 'Sender': '10.0.0.14', 'Sent': 1651547974.5294194, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 486, 'Sender': '10.0.0.14', 'Sent': 1651547974.6296816, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 277, 'Sender': '10.0.0.14', 'Sent': 1651547974.729904, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 390, 'Sender': '10.0.0.14', 'Sent': 1651547974.8301528, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 477, 'Sender': '10.0.0.14', 'Sent': 1651547974.932373, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 215, 'Sender': '10.0.0.14', 'Sent': 1651547975.0332248, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 402, 'Sender': '10.0.0.14', 'Sent': 1651547975.1334016, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 68, 'Sender': '10.0.0.14', 'Sent': 1651547975.2336464, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 342, 'Sender': '10.0.0.14', 'Sent': 1651547964.9762921, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 262, 'Sender': '10.0.0.14', 'Sent': 1651547965.782583, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 426, 'Sender': '10.0.0.14', 'Sent': 1651547966.8872542, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 56, 'Sender': '10.0.0.14', 'Sent': 1651547967.1886103, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 204, 'Sender': '10.0.0.14', 'Sent': 1651547967.2890372, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 491, 'Sender': '10.0.0.14', 'Sent': 1651547969.7039933, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 199, 'Sender': '10.0.0.14', 'Sent': 1651547970.105049, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 76, 'Sender': '10.0.0.14', 'Sent': 1651547970.70716, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 144, 'Sender': '10.0.0.14', 'Sent': 1651547971.4124207, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 433, 'Sender': '10.0.0.14', 'Sent': 1651547972.619825, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'humidity|10', 'Value': 319, 'Sender': '10.0.0.14', 'Sent': 1651547975.3338664, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 241, 'Sender': '10.0.0.14', 'Sent': 1651547975.4366217, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 463, 'Sender': '10.0.0.14', 'Sent': 1651547975.5383055, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 50, 'Sender': '10.0.0.14', 'Sent': 1651547975.6386492, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 122, 'Sender': '10.0.0.14', 'Sent': 1651547975.7408288, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 35, 'Sender': '10.0.0.14', 'Sent': 1651547975.8424952, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 377, 'Sender': '10.0.0.14', 'Sent': 1651547975.9435349, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 334, 'Sender': '10.0.0.14', 'Sent': 1651547976.0437732, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 472, 'Sender': '10.0.0.14', 'Sent': 1651547976.144272, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 184, 'Sender': '10.0.0.14', 'Sent': 1651547976.2449799, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 426, 'Sender': '10.0.0.14', 'Sent': 1651547966.8872542, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 56, 'Sender': '10.0.0.14', 'Sent': 1651547967.1886103, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 204, 'Sender': '10.0.0.14', 'Sent': 1651547967.2890372, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 491, 'Sender': '10.0.0.14', 'Sent': 1651547969.7039933, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 199, 'Sender': '10.0.0.14', 'Sent': 1651547970.105049, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 76, 'Sender': '10.0.0.14', 'Sent': 1651547970.70716, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 144, 'Sender': '10.0.0.14', 'Sent': 1651547971.4124207, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 433, 'Sender': '10.0.0.14', 'Sent': 1651547972.619825, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 122, 'Sender': '10.0.0.14', 'Sent': 1651547975.7408288, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 377, 'Sender': '10.0.0.14', 'Sent': 1651547975.9435349, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'pressure|20', 'Value': 388, 'Sender': '10.0.0.14', 'Sent': 1651547976.345191, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 182, 'Sender': '10.0.0.14', 'Sent': 1651547976.4454029, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 394, 'Sender': '10.0.0.14', 'Sent': 1651547976.5456104, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 237, 'Sender': '10.0.0.14', 'Sent': 1651547976.6461384, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 488, 'Sender': '10.0.0.14', 'Sent': 1651547976.7463849, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 427, 'Sender': '10.0.0.14', 'Sent': 1651547976.8465927, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 96, 'Sender': '10.0.0.14', 'Sent': 1651547976.9512284, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 424, 'Sender': '10.0.0.14', 'Sent': 1651547977.0549152, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 434, 'Sender': '10.0.0.14', 'Sent': 1651547977.1552222, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 7, 'Sender': '10.0.0.14', 'Sent': 1651547977.2574055, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 228, 'Sender': '10.0.0.14', 'Sent': 1651547977.358032, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 210, 'Sender': '10.0.0.14', 'Sent': 1651547977.4583764, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 58, 'Sender': '10.0.0.14', 'Sent': 1651547977.5587068, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651547977.6642756, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 269, 'Sender': '10.0.0.14', 'Sent': 1651547977.764635, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 251, 'Sender': '10.0.0.14', 'Sent': 1651547977.8658729, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 238, 'Sender': '10.0.0.14', 'Sent': 1651547977.968902, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 24, 'Sender': '10.0.0.14', 'Sent': 1651547978.0705314, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 45, 'Sender': '10.0.0.14', 'Sent': 1651547978.170748, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 168, 'Sender': '10.0.0.14', 'Sent': 1651547978.2724636, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 390, 'Sender': '10.0.0.14', 'Sent': 1651547978.373443, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 393, 'Sender': '10.0.0.14', 'Sent': 1651547978.4739287, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 378, 'Sender': '10.0.0.14', 'Sent': 1651547978.5741463, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 443, 'Sender': '10.0.0.14', 'Sent': 1651547978.6744583, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 56, 'Sender': '10.0.0.14', 'Sent': 1651547967.1886103, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 204, 'Sender': '10.0.0.14', 'Sent': 1651547967.2890372, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 491, 'Sender': '10.0.0.14', 'Sent': 1651547969.7039933, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 199, 'Sender': '10.0.0.14', 'Sent': 1651547970.105049, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 76, 'Sender': '10.0.0.14', 'Sent': 1651547970.70716, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 144, 'Sender': '10.0.0.14', 'Sent': 1651547971.4124207, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 433, 'Sender': '10.0.0.14', 'Sent': 1651547972.619825, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 122, 'Sender': '10.0.0.14', 'Sent': 1651547975.7408288, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 377, 'Sender': '10.0.0.14', 'Sent': 1651547975.9435349, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 394, 'Sender': '10.0.0.14', 'Sent': 1651547976.5456104, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'airquality|20', 'Value': 381, 'Sender': '10.0.0.14', 'Sent': 1651547978.7747216, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 216, 'Sender': '10.0.0.14', 'Sent': 1651547978.8767455, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 235, 'Sender': '10.0.0.14', 'Sent': 1651547978.9775817, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 133, 'Sender': '10.0.0.14', 'Sent': 1651547979.0786443, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 389, 'Sender': '10.0.0.14', 'Sent': 1651547979.1791654, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 112, 'Sender': '10.0.0.14', 'Sent': 1651547979.2820258, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 293, 'Sender': '10.0.0.14', 'Sent': 1651547979.3826513, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 71, 'Sender': '10.0.0.14', 'Sent': 1651547979.482886, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 314, 'Sender': '10.0.0.14', 'Sent': 1651547979.5832286, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 240, 'Sender': '10.0.0.14', 'Sent': 1651547979.6834671, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 311, 'Sender': '10.0.0.14', 'Sent': 1651547979.783783, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 484, 'Sender': '10.0.0.14', 'Sent': 1651547979.8847902, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 456, 'Sender': '10.0.0.14', 'Sent': 1651547979.9850502, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 289, 'Sender': '10.0.0.14', 'Sent': 1651547980.0866606, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 12, 'Sender': '10.0.0.14', 'Sent': 1651547980.191963, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 125, 'Sender': '10.0.0.14', 'Sent': 1651547980.292796, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 39, 'Sender': '10.0.0.14', 'Sent': 1651547980.3931134, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 28, 'Sender': '10.0.0.14', 'Sent': 1651547980.49339, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 223, 'Sender': '10.0.0.14', 'Sent': 1651547980.6003504, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 400, 'Sender': '10.0.0.14', 'Sent': 1651547980.7010806, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 34, 'Sender': '10.0.0.14', 'Sent': 1651547980.8014684, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 339, 'Sender': '10.0.0.14', 'Sent': 1651547980.9040246, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 399, 'Sender': '10.0.0.14', 'Sent': 1651547981.0049622, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 187, 'Sender': '10.0.0.14', 'Sent': 1651547981.1052139, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 190, 'Sender': '10.0.0.14', 'Sent': 1651547981.2054327, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 148, 'Sender': '10.0.0.14', 'Sent': 1651547981.3090107, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 83, 'Sender': '10.0.0.14', 'Sent': 1651547981.4092147, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 284, 'Sender': '10.0.0.14', 'Sent': 1651547981.5131967, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 366, 'Sender': '10.0.0.14', 'Sent': 1651547981.6134624, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 324, 'Sender': '10.0.0.14', 'Sent': 1651547981.7140255, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651547981.814365, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 494, 'Sender': '10.0.0.14', 'Sent': 1651547981.9203842, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 468, 'Sender': '10.0.0.14', 'Sent': 1651547982.0206769, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 199, 'Sender': '10.0.0.14', 'Sent': 1651547970.105049, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 76, 'Sender': '10.0.0.14', 'Sent': 1651547970.70716, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 144, 'Sender': '10.0.0.14', 'Sent': 1651547971.4124207, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 433, 'Sender': '10.0.0.14', 'Sent': 1651547972.619825, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 122, 'Sender': '10.0.0.14', 'Sent': 1651547975.7408288, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 377, 'Sender': '10.0.0.14', 'Sent': 1651547975.9435349, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 394, 'Sender': '10.0.0.14', 'Sent': 1651547976.5456104, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 112, 'Sender': '10.0.0.14', 'Sent': 1651547979.2820258, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 456, 'Sender': '10.0.0.14', 'Sent': 1651547979.9850502, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 83, 'Sender': '10.0.0.14', 'Sent': 1651547981.4092147, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'smell|10', 'Value': 420, 'Sender': '10.0.0.14', 'Sent': 1651547982.1228857, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 42, 'Sender': '10.0.0.14', 'Sent': 1651547982.223061, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 296, 'Sender': '10.0.0.14', 'Sent': 1651547982.323438, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 219, 'Sender': '10.0.0.14', 'Sent': 1651547982.4237585, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 298, 'Sender': '10.0.0.14', 'Sent': 1651547982.5324976, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 394, 'Sender': '10.0.0.14', 'Sent': 1651547982.632758, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 313, 'Sender': '10.0.0.14', 'Sent': 1651547982.7330089, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 436, 'Sender': '10.0.0.14', 'Sent': 1651547982.8335142, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 67, 'Sender': '10.0.0.14', 'Sent': 1651547982.933814, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 292, 'Sender': '10.0.0.14', 'Sent': 1651547983.034183, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 296, 'Sender': '10.0.0.14', 'Sent': 1651547983.1344528, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 61, 'Sender': '10.0.0.14', 'Sent': 1651547983.234801, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 109, 'Sender': '10.0.0.14', 'Sent': 1651547983.342485, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 270, 'Sender': '10.0.0.14', 'Sent': 1651547983.4431355, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 335, 'Sender': '10.0.0.14', 'Sent': 1651547983.543332, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 330, 'Sender': '10.0.0.14', 'Sent': 1651547983.6446903, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 438, 'Sender': '10.0.0.14', 'Sent': 1651547983.7451148, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 392, 'Sender': '10.0.0.14', 'Sent': 1651547983.845815, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 292, 'Sender': '10.0.0.14', 'Sent': 1651547983.9466543, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 108, 'Sender': '10.0.0.14', 'Sent': 1651547984.0469398, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 478, 'Sender': '10.0.0.14', 'Sent': 1651547984.1471207, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 368, 'Sender': '10.0.0.14', 'Sent': 1651547984.2473073, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 45, 'Sender': '10.0.0.14', 'Sent': 1651547984.3475044, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 343, 'Sender': '10.0.0.14', 'Sent': 1651547984.4477003, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 466, 'Sender': '10.0.0.14', 'Sent': 1651547984.5486946, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 325, 'Sender': '10.0.0.14', 'Sent': 1651547984.6504023, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 357, 'Sender': '10.0.0.14', 'Sent': 1651547984.7506871, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 389, 'Sender': '10.0.0.14', 'Sent': 1651547984.8532026, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 406, 'Sender': '10.0.0.14', 'Sent': 1651547984.9554243, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 330, 'Sender': '10.0.0.14', 'Sent': 1651547985.0571933, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 180, 'Sender': '10.0.0.14', 'Sent': 1651547985.1574554, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 365, 'Sender': '10.0.0.14', 'Sent': 1651547985.2577038, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 4, 'Sender': '10.0.0.14', 'Sent': 1651547985.3587277, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 498, 'Sender': '10.0.0.14', 'Sent': 1651547985.4589431, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 415, 'Sender': '10.0.0.14', 'Sent': 1651547985.5595465, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 416, 'Sender': '10.0.0.14', 'Sent': 1651547985.6607044, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 306, 'Sender': '10.0.0.14', 'Sent': 1651547985.7613297, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 115, 'Sender': '10.0.0.14', 'Sent': 1651547985.8615804, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 148, 'Sender': '10.0.0.14', 'Sent': 1651547985.9618049, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 144, 'Sender': '10.0.0.14', 'Sent': 1651547986.0642514, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 219, 'Sender': '10.0.0.14', 'Sent': 1651547986.164389, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 38, 'Sender': '10.0.0.14', 'Sent': 1651547986.264592, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 7, 'Sender': '10.0.0.14', 'Sent': 1651547986.3669844, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 68, 'Sender': '10.0.0.14', 'Sent': 1651547986.4671023, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 494, 'Sender': '10.0.0.14', 'Sent': 1651547986.5694077, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 97, 'Sender': '10.0.0.14', 'Sent': 1651547986.669552, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 219, 'Sender': '10.0.0.14', 'Sent': 1651547986.7702763, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 323, 'Sender': '10.0.0.14', 'Sent': 1651547986.8704329, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 202, 'Sender': '10.0.0.14', 'Sent': 1651547986.9707868, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 104, 'Sender': '10.0.0.14', 'Sent': 1651547987.0719879, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 13, 'Sender': '10.0.0.14', 'Sent': 1651547987.1724393, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 353, 'Sender': '10.0.0.14', 'Sent': 1651547987.272984, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 221, 'Sender': '10.0.0.14', 'Sent': 1651547987.37338, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 200, 'Sender': '10.0.0.14', 'Sent': 1651547987.4735193, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 271, 'Sender': '10.0.0.14', 'Sent': 1651547987.573756, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 61, 'Sender': '10.0.0.14', 'Sent': 1651547987.675073, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547987.7753232, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 90, 'Sender': '10.0.0.14', 'Sent': 1651547987.8758519, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 112, 'Sender': '10.0.0.14', 'Sent': 1651547979.2820258, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 456, 'Sender': '10.0.0.14', 'Sent': 1651547979.9850502, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 83, 'Sender': '10.0.0.14', 'Sent': 1651547981.4092147, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 61, 'Sender': '10.0.0.14', 'Sent': 1651547983.234801, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 45, 'Sender': '10.0.0.14', 'Sent': 1651547984.3475044, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 466, 'Sender': '10.0.0.14', 'Sent': 1651547984.5486946, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 389, 'Sender': '10.0.0.14', 'Sent': 1651547984.8532026, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 115, 'Sender': '10.0.0.14', 'Sent': 1651547985.8615804, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 221, 'Sender': '10.0.0.14', 'Sent': 1651547987.37338, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547987.7753232, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'light|10', 'Value': 199, 'Sender': '10.0.0.14', 'Sent': 1651547987.976125, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 285, 'Sender': '10.0.0.14', 'Sent': 1651547988.0764058, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 300, 'Sender': '10.0.0.14', 'Sent': 1651547988.1765952, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 312, 'Sender': '10.0.0.14', 'Sent': 1651547988.2792113, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 366, 'Sender': '10.0.0.14', 'Sent': 1651547988.3801517, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 23, 'Sender': '10.0.0.14', 'Sent': 1651547988.482849, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 493, 'Sender': '10.0.0.14', 'Sent': 1651547988.5840714, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 375, 'Sender': '10.0.0.14', 'Sent': 1651547988.6847515, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 58, 'Sender': '10.0.0.14', 'Sent': 1651547988.7865305, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547988.8871806, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 428, 'Sender': '10.0.0.14', 'Sent': 1651547988.991455, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 467, 'Sender': '10.0.0.14', 'Sent': 1651547989.0926764, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 45, 'Sender': '10.0.0.14', 'Sent': 1651547989.193222, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 291, 'Sender': '10.0.0.14', 'Sent': 1651547989.2935467, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 264, 'Sender': '10.0.0.14', 'Sent': 1651547989.3938231, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 332, 'Sender': '10.0.0.14', 'Sent': 1651547989.4994817, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 428, 'Sender': '10.0.0.14', 'Sent': 1651547989.5997658, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 173, 'Sender': '10.0.0.14', 'Sent': 1651547989.700245, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 332, 'Sender': '10.0.0.14', 'Sent': 1651547989.8004622, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 236, 'Sender': '10.0.0.14', 'Sent': 1651547989.9007134, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 112, 'Sender': '10.0.0.14', 'Sent': 1651547979.2820258, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 456, 'Sender': '10.0.0.14', 'Sent': 1651547979.9850502, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 83, 'Sender': '10.0.0.14', 'Sent': 1651547981.4092147, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 61, 'Sender': '10.0.0.14', 'Sent': 1651547983.234801, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 45, 'Sender': '10.0.0.14', 'Sent': 1651547984.3475044, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 466, 'Sender': '10.0.0.14', 'Sent': 1651547984.5486946, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 389, 'Sender': '10.0.0.14', 'Sent': 1651547984.8532026, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 115, 'Sender': '10.0.0.14', 'Sent': 1651547985.8615804, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 221, 'Sender': '10.0.0.14', 'Sent': 1651547987.37338, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547987.7753232, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'light|10', 'Value': 45, 'Sender': '10.0.0.14', 'Sent': 1651547990.0026896, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 311, 'Sender': '10.0.0.14', 'Sent': 1651547990.1031592, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 265, 'Sender': '10.0.0.14', 'Sent': 1651547990.2054422, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 320, 'Sender': '10.0.0.14', 'Sent': 1651547990.309807, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 445, 'Sender': '10.0.0.14', 'Sent': 1651547990.4103005, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 466, 'Sender': '10.0.0.14', 'Sent': 1651547990.5125697, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 7, 'Sender': '10.0.0.14', 'Sent': 1651547990.6130981, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 194, 'Sender': '10.0.0.14', 'Sent': 1651547990.7167048, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 35, 'Sender': '10.0.0.14', 'Sent': 1651547990.8171918, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 201, 'Sender': '10.0.0.14', 'Sent': 1651547990.917839, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 400, 'Sender': '10.0.0.14', 'Sent': 1651547991.01821, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 206, 'Sender': '10.0.0.14', 'Sent': 1651547991.1191173, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 83, 'Sender': '10.0.0.14', 'Sent': 1651547981.4092147, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 61, 'Sender': '10.0.0.14', 'Sent': 1651547983.234801, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 45, 'Sender': '10.0.0.14', 'Sent': 1651547984.3475044, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 466, 'Sender': '10.0.0.14', 'Sent': 1651547984.5486946, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 389, 'Sender': '10.0.0.14', 'Sent': 1651547984.8532026, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 115, 'Sender': '10.0.0.14', 'Sent': 1651547985.8615804, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 221, 'Sender': '10.0.0.14', 'Sent': 1651547987.37338, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547987.7753232, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 35, 'Sender': '10.0.0.14', 'Sent': 1651547990.8171918, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 206, 'Sender': '10.0.0.14', 'Sent': 1651547991.1191173, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'humidity|10', 'Value': 74, 'Sender': '10.0.0.14', 'Sent': 1651547991.2222278, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 71, 'Sender': '10.0.0.14', 'Sent': 1651547991.3226008, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 182, 'Sender': '10.0.0.14', 'Sent': 1651547991.4235837, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 254, 'Sender': '10.0.0.14', 'Sent': 1651547991.5247803, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 55, 'Sender': '10.0.0.14', 'Sent': 1651547991.6250079, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 410, 'Sender': '10.0.0.14', 'Sent': 1651547991.7252436, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 222, 'Sender': '10.0.0.14', 'Sent': 1651547991.8259883, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 239, 'Sender': '10.0.0.14', 'Sent': 1651547991.9303432, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 222, 'Sender': '10.0.0.14', 'Sent': 1651547992.0306482, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 487, 'Sender': '10.0.0.14', 'Sent': 1651547992.1309514, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 434, 'Sender': '10.0.0.14', 'Sent': 1651547992.23261, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 424, 'Sender': '10.0.0.14', 'Sent': 1651547992.3329072, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 263, 'Sender': '10.0.0.14', 'Sent': 1651547992.4333239, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 385, 'Sender': '10.0.0.14', 'Sent': 1651547992.5336645, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 349, 'Sender': '10.0.0.14', 'Sent': 1651547992.6341598, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 283, 'Sender': '10.0.0.14', 'Sent': 1651547992.7344012, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 298, 'Sender': '10.0.0.14', 'Sent': 1651547992.835042, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 150, 'Sender': '10.0.0.14', 'Sent': 1651547992.935571, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 479, 'Sender': '10.0.0.14', 'Sent': 1651547993.036148, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 64, 'Sender': '10.0.0.14', 'Sent': 1651547993.1364477, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 85, 'Sender': '10.0.0.14', 'Sent': 1651547993.2366695, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 377, 'Sender': '10.0.0.14', 'Sent': 1651547993.3369362, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 24, 'Sender': '10.0.0.14', 'Sent': 1651547993.4372828, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 467, 'Sender': '10.0.0.14', 'Sent': 1651547993.5405183, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 31, 'Sender': '10.0.0.14', 'Sent': 1651547993.645432, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 330, 'Sender': '10.0.0.14', 'Sent': 1651547993.7526927, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 174, 'Sender': '10.0.0.14', 'Sent': 1651547993.8530564, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 97, 'Sender': '10.0.0.14', 'Sent': 1651547993.953952, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 466, 'Sender': '10.0.0.14', 'Sent': 1651547984.5486946, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 389, 'Sender': '10.0.0.14', 'Sent': 1651547984.8532026, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 115, 'Sender': '10.0.0.14', 'Sent': 1651547985.8615804, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 221, 'Sender': '10.0.0.14', 'Sent': 1651547987.37338, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547987.7753232, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 35, 'Sender': '10.0.0.14', 'Sent': 1651547990.8171918, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 206, 'Sender': '10.0.0.14', 'Sent': 1651547991.1191173, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 467, 'Sender': '10.0.0.14', 'Sent': 1651547993.5405183, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 31, 'Sender': '10.0.0.14', 'Sent': 1651547993.645432, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 174, 'Sender': '10.0.0.14', 'Sent': 1651547993.8530564, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'smell|10', 'Value': 443, 'Sender': '10.0.0.14', 'Sent': 1651547994.0549698, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 364, 'Sender': '10.0.0.14', 'Sent': 1651547994.1568456, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547994.2573826, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 119, 'Sender': '10.0.0.14', 'Sent': 1651547994.3586266, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 389, 'Sender': '10.0.0.14', 'Sent': 1651547984.8532026, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 115, 'Sender': '10.0.0.14', 'Sent': 1651547985.8615804, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 221, 'Sender': '10.0.0.14', 'Sent': 1651547987.37338, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547987.7753232, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 35, 'Sender': '10.0.0.14', 'Sent': 1651547990.8171918, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 206, 'Sender': '10.0.0.14', 'Sent': 1651547991.1191173, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 467, 'Sender': '10.0.0.14', 'Sent': 1651547993.5405183, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 31, 'Sender': '10.0.0.14', 'Sent': 1651547993.645432, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 174, 'Sender': '10.0.0.14', 'Sent': 1651547993.8530564, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547994.2573826, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'location|20', 'Value': 169, 'Sender': '10.0.0.14', 'Sent': 1651547994.459611, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 391, 'Sender': '10.0.0.14', 'Sent': 1651547994.559815, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 239, 'Sender': '10.0.0.14', 'Sent': 1651547994.6609743, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 31, 'Sender': '10.0.0.14', 'Sent': 1651547994.7691002, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 170, 'Sender': '10.0.0.14', 'Sent': 1651547994.8694534, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 103, 'Sender': '10.0.0.14', 'Sent': 1651547994.9698544, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 125, 'Sender': '10.0.0.14', 'Sent': 1651547995.0714006, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 137, 'Sender': '10.0.0.14', 'Sent': 1651547995.1752505, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 428, 'Sender': '10.0.0.14', 'Sent': 1651547995.2769897, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 157, 'Sender': '10.0.0.14', 'Sent': 1651547995.381698, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 68, 'Sender': '10.0.0.14', 'Sent': 1651547995.4825063, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 42, 'Sender': '10.0.0.14', 'Sent': 1651547995.5829024, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 34, 'Sender': '10.0.0.14', 'Sent': 1651547995.6831462, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 192, 'Sender': '10.0.0.14', 'Sent': 1651547995.7836769, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 292, 'Sender': '10.0.0.14', 'Sent': 1651547995.8839288, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 231, 'Sender': '10.0.0.14', 'Sent': 1651547995.9843097, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 423, 'Sender': '10.0.0.14', 'Sent': 1651547996.0844643, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 431, 'Sender': '10.0.0.14', 'Sent': 1651547996.184862, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 420, 'Sender': '10.0.0.14', 'Sent': 1651547996.2851768, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 138, 'Sender': '10.0.0.14', 'Sent': 1651547996.3854108, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 474, 'Sender': '10.0.0.14', 'Sent': 1651547996.4857063, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 361, 'Sender': '10.0.0.14', 'Sent': 1651547996.586048, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 420, 'Sender': '10.0.0.14', 'Sent': 1651547996.6863286, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 126, 'Sender': '10.0.0.14', 'Sent': 1651547996.7867305, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 148, 'Sender': '10.0.0.14', 'Sent': 1651547996.8888566, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 427, 'Sender': '10.0.0.14', 'Sent': 1651547996.9901838, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 143, 'Sender': '10.0.0.14', 'Sent': 1651547997.0903661, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 170, 'Sender': '10.0.0.14', 'Sent': 1651547997.1906705, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 154, 'Sender': '10.0.0.14', 'Sent': 1651547997.2924032, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 419, 'Sender': '10.0.0.14', 'Sent': 1651547997.3948832, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 434, 'Sender': '10.0.0.14', 'Sent': 1651547997.4964979, 'Broker': 'None', 'Brokered': 0}
+Received history request for weather|20
+Sending:
+[{'Topic': 'weather|20', 'Value': 206, 'Sender': '10.0.0.14', 'Sent': 1651547991.1191173, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 467, 'Sender': '10.0.0.14', 'Sent': 1651547993.5405183, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 31, 'Sender': '10.0.0.14', 'Sent': 1651547993.645432, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 174, 'Sender': '10.0.0.14', 'Sent': 1651547993.8530564, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547994.2573826, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 137, 'Sender': '10.0.0.14', 'Sent': 1651547995.1752505, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 42, 'Sender': '10.0.0.14', 'Sent': 1651547995.5829024, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 34, 'Sender': '10.0.0.14', 'Sent': 1651547995.6831462, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 427, 'Sender': '10.0.0.14', 'Sent': 1651547996.9901838, 'Broker': 'None', 'Brokered': 0}, {'Topic': 'weather|20', 'Value': 170, 'Sender': '10.0.0.14', 'Sent': 1651547997.1906705, 'Broker': 'None', 'Brokered': 0}]
+Publish: 
+{'Topic': 'humidity|10', 'Value': 404, 'Sender': '10.0.0.14', 'Sent': 1651547997.5966733, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651547997.69698, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 93, 'Sender': '10.0.0.14', 'Sent': 1651547997.798822, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 415, 'Sender': '10.0.0.14', 'Sent': 1651547997.9006927, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 480, 'Sender': '10.0.0.14', 'Sent': 1651547998.0014296, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 79, 'Sender': '10.0.0.14', 'Sent': 1651547998.1027527, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 483, 'Sender': '10.0.0.14', 'Sent': 1651547998.2029858, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 255, 'Sender': '10.0.0.14', 'Sent': 1651547998.30494, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 224, 'Sender': '10.0.0.14', 'Sent': 1651547998.4051464, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 307, 'Sender': '10.0.0.14', 'Sent': 1651547998.5053835, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 50, 'Sender': '10.0.0.14', 'Sent': 1651547998.605599, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 147, 'Sender': '10.0.0.14', 'Sent': 1651547998.7058911, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 7, 'Sender': '10.0.0.14', 'Sent': 1651547998.8063438, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 229, 'Sender': '10.0.0.14', 'Sent': 1651547998.910014, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 203, 'Sender': '10.0.0.14', 'Sent': 1651547999.014089, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 346, 'Sender': '10.0.0.14', 'Sent': 1651547999.1145403, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 21, 'Sender': '10.0.0.14', 'Sent': 1651547999.2147217, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 11, 'Sender': '10.0.0.14', 'Sent': 1651547999.318885, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 365, 'Sender': '10.0.0.14', 'Sent': 1651547999.4224153, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 472, 'Sender': '10.0.0.14', 'Sent': 1651547999.5226471, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 79, 'Sender': '10.0.0.14', 'Sent': 1651547999.6229239, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 188, 'Sender': '10.0.0.14', 'Sent': 1651547999.7246099, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 378, 'Sender': '10.0.0.14', 'Sent': 1651547999.8332293, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 406, 'Sender': '10.0.0.14', 'Sent': 1651547999.9339266, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 68, 'Sender': '10.0.0.14', 'Sent': 1651548000.034165, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 190, 'Sender': '10.0.0.14', 'Sent': 1651548000.1346178, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 345, 'Sender': '10.0.0.14', 'Sent': 1651548000.2347417, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 260, 'Sender': '10.0.0.14', 'Sent': 1651548000.334894, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 455, 'Sender': '10.0.0.14', 'Sent': 1651548000.4350703, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 386, 'Sender': '10.0.0.14', 'Sent': 1651548000.535479, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 303, 'Sender': '10.0.0.14', 'Sent': 1651548000.6358712, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 25, 'Sender': '10.0.0.14', 'Sent': 1651548000.7360036, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 248, 'Sender': '10.0.0.14', 'Sent': 1651548000.837312, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 107, 'Sender': '10.0.0.14', 'Sent': 1651548000.9375744, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 374, 'Sender': '10.0.0.14', 'Sent': 1651548001.0377464, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 293, 'Sender': '10.0.0.14', 'Sent': 1651548001.13808, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 388, 'Sender': '10.0.0.14', 'Sent': 1651548001.2385674, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 247, 'Sender': '10.0.0.14', 'Sent': 1651548001.3388011, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 326, 'Sender': '10.0.0.14', 'Sent': 1651548001.439155, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 373, 'Sender': '10.0.0.14', 'Sent': 1651548001.5397902, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 144, 'Sender': '10.0.0.14', 'Sent': 1651548001.6400805, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 238, 'Sender': '10.0.0.14', 'Sent': 1651548001.741175, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 253, 'Sender': '10.0.0.14', 'Sent': 1651548001.841431, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 421, 'Sender': '10.0.0.14', 'Sent': 1651548001.9420226, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 34, 'Sender': '10.0.0.14', 'Sent': 1651548002.0431945, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 110, 'Sender': '10.0.0.14', 'Sent': 1651548002.1437354, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 103, 'Sender': '10.0.0.14', 'Sent': 1651548002.2441368, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 441, 'Sender': '10.0.0.14', 'Sent': 1651548002.344438, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 466, 'Sender': '10.0.0.14', 'Sent': 1651548002.4446464, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 401, 'Sender': '10.0.0.14', 'Sent': 1651548002.5469475, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 318, 'Sender': '10.0.0.14', 'Sent': 1651548002.6531367, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 380, 'Sender': '10.0.0.14', 'Sent': 1651548002.753483, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 259, 'Sender': '10.0.0.14', 'Sent': 1651548002.8540611, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 53, 'Sender': '10.0.0.14', 'Sent': 1651548002.9564204, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 388, 'Sender': '10.0.0.14', 'Sent': 1651548003.0572252, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 35, 'Sender': '10.0.0.14', 'Sent': 1651548003.1589668, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 181, 'Sender': '10.0.0.14', 'Sent': 1651548003.2632732, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 409, 'Sender': '10.0.0.14', 'Sent': 1651548003.3649802, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 75, 'Sender': '10.0.0.14', 'Sent': 1651548003.4692256, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 343, 'Sender': '10.0.0.14', 'Sent': 1651548003.570456, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 162, 'Sender': '10.0.0.14', 'Sent': 1651548003.6707642, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 280, 'Sender': '10.0.0.14', 'Sent': 1651548003.7712133, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 46, 'Sender': '10.0.0.14', 'Sent': 1651548003.871499, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 311, 'Sender': '10.0.0.14', 'Sent': 1651548003.9719589, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 416, 'Sender': '10.0.0.14', 'Sent': 1651548004.0722082, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 199, 'Sender': '10.0.0.14', 'Sent': 1651548004.1728659, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 399, 'Sender': '10.0.0.14', 'Sent': 1651548004.273569, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 163, 'Sender': '10.0.0.14', 'Sent': 1651548004.3750248, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 116, 'Sender': '10.0.0.14', 'Sent': 1651548004.4755828, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 290, 'Sender': '10.0.0.14', 'Sent': 1651548004.5767303, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 348, 'Sender': '10.0.0.14', 'Sent': 1651548004.677325, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 402, 'Sender': '10.0.0.14', 'Sent': 1651548004.782297, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 355, 'Sender': '10.0.0.14', 'Sent': 1651548004.8830256, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 367, 'Sender': '10.0.0.14', 'Sent': 1651548004.9832835, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 2, 'Sender': '10.0.0.14', 'Sent': 1651548005.0859597, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 437, 'Sender': '10.0.0.14', 'Sent': 1651548005.186254, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 329, 'Sender': '10.0.0.14', 'Sent': 1651548005.2864892, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 290, 'Sender': '10.0.0.14', 'Sent': 1651548005.3867445, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 229, 'Sender': '10.0.0.14', 'Sent': 1651548005.4877765, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 267, 'Sender': '10.0.0.14', 'Sent': 1651548005.593331, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 310, 'Sender': '10.0.0.14', 'Sent': 1651548005.6936035, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 61, 'Sender': '10.0.0.14', 'Sent': 1651548005.7937326, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 66, 'Sender': '10.0.0.14', 'Sent': 1651548005.8944652, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 455, 'Sender': '10.0.0.14', 'Sent': 1651548005.994584, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 381, 'Sender': '10.0.0.14', 'Sent': 1651548006.0954113, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 450, 'Sender': '10.0.0.14', 'Sent': 1651548006.1959257, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 16, 'Sender': '10.0.0.14', 'Sent': 1651548006.298264, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 288, 'Sender': '10.0.0.14', 'Sent': 1651548006.4035642, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 46, 'Sender': '10.0.0.14', 'Sent': 1651548006.5039122, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 17, 'Sender': '10.0.0.14', 'Sent': 1651548006.6050315, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 61, 'Sender': '10.0.0.14', 'Sent': 1651548006.7057314, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651548006.8058827, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 1, 'Sender': '10.0.0.14', 'Sent': 1651548006.9060254, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 374, 'Sender': '10.0.0.14', 'Sent': 1651548007.0062873, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 10, 'Sender': '10.0.0.14', 'Sent': 1651548007.106569, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 465, 'Sender': '10.0.0.14', 'Sent': 1651548007.2071004, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 166, 'Sender': '10.0.0.14', 'Sent': 1651548007.3086135, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 334, 'Sender': '10.0.0.14', 'Sent': 1651548007.4088645, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 480, 'Sender': '10.0.0.14', 'Sent': 1651548007.5090628, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 485, 'Sender': '10.0.0.14', 'Sent': 1651548007.6096745, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 33, 'Sender': '10.0.0.14', 'Sent': 1651548007.7111142, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 293, 'Sender': '10.0.0.14', 'Sent': 1651548007.811324, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 128, 'Sender': '10.0.0.14', 'Sent': 1651548007.9114263, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 121, 'Sender': '10.0.0.14', 'Sent': 1651548008.0115485, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 53, 'Sender': '10.0.0.14', 'Sent': 1651548008.1117826, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 34, 'Sender': '10.0.0.14', 'Sent': 1651548008.2120068, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 115, 'Sender': '10.0.0.14', 'Sent': 1651548008.3121414, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 424, 'Sender': '10.0.0.14', 'Sent': 1651548008.4125013, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 339, 'Sender': '10.0.0.14', 'Sent': 1651548008.5133562, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 425, 'Sender': '10.0.0.14', 'Sent': 1651548008.6138823, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 333, 'Sender': '10.0.0.14', 'Sent': 1651548008.7141151, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 107, 'Sender': '10.0.0.14', 'Sent': 1651548008.8143806, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 251, 'Sender': '10.0.0.14', 'Sent': 1651548008.915422, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651548009.0179973, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 403, 'Sender': '10.0.0.14', 'Sent': 1651548009.1182566, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 390, 'Sender': '10.0.0.14', 'Sent': 1651548009.2185066, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 290, 'Sender': '10.0.0.14', 'Sent': 1651548009.3187518, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 81, 'Sender': '10.0.0.14', 'Sent': 1651548009.4189134, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 172, 'Sender': '10.0.0.14', 'Sent': 1651548009.5191762, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 121, 'Sender': '10.0.0.14', 'Sent': 1651548009.619785, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 149, 'Sender': '10.0.0.14', 'Sent': 1651548009.720285, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 412, 'Sender': '10.0.0.14', 'Sent': 1651548009.8217163, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 302, 'Sender': '10.0.0.14', 'Sent': 1651548009.922763, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 94, 'Sender': '10.0.0.14', 'Sent': 1651548010.0235307, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 497, 'Sender': '10.0.0.14', 'Sent': 1651548010.1240904, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 2, 'Sender': '10.0.0.14', 'Sent': 1651548010.2249246, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 61, 'Sender': '10.0.0.14', 'Sent': 1651548010.3255908, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651548010.4262226, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 154, 'Sender': '10.0.0.14', 'Sent': 1651548010.5265684, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 182, 'Sender': '10.0.0.14', 'Sent': 1651548010.6273484, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 290, 'Sender': '10.0.0.14', 'Sent': 1651548010.7281876, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 361, 'Sender': '10.0.0.14', 'Sent': 1651548010.8294497, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 24, 'Sender': '10.0.0.14', 'Sent': 1651548010.932201, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 363, 'Sender': '10.0.0.14', 'Sent': 1651548011.0327759, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 3, 'Sender': '10.0.0.14', 'Sent': 1651548011.1331975, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 216, 'Sender': '10.0.0.14', 'Sent': 1651548011.2337506, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 280, 'Sender': '10.0.0.14', 'Sent': 1651548011.3348303, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 278, 'Sender': '10.0.0.14', 'Sent': 1651548011.4350634, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 146, 'Sender': '10.0.0.14', 'Sent': 1651548011.5357025, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 172, 'Sender': '10.0.0.14', 'Sent': 1651548011.6369126, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 63, 'Sender': '10.0.0.14', 'Sent': 1651548011.7388916, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 324, 'Sender': '10.0.0.14', 'Sent': 1651548011.839095, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 326, 'Sender': '10.0.0.14', 'Sent': 1651548011.9394543, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 68, 'Sender': '10.0.0.14', 'Sent': 1651548012.040389, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 473, 'Sender': '10.0.0.14', 'Sent': 1651548012.1431148, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 247, 'Sender': '10.0.0.14', 'Sent': 1651548012.2437985, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 467, 'Sender': '10.0.0.14', 'Sent': 1651548012.3446202, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 161, 'Sender': '10.0.0.14', 'Sent': 1651548012.4451377, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 353, 'Sender': '10.0.0.14', 'Sent': 1651548012.5453978, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 456, 'Sender': '10.0.0.14', 'Sent': 1651548012.64984, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 94, 'Sender': '10.0.0.14', 'Sent': 1651548012.751296, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 37, 'Sender': '10.0.0.14', 'Sent': 1651548012.8557496, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 228, 'Sender': '10.0.0.14', 'Sent': 1651548012.9560688, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 170, 'Sender': '10.0.0.14', 'Sent': 1651548013.0564995, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 158, 'Sender': '10.0.0.14', 'Sent': 1651548013.157242, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 7, 'Sender': '10.0.0.14', 'Sent': 1651548013.2578235, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 487, 'Sender': '10.0.0.14', 'Sent': 1651548013.3580809, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 477, 'Sender': '10.0.0.14', 'Sent': 1651548013.458434, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 237, 'Sender': '10.0.0.14', 'Sent': 1651548013.5587623, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 397, 'Sender': '10.0.0.14', 'Sent': 1651548013.6593065, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 152, 'Sender': '10.0.0.14', 'Sent': 1651548013.7604437, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 251, 'Sender': '10.0.0.14', 'Sent': 1651548013.860612, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 427, 'Sender': '10.0.0.14', 'Sent': 1651548013.9609458, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 375, 'Sender': '10.0.0.14', 'Sent': 1651548014.0612113, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 156, 'Sender': '10.0.0.14', 'Sent': 1651548014.1616008, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 461, 'Sender': '10.0.0.14', 'Sent': 1651548014.2618914, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 95, 'Sender': '10.0.0.14', 'Sent': 1651548014.3621724, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 315, 'Sender': '10.0.0.14', 'Sent': 1651548014.4623237, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 461, 'Sender': '10.0.0.14', 'Sent': 1651548014.5626667, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 74, 'Sender': '10.0.0.14', 'Sent': 1651548014.662918, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 147, 'Sender': '10.0.0.14', 'Sent': 1651548014.7632518, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 109, 'Sender': '10.0.0.14', 'Sent': 1651548014.8634567, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 102, 'Sender': '10.0.0.14', 'Sent': 1651548014.9637165, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 400, 'Sender': '10.0.0.14', 'Sent': 1651548015.06409, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 350, 'Sender': '10.0.0.14', 'Sent': 1651548015.1642249, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 361, 'Sender': '10.0.0.14', 'Sent': 1651548015.2645102, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 356, 'Sender': '10.0.0.14', 'Sent': 1651548015.364634, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 322, 'Sender': '10.0.0.14', 'Sent': 1651548015.464883, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 96, 'Sender': '10.0.0.14', 'Sent': 1651548015.5651135, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 357, 'Sender': '10.0.0.14', 'Sent': 1651548015.6655905, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 308, 'Sender': '10.0.0.14', 'Sent': 1651548015.765966, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 284, 'Sender': '10.0.0.14', 'Sent': 1651548015.8662477, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 327, 'Sender': '10.0.0.14', 'Sent': 1651548015.9666092, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 497, 'Sender': '10.0.0.14', 'Sent': 1651548016.0668852, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 78, 'Sender': '10.0.0.14', 'Sent': 1651548016.1671035, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 252, 'Sender': '10.0.0.14', 'Sent': 1651548016.2675817, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 397, 'Sender': '10.0.0.14', 'Sent': 1651548016.3677235, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 295, 'Sender': '10.0.0.14', 'Sent': 1651548016.467894, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 300, 'Sender': '10.0.0.14', 'Sent': 1651548016.568154, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 423, 'Sender': '10.0.0.14', 'Sent': 1651548016.6683779, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 314, 'Sender': '10.0.0.14', 'Sent': 1651548016.7687652, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 153, 'Sender': '10.0.0.14', 'Sent': 1651548016.868992, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 373, 'Sender': '10.0.0.14', 'Sent': 1651548016.9692316, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 72, 'Sender': '10.0.0.14', 'Sent': 1651548017.0695279, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 184, 'Sender': '10.0.0.14', 'Sent': 1651548017.169771, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 92, 'Sender': '10.0.0.14', 'Sent': 1651548017.2700856, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 328, 'Sender': '10.0.0.14', 'Sent': 1651548017.3704276, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 420, 'Sender': '10.0.0.14', 'Sent': 1651548017.4707236, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 55, 'Sender': '10.0.0.14', 'Sent': 1651548017.571002, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 398, 'Sender': '10.0.0.14', 'Sent': 1651548017.671272, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 239, 'Sender': '10.0.0.14', 'Sent': 1651548017.7715912, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 334, 'Sender': '10.0.0.14', 'Sent': 1651548017.871876, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 479, 'Sender': '10.0.0.14', 'Sent': 1651548017.97221, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 110, 'Sender': '10.0.0.14', 'Sent': 1651548018.0725768, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 287, 'Sender': '10.0.0.14', 'Sent': 1651548018.1729023, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 466, 'Sender': '10.0.0.14', 'Sent': 1651548018.2732136, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 3, 'Sender': '10.0.0.14', 'Sent': 1651548018.3734677, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 319, 'Sender': '10.0.0.14', 'Sent': 1651548018.4740524, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 248, 'Sender': '10.0.0.14', 'Sent': 1651548018.5743182, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 387, 'Sender': '10.0.0.14', 'Sent': 1651548018.6748793, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 34, 'Sender': '10.0.0.14', 'Sent': 1651548018.7751331, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 268, 'Sender': '10.0.0.14', 'Sent': 1651548018.8754644, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 111, 'Sender': '10.0.0.14', 'Sent': 1651548018.9768538, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 400, 'Sender': '10.0.0.14', 'Sent': 1651548019.077085, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 91, 'Sender': '10.0.0.14', 'Sent': 1651548019.177493, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 186, 'Sender': '10.0.0.14', 'Sent': 1651548019.277794, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 399, 'Sender': '10.0.0.14', 'Sent': 1651548019.3780575, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 339, 'Sender': '10.0.0.14', 'Sent': 1651548019.4782608, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 362, 'Sender': '10.0.0.14', 'Sent': 1651548019.5785134, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 110, 'Sender': '10.0.0.14', 'Sent': 1651548019.6786604, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 32, 'Sender': '10.0.0.14', 'Sent': 1651548019.778875, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 253, 'Sender': '10.0.0.14', 'Sent': 1651548019.8791206, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 174, 'Sender': '10.0.0.14', 'Sent': 1651548019.9794834, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 73, 'Sender': '10.0.0.14', 'Sent': 1651548020.079814, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 259, 'Sender': '10.0.0.14', 'Sent': 1651548020.1800995, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 66, 'Sender': '10.0.0.14', 'Sent': 1651548020.2804341, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 379, 'Sender': '10.0.0.14', 'Sent': 1651548020.380803, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 236, 'Sender': '10.0.0.14', 'Sent': 1651548020.481144, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 449, 'Sender': '10.0.0.14', 'Sent': 1651548020.581565, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 119, 'Sender': '10.0.0.14', 'Sent': 1651548020.6818016, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 458, 'Sender': '10.0.0.14', 'Sent': 1651548020.7821302, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 81, 'Sender': '10.0.0.14', 'Sent': 1651548020.8824117, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 97, 'Sender': '10.0.0.14', 'Sent': 1651548020.9828382, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 13, 'Sender': '10.0.0.14', 'Sent': 1651548021.0831938, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 225, 'Sender': '10.0.0.14', 'Sent': 1651548021.1834755, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 496, 'Sender': '10.0.0.14', 'Sent': 1651548021.2836938, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 12, 'Sender': '10.0.0.14', 'Sent': 1651548021.3839061, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 467, 'Sender': '10.0.0.14', 'Sent': 1651548021.484216, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 340, 'Sender': '10.0.0.14', 'Sent': 1651548021.5852263, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 493, 'Sender': '10.0.0.14', 'Sent': 1651548021.6855376, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 362, 'Sender': '10.0.0.14', 'Sent': 1651548021.7859325, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 227, 'Sender': '10.0.0.14', 'Sent': 1651548021.8862863, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 309, 'Sender': '10.0.0.14', 'Sent': 1651548021.9866889, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 443, 'Sender': '10.0.0.14', 'Sent': 1651548022.0871427, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 404, 'Sender': '10.0.0.14', 'Sent': 1651548022.1875036, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 106, 'Sender': '10.0.0.14', 'Sent': 1651548022.2877955, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 395, 'Sender': '10.0.0.14', 'Sent': 1651548022.3884296, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 138, 'Sender': '10.0.0.14', 'Sent': 1651548022.4886339, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 202, 'Sender': '10.0.0.14', 'Sent': 1651548022.588818, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 409, 'Sender': '10.0.0.14', 'Sent': 1651548022.6890838, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 184, 'Sender': '10.0.0.14', 'Sent': 1651548022.7893214, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 480, 'Sender': '10.0.0.14', 'Sent': 1651548022.889523, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 36, 'Sender': '10.0.0.14', 'Sent': 1651548022.989852, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 352, 'Sender': '10.0.0.14', 'Sent': 1651548023.090853, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 143, 'Sender': '10.0.0.14', 'Sent': 1651548023.1911905, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 55, 'Sender': '10.0.0.14', 'Sent': 1651548023.2914803, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 183, 'Sender': '10.0.0.14', 'Sent': 1651548023.3917768, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 296, 'Sender': '10.0.0.14', 'Sent': 1651548023.4920967, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 336, 'Sender': '10.0.0.14', 'Sent': 1651548023.592466, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 40, 'Sender': '10.0.0.14', 'Sent': 1651548023.6927323, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 383, 'Sender': '10.0.0.14', 'Sent': 1651548023.7930462, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 431, 'Sender': '10.0.0.14', 'Sent': 1651548023.893378, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 201, 'Sender': '10.0.0.14', 'Sent': 1651548023.9937024, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 392, 'Sender': '10.0.0.14', 'Sent': 1651548024.0940619, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 97, 'Sender': '10.0.0.14', 'Sent': 1651548024.1942923, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 219, 'Sender': '10.0.0.14', 'Sent': 1651548024.2946112, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 319, 'Sender': '10.0.0.14', 'Sent': 1651548024.394932, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 88, 'Sender': '10.0.0.14', 'Sent': 1651548024.4959345, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 458, 'Sender': '10.0.0.14', 'Sent': 1651548024.596718, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 417, 'Sender': '10.0.0.14', 'Sent': 1651548024.6970537, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 273, 'Sender': '10.0.0.14', 'Sent': 1651548024.7973962, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 297, 'Sender': '10.0.0.14', 'Sent': 1651548024.8976314, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 392, 'Sender': '10.0.0.14', 'Sent': 1651548024.9978344, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 97, 'Sender': '10.0.0.14', 'Sent': 1651548025.0981765, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 288, 'Sender': '10.0.0.14', 'Sent': 1651548025.1984918, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651548025.298766, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 457, 'Sender': '10.0.0.14', 'Sent': 1651548025.3992934, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 356, 'Sender': '10.0.0.14', 'Sent': 1651548025.4994624, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 129, 'Sender': '10.0.0.14', 'Sent': 1651548025.599999, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651548025.7002866, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 360, 'Sender': '10.0.0.14', 'Sent': 1651548025.8005087, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 270, 'Sender': '10.0.0.14', 'Sent': 1651548025.9006953, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 245, 'Sender': '10.0.0.14', 'Sent': 1651548026.0009968, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 465, 'Sender': '10.0.0.14', 'Sent': 1651548026.1012769, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 391, 'Sender': '10.0.0.14', 'Sent': 1651548026.2016592, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 153, 'Sender': '10.0.0.14', 'Sent': 1651548026.3019168, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 26, 'Sender': '10.0.0.14', 'Sent': 1651548026.402192, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 12, 'Sender': '10.0.0.14', 'Sent': 1651548026.5025601, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 66, 'Sender': '10.0.0.14', 'Sent': 1651548026.6029067, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 423, 'Sender': '10.0.0.14', 'Sent': 1651548026.703386, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 423, 'Sender': '10.0.0.14', 'Sent': 1651548026.80369, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 327, 'Sender': '10.0.0.14', 'Sent': 1651548026.9040377, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 357, 'Sender': '10.0.0.14', 'Sent': 1651548027.0043392, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 29, 'Sender': '10.0.0.14', 'Sent': 1651548027.1047049, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 300, 'Sender': '10.0.0.14', 'Sent': 1651548027.205003, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 73, 'Sender': '10.0.0.14', 'Sent': 1651548027.3051894, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 130, 'Sender': '10.0.0.14', 'Sent': 1651548027.4055026, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 228, 'Sender': '10.0.0.14', 'Sent': 1651548027.5057695, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 29, 'Sender': '10.0.0.14', 'Sent': 1651548027.606142, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 468, 'Sender': '10.0.0.14', 'Sent': 1651548027.7064016, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 428, 'Sender': '10.0.0.14', 'Sent': 1651548027.8066707, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 349, 'Sender': '10.0.0.14', 'Sent': 1651548027.9069998, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 30, 'Sender': '10.0.0.14', 'Sent': 1651548028.00729, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 493, 'Sender': '10.0.0.14', 'Sent': 1651548028.1075528, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 166, 'Sender': '10.0.0.14', 'Sent': 1651548028.2078538, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 364, 'Sender': '10.0.0.14', 'Sent': 1651548028.3082607, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 419, 'Sender': '10.0.0.14', 'Sent': 1651548028.4085274, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 343, 'Sender': '10.0.0.14', 'Sent': 1651548028.5088706, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 219, 'Sender': '10.0.0.14', 'Sent': 1651548028.6092722, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 108, 'Sender': '10.0.0.14', 'Sent': 1651548028.709581, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 163, 'Sender': '10.0.0.14', 'Sent': 1651548028.8099334, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 422, 'Sender': '10.0.0.14', 'Sent': 1651548028.9105396, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 257, 'Sender': '10.0.0.14', 'Sent': 1651548029.0106866, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 111, 'Sender': '10.0.0.14', 'Sent': 1651548029.1108987, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 239, 'Sender': '10.0.0.14', 'Sent': 1651548029.2112367, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 30, 'Sender': '10.0.0.14', 'Sent': 1651548029.3116107, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 466, 'Sender': '10.0.0.14', 'Sent': 1651548029.412158, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 383, 'Sender': '10.0.0.14', 'Sent': 1651548029.5123417, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 48, 'Sender': '10.0.0.14', 'Sent': 1651548029.6125941, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 431, 'Sender': '10.0.0.14', 'Sent': 1651548029.7133198, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 384, 'Sender': '10.0.0.14', 'Sent': 1651548029.8136604, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 141, 'Sender': '10.0.0.14', 'Sent': 1651548029.9139373, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 108, 'Sender': '10.0.0.14', 'Sent': 1651548030.01422, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 234, 'Sender': '10.0.0.14', 'Sent': 1651548030.1153393, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 392, 'Sender': '10.0.0.14', 'Sent': 1651548030.2155547, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 477, 'Sender': '10.0.0.14', 'Sent': 1651548030.3193657, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 150, 'Sender': '10.0.0.14', 'Sent': 1651548030.4195564, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 412, 'Sender': '10.0.0.14', 'Sent': 1651548030.5198998, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 463, 'Sender': '10.0.0.14', 'Sent': 1651548030.6200693, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 141, 'Sender': '10.0.0.14', 'Sent': 1651548030.7201848, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 179, 'Sender': '10.0.0.14', 'Sent': 1651548030.8204975, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 339, 'Sender': '10.0.0.14', 'Sent': 1651548030.9206817, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 39, 'Sender': '10.0.0.14', 'Sent': 1651548031.0209713, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 295, 'Sender': '10.0.0.14', 'Sent': 1651548031.1223297, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 176, 'Sender': '10.0.0.14', 'Sent': 1651548031.2227345, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 485, 'Sender': '10.0.0.14', 'Sent': 1651548031.323065, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 168, 'Sender': '10.0.0.14', 'Sent': 1651548031.425856, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 477, 'Sender': '10.0.0.14', 'Sent': 1651548031.5262516, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 61, 'Sender': '10.0.0.14', 'Sent': 1651548031.6266534, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 149, 'Sender': '10.0.0.14', 'Sent': 1651548031.726982, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 394, 'Sender': '10.0.0.14', 'Sent': 1651548031.8271222, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 317, 'Sender': '10.0.0.14', 'Sent': 1651548031.927343, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 376, 'Sender': '10.0.0.14', 'Sent': 1651548032.028009, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 427, 'Sender': '10.0.0.14', 'Sent': 1651548032.1287196, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 175, 'Sender': '10.0.0.14', 'Sent': 1651548032.2293866, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 302, 'Sender': '10.0.0.14', 'Sent': 1651548032.3300436, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651548032.4310324, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 182, 'Sender': '10.0.0.14', 'Sent': 1651548032.531269, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 49, 'Sender': '10.0.0.14', 'Sent': 1651548032.6315541, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 11, 'Sender': '10.0.0.14', 'Sent': 1651548032.7319243, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 302, 'Sender': '10.0.0.14', 'Sent': 1651548032.8324757, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 399, 'Sender': '10.0.0.14', 'Sent': 1651548032.9327977, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 489, 'Sender': '10.0.0.14', 'Sent': 1651548033.034953, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 19, 'Sender': '10.0.0.14', 'Sent': 1651548033.1368248, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 148, 'Sender': '10.0.0.14', 'Sent': 1651548033.2374008, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 242, 'Sender': '10.0.0.14', 'Sent': 1651548033.3376114, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 271, 'Sender': '10.0.0.14', 'Sent': 1651548033.4388144, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 75, 'Sender': '10.0.0.14', 'Sent': 1651548033.5391963, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 92, 'Sender': '10.0.0.14', 'Sent': 1651548033.6394682, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 126, 'Sender': '10.0.0.14', 'Sent': 1651548033.7399132, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 12, 'Sender': '10.0.0.14', 'Sent': 1651548033.8406587, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 316, 'Sender': '10.0.0.14', 'Sent': 1651548033.9408813, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 231, 'Sender': '10.0.0.14', 'Sent': 1651548034.0409777, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 191, 'Sender': '10.0.0.14', 'Sent': 1651548034.1413453, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 301, 'Sender': '10.0.0.14', 'Sent': 1651548034.2416308, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 347, 'Sender': '10.0.0.14', 'Sent': 1651548034.3419762, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 430, 'Sender': '10.0.0.14', 'Sent': 1651548034.442173, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 92, 'Sender': '10.0.0.14', 'Sent': 1651548034.5424075, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 56, 'Sender': '10.0.0.14', 'Sent': 1651548034.642702, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 40, 'Sender': '10.0.0.14', 'Sent': 1651548034.7429361, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 316, 'Sender': '10.0.0.14', 'Sent': 1651548034.8436003, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 497, 'Sender': '10.0.0.14', 'Sent': 1651548034.9438295, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 97, 'Sender': '10.0.0.14', 'Sent': 1651548035.0447063, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 291, 'Sender': '10.0.0.14', 'Sent': 1651548035.145265, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 357, 'Sender': '10.0.0.14', 'Sent': 1651548035.2455485, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 12, 'Sender': '10.0.0.14', 'Sent': 1651548035.34591, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 460, 'Sender': '10.0.0.14', 'Sent': 1651548035.4462335, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 148, 'Sender': '10.0.0.14', 'Sent': 1651548035.5464106, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 464, 'Sender': '10.0.0.14', 'Sent': 1651548035.6468406, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 7, 'Sender': '10.0.0.14', 'Sent': 1651548035.7473664, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 90, 'Sender': '10.0.0.14', 'Sent': 1651548035.8476617, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 165, 'Sender': '10.0.0.14', 'Sent': 1651548035.9480069, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 226, 'Sender': '10.0.0.14', 'Sent': 1651548036.0483246, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 486, 'Sender': '10.0.0.14', 'Sent': 1651548036.148807, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 62, 'Sender': '10.0.0.14', 'Sent': 1651548036.2498703, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 41, 'Sender': '10.0.0.14', 'Sent': 1651548036.3500998, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 140, 'Sender': '10.0.0.14', 'Sent': 1651548036.4509854, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 84, 'Sender': '10.0.0.14', 'Sent': 1651548036.551344, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 440, 'Sender': '10.0.0.14', 'Sent': 1651548036.6516771, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 313, 'Sender': '10.0.0.14', 'Sent': 1651548036.7524157, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 146, 'Sender': '10.0.0.14', 'Sent': 1651548036.8527224, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 170, 'Sender': '10.0.0.14', 'Sent': 1651548036.9531379, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 6, 'Sender': '10.0.0.14', 'Sent': 1651548037.0546107, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 489, 'Sender': '10.0.0.14', 'Sent': 1651548037.1551738, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 488, 'Sender': '10.0.0.14', 'Sent': 1651548037.2556047, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 130, 'Sender': '10.0.0.14', 'Sent': 1651548037.3560388, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 376, 'Sender': '10.0.0.14', 'Sent': 1651548037.4565988, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 327, 'Sender': '10.0.0.14', 'Sent': 1651548037.55721, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 15, 'Sender': '10.0.0.14', 'Sent': 1651548037.6576009, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 325, 'Sender': '10.0.0.14', 'Sent': 1651548037.7586863, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 145, 'Sender': '10.0.0.14', 'Sent': 1651548037.8591058, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 294, 'Sender': '10.0.0.14', 'Sent': 1651548037.9601808, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 459, 'Sender': '10.0.0.14', 'Sent': 1651548038.060718, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 196, 'Sender': '10.0.0.14', 'Sent': 1651548038.1610732, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 304, 'Sender': '10.0.0.14', 'Sent': 1651548038.2614677, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 334, 'Sender': '10.0.0.14', 'Sent': 1651548038.3617883, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 438, 'Sender': '10.0.0.14', 'Sent': 1651548038.4626079, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 120, 'Sender': '10.0.0.14', 'Sent': 1651548038.5630696, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 325, 'Sender': '10.0.0.14', 'Sent': 1651548038.6635427, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 165, 'Sender': '10.0.0.14', 'Sent': 1651548038.7643301, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 60, 'Sender': '10.0.0.14', 'Sent': 1651548038.8646324, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 44, 'Sender': '10.0.0.14', 'Sent': 1651548038.965114, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 123, 'Sender': '10.0.0.14', 'Sent': 1651548039.0666234, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 177, 'Sender': '10.0.0.14', 'Sent': 1651548039.1673758, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 103, 'Sender': '10.0.0.14', 'Sent': 1651548039.2678173, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 358, 'Sender': '10.0.0.14', 'Sent': 1651548039.368032, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 474, 'Sender': '10.0.0.14', 'Sent': 1651548039.4688988, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 488, 'Sender': '10.0.0.14', 'Sent': 1651548039.5691407, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 408, 'Sender': '10.0.0.14', 'Sent': 1651548039.6694205, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 233, 'Sender': '10.0.0.14', 'Sent': 1651548039.7698376, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 132, 'Sender': '10.0.0.14', 'Sent': 1651548039.8701677, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 220, 'Sender': '10.0.0.14', 'Sent': 1651548039.9706166, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 339, 'Sender': '10.0.0.14', 'Sent': 1651548040.070859, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 469, 'Sender': '10.0.0.14', 'Sent': 1651548040.1711411, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 14, 'Sender': '10.0.0.14', 'Sent': 1651548040.2714412, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 363, 'Sender': '10.0.0.14', 'Sent': 1651548040.3716736, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 288, 'Sender': '10.0.0.14', 'Sent': 1651548040.4723713, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 267, 'Sender': '10.0.0.14', 'Sent': 1651548040.572528, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 443, 'Sender': '10.0.0.14', 'Sent': 1651548040.672654, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 312, 'Sender': '10.0.0.14', 'Sent': 1651548040.7736862, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 395, 'Sender': '10.0.0.14', 'Sent': 1651548040.8743658, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 238, 'Sender': '10.0.0.14', 'Sent': 1651548040.974614, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 187, 'Sender': '10.0.0.14', 'Sent': 1651548041.0748565, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 385, 'Sender': '10.0.0.14', 'Sent': 1651548041.1753316, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 53, 'Sender': '10.0.0.14', 'Sent': 1651548041.2755709, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 30, 'Sender': '10.0.0.14', 'Sent': 1651548041.3758087, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 417, 'Sender': '10.0.0.14', 'Sent': 1651548041.4766307, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 53, 'Sender': '10.0.0.14', 'Sent': 1651548041.5772889, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 94, 'Sender': '10.0.0.14', 'Sent': 1651548041.6776674, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 449, 'Sender': '10.0.0.14', 'Sent': 1651548041.777902, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 243, 'Sender': '10.0.0.14', 'Sent': 1651548041.8781335, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 10, 'Sender': '10.0.0.14', 'Sent': 1651548041.9787552, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 421, 'Sender': '10.0.0.14', 'Sent': 1651548042.0790176, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 269, 'Sender': '10.0.0.14', 'Sent': 1651548042.180121, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 444, 'Sender': '10.0.0.14', 'Sent': 1651548042.2808063, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 201, 'Sender': '10.0.0.14', 'Sent': 1651548042.3823326, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 333, 'Sender': '10.0.0.14', 'Sent': 1651548042.4828503, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 6, 'Sender': '10.0.0.14', 'Sent': 1651548042.583543, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 481, 'Sender': '10.0.0.14', 'Sent': 1651548042.684668, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 183, 'Sender': '10.0.0.14', 'Sent': 1651548042.7849312, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 180, 'Sender': '10.0.0.14', 'Sent': 1651548042.8851666, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 327, 'Sender': '10.0.0.14', 'Sent': 1651548042.9854178, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 135, 'Sender': '10.0.0.14', 'Sent': 1651548043.0856578, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 270, 'Sender': '10.0.0.14', 'Sent': 1651548043.1859248, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 437, 'Sender': '10.0.0.14', 'Sent': 1651548043.2862198, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 283, 'Sender': '10.0.0.14', 'Sent': 1651548043.3865998, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 302, 'Sender': '10.0.0.14', 'Sent': 1651548043.4874723, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 141, 'Sender': '10.0.0.14', 'Sent': 1651548043.5878527, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 480, 'Sender': '10.0.0.14', 'Sent': 1651548043.689943, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 13, 'Sender': '10.0.0.14', 'Sent': 1651548043.7902503, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 216, 'Sender': '10.0.0.14', 'Sent': 1651548043.8905382, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 82, 'Sender': '10.0.0.14', 'Sent': 1651548043.9911046, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 68, 'Sender': '10.0.0.14', 'Sent': 1651548044.0913582, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 238, 'Sender': '10.0.0.14', 'Sent': 1651548044.1918159, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 79, 'Sender': '10.0.0.14', 'Sent': 1651548044.292199, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 336, 'Sender': '10.0.0.14', 'Sent': 1651548044.3924263, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 117, 'Sender': '10.0.0.14', 'Sent': 1651548044.4927797, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 342, 'Sender': '10.0.0.14', 'Sent': 1651548044.5939705, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 138, 'Sender': '10.0.0.14', 'Sent': 1651548044.6943662, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 244, 'Sender': '10.0.0.14', 'Sent': 1651548044.7954073, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 379, 'Sender': '10.0.0.14', 'Sent': 1651548044.8957343, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 317, 'Sender': '10.0.0.14', 'Sent': 1651548044.9961295, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 338, 'Sender': '10.0.0.14', 'Sent': 1651548045.0964313, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 138, 'Sender': '10.0.0.14', 'Sent': 1651548045.196641, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 174, 'Sender': '10.0.0.14', 'Sent': 1651548045.2968857, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 92, 'Sender': '10.0.0.14', 'Sent': 1651548045.3971744, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 300, 'Sender': '10.0.0.14', 'Sent': 1651548045.497323, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 449, 'Sender': '10.0.0.14', 'Sent': 1651548045.5987291, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 447, 'Sender': '10.0.0.14', 'Sent': 1651548045.6993825, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 328, 'Sender': '10.0.0.14', 'Sent': 1651548045.7995596, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 165, 'Sender': '10.0.0.14', 'Sent': 1651548045.9002779, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 290, 'Sender': '10.0.0.14', 'Sent': 1651548046.0004501, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 10, 'Sender': '10.0.0.14', 'Sent': 1651548046.100633, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 364, 'Sender': '10.0.0.14', 'Sent': 1651548046.2009037, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 14, 'Sender': '10.0.0.14', 'Sent': 1651548046.3012774, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 143, 'Sender': '10.0.0.14', 'Sent': 1651548046.4015489, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 397, 'Sender': '10.0.0.14', 'Sent': 1651548046.5019276, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 139, 'Sender': '10.0.0.14', 'Sent': 1651548046.6021729, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 318, 'Sender': '10.0.0.14', 'Sent': 1651548046.704153, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 270, 'Sender': '10.0.0.14', 'Sent': 1651548046.804593, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 483, 'Sender': '10.0.0.14', 'Sent': 1651548046.9069002, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 294, 'Sender': '10.0.0.14', 'Sent': 1651548047.0082474, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 347, 'Sender': '10.0.0.14', 'Sent': 1651548047.108844, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 37, 'Sender': '10.0.0.14', 'Sent': 1651548047.2102633, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 129, 'Sender': '10.0.0.14', 'Sent': 1651548047.310542, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 102, 'Sender': '10.0.0.14', 'Sent': 1651548047.410813, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 84, 'Sender': '10.0.0.14', 'Sent': 1651548047.5118084, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 202, 'Sender': '10.0.0.14', 'Sent': 1651548047.6123073, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 310, 'Sender': '10.0.0.14', 'Sent': 1651548047.7128456, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 130, 'Sender': '10.0.0.14', 'Sent': 1651548047.8140104, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 136, 'Sender': '10.0.0.14', 'Sent': 1651548047.9143758, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 131, 'Sender': '10.0.0.14', 'Sent': 1651548048.0157406, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 386, 'Sender': '10.0.0.14', 'Sent': 1651548048.1167154, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 413, 'Sender': '10.0.0.14', 'Sent': 1651548048.2169707, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 496, 'Sender': '10.0.0.14', 'Sent': 1651548048.31723, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 444, 'Sender': '10.0.0.14', 'Sent': 1651548048.417497, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 311, 'Sender': '10.0.0.14', 'Sent': 1651548048.5178058, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 218, 'Sender': '10.0.0.14', 'Sent': 1651548048.6180844, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 402, 'Sender': '10.0.0.14', 'Sent': 1651548048.7184038, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 52, 'Sender': '10.0.0.14', 'Sent': 1651548048.818736, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'location|20', 'Value': 290, 'Sender': '10.0.0.14', 'Sent': 1651548048.9190254, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 64, 'Sender': '10.0.0.14', 'Sent': 1651548049.01928, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 81, 'Sender': '10.0.0.14', 'Sent': 1651548049.1197076, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'pressure|20', 'Value': 30, 'Sender': '10.0.0.14', 'Sent': 1651548049.2200885, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 415, 'Sender': '10.0.0.14', 'Sent': 1651548049.3207347, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 80, 'Sender': '10.0.0.14', 'Sent': 1651548049.420987, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'temperature|10', 'Value': 478, 'Sender': '10.0.0.14', 'Sent': 1651548049.5221412, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'light|10', 'Value': 466, 'Sender': '10.0.0.14', 'Sent': 1651548049.6224136, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'altitude|20', 'Value': 70, 'Sender': '10.0.0.14', 'Sent': 1651548049.7226126, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'humidity|10', 'Value': 76, 'Sender': '10.0.0.14', 'Sent': 1651548049.822974, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'weather|20', 'Value': 375, 'Sender': '10.0.0.14', 'Sent': 1651548049.9233048, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 370, 'Sender': '10.0.0.14', 'Sent': 1651548050.0239434, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'airquality|20', 'Value': 78, 'Sender': '10.0.0.14', 'Sent': 1651548050.1247497, 'Broker': 'None', 'Brokered': 0}
+Publish: 
+{'Topic': 'smell|10', 'Value': 457, 'Sender': '10.0.0.14', 'Sent': 1651548050.2250524, 'Broker': 'None', 'Brokered': 0}
+Stop requested
+Stop acknowledged
+Current state is now = LOST

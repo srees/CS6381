@@ -1,0 +1,199 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Subscriber interested in listening for these topics: ['temperature|20']
+Getting subscriber object
+Binding REP to tcp://10.0.0.75:5580
+Getting registry proxy
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+Current state is now = CONNECTED
+['registry5', 'registry2', 'registry4', 'registry3']
+Checking if registries/registry5 exists (it better be)
+registries/registry5 znode indeed exists; get value
+Connecting to 10.0.0.5:5550
+Starting registry monitor loop thread
+Registering with tcp://10.0.0.5:5550...
+Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
+Registration sent
+Event: {'event': 1, 'value': 23, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
+Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
+Registration received
+Waiting for start from registry
+Retrieving history...
+Getting temperature|20 from tcp://10.0.0.6:5562
+{'Topic': 'temperature|20', 'Value': 454, 'Sender': '10.0.0.10', 'Sent': 1651547982.0698023, 'Broker': '10.0.0.6', 'Brokered': 1651547989.0388725, 'Subscriber': '10.0.0.75', 'Received': 1651547989.0598261, 'Latency': 6.990023851394653}
+{'Topic': 'temperature|20', 'Value': 63, 'Sender': '10.0.0.10', 'Sent': 1651547982.2703927, 'Broker': '10.0.0.6', 'Brokered': 1651547989.0388732, 'Subscriber': '10.0.0.75', 'Received': 1651547989.060047, 'Latency': 6.78965425491333}
+{'Topic': 'temperature|20', 'Value': 359, 'Sender': '10.0.0.10', 'Sent': 1651547983.1789377, 'Broker': '10.0.0.6', 'Brokered': 1651547989.0388734, 'Subscriber': '10.0.0.75', 'Received': 1651547989.0601032, 'Latency': 5.881165504455566}
+{'Topic': 'temperature|20', 'Value': 60, 'Sender': '10.0.0.10', 'Sent': 1651547983.3822849, 'Broker': '10.0.0.6', 'Brokered': 1651547989.0388734, 'Subscriber': '10.0.0.75', 'Received': 1651547989.060158, 'Latency': 5.677873134613037}
+{'Topic': 'temperature|20', 'Value': 486, 'Sender': '10.0.0.10', 'Sent': 1651547984.2951307, 'Broker': '10.0.0.6', 'Brokered': 1651547989.0388737, 'Subscriber': '10.0.0.75', 'Received': 1651547989.0602028, 'Latency': 4.7650721073150635}
+{'Topic': 'temperature|20', 'Value': 162, 'Sender': '10.0.0.10', 'Sent': 1651547985.617541, 'Broker': '10.0.0.6', 'Brokered': 1651547989.038874, 'Subscriber': '10.0.0.75', 'Received': 1651547989.0602455, 'Latency': 3.442704439163208}
+{'Topic': 'temperature|20', 'Value': 419, 'Sender': '10.0.0.10', 'Sent': 1651547985.719491, 'Broker': '10.0.0.6', 'Brokered': 1651547989.0388741, 'Subscriber': '10.0.0.75', 'Received': 1651547989.0602872, 'Latency': 3.3407962322235107}
+{'Topic': 'temperature|20', 'Value': 269, 'Sender': '10.0.0.10', 'Sent': 1651547986.2238102, 'Broker': '10.0.0.6', 'Brokered': 1651547989.0388744, 'Subscriber': '10.0.0.75', 'Received': 1651547989.060328, 'Latency': 2.836517810821533}
+{'Topic': 'temperature|20', 'Value': 463, 'Sender': '10.0.0.10', 'Sent': 1651547986.3249884, 'Broker': '10.0.0.6', 'Brokered': 1651547989.0388744, 'Subscriber': '10.0.0.75', 'Received': 1651547989.0603683, 'Latency': 2.735379934310913}
+{'Topic': 'temperature|20', 'Value': 349, 'Sender': '10.0.0.10', 'Sent': 1651547987.6432765, 'Broker': '10.0.0.6', 'Brokered': 1651547989.0388746, 'Subscriber': '10.0.0.75', 'Received': 1651547989.0604093, 'Latency': 1.41713285446167}
+Subscribing to tcp://10.0.0.6:5561
+Starting update loop thread
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Starting subscriber listen loop...
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['temperature|20']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['temperature|20']}]
+Error: unable to lock polling for updates
+{'Topic': 'temperature|20', 'Value': 129, 'Sender': '10.0.0.10', 'Sent': 1651547958.486324, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2537014, 'Subscriber': '10.0.0.75', 'Received': 1651547993.2847195, 'Latency': 34.79839539527893}
+{'Topic': 'temperature|20', 'Value': 99, 'Sender': '10.0.0.10', 'Sent': 1651547960.5125887, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2550507, 'Subscriber': '10.0.0.75', 'Received': 1651547993.2848682, 'Latency': 32.772279500961304}
+{'Topic': 'temperature|20', 'Value': 192, 'Sender': '10.0.0.10', 'Sent': 1651547961.2166326, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2557309, 'Subscriber': '10.0.0.75', 'Received': 1651547993.2849495, 'Latency': 32.06831693649292}
+{'Topic': 'temperature|20', 'Value': 203, 'Sender': '10.0.0.10', 'Sent': 1651547962.7268558, 'Broker': '10.0.0.6', 'Brokered': 1651547993.256707, 'Subscriber': '10.0.0.75', 'Received': 1651547993.285022, 'Latency': 30.55816626548767}
+{'Topic': 'temperature|20', 'Value': 382, 'Sender': '10.0.0.10', 'Sent': 1651547963.3319068, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2574892, 'Subscriber': '10.0.0.75', 'Received': 1651547993.285091, 'Latency': 29.953184127807617}
+{'Topic': 'temperature|20', 'Value': 233, 'Sender': '10.0.0.10', 'Sent': 1651547963.8354208, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2576532, 'Subscriber': '10.0.0.75', 'Received': 1651547993.2851586, 'Latency': 29.449737787246704}
+{'Topic': 'temperature|20', 'Value': 90, 'Sender': '10.0.0.10', 'Sent': 1651547963.9355402, 'Broker': '10.0.0.6', 'Brokered': 1651547993.257824, 'Subscriber': '10.0.0.75', 'Received': 1651547993.2852247, 'Latency': 29.349684476852417}
+{'Topic': 'temperature|20', 'Value': 39, 'Sender': '10.0.0.10', 'Sent': 1651547964.7409408, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2581792, 'Subscriber': '10.0.0.75', 'Received': 1651547993.2852912, 'Latency': 28.544350385665894}
+{'Topic': 'temperature|20', 'Value': 318, 'Sender': '10.0.0.10', 'Sent': 1651547965.3439634, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2585356, 'Subscriber': '10.0.0.75', 'Received': 1651547993.2853568, 'Latency': 27.94139337539673}
+{'Topic': 'temperature|20', 'Value': 111, 'Sender': '10.0.0.10', 'Sent': 1651547965.8470206, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2590356, 'Subscriber': '10.0.0.75', 'Received': 1651547993.2854226, 'Latency': 27.43840193748474}
+{'Topic': 'temperature|20', 'Value': 442, 'Sender': '10.0.0.10', 'Sent': 1651547966.1522563, 'Broker': '10.0.0.6', 'Brokered': 1651547993.259208, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3214476, 'Latency': 27.169191360473633}
+{'Topic': 'temperature|20', 'Value': 45, 'Sender': '10.0.0.10', 'Sent': 1651547966.5540173, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2593865, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3216333, 'Latency': 26.767616033554077}
+{'Topic': 'temperature|20', 'Value': 0, 'Sender': '10.0.0.10', 'Sent': 1651547967.0570486, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2596188, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3217082, 'Latency': 26.264659643173218}
+{'Topic': 'temperature|20', 'Value': 82, 'Sender': '10.0.0.10', 'Sent': 1651547968.465586, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2602162, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3322735, 'Latency': 24.866687536239624}
+{'Topic': 'temperature|20', 'Value': 127, 'Sender': '10.0.0.10', 'Sent': 1651547968.8670723, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2604039, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3323817, 'Latency': 24.465309381484985}
+{'Topic': 'temperature|20', 'Value': 370, 'Sender': '10.0.0.10', 'Sent': 1651547969.0675375, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2605317, 'Subscriber': '10.0.0.75', 'Received': 1651547993.332455, 'Latency': 24.264917373657227}
+{'Topic': 'temperature|20', 'Value': 352, 'Sender': '10.0.0.10', 'Sent': 1651547969.569812, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2609816, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3325222, 'Latency': 23.762710094451904}
+{'Topic': 'temperature|20', 'Value': 61, 'Sender': '10.0.0.10', 'Sent': 1651547970.7752376, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2612135, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3325884, 'Latency': 22.557350873947144}
+{'Topic': 'temperature|20', 'Value': 361, 'Sender': '10.0.0.10', 'Sent': 1651547971.1794116, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2617192, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3326578, 'Latency': 22.1532461643219}
+{'Topic': 'temperature|20', 'Value': 115, 'Sender': '10.0.0.10', 'Sent': 1651547971.279679, 'Broker': '10.0.0.6', 'Brokered': 1651547993.261851, 'Subscriber': '10.0.0.75', 'Received': 1651547993.332722, 'Latency': 22.053042888641357}
+{'Topic': 'temperature|20', 'Value': 451, 'Sender': '10.0.0.10', 'Sent': 1651547971.5816083, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2620902, 'Subscriber': '10.0.0.75', 'Received': 1651547993.33279, 'Latency': 21.751181602478027}
+{'Topic': 'temperature|20', 'Value': 367, 'Sender': '10.0.0.10', 'Sent': 1651547971.682199, 'Broker': '10.0.0.6', 'Brokered': 1651547993.262226, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3328521, 'Latency': 21.65065312385559}
+{'Topic': 'temperature|20', 'Value': 211, 'Sender': '10.0.0.10', 'Sent': 1651547972.386653, 'Broker': '10.0.0.6', 'Brokered': 1651547993.262801, 'Subscriber': '10.0.0.75', 'Received': 1651547993.332914, 'Latency': 20.946261167526245}
+{'Topic': 'temperature|20', 'Value': 46, 'Sender': '10.0.0.10', 'Sent': 1651547972.8895905, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2636125, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3329754, 'Latency': 20.443384885787964}
+{'Topic': 'temperature|20', 'Value': 23, 'Sender': '10.0.0.10', 'Sent': 1651547973.3912117, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2637172, 'Subscriber': '10.0.0.75', 'Received': 1651547993.333037, 'Latency': 19.94182515144348}
+{'Topic': 'temperature|20', 'Value': 345, 'Sender': '10.0.0.10', 'Sent': 1651547974.1957898, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2639189, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3330982, 'Latency': 19.137308359146118}
+{'Topic': 'temperature|20', 'Value': 279, 'Sender': '10.0.0.10', 'Sent': 1651547974.499794, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2640162, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3332028, 'Latency': 18.83340883255005}
+{'Topic': 'temperature|20', 'Value': 78, 'Sender': '10.0.0.10', 'Sent': 1651547977.1230085, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2649512, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3369584, 'Latency': 16.21394991874695}
+{'Topic': 'temperature|20', 'Value': 344, 'Sender': '10.0.0.10', 'Sent': 1651547978.4407601, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2653458, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3370504, 'Latency': 14.896290302276611}
+{'Topic': 'temperature|20', 'Value': 407, 'Sender': '10.0.0.10', 'Sent': 1651547978.6429024, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2655554, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3371222, 'Latency': 14.694219827651978}
+{'Topic': 'temperature|20', 'Value': 389, 'Sender': '10.0.0.10', 'Sent': 1651547979.8485172, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2663023, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3371906, 'Latency': 13.488673448562622}
+{'Topic': 'temperature|20', 'Value': 421, 'Sender': '10.0.0.10', 'Sent': 1651547981.15949, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2666674, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3372548, 'Latency': 12.177764654159546}
+{'Topic': 'temperature|20', 'Value': 346, 'Sender': '10.0.0.10', 'Sent': 1651547981.361982, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2667902, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3373175, 'Latency': 11.975335359573364}
+{'Topic': 'temperature|20', 'Value': 18, 'Sender': '10.0.0.10', 'Sent': 1651547981.4621346, 'Broker': '10.0.0.6', 'Brokered': 1651547993.266913, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3373797, 'Latency': 11.875245094299316}
+{'Topic': 'temperature|20', 'Value': 454, 'Sender': '10.0.0.10', 'Sent': 1651547982.0698023, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2672777, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3374417, 'Latency': 11.267639398574829}
+{'Topic': 'temperature|20', 'Value': 63, 'Sender': '10.0.0.10', 'Sent': 1651547982.2703927, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2676706, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3375037, 'Latency': 11.067111015319824}
+{'Topic': 'temperature|20', 'Value': 359, 'Sender': '10.0.0.10', 'Sent': 1651547983.1789377, 'Broker': '10.0.0.6', 'Brokered': 1651547993.267981, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3375745, 'Latency': 10.158636808395386}
+{'Topic': 'temperature|20', 'Value': 60, 'Sender': '10.0.0.10', 'Sent': 1651547983.3822849, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2680829, 'Subscriber': '10.0.0.75', 'Received': 1651547993.33764, 'Latency': 9.955355167388916}
+{'Topic': 'temperature|20', 'Value': 486, 'Sender': '10.0.0.10', 'Sent': 1651547984.2951307, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2684925, 'Subscriber': '10.0.0.75', 'Received': 1651547993.337703, 'Latency': 9.042572259902954}
+{'Topic': 'temperature|20', 'Value': 162, 'Sender': '10.0.0.10', 'Sent': 1651547985.617541, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2687995, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3377652, 'Latency': 7.720224142074585}
+{'Topic': 'temperature|20', 'Value': 419, 'Sender': '10.0.0.10', 'Sent': 1651547985.719491, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2690675, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3378282, 'Latency': 7.618337154388428}
+{'Topic': 'temperature|20', 'Value': 269, 'Sender': '10.0.0.10', 'Sent': 1651547986.2238102, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2692122, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3378901, 'Latency': 7.11407995223999}
+{'Topic': 'temperature|20', 'Value': 463, 'Sender': '10.0.0.10', 'Sent': 1651547986.3249884, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2693484, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3379533, 'Latency': 7.012964963912964}
+{'Topic': 'temperature|20', 'Value': 349, 'Sender': '10.0.0.10', 'Sent': 1651547987.6432765, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2698867, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3380146, 'Latency': 5.694738149642944}
+{'Topic': 'temperature|20', 'Value': 19, 'Sender': '10.0.0.10', 'Sent': 1651547989.2581182, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2705052, 'Subscriber': '10.0.0.75', 'Received': 1651547993.338076, 'Latency': 4.079957962036133}
+{'Topic': 'temperature|20', 'Value': 263, 'Sender': '10.0.0.10', 'Sent': 1651547990.0657916, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2710955, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3381436, 'Latency': 3.2723519802093506}
+{'Topic': 'temperature|20', 'Value': 205, 'Sender': '10.0.0.10', 'Sent': 1651547990.4690268, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2713256, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3382068, 'Latency': 2.8691799640655518}
+{'Topic': 'temperature|20', 'Value': 349, 'Sender': '10.0.0.10', 'Sent': 1651547991.592588, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2719464, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3382688, 'Latency': 1.745680809020996}
+{'Topic': 'temperature|20', 'Value': 291, 'Sender': '10.0.0.10', 'Sent': 1651547991.7935061, 'Broker': '10.0.0.6', 'Brokered': 1651547993.2721763, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3383303, 'Latency': 1.5448241233825684}
+{'Topic': 'temperature|20', 'Value': 357, 'Sender': '10.0.0.10', 'Sent': 1651547992.8091924, 'Broker': '10.0.0.6', 'Brokered': 1651547993.272864, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3383927, 'Latency': 0.5292003154754639}
+{'Topic': 'temperature|20', 'Value': 163, 'Sender': '10.0.0.10', 'Sent': 1651547992.909843, 'Broker': '10.0.0.6', 'Brokered': 1651547993.272992, 'Subscriber': '10.0.0.75', 'Received': 1651547993.33846, 'Latency': 0.428617000579834}
+{'Topic': 'temperature|20', 'Value': 498, 'Sender': '10.0.0.10', 'Sent': 1651547993.3113012, 'Broker': '10.0.0.6', 'Brokered': 1651547993.3747084, 'Subscriber': '10.0.0.75', 'Received': 1651547993.3958044, 'Latency': 0.084503173828125}
+{'Topic': 'temperature|20', 'Value': 446, 'Sender': '10.0.0.10', 'Sent': 1651547994.7333536, 'Broker': '10.0.0.6', 'Brokered': 1651547994.7600033, 'Subscriber': '10.0.0.75', 'Received': 1651547994.7830665, 'Latency': 0.0497128963470459}
+{'Topic': 'temperature|20', 'Value': 298, 'Sender': '10.0.0.10', 'Sent': 1651547996.2485557, 'Broker': '10.0.0.6', 'Brokered': 1651547996.2709463, 'Subscriber': '10.0.0.75', 'Received': 1651547996.2912266, 'Latency': 0.04267096519470215}
+{'Topic': 'temperature|20', 'Value': 0, 'Sender': '10.0.0.10', 'Sent': 1651547997.1531234, 'Broker': '10.0.0.6', 'Brokered': 1651547997.1758726, 'Subscriber': '10.0.0.75', 'Received': 1651547997.2003136, 'Latency': 0.047190189361572266}
+{'Topic': 'temperature|20', 'Value': 344, 'Sender': '10.0.0.10', 'Sent': 1651547997.454391, 'Broker': '10.0.0.6', 'Brokered': 1651547997.4750388, 'Subscriber': '10.0.0.75', 'Received': 1651547997.497047, 'Latency': 0.04265594482421875}
+{'Topic': 'temperature|20', 'Value': 399, 'Sender': '10.0.0.10', 'Sent': 1651547997.75911, 'Broker': '10.0.0.6', 'Brokered': 1651547997.7818072, 'Subscriber': '10.0.0.75', 'Received': 1651547997.80452, 'Latency': 0.0454099178314209}
+{'Topic': 'temperature|20', 'Value': 370, 'Sender': '10.0.0.10', 'Sent': 1651547997.9603906, 'Broker': '10.0.0.6', 'Brokered': 1651547997.9807944, 'Subscriber': '10.0.0.75', 'Received': 1651547998.001804, 'Latency': 0.04141354560852051}
+{'Topic': 'temperature|20', 'Value': 427, 'Sender': '10.0.0.10', 'Sent': 1651547998.9735715, 'Broker': '10.0.0.6', 'Brokered': 1651547998.9952958, 'Subscriber': '10.0.0.75', 'Received': 1651547999.0165496, 'Latency': 0.04297804832458496}
+{'Topic': 'temperature|20', 'Value': 322, 'Sender': '10.0.0.10', 'Sent': 1651548000.8880491, 'Broker': '10.0.0.6', 'Brokered': 1651548000.908915, 'Subscriber': '10.0.0.75', 'Received': 1651548000.9295337, 'Latency': 0.04148459434509277}
+{'Topic': 'temperature|20', 'Value': 283, 'Sender': '10.0.0.10', 'Sent': 1651548001.1910884, 'Broker': '10.0.0.6', 'Brokered': 1651548001.213962, 'Subscriber': '10.0.0.75', 'Received': 1651548001.2391944, 'Latency': 0.04810595512390137}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['temperature|20']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['temperature|20']}]
+{'Topic': 'temperature|20', 'Value': 46, 'Sender': '10.0.0.10', 'Sent': 1651548002.0034313, 'Broker': '10.0.0.6', 'Brokered': 1651548002.0251684, 'Subscriber': '10.0.0.75', 'Received': 1651548002.0472412, 'Latency': 0.04380989074707031}
+Subscribing to tcp://10.0.0.7:5561
+{'Topic': 'temperature|20', 'Value': 391, 'Sender': '10.0.0.10', 'Sent': 1651548003.1097777, 'Broker': '10.0.0.6', 'Brokered': 1651548003.1302307, 'Subscriber': '10.0.0.75', 'Received': 1651548003.1518383, 'Latency': 0.04206061363220215}
+{'Topic': 'temperature|20', 'Value': 108, 'Sender': '10.0.0.10', 'Sent': 1651548003.5144098, 'Broker': '10.0.0.6', 'Brokered': 1651548003.5352201, 'Subscriber': '10.0.0.75', 'Received': 1651548003.5570488, 'Latency': 0.04263901710510254}
+{'Topic': 'temperature|20', 'Value': 20, 'Sender': '10.0.0.10', 'Sent': 1651548003.6157372, 'Broker': '10.0.0.6', 'Brokered': 1651548003.6360848, 'Subscriber': '10.0.0.75', 'Received': 1651548003.65834, 'Latency': 0.0426027774810791}
+{'Topic': 'temperature|20', 'Value': 273, 'Sender': '10.0.0.10', 'Sent': 1651548004.3337762, 'Broker': '10.0.0.6', 'Brokered': 1651548004.3566463, 'Subscriber': '10.0.0.75', 'Received': 1651548004.378688, 'Latency': 0.044911861419677734}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['temperature|20']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['temperature|20']}]
+{'Topic': 'temperature|20', 'Value': 107, 'Sender': '10.0.0.10', 'Sent': 1651548006.5653389, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0809639, 'Subscriber': '10.0.0.75', 'Received': 1651548016.10727, 'Latency': 9.54193115234375}
+{'Topic': 'temperature|20', 'Value': 364, 'Sender': '10.0.0.10', 'Sent': 1651548007.2728412, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0813525, 'Subscriber': '10.0.0.75', 'Received': 1651548016.1077466, 'Latency': 8.83490538597107}
+{'Topic': 'temperature|20', 'Value': 472, 'Sender': '10.0.0.10', 'Sent': 1651548007.7747395, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0816052, 'Subscriber': '10.0.0.75', 'Received': 1651548016.107843, 'Latency': 8.33310341835022}
+{'Topic': 'temperature|20', 'Value': 444, 'Sender': '10.0.0.10', 'Sent': 1651548007.8760052, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0817318, 'Subscriber': '10.0.0.75', 'Received': 1651548016.1079211, 'Latency': 8.231915950775146}
+{'Topic': 'temperature|20', 'Value': 291, 'Sender': '10.0.0.10', 'Sent': 1651548008.5843391, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0821786, 'Subscriber': '10.0.0.75', 'Received': 1651548016.1079955, 'Latency': 7.523656368255615}
+{'Topic': 'temperature|20', 'Value': 124, 'Sender': '10.0.0.10', 'Sent': 1651548008.6845808, 'Broker': '10.0.0.6', 'Brokered': 1651548016.082315, 'Subscriber': '10.0.0.75', 'Received': 1651548016.108068, 'Latency': 7.423487186431885}
+{'Topic': 'temperature|20', 'Value': 289, 'Sender': '10.0.0.10', 'Sent': 1651548008.985304, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0825844, 'Subscriber': '10.0.0.75', 'Received': 1651548016.1081395, 'Latency': 7.122835397720337}
+{'Topic': 'temperature|20', 'Value': 292, 'Sender': '10.0.0.10', 'Sent': 1651548009.390166, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0830529, 'Subscriber': '10.0.0.75', 'Received': 1651548016.109767, 'Latency': 6.7196009159088135}
+{'Topic': 'temperature|20', 'Value': 243, 'Sender': '10.0.0.10', 'Sent': 1651548009.4903874, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0831838, 'Subscriber': '10.0.0.75', 'Received': 1651548016.1312993, 'Latency': 6.640911817550659}
+{'Topic': 'temperature|20', 'Value': 278, 'Sender': '10.0.0.10', 'Sent': 1651548014.5237982, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0845008, 'Subscriber': '10.0.0.75', 'Received': 1651548016.13142, 'Latency': 1.607621669769287}
+{'Topic': 'temperature|20', 'Value': 281, 'Sender': '10.0.0.10', 'Sent': 1651548014.8250391, 'Broker': '10.0.0.6', 'Brokered': 1651548016.084848, 'Subscriber': '10.0.0.75', 'Received': 1651548016.179957, 'Latency': 1.3549177646636963}
+{'Topic': 'temperature|20', 'Value': 58, 'Sender': '10.0.0.10', 'Sent': 1651548015.7275257, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0851116, 'Subscriber': '10.0.0.75', 'Received': 1651548016.180074, 'Latency': 0.4525482654571533}
+{'Topic': 'temperature|20', 'Value': 408, 'Sender': '10.0.0.10', 'Sent': 1651548017.5345511, 'Broker': '10.0.0.6', 'Brokered': 1651548017.555663, 'Subscriber': '10.0.0.75', 'Received': 1651548017.5779867, 'Latency': 0.04343557357788086}
+{'Topic': 'temperature|20', 'Value': 445, 'Sender': '10.0.0.10', 'Sent': 1651548017.9366195, 'Broker': '10.0.0.6', 'Brokered': 1651548017.9570255, 'Subscriber': '10.0.0.75', 'Received': 1651548017.9792063, 'Latency': 0.0425868034362793}
+{'Topic': 'temperature|20', 'Value': 403, 'Sender': '10.0.0.10', 'Sent': 1651548019.344479, 'Broker': '10.0.0.6', 'Brokered': 1651548019.364839, 'Subscriber': '10.0.0.75', 'Received': 1651548019.3879068, 'Latency': 0.04342770576477051}
+{'Topic': 'temperature|20', 'Value': 232, 'Sender': '10.0.0.10', 'Sent': 1651548020.949434, 'Broker': '10.0.0.6', 'Brokered': 1651548020.9698172, 'Subscriber': '10.0.0.75', 'Received': 1651548020.9921746, 'Latency': 0.042740583419799805}
+{'Topic': 'temperature|20', 'Value': 410, 'Sender': '10.0.0.10', 'Sent': 1651548021.3501973, 'Broker': '10.0.0.6', 'Brokered': 1651548021.3705077, 'Subscriber': '10.0.0.75', 'Received': 1651548021.3928654, 'Latency': 0.04266810417175293}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['temperature|20']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['temperature|20']}]
+{'Topic': 'temperature|20', 'Value': 469, 'Sender': '10.0.0.10', 'Sent': 1651548024.472988, 'Broker': '10.0.0.6', 'Brokered': 1651548024.4967654, 'Subscriber': '10.0.0.75', 'Received': 1651548024.5192554, 'Latency': 0.04626750946044922}
+{'Topic': 'temperature|20', 'Value': 252, 'Sender': '10.0.0.10', 'Sent': 1651548025.4792376, 'Broker': '10.0.0.6', 'Brokered': 1651548025.4996822, 'Subscriber': '10.0.0.75', 'Received': 1651548025.52236, 'Latency': 0.04312252998352051}
+{'Topic': 'temperature|20', 'Value': 134, 'Sender': '10.0.0.10', 'Sent': 1651548026.682924, 'Broker': '10.0.0.6', 'Brokered': 1651548026.7041316, 'Subscriber': '10.0.0.75', 'Received': 1651548026.726799, 'Latency': 0.04387497901916504}
+{'Topic': 'temperature|20', 'Value': 327, 'Sender': '10.0.0.10', 'Sent': 1651548028.3893914, 'Broker': '10.0.0.6', 'Brokered': 1651548028.409695, 'Subscriber': '10.0.0.75', 'Received': 1651548028.4310398, 'Latency': 0.04164838790893555}
+{'Topic': 'temperature|20', 'Value': 248, 'Sender': '10.0.0.10', 'Sent': 1651548029.5957537, 'Broker': '10.0.0.6', 'Brokered': 1651548029.616929, 'Subscriber': '10.0.0.75', 'Received': 1651548029.6384127, 'Latency': 0.04265904426574707}
+{'Topic': 'temperature|20', 'Value': 436, 'Sender': '10.0.0.10', 'Sent': 1651548029.6959436, 'Broker': '10.0.0.6', 'Brokered': 1651548029.7175107, 'Subscriber': '10.0.0.75', 'Received': 1651548029.742277, 'Latency': 0.04633331298828125}
+{'Topic': 'temperature|20', 'Value': 200, 'Sender': '10.0.0.10', 'Sent': 1651548029.8963573, 'Broker': '10.0.0.6', 'Brokered': 1651548029.9218311, 'Subscriber': '10.0.0.75', 'Received': 1651548029.945592, 'Latency': 0.049234628677368164}
+{'Topic': 'temperature|20', 'Value': 394, 'Sender': '10.0.0.10', 'Sent': 1651548032.21217, 'Broker': '10.0.0.6', 'Brokered': 1651548032.2333355, 'Subscriber': '10.0.0.75', 'Received': 1651548032.2550294, 'Latency': 0.042859554290771484}
+{'Topic': 'temperature|20', 'Value': 200, 'Sender': '10.0.0.10', 'Sent': 1651548033.6206274, 'Broker': '10.0.0.6', 'Brokered': 1651548033.6411407, 'Subscriber': '10.0.0.75', 'Received': 1651548033.662543, 'Latency': 0.0419156551361084}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['temperature|20']}]
+{'Topic': 'temperature|20', 'Value': 131, 'Sender': '10.0.0.10', 'Sent': 1651548034.4239018, 'Broker': '10.0.0.6', 'Brokered': 1651548034.4465585, 'Subscriber': '10.0.0.75', 'Received': 1651548034.4677832, 'Latency': 0.04388141632080078}
+Unsubscribing from tcp://10.0.0.7:5561
+{'Topic': 'temperature|20', 'Value': 380, 'Sender': '10.0.0.10', 'Sent': 1651548035.1322775, 'Broker': '10.0.0.6', 'Brokered': 1651548035.1530304, 'Subscriber': '10.0.0.75', 'Received': 1651548035.1753445, 'Latency': 0.043066978454589844}
+{'Topic': 'temperature|20', 'Value': 11, 'Sender': '10.0.0.10', 'Sent': 1651548035.535085, 'Broker': '10.0.0.6', 'Brokered': 1651548035.555929, 'Subscriber': '10.0.0.75', 'Received': 1651548035.5807302, 'Latency': 0.04564523696899414}
+{'Topic': 'temperature|20', 'Value': 178, 'Sender': '10.0.0.10', 'Sent': 1651548035.6352706, 'Broker': '10.0.0.6', 'Brokered': 1651548035.6558027, 'Subscriber': '10.0.0.75', 'Received': 1651548035.680161, 'Latency': 0.044890403747558594}
+{'Topic': 'temperature|20', 'Value': 269, 'Sender': '10.0.0.10', 'Sent': 1651548037.3467917, 'Broker': '10.0.0.6', 'Brokered': 1651548037.368114, 'Subscriber': '10.0.0.75', 'Received': 1651548037.3929648, 'Latency': 0.046173095703125}
+{'Topic': 'temperature|20', 'Value': 364, 'Sender': '10.0.0.10', 'Sent': 1651548038.8535533, 'Broker': '10.0.0.6', 'Brokered': 1651548038.8758733, 'Subscriber': '10.0.0.75', 'Received': 1651548038.8987737, 'Latency': 0.045220375061035156}
+{'Topic': 'temperature|20', 'Value': 395, 'Sender': '10.0.0.10', 'Sent': 1651548039.762116, 'Broker': '10.0.0.6', 'Brokered': 1651548039.7825532, 'Subscriber': '10.0.0.75', 'Received': 1651548039.8048604, 'Latency': 0.04274439811706543}
+{'Topic': 'temperature|20', 'Value': 353, 'Sender': '10.0.0.10', 'Sent': 1651548039.8648303, 'Broker': '10.0.0.6', 'Brokered': 1651548039.885359, 'Subscriber': '10.0.0.75', 'Received': 1651548039.9068403, 'Latency': 0.04201006889343262}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['temperature|20']}]
+{'Topic': 'temperature|20', 'Value': 124, 'Sender': '10.0.0.22', 'Sent': 1651548050.4423654, 'Broker': '10.0.0.6', 'Brokered': 1651548050.470418, 'Subscriber': '10.0.0.75', 'Received': 1651548050.4931283, 'Latency': 0.05076289176940918}
+{'Topic': 'temperature|20', 'Value': 244, 'Sender': '10.0.0.22', 'Sent': 1651548051.5487478, 'Broker': '10.0.0.6', 'Brokered': 1651548051.5698469, 'Subscriber': '10.0.0.75', 'Received': 1651548051.5922997, 'Latency': 0.04355192184448242}
+{'Topic': 'temperature|20', 'Value': 52, 'Sender': '10.0.0.22', 'Sent': 1651548054.3607168, 'Broker': '10.0.0.6', 'Brokered': 1651548054.3811138, 'Subscriber': '10.0.0.75', 'Received': 1651548054.403516, 'Latency': 0.04279923439025879}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+{'Topic': 'temperature|20', 'Value': 458, 'Sender': '10.0.0.22', 'Sent': 1651548054.661514, 'Broker': '10.0.0.6', 'Brokered': 1651548054.681958, 'Subscriber': '10.0.0.75', 'Received': 1651548054.7041392, 'Latency': 0.04262518882751465}
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['temperature|20']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['temperature|20']}]
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['temperature|20']}]
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['temperature|20']}]
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['temperature|20']}]
+WARNING:kazoo.client:Connection dropped: socket connection broken
+WARNING:kazoo.client:Transition to CONNECTING
+Current state is now = SUSPENDED
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Network is unreachable

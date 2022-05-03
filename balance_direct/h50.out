@@ -1,0 +1,60 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Subscriber interested in listening for these topics: ['airquality|20', 'pressure|20', 'location|10']
+Getting subscriber object
+Binding REP to tcp://10.0.0.50:5580
+Getting registry proxy
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+Current state is now = CONNECTED
+['registry5', 'registry2', 'registry4', 'registry3']
+Checking if registries/registry5 exists (it better be)
+registries/registry5 znode indeed exists; get value
+Connecting to 10.0.0.5:5550
+Starting registry monitor loop thread
+Registering with tcp://10.0.0.5:5550...
+Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
+Event: {'event': 1, 'value': 23, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
+Registration sent
+Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
+Registration received
+Waiting for start from registry
+Retrieving history...
+Getting airquality|20 from tcp://10.0.0.11:5572
+{'Topic': 'airquality|20', 'Value': 401, 'Sender': '10.0.0.11', 'Sent': 1651548260.1984313, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.212558, 'Latency': 9.014126777648926}
+{'Topic': 'airquality|20', 'Value': 44, 'Sender': '10.0.0.11', 'Sent': 1651548260.80636, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.212789, 'Latency': 8.406429052352905}
+{'Topic': 'airquality|20', 'Value': 260, 'Sender': '10.0.0.11', 'Sent': 1651548262.2168033, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.2128463, 'Latency': 6.996042966842651}
+{'Topic': 'airquality|20', 'Value': 82, 'Sender': '10.0.0.11', 'Sent': 1651548262.8228605, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.2128928, 'Latency': 6.3900322914123535}
+{'Topic': 'airquality|20', 'Value': 194, 'Sender': '10.0.0.11', 'Sent': 1651548262.924998, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.2129352, 'Latency': 6.287937164306641}
+{'Topic': 'airquality|20', 'Value': 94, 'Sender': '10.0.0.11', 'Sent': 1651548263.0254493, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.212978, 'Latency': 6.187528610229492}
+{'Topic': 'airquality|20', 'Value': 399, 'Sender': '10.0.0.11', 'Sent': 1651548263.5302327, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.2131543, 'Latency': 5.682921648025513}
+{'Topic': 'airquality|20', 'Value': 403, 'Sender': '10.0.0.11', 'Sent': 1651548266.8524666, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.2134063, 'Latency': 2.3609397411346436}
+{'Topic': 'airquality|20', 'Value': 306, 'Sender': '10.0.0.11', 'Sent': 1651548267.355853, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.213648, 'Latency': 1.857795000076294}
+{'Topic': 'airquality|20', 'Value': 432, 'Sender': '10.0.0.11', 'Sent': 1651548267.6578724, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.213871, 'Latency': 1.5559985637664795}
+Getting pressure|20 from tcp://10.0.0.11:5572
+{'Topic': 'pressure|20', 'Value': 452, 'Sender': '10.0.0.11', 'Sent': 1651548258.3888054, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.388079, 'Latency': 10.999273538589478}
+{'Topic': 'pressure|20', 'Value': 327, 'Sender': '10.0.0.11', 'Sent': 1651548260.6032076, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3882291, 'Latency': 8.785021543502808}
+{'Topic': 'pressure|20', 'Value': 348, 'Sender': '10.0.0.11', 'Sent': 1651548260.7044945, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3882968, 'Latency': 8.683802366256714}
+{'Topic': 'pressure|20', 'Value': 81, 'Sender': '10.0.0.11', 'Sent': 1651548262.5180626, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3884454, 'Latency': 6.870382785797119}
+{'Topic': 'pressure|20', 'Value': 156, 'Sender': '10.0.0.11', 'Sent': 1651548263.9317417, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.388508, 'Latency': 5.456766366958618}
+{'Topic': 'pressure|20', 'Value': 165, 'Sender': '10.0.0.11', 'Sent': 1651548264.1325815, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3887923, 'Latency': 5.256210803985596}
+{'Topic': 'pressure|20', 'Value': 408, 'Sender': '10.0.0.11', 'Sent': 1651548264.5343277, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3888528, 'Latency': 4.854525089263916}
+{'Topic': 'pressure|20', 'Value': 349, 'Sender': '10.0.0.11', 'Sent': 1651548264.6348746, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3889003, 'Latency': 4.75402569770813}
+{'Topic': 'pressure|20', 'Value': 167, 'Sender': '10.0.0.11', 'Sent': 1651548265.7438855, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3889472, 'Latency': 3.645061731338501}
+{'Topic': 'pressure|20', 'Value': 317, 'Sender': '10.0.0.11', 'Sent': 1651548268.976614, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.50', 'Received': 1651548269.3889933, 'Latency': 0.41237926483154297}
+Getting location|10 from tcp://10.0.0.11:5572
+WARNING:kazoo.client:Connection dropped: socket connection broken
+WARNING:kazoo.client:Transition to CONNECTING
+Current state is now = SUSPENDED
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Network is unreachable

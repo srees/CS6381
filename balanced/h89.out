@@ -1,0 +1,220 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Subscriber interested in listening for these topics: ['weather|20', 'light|10']
+Getting subscriber object
+Binding REP to tcp://10.0.0.89:5580
+Getting registry proxy
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+Current state is now = CONNECTED
+['registry5', 'registry2', 'registry4', 'registry3']
+Checking if registries/registry5 exists (it better be)
+registries/registry5 znode indeed exists; get value
+Connecting to 10.0.0.5:5550
+Starting registry monitor loop thread
+Registering with tcp://10.0.0.5:5550...
+Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
+Registration sent
+Event: {'event': 1, 'value': 24, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
+Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
+Registration received
+Waiting for start from registry
+Retrieving history...
+Getting weather|20 from tcp://10.0.0.6:5562
+{'Topic': 'weather|20', 'Value': 389, 'Sender': '10.0.0.14', 'Sent': 1651547984.8532026, 'Broker': '10.0.0.6', 'Brokered': 1651547994.3937232, 'Subscriber': '10.0.0.89', 'Received': 1651547994.4197352, 'Latency': 9.566532611846924}
+{'Topic': 'weather|20', 'Value': 115, 'Sender': '10.0.0.14', 'Sent': 1651547985.8615804, 'Broker': '10.0.0.6', 'Brokered': 1651547994.3937237, 'Subscriber': '10.0.0.89', 'Received': 1651547994.4199178, 'Latency': 8.558337450027466}
+{'Topic': 'weather|20', 'Value': 221, 'Sender': '10.0.0.14', 'Sent': 1651547987.37338, 'Broker': '10.0.0.6', 'Brokered': 1651547994.3937237, 'Subscriber': '10.0.0.89', 'Received': 1651547994.4199822, 'Latency': 7.046602249145508}
+{'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547987.7753232, 'Broker': '10.0.0.6', 'Brokered': 1651547994.393724, 'Subscriber': '10.0.0.89', 'Received': 1651547994.420031, 'Latency': 6.644707918167114}
+{'Topic': 'weather|20', 'Value': 35, 'Sender': '10.0.0.14', 'Sent': 1651547990.8171918, 'Broker': '10.0.0.6', 'Brokered': 1651547994.3937242, 'Subscriber': '10.0.0.89', 'Received': 1651547994.420111, 'Latency': 3.602919101715088}
+{'Topic': 'weather|20', 'Value': 206, 'Sender': '10.0.0.14', 'Sent': 1651547991.1191173, 'Broker': '10.0.0.6', 'Brokered': 1651547994.3937242, 'Subscriber': '10.0.0.89', 'Received': 1651547994.4201574, 'Latency': 3.3010401725769043}
+{'Topic': 'weather|20', 'Value': 467, 'Sender': '10.0.0.14', 'Sent': 1651547993.5405183, 'Broker': '10.0.0.6', 'Brokered': 1651547994.3937244, 'Subscriber': '10.0.0.89', 'Received': 1651547994.4202027, 'Latency': 0.8796844482421875}
+{'Topic': 'weather|20', 'Value': 31, 'Sender': '10.0.0.14', 'Sent': 1651547993.645432, 'Broker': '10.0.0.6', 'Brokered': 1651547994.3937247, 'Subscriber': '10.0.0.89', 'Received': 1651547994.4202466, 'Latency': 0.7748146057128906}
+{'Topic': 'weather|20', 'Value': 174, 'Sender': '10.0.0.14', 'Sent': 1651547993.8530564, 'Broker': '10.0.0.6', 'Brokered': 1651547994.393725, 'Subscriber': '10.0.0.89', 'Received': 1651547994.420289, 'Latency': 0.567232608795166}
+{'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547994.2573826, 'Broker': '10.0.0.6', 'Brokered': 1651547994.393725, 'Subscriber': '10.0.0.89', 'Received': 1651547994.4203312, 'Latency': 0.1629486083984375}
+Getting light|10 from tcp://10.0.0.6:5562
+{'Topic': 'light|10', 'Value': 68, 'Sender': '10.0.0.10', 'Sent': 1651547989.4592884, 'Broker': '10.0.0.6', 'Brokered': 1651547997.742833, 'Subscriber': '10.0.0.89', 'Received': 1651547997.7687511, 'Latency': 8.309462785720825}
+{'Topic': 'light|10', 'Value': 296, 'Sender': '10.0.0.10', 'Sent': 1651547989.7632542, 'Broker': '10.0.0.6', 'Brokered': 1651547997.7428334, 'Subscriber': '10.0.0.89', 'Received': 1651547997.7688985, 'Latency': 8.00564432144165}
+{'Topic': 'light|10', 'Value': 358, 'Sender': '10.0.0.10', 'Sent': 1651547990.368783, 'Broker': '10.0.0.6', 'Brokered': 1651547997.7428336, 'Subscriber': '10.0.0.89', 'Received': 1651547997.7689521, 'Latency': 7.400169134140015}
+{'Topic': 'light|10', 'Value': 98, 'Sender': '10.0.0.10', 'Sent': 1651547991.1913023, 'Broker': '10.0.0.6', 'Brokered': 1651547997.7428339, 'Subscriber': '10.0.0.89', 'Received': 1651547997.7690089, 'Latency': 6.577706575393677}
+{'Topic': 'light|10', 'Value': 307, 'Sender': '10.0.0.10', 'Sent': 1651547991.2915404, 'Broker': '10.0.0.6', 'Brokered': 1651547997.742834, 'Subscriber': '10.0.0.89', 'Received': 1651547997.7690532, 'Latency': 6.477512836456299}
+{'Topic': 'light|10', 'Value': 82, 'Sender': '10.0.0.10', 'Sent': 1651547991.9964023, 'Broker': '10.0.0.6', 'Brokered': 1651547997.7428343, 'Subscriber': '10.0.0.89', 'Received': 1651547997.769094, 'Latency': 5.77269172668457}
+{'Topic': 'light|10', 'Value': 136, 'Sender': '10.0.0.10', 'Sent': 1651547992.1996503, 'Broker': '10.0.0.6', 'Brokered': 1651547997.7428348, 'Subscriber': '10.0.0.89', 'Received': 1651547997.7691338, 'Latency': 5.569483518600464}
+{'Topic': 'light|10', 'Value': 393, 'Sender': '10.0.0.10', 'Sent': 1651547992.299925, 'Broker': '10.0.0.6', 'Brokered': 1651547997.7428348, 'Subscriber': '10.0.0.89', 'Received': 1651547997.7691739, 'Latency': 5.4692487716674805}
+{'Topic': 'light|10', 'Value': 462, 'Sender': '10.0.0.10', 'Sent': 1651547995.243573, 'Broker': '10.0.0.6', 'Brokered': 1651547997.742835, 'Subscriber': '10.0.0.89', 'Received': 1651547997.769214, 'Latency': 2.5256409645080566}
+{'Topic': 'light|10', 'Value': 313, 'Sender': '10.0.0.10', 'Sent': 1651547995.8466434, 'Broker': '10.0.0.6', 'Brokered': 1651547997.7428353, 'Subscriber': '10.0.0.89', 'Received': 1651547997.7692537, 'Latency': 1.9226102828979492}
+Subscribing to tcp://10.0.0.6:5561
+Starting update loop thread
+Fetching updates from registry 10.0.0.5:5550Starting subscriber listen loop...
+
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['weather|20', 'light|10']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['weather|20', 'light|10']}]
+{'Topic': 'light|10', 'Value': 52, 'Sender': '10.0.0.10', 'Sent': 1651547998.4691594, 'Broker': '10.0.0.6', 'Brokered': 1651547998.4902966, 'Subscriber': '10.0.0.89', 'Received': 1651547998.5107338, 'Latency': 0.04157447814941406}
+Subscribing to tcp://10.0.0.7:5561
+{'Topic': 'light|10', 'Value': 45, 'Sender': '10.0.0.10', 'Sent': 1651547999.1785645, 'Broker': '10.0.0.6', 'Brokered': 1651547999.201167, 'Subscriber': '10.0.0.89', 'Received': 1651547999.2223763, 'Latency': 0.043811798095703125}
+{'Topic': 'light|10', 'Value': 309, 'Sender': '10.0.0.10', 'Sent': 1651547999.3802044, 'Broker': '10.0.0.6', 'Brokered': 1651547999.401175, 'Subscriber': '10.0.0.89', 'Received': 1651547999.422656, 'Latency': 0.04245162010192871}
+{'Topic': 'weather|20', 'Value': 68, 'Sender': '10.0.0.14', 'Sent': 1651548000.034165, 'Broker': '10.0.0.7', 'Brokered': 1651548000.0552678, 'Subscriber': '10.0.0.89', 'Received': 1651548000.0756798, 'Latency': 0.04151487350463867}
+{'Topic': 'weather|20', 'Value': 248, 'Sender': '10.0.0.14', 'Sent': 1651548000.837312, 'Broker': '10.0.0.7', 'Brokered': 1651548000.8582737, 'Subscriber': '10.0.0.89', 'Received': 1651548000.8792884, 'Latency': 0.0419764518737793}
+{'Topic': 'light|10', 'Value': 275, 'Sender': '10.0.0.10', 'Sent': 1651548001.0907981, 'Broker': '10.0.0.6', 'Brokered': 1651548001.1124384, 'Subscriber': '10.0.0.89', 'Received': 1651548001.135996, 'Latency': 0.04519796371459961}
+{'Topic': 'light|10', 'Value': 402, 'Sender': '10.0.0.10', 'Sent': 1651548001.2924666, 'Broker': '10.0.0.6', 'Brokered': 1651548001.3127825, 'Subscriber': '10.0.0.89', 'Received': 1651548001.3353193, 'Latency': 0.04285264015197754}
+{'Topic': 'weather|20', 'Value': 238, 'Sender': '10.0.0.14', 'Sent': 1651548001.741175, 'Broker': '10.0.0.7', 'Brokered': 1651548001.7624996, 'Subscriber': '10.0.0.89', 'Received': 1651548001.7867095, 'Latency': 0.045534610748291016}
+{'Topic': 'weather|20', 'Value': 35, 'Sender': '10.0.0.14', 'Sent': 1651548003.1589668, 'Broker': '10.0.0.7', 'Brokered': 1651548003.1803052, 'Subscriber': '10.0.0.89', 'Received': 1651548003.2015355, 'Latency': 0.04256868362426758}
+{'Topic': 'light|10', 'Value': 463, 'Sender': '10.0.0.10', 'Sent': 1651548003.2107499, 'Broker': '10.0.0.6', 'Brokered': 1651548003.234294, 'Subscriber': '10.0.0.89', 'Received': 1651548003.263593, 'Latency': 0.05284309387207031}
+{'Topic': 'weather|20', 'Value': 181, 'Sender': '10.0.0.14', 'Sent': 1651548003.2632732, 'Broker': '10.0.0.7', 'Brokered': 1651548003.286391, 'Subscriber': '10.0.0.89', 'Received': 1651548003.3088667, 'Latency': 0.0455935001373291}
+{'Topic': 'weather|20', 'Value': 163, 'Sender': '10.0.0.14', 'Sent': 1651548004.3750248, 'Broker': '10.0.0.7', 'Brokered': 1651548004.3989725, 'Subscriber': '10.0.0.89', 'Received': 1651548004.424448, 'Latency': 0.0494232177734375}
+{'Topic': 'weather|20', 'Value': 348, 'Sender': '10.0.0.14', 'Sent': 1651548004.677325, 'Broker': '10.0.0.7', 'Brokered': 1651548004.6977053, 'Subscriber': '10.0.0.89', 'Received': 1651548004.723339, 'Latency': 0.04601407051086426}
+{'Topic': 'light|10', 'Value': 21, 'Sender': '10.0.0.10', 'Sent': 1651548004.7458403, 'Broker': '10.0.0.6', 'Brokered': 1651548004.7701464, 'Subscriber': '10.0.0.89', 'Received': 1651548004.7925355, 'Latency': 0.04669523239135742}
+{'Topic': 'light|10', 'Value': 43, 'Sender': '10.0.0.10', 'Sent': 1651548004.846123, 'Broker': '10.0.0.6', 'Brokered': 1651548004.8664877, 'Subscriber': '10.0.0.89', 'Received': 1651548004.8923771, 'Latency': 0.04625415802001953}
+{'Topic': 'light|10', 'Value': 229, 'Sender': '10.0.0.10', 'Sent': 1651548004.9466412, 'Broker': '10.0.0.6', 'Brokered': 1651548004.9683614, 'Subscriber': '10.0.0.89', 'Received': 1651548004.988816, 'Latency': 0.0421748161315918}
+{'Topic': 'weather|20', 'Value': 450, 'Sender': '10.0.0.14', 'Sent': 1651548006.1959257, 'Broker': '10.0.0.7', 'Brokered': 1651548006.219625, 'Subscriber': '10.0.0.89', 'Received': 1651548006.2435002, 'Latency': 0.047574520111083984}
+{'Topic': 'weather|20', 'Value': 17, 'Sender': '10.0.0.14', 'Sent': 1651548006.6050315, 'Broker': '10.0.0.7', 'Brokered': 1651548006.626066, 'Subscriber': '10.0.0.89', 'Received': 1651548006.647561, 'Latency': 0.04252958297729492}
+{'Topic': 'weather|20', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651548006.8058827, 'Broker': '10.0.0.7', 'Brokered': 1651548006.8266132, 'Subscriber': '10.0.0.89', 'Received': 1651548006.8479695, 'Latency': 0.04208683967590332}
+{'Topic': 'weather|20', 'Value': 115, 'Sender': '10.0.0.14', 'Sent': 1651548008.3121414, 'Broker': '10.0.0.7', 'Brokered': 1651548008.33268, 'Subscriber': '10.0.0.89', 'Received': 1651548008.3546891, 'Latency': 0.04254770278930664}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+{'Topic': 'weather|20', 'Value': 339, 'Sender': '10.0.0.14', 'Sent': 1651548008.5133562, 'Broker': '10.0.0.7', 'Brokered': 1651548008.53659, 'Subscriber': '10.0.0.89', 'Received': 1651548008.563333, 'Latency': 0.04997682571411133}
+{'Topic': 'weather|20', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651548009.0179973, 'Broker': '10.0.0.7', 'Brokered': 1651548009.0393546, 'Subscriber': '10.0.0.89', 'Received': 1651548009.0609891, 'Latency': 0.04299187660217285}
+{'Topic': 'weather|20', 'Value': 2, 'Sender': '10.0.0.14', 'Sent': 1651548010.2249246, 'Broker': '10.0.0.7', 'Brokered': 1651548010.2454195, 'Subscriber': '10.0.0.89', 'Received': 1651548010.26681, 'Latency': 0.0418853759765625}
+{'Topic': 'weather|20', 'Value': 154, 'Sender': '10.0.0.14', 'Sent': 1651548010.5265684, 'Broker': '10.0.0.7', 'Brokered': 1651548010.5472987, 'Subscriber': '10.0.0.89', 'Received': 1651548010.5677392, 'Latency': 0.04117083549499512}
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['weather|20', 'light|10']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['weather|20', 'light|10']}]
+{'Topic': 'weather|20', 'Value': 63, 'Sender': '10.0.0.14', 'Sent': 1651548011.7388916, 'Broker': '10.0.0.7', 'Brokered': 1651548011.759659, 'Subscriber': '10.0.0.89', 'Received': 1651548011.781405, 'Latency': 0.042513370513916016}
+{'Topic': 'weather|20', 'Value': 95, 'Sender': '10.0.0.14', 'Sent': 1651548014.3621724, 'Broker': '10.0.0.7', 'Brokered': 1651548014.382528, 'Subscriber': '10.0.0.89', 'Received': 1651548014.4038122, 'Latency': 0.04163980484008789}
+{'Topic': 'weather|20', 'Value': 322, 'Sender': '10.0.0.14', 'Sent': 1651548015.464883, 'Broker': '10.0.0.7', 'Brokered': 1651548015.485457, 'Subscriber': '10.0.0.89', 'Received': 1651548015.5066583, 'Latency': 0.04177522659301758}
+{'Topic': 'weather|20', 'Value': 96, 'Sender': '10.0.0.14', 'Sent': 1651548015.5651135, 'Broker': '10.0.0.7', 'Brokered': 1651548015.5858486, 'Subscriber': '10.0.0.89', 'Received': 1651548015.6071844, 'Latency': 0.042070865631103516}
+{'Topic': 'light|10', 'Value': 233, 'Sender': '10.0.0.10', 'Sent': 1651548005.9529934, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0808318, 'Subscriber': '10.0.0.89', 'Received': 1651548016.1087763, 'Latency': 10.15578293800354}
+{'Topic': 'light|10', 'Value': 259, 'Sender': '10.0.0.10', 'Sent': 1651548006.8672688, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0812252, 'Subscriber': '10.0.0.89', 'Received': 1651548016.120701, 'Latency': 9.253432273864746}
+{'Topic': 'light|10', 'Value': 344, 'Sender': '10.0.0.10', 'Sent': 1651548007.574244, 'Broker': '10.0.0.6', 'Brokered': 1651548016.081479, 'Subscriber': '10.0.0.89', 'Received': 1651548016.120945, 'Latency': 8.546700954437256}
+{'Topic': 'light|10', 'Value': 94, 'Sender': '10.0.0.10', 'Sent': 1651548010.5999346, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0834575, 'Subscriber': '10.0.0.89', 'Received': 1651548016.121067, 'Latency': 5.521132469177246}
+{'Topic': 'light|10', 'Value': 442, 'Sender': '10.0.0.10', 'Sent': 1651548011.606008, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0835948, 'Subscriber': '10.0.0.89', 'Received': 1651548016.121228, 'Latency': 4.5152199268341064}
+{'Topic': 'light|10', 'Value': 170, 'Sender': '10.0.0.10', 'Sent': 1651548012.4144316, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0838623, 'Subscriber': '10.0.0.89', 'Received': 1651548016.1213074, 'Latency': 3.706875801086426}
+{'Topic': 'light|10', 'Value': 1, 'Sender': '10.0.0.10', 'Sent': 1651548014.0220985, 'Broker': '10.0.0.6', 'Brokered': 1651548016.0842564, 'Subscriber': '10.0.0.89', 'Received': 1651548016.1213827, 'Latency': 2.0992841720581055}
+{'Topic': 'light|10', 'Value': 488, 'Sender': '10.0.0.10', 'Sent': 1651548014.1225438, 'Broker': '10.0.0.6', 'Brokered': 1651548016.084377, 'Subscriber': '10.0.0.89', 'Received': 1651548016.1214545, 'Latency': 1.998910665512085}
+{'Topic': 'weather|20', 'Value': 423, 'Sender': '10.0.0.14', 'Sent': 1651548016.6683779, 'Broker': '10.0.0.7', 'Brokered': 1651548016.6889875, 'Subscriber': '10.0.0.89', 'Received': 1651548016.7101424, 'Latency': 0.04176449775695801}
+{'Topic': 'light|10', 'Value': 438, 'Sender': '10.0.0.10', 'Sent': 1651548017.1334689, 'Broker': '10.0.0.6', 'Brokered': 1651548017.154087, 'Subscriber': '10.0.0.89', 'Received': 1651548017.1746588, 'Latency': 0.04118990898132324}
+{'Topic': 'light|10', 'Value': 112, 'Sender': '10.0.0.10', 'Sent': 1651548017.6348422, 'Broker': '10.0.0.6', 'Brokered': 1651548017.6551902, 'Subscriber': '10.0.0.89', 'Received': 1651548017.6758773, 'Latency': 0.04103517532348633}
+{'Topic': 'weather|20', 'Value': 239, 'Sender': '10.0.0.14', 'Sent': 1651548017.7715912, 'Broker': '10.0.0.7', 'Brokered': 1651548017.7926538, 'Subscriber': '10.0.0.89', 'Received': 1651548017.8143678, 'Latency': 0.04277658462524414}
+{'Topic': 'light|10', 'Value': 198, 'Sender': '10.0.0.10', 'Sent': 1651548017.8361924, 'Broker': '10.0.0.6', 'Brokered': 1651548017.8566, 'Subscriber': '10.0.0.89', 'Received': 1651548017.8772655, 'Latency': 0.04107308387756348}
+{'Topic': 'weather|20', 'Value': 479, 'Sender': '10.0.0.14', 'Sent': 1651548017.97221, 'Broker': '10.0.0.7', 'Brokered': 1651548017.9928048, 'Subscriber': '10.0.0.89', 'Received': 1651548018.0152411, 'Latency': 0.04303121566772461}
+{'Topic': 'light|10', 'Value': 115, 'Sender': '10.0.0.10', 'Sent': 1651548018.4392443, 'Broker': '10.0.0.6', 'Brokered': 1651548018.4598835, 'Subscriber': '10.0.0.89', 'Received': 1651548018.4802918, 'Latency': 0.04104757308959961}
+{'Topic': 'weather|20', 'Value': 248, 'Sender': '10.0.0.14', 'Sent': 1651548018.5743182, 'Broker': '10.0.0.7', 'Brokered': 1651548018.5952039, 'Subscriber': '10.0.0.89', 'Received': 1651548018.617471, 'Latency': 0.043152809143066406}
+{'Topic': 'light|10', 'Value': 344, 'Sender': '10.0.0.10', 'Sent': 1651548019.444705, 'Broker': '10.0.0.6', 'Brokered': 1651548019.4654305, 'Subscriber': '10.0.0.89', 'Received': 1651548019.4860919, 'Latency': 0.04138684272766113}
+{'Topic': 'light|10', 'Value': 190, 'Sender': '10.0.0.10', 'Sent': 1651548020.3475256, 'Broker': '10.0.0.6', 'Brokered': 1651548020.3678823, 'Subscriber': '10.0.0.89', 'Received': 1651548020.3881903, 'Latency': 0.0406646728515625}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['weather|20', 'light|10']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['weather|20', 'light|10']}]
+{'Topic': 'weather|20', 'Value': 12, 'Sender': '10.0.0.14', 'Sent': 1651548021.3839061, 'Broker': '10.0.0.7', 'Brokered': 1651548021.4044135, 'Subscriber': '10.0.0.89', 'Received': 1651548021.4292433, 'Latency': 0.04533720016479492}
+{'Topic': 'light|10', 'Value': 499, 'Sender': '10.0.0.10', 'Sent': 1651548021.7523305, 'Broker': '10.0.0.6', 'Brokered': 1651548021.7734911, 'Subscriber': '10.0.0.89', 'Received': 1651548021.79391, 'Latency': 0.041579484939575195}
+{'Topic': 'weather|20', 'Value': 55, 'Sender': '10.0.0.14', 'Sent': 1651548023.2914803, 'Broker': '10.0.0.7', 'Brokered': 1651548023.3120887, 'Subscriber': '10.0.0.89', 'Received': 1651548023.334897, 'Latency': 0.043416738510131836}
+{'Topic': 'light|10', 'Value': 78, 'Sender': '10.0.0.10', 'Sent': 1651548023.467904, 'Broker': '10.0.0.6', 'Brokered': 1651548023.4885726, 'Subscriber': '10.0.0.89', 'Received': 1651548023.509229, 'Latency': 0.04132485389709473}
+{'Topic': 'light|10', 'Value': 98, 'Sender': '10.0.0.10', 'Sent': 1651548023.668826, 'Broker': '10.0.0.6', 'Brokered': 1651548023.6892838, 'Subscriber': '10.0.0.89', 'Received': 1651548023.709561, 'Latency': 0.04073500633239746}
+{'Topic': 'weather|20', 'Value': 40, 'Sender': '10.0.0.14', 'Sent': 1651548023.6927323, 'Broker': '10.0.0.7', 'Brokered': 1651548023.7134132, 'Subscriber': '10.0.0.89', 'Received': 1651548023.7370868, 'Latency': 0.04435443878173828}
+{'Topic': 'weather|20', 'Value': 458, 'Sender': '10.0.0.14', 'Sent': 1651548024.596718, 'Broker': '10.0.0.7', 'Brokered': 1651548024.617303, 'Subscriber': '10.0.0.89', 'Received': 1651548024.6389139, 'Latency': 0.042195796966552734}
+{'Topic': 'light|10', 'Value': 71, 'Sender': '10.0.0.10', 'Sent': 1651548025.0765314, 'Broker': '10.0.0.6', 'Brokered': 1651548025.09721, 'Subscriber': '10.0.0.89', 'Received': 1651548025.118006, 'Latency': 0.04147458076477051}
+{'Topic': 'weather|20', 'Value': 356, 'Sender': '10.0.0.14', 'Sent': 1651548025.4994624, 'Broker': '10.0.0.7', 'Brokered': 1651548025.519779, 'Subscriber': '10.0.0.89', 'Received': 1651548025.5417826, 'Latency': 0.04232025146484375}
+{'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651548025.7002866, 'Broker': '10.0.0.7', 'Brokered': 1651548025.7209654, 'Subscriber': '10.0.0.89', 'Received': 1651548025.7430787, 'Latency': 0.04279208183288574}
+{'Topic': 'light|10', 'Value': 233, 'Sender': '10.0.0.10', 'Sent': 1651548025.7801511, 'Broker': '10.0.0.6', 'Brokered': 1651548025.8007362, 'Subscriber': '10.0.0.89', 'Received': 1651548025.8213785, 'Latency': 0.04122734069824219}
+{'Topic': 'light|10', 'Value': 202, 'Sender': '10.0.0.10', 'Sent': 1651548026.081092, 'Broker': '10.0.0.6', 'Brokered': 1651548026.1015935, 'Subscriber': '10.0.0.89', 'Received': 1651548026.1222255, 'Latency': 0.04113364219665527}
+{'Topic': 'weather|20', 'Value': 465, 'Sender': '10.0.0.14', 'Sent': 1651548026.1012769, 'Broker': '10.0.0.7', 'Brokered': 1651548026.1217191, 'Subscriber': '10.0.0.89', 'Received': 1651548026.144954, 'Latency': 0.04367709159851074}
+{'Topic': 'weather|20', 'Value': 73, 'Sender': '10.0.0.14', 'Sent': 1651548027.3051894, 'Broker': '10.0.0.7', 'Brokered': 1651548027.3259873, 'Subscriber': '10.0.0.89', 'Received': 1651548027.3492172, 'Latency': 0.04402780532836914}
+{'Topic': 'weather|20', 'Value': 364, 'Sender': '10.0.0.14', 'Sent': 1651548028.3082607, 'Broker': '10.0.0.7', 'Brokered': 1651548028.329323, 'Subscriber': '10.0.0.89', 'Received': 1651548028.3509572, 'Latency': 0.042696475982666016}
+{'Topic': 'light|10', 'Value': 222, 'Sender': '10.0.0.10', 'Sent': 1651548028.5902202, 'Broker': '10.0.0.6', 'Brokered': 1651548028.6111038, 'Subscriber': '10.0.0.89', 'Received': 1651548028.6319616, 'Latency': 0.041741371154785156}
+{'Topic': 'weather|20', 'Value': 422, 'Sender': '10.0.0.14', 'Sent': 1651548028.9105396, 'Broker': '10.0.0.7', 'Brokered': 1651548028.9313114, 'Subscriber': '10.0.0.89', 'Received': 1651548028.9555905, 'Latency': 0.045050859451293945}
+{'Topic': 'weather|20', 'Value': 383, 'Sender': '10.0.0.14', 'Sent': 1651548029.5123417, 'Broker': '10.0.0.7', 'Brokered': 1651548029.532983, 'Subscriber': '10.0.0.89', 'Received': 1651548029.5547562, 'Latency': 0.04241442680358887}
+{'Topic': 'weather|20', 'Value': 141, 'Sender': '10.0.0.14', 'Sent': 1651548029.9139373, 'Broker': '10.0.0.7', 'Brokered': 1651548029.9348462, 'Subscriber': '10.0.0.89', 'Received': 1651548029.9559453, 'Latency': 0.0420079231262207}
+{'Topic': 'light|10', 'Value': 440, 'Sender': '10.0.0.10', 'Sent': 1651548030.1000724, 'Broker': '10.0.0.6', 'Brokered': 1651548030.125684, 'Subscriber': '10.0.0.89', 'Received': 1651548030.1462133, 'Latency': 0.04614090919494629}
+{'Topic': 'weather|20', 'Value': 234, 'Sender': '10.0.0.14', 'Sent': 1651548030.1153393, 'Broker': '10.0.0.7', 'Brokered': 1651548030.1383903, 'Subscriber': '10.0.0.89', 'Received': 1651548030.162324, 'Latency': 0.04698467254638672}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+{'Topic': 'light|10', 'Value': 236, 'Sender': '10.0.0.10', 'Sent': 1651548031.2071488, 'Broker': '10.0.0.6', 'Brokered': 1651548031.2289748, 'Subscriber': '10.0.0.89', 'Received': 1651548031.254058, 'Latency': 0.04690909385681152}
+{'Topic': 'light|10', 'Value': 484, 'Sender': '10.0.0.10', 'Sent': 1651548031.3075223, 'Broker': '10.0.0.6', 'Brokered': 1651548031.328827, 'Subscriber': '10.0.0.89', 'Received': 1651548031.3494728, 'Latency': 0.04195046424865723}
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['weather|20', 'light|10']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['weather|20', 'light|10']}]
+{'Topic': 'light|10', 'Value': 22, 'Sender': '10.0.0.10', 'Sent': 1651548032.7159817, 'Broker': '10.0.0.6', 'Brokered': 1651548032.7364445, 'Subscriber': '10.0.0.89', 'Received': 1651548032.7584937, 'Latency': 0.042511940002441406}
+{'Topic': 'weather|20', 'Value': 231, 'Sender': '10.0.0.14', 'Sent': 1651548034.0409777, 'Broker': '10.0.0.7', 'Brokered': 1651548034.0613108, 'Subscriber': '10.0.0.89', 'Received': 1651548034.083048, 'Latency': 0.04207038879394531}
+{'Topic': 'weather|20', 'Value': 191, 'Sender': '10.0.0.14', 'Sent': 1651548034.1413453, 'Broker': '10.0.0.7', 'Brokered': 1651548034.1618595, 'Subscriber': '10.0.0.89', 'Received': 1651548034.1831908, 'Latency': 0.04184556007385254}
+{'Topic': 'weather|20', 'Value': 347, 'Sender': '10.0.0.14', 'Sent': 1651548034.3419762, 'Broker': '10.0.0.7', 'Brokered': 1651548034.3623033, 'Subscriber': '10.0.0.89', 'Received': 1651548034.3850286, 'Latency': 0.04305243492126465}
+{'Topic': 'light|10', 'Value': 29, 'Sender': '10.0.0.10', 'Sent': 1651548034.529441, 'Broker': '10.0.0.6', 'Brokered': 1651548034.5500205, 'Subscriber': '10.0.0.89', 'Received': 1651548034.5704803, 'Latency': 0.041039228439331055}
+{'Topic': 'weather|20', 'Value': 316, 'Sender': '10.0.0.14', 'Sent': 1651548034.8436003, 'Broker': '10.0.0.7', 'Brokered': 1651548034.8641021, 'Subscriber': '10.0.0.89', 'Received': 1651548034.885307, 'Latency': 0.04170680046081543}
+{'Topic': 'light|10', 'Value': 105, 'Sender': '10.0.0.10', 'Sent': 1651548035.031625, 'Broker': '10.0.0.6', 'Brokered': 1651548035.0534272, 'Subscriber': '10.0.0.89', 'Received': 1651548035.0752528, 'Latency': 0.04362773895263672}
+{'Topic': 'light|10', 'Value': 269, 'Sender': '10.0.0.10', 'Sent': 1651548036.6427717, 'Broker': '10.0.0.6', 'Brokered': 1651548036.6632307, 'Subscriber': '10.0.0.89', 'Received': 1651548036.684383, 'Latency': 0.0416111946105957}
+{'Topic': 'weather|20', 'Value': 313, 'Sender': '10.0.0.14', 'Sent': 1651548036.7524157, 'Broker': '10.0.0.7', 'Brokered': 1651548036.7728314, 'Subscriber': '10.0.0.89', 'Received': 1651548036.7968206, 'Latency': 0.04440498352050781}
+{'Topic': 'light|10', 'Value': 77, 'Sender': '10.0.0.10', 'Sent': 1651548036.8440263, 'Broker': '10.0.0.6', 'Brokered': 1651548036.8647938, 'Subscriber': '10.0.0.89', 'Received': 1651548036.8855588, 'Latency': 0.04153251647949219}
+{'Topic': 'weather|20', 'Value': 488, 'Sender': '10.0.0.14', 'Sent': 1651548037.2556047, 'Broker': '10.0.0.7', 'Brokered': 1651548037.2793684, 'Subscriber': '10.0.0.89', 'Received': 1651548037.305199, 'Latency': 0.04959416389465332}
+{'Topic': 'light|10', 'Value': 196, 'Sender': '10.0.0.10', 'Sent': 1651548037.5478833, 'Broker': '10.0.0.6', 'Brokered': 1651548037.569644, 'Subscriber': '10.0.0.89', 'Received': 1651548037.5930946, 'Latency': 0.0452113151550293}
+{'Topic': 'weather|20', 'Value': 327, 'Sender': '10.0.0.14', 'Sent': 1651548037.55721, 'Broker': '10.0.0.6', 'Brokered': 1651548037.5821104, 'Subscriber': '10.0.0.89', 'Received': 1651548037.6098256, 'Latency': 0.05261564254760742}
+{'Topic': 'weather|20', 'Value': 327, 'Sender': '10.0.0.14', 'Sent': 1651548037.55721, 'Broker': '10.0.0.7', 'Brokered': 1651548037.5785685, 'Subscriber': '10.0.0.89', 'Received': 1651548037.6099312, 'Latency': 0.052721261978149414}
+{'Topic': 'weather|20', 'Value': 294, 'Sender': '10.0.0.14', 'Sent': 1651548037.9601808, 'Broker': '10.0.0.6', 'Brokered': 1651548037.9807165, 'Subscriber': '10.0.0.89', 'Received': 1651548038.0030777, 'Latency': 0.04289698600769043}
+{'Topic': 'light|10', 'Value': 52, 'Sender': '10.0.0.10', 'Sent': 1651548038.4520638, 'Broker': '10.0.0.6', 'Brokered': 1651548038.4727483, 'Subscriber': '10.0.0.89', 'Received': 1651548038.494075, 'Latency': 0.042011260986328125}
+{'Topic': 'weather|20', 'Value': 44, 'Sender': '10.0.0.14', 'Sent': 1651548038.965114, 'Broker': '10.0.0.6', 'Brokered': 1651548038.9855509, 'Subscriber': '10.0.0.89', 'Received': 1651548039.0066419, 'Latency': 0.041527748107910156}
+{'Topic': 'weather|20', 'Value': 103, 'Sender': '10.0.0.14', 'Sent': 1651548039.2678173, 'Broker': '10.0.0.6', 'Brokered': 1651548039.2888377, 'Subscriber': '10.0.0.89', 'Received': 1651548039.3092556, 'Latency': 0.04143834114074707}
+{'Topic': 'light|10', 'Value': 81, 'Sender': '10.0.0.10', 'Sent': 1651548039.4588368, 'Broker': '10.0.0.6', 'Brokered': 1651548039.4809694, 'Subscriber': '10.0.0.89', 'Received': 1651548039.5022268, 'Latency': 0.04339003562927246}
+{'Topic': 'weather|20', 'Value': 233, 'Sender': '10.0.0.14', 'Sent': 1651548039.7698376, 'Broker': '10.0.0.6', 'Brokered': 1651548039.7921765, 'Subscriber': '10.0.0.89', 'Received': 1651548039.814555, 'Latency': 0.04471731185913086}
+{'Topic': 'light|10', 'Value': 138, 'Sender': '10.0.0.10', 'Sent': 1651548040.065519, 'Broker': '10.0.0.6', 'Brokered': 1651548040.0863595, 'Subscriber': '10.0.0.89', 'Received': 1651548040.1069841, 'Latency': 0.041465044021606445}
+{'Topic': 'light|10', 'Value': 399, 'Sender': '10.0.0.10', 'Sent': 1651548040.3682895, 'Broker': '10.0.0.6', 'Brokered': 1651548040.3889244, 'Subscriber': '10.0.0.89', 'Received': 1651548040.411766, 'Latency': 0.04347658157348633}
+{'Topic': 'light|10', 'Value': 299, 'Sender': '10.0.0.10', 'Sent': 1651548040.4685087, 'Broker': '10.0.0.6', 'Brokered': 1651548040.4903085, 'Subscriber': '10.0.0.89', 'Received': 1651548040.5114815, 'Latency': 0.04297280311584473}
+{'Topic': 'light|10', 'Value': 386, 'Sender': '10.0.0.10', 'Sent': 1651548040.669612, 'Broker': '10.0.0.6', 'Brokered': 1651548040.690745, 'Subscriber': '10.0.0.89', 'Received': 1651548040.7116165, 'Latency': 0.04200458526611328}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+{'Topic': 'light|10', 'Value': 202, 'Sender': '10.0.0.10', 'Sent': 1651548041.5729287, 'Broker': '10.0.0.6', 'Brokered': 1651548041.5938196, 'Subscriber': '10.0.0.89', 'Received': 1651548041.6194491, 'Latency': 0.04652047157287598}
+{'Topic': 'light|10', 'Value': 173, 'Sender': '10.0.0.10', 'Sent': 1651548041.8740356, 'Broker': '10.0.0.6', 'Brokered': 1651548041.8949988, 'Subscriber': '10.0.0.89', 'Received': 1651548041.9155865, 'Latency': 0.04155087471008301}
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['weather|20', 'light|10']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['weather|20', 'light|10']}]
+{'Topic': 'weather|20', 'Value': 10, 'Sender': '10.0.0.14', 'Sent': 1651548041.9787552, 'Broker': '10.0.0.6', 'Brokered': 1651548042.000967, 'Subscriber': '10.0.0.89', 'Received': 1651548042.021756, 'Latency': 0.04300069808959961}
+{'Topic': 'light|10', 'Value': 175, 'Sender': '10.0.0.10', 'Sent': 1651548042.275102, 'Broker': '10.0.0.6', 'Brokered': 1651548042.2955034, 'Subscriber': '10.0.0.89', 'Received': 1651548042.3165314, 'Latency': 0.04142951965332031}
+{'Topic': 'weather|20', 'Value': 333, 'Sender': '10.0.0.14', 'Sent': 1651548042.4828503, 'Broker': '10.0.0.6', 'Brokered': 1651548042.5040202, 'Subscriber': '10.0.0.89', 'Received': 1651548042.5252047, 'Latency': 0.04235434532165527}
+{'Topic': 'light|10', 'Value': 245, 'Sender': '10.0.0.10', 'Sent': 1651548042.576152, 'Broker': '10.0.0.6', 'Brokered': 1651548042.6009183, 'Subscriber': '10.0.0.89', 'Received': 1651548042.6217031, 'Latency': 0.04555106163024902}
+{'Topic': 'light|10', 'Value': 49, 'Sender': '10.0.0.10', 'Sent': 1651548042.7798088, 'Broker': '10.0.0.6', 'Brokered': 1651548042.8007402, 'Subscriber': '10.0.0.89', 'Received': 1651548042.8216038, 'Latency': 0.04179501533508301}
+{'Topic': 'weather|20', 'Value': 336, 'Sender': '10.0.0.14', 'Sent': 1651548044.3924263, 'Broker': '10.0.0.7', 'Brokered': 1651548044.4132776, 'Subscriber': '10.0.0.89', 'Received': 1651548044.4367085, 'Latency': 0.04428219795227051}
+{'Topic': 'weather|20', 'Value': 342, 'Sender': '10.0.0.14', 'Sent': 1651548044.5939705, 'Broker': '10.0.0.7', 'Brokered': 1651548044.614582, 'Subscriber': '10.0.0.89', 'Received': 1651548044.636, 'Latency': 0.042029380798339844}
+{'Topic': 'weather|20', 'Value': 138, 'Sender': '10.0.0.14', 'Sent': 1651548044.6943662, 'Broker': '10.0.0.7', 'Brokered': 1651548044.7147284, 'Subscriber': '10.0.0.89', 'Received': 1651548044.735745, 'Latency': 0.04137873649597168}
+{'Topic': 'weather|20', 'Value': 379, 'Sender': '10.0.0.14', 'Sent': 1651548044.8957343, 'Broker': '10.0.0.7', 'Brokered': 1651548044.916324, 'Subscriber': '10.0.0.89', 'Received': 1651548044.9384217, 'Latency': 0.042687416076660156}
+{'Topic': 'weather|20', 'Value': 364, 'Sender': '10.0.0.14', 'Sent': 1651548046.2009037, 'Broker': '10.0.0.7', 'Brokered': 1651548046.2216086, 'Subscriber': '10.0.0.89', 'Received': 1651548046.2431831, 'Latency': 0.04227948188781738}
+{'Topic': 'weather|20', 'Value': 294, 'Sender': '10.0.0.14', 'Sent': 1651548047.0082474, 'Broker': '10.0.0.7', 'Brokered': 1651548047.0326574, 'Subscriber': '10.0.0.89', 'Received': 1651548047.0537274, 'Latency': 0.04548001289367676}
+{'Topic': 'weather|20', 'Value': 37, 'Sender': '10.0.0.14', 'Sent': 1651548047.2102633, 'Broker': '10.0.0.7', 'Brokered': 1651548047.231617, 'Subscriber': '10.0.0.89', 'Received': 1651548047.2537332, 'Latency': 0.043469905853271484}
+{'Topic': 'weather|20', 'Value': 270, 'Sender': '10.0.0.14', 'Sent': 1651548043.1859248, 'Broker': '10.0.0.6', 'Brokered': 1651548049.631681, 'Subscriber': '10.0.0.89', 'Received': 1651548049.65545, 'Latency': 6.469525337219238}
+{'Topic': 'weather|20', 'Value': 141, 'Sender': '10.0.0.14', 'Sent': 1651548043.5878527, 'Broker': '10.0.0.6', 'Brokered': 1651548049.6319757, 'Subscriber': '10.0.0.89', 'Received': 1651548049.655562, 'Latency': 6.06770920753479}
+{'Topic': 'weather|20', 'Value': 336, 'Sender': '10.0.0.14', 'Sent': 1651548044.3924263, 'Broker': '10.0.0.6', 'Brokered': 1651548049.6321015, 'Subscriber': '10.0.0.89', 'Received': 1651548049.655639, 'Latency': 5.26321268081665}
+{'Topic': 'weather|20', 'Value': 342, 'Sender': '10.0.0.14', 'Sent': 1651548044.5939705, 'Broker': '10.0.0.6', 'Brokered': 1651548049.6322193, 'Subscriber': '10.0.0.89', 'Received': 1651548049.655712, 'Latency': 5.061741352081299}
+{'Topic': 'weather|20', 'Value': 138, 'Sender': '10.0.0.14', 'Sent': 1651548044.6943662, 'Broker': '10.0.0.6', 'Brokered': 1651548049.6323419, 'Subscriber': '10.0.0.89', 'Received': 1651548049.6706111, 'Latency': 4.976244926452637}
+{'Topic': 'weather|20', 'Value': 379, 'Sender': '10.0.0.14', 'Sent': 1651548044.8957343, 'Broker': '10.0.0.6', 'Brokered': 1651548049.6324663, 'Subscriber': '10.0.0.89', 'Received': 1651548049.6707222, 'Latency': 4.7749879360198975}
+{'Topic': 'weather|20', 'Value': 364, 'Sender': '10.0.0.14', 'Sent': 1651548046.2009037, 'Broker': '10.0.0.6', 'Brokered': 1651548049.6326466, 'Subscriber': '10.0.0.89', 'Received': 1651548049.6707969, 'Latency': 3.469893217086792}
+{'Topic': 'weather|20', 'Value': 294, 'Sender': '10.0.0.14', 'Sent': 1651548047.0082474, 'Broker': '10.0.0.6', 'Brokered': 1651548049.6327982, 'Subscriber': '10.0.0.89', 'Received': 1651548049.6708672, 'Latency': 2.6626198291778564}
+{'Topic': 'weather|20', 'Value': 37, 'Sender': '10.0.0.14', 'Sent': 1651548047.2102633, 'Broker': '10.0.0.6', 'Brokered': 1651548049.6329274, 'Subscriber': '10.0.0.89', 'Received': 1651548049.6709416, 'Latency': 2.4606783390045166}
+{'Topic': 'weather|20', 'Value': 375, 'Sender': '10.0.0.14', 'Sent': 1651548049.9233048, 'Broker': '10.0.0.6', 'Brokered': 1651548049.9449856, 'Subscriber': '10.0.0.89', 'Received': 1651548049.967847, 'Latency': 0.04454231262207031}
+{'Topic': 'weather|20', 'Value': 375, 'Sender': '10.0.0.14', 'Sent': 1651548049.9233048, 'Broker': '10.0.0.7', 'Brokered': 1651548049.9448373, 'Subscriber': '10.0.0.89', 'Received': 1651548049.9679518, 'Latency': 0.0446469783782959}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['weather|20', 'light|10']}, {'ip': '10.0.0.7', 'port': '5561', 'topics': ['weather|20', 'light|10']}]
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['weather|20', 'light|10']}]
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['weather|20', 'light|10']}]
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.6', 'port': '5561', 'topics': ['weather|20', 'light|10']}]
+Error: unable to lock polling for updates
+WARNING:kazoo.client:Connection dropped: socket connection broken
+WARNING:kazoo.client:Transition to CONNECTING
+Current state is now = SUSPENDED
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+Fetching updates from registry 10.0.0.5:5550
+Request sent

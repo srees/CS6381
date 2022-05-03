@@ -1,0 +1,936 @@
+Current libzmq version is 4.3.4
+Current  pyzmq version is 22.3.0
+Main: parse command line arguments
+Getting broker object
+Binding REP to tcp://10.0.0.7:5560
+Binding HIST_REP to tcp://10.0.0.7:5562
+Binding PUB to tcp://10.0.0.7:5561
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+Current state is now = CONNECTED
+Getting registry proxy
+Initializing Zookeeper connection
+=================================
+Server IP: 10.0.0.1, Port: 2181;
+=================================
+Driver::init_driver -- instantiate zk obj: hosts = 10.0.0.1:2181
+Driver::init_driver -- state after connect = LOST
+Current state is now = CONNECTED
+['registry5', 'registry2', 'registry4', 'registry3']
+Checking if registries/registry5 exists (it better be)
+registries/registry5 znode indeed exists; get value
+Connecting to 10.0.0.5:5550
+Starting registry monitor loop thread
+Registering with tcp://10.0.0.5:5550...
+Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
+Registration sent
+Event: {'event': 1, 'value': 31, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
+Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
+Registration received
+Waiting for start from registry
+History request listener started at tcp://10.0.0.7:5562
+Starting update loop thread
+Starting broker listen loop...
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatebackup
+[]
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatebackup
+[]
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatebackup
+[{'ip': '10.0.0.15', 'port': '5571', 'topics': ['sound|20', 'light|20']}, {'ip': '10.0.0.14', 'port': '5571', 'topics': ['weather|20']}, {'ip': '10.0.0.13', 'port': '5571', 'topics': ['location|10', 'humidity|20']}, {'ip': '10.0.0.19', 'port': '5571', 'topics': ['smell|20']}]
+Broker subscribing to tcp://10.0.0.15:5571
+Broker subscribing to tcp://10.0.0.14:5571
+Broker subscribing to tcp://10.0.0.13:5571
+Broker subscribing to tcp://10.0.0.19:5571
+Broker received: 
+{'Topic': 'sound|20', 'Value': 60, 'Sender': '10.0.0.15', 'Sent': 1651547993.2398703, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 409, 'Sender': '10.0.0.13', 'Sent': 1651547993.3362617, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 111, 'Sender': '10.0.0.15', 'Sent': 1651547993.4421058, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 324, 'Sender': '10.0.0.13', 'Sent': 1651547993.5401373, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 467, 'Sender': '10.0.0.14', 'Sent': 1651547993.5405183, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 340, 'Sender': '10.0.0.15', 'Sent': 1651547993.6451113, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 31, 'Sender': '10.0.0.14', 'Sent': 1651547993.645432, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 174, 'Sender': '10.0.0.14', 'Sent': 1651547993.8530564, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 289, 'Sender': '10.0.0.13', 'Sent': 1651547993.8494003, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 308, 'Sender': '10.0.0.15', 'Sent': 1651547993.9530787, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 241, 'Sender': '10.0.0.15', 'Sent': 1651547994.1541934, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 282, 'Sender': '10.0.0.13', 'Sent': 1651547994.153685, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 411, 'Sender': '10.0.0.15', 'Sent': 1651547994.256024, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651547994.2573826, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 469, 'Sender': '10.0.0.15', 'Sent': 1651547994.4599895, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 463, 'Sender': '10.0.0.19', 'Sent': 1651547994.6526587, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 215, 'Sender': '10.0.0.15', 'Sent': 1651547994.6607847, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 141, 'Sender': '10.0.0.13', 'Sent': 1651547994.7605298, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 449, 'Sender': '10.0.0.19', 'Sent': 1651547994.8556974, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 0, 'Sender': '10.0.0.15', 'Sent': 1651547994.8632917, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 185, 'Sender': '10.0.0.13', 'Sent': 1651547995.061372, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 215, 'Sender': '10.0.0.15', 'Sent': 1651547995.0701306, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 352, 'Sender': '10.0.0.19', 'Sent': 1651547995.1602836, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 137, 'Sender': '10.0.0.14', 'Sent': 1651547995.1752505, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 182, 'Sender': '10.0.0.15', 'Sent': 1651547995.3815777, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 310, 'Sender': '10.0.0.15', 'Sent': 1651547995.5828176, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 42, 'Sender': '10.0.0.14', 'Sent': 1651547995.5829024, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 470, 'Sender': '10.0.0.15', 'Sent': 1651547995.6830144, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 34, 'Sender': '10.0.0.14', 'Sent': 1651547995.6831462, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 219, 'Sender': '10.0.0.13', 'Sent': 1651547995.7669277, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 299, 'Sender': '10.0.0.15', 'Sent': 1651547995.7836072, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 310, 'Sender': '10.0.0.19', 'Sent': 1651547995.9646, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 120, 'Sender': '10.0.0.15', 'Sent': 1651547995.9840748, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 52, 'Sender': '10.0.0.13', 'Sent': 1651547996.470925, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 410, 'Sender': '10.0.0.19', 'Sent': 1651547996.566312, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 460, 'Sender': '10.0.0.13', 'Sent': 1651547996.5710871, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 452, 'Sender': '10.0.0.19', 'Sent': 1651547996.6667953, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 197, 'Sender': '10.0.0.15', 'Sent': 1651547996.6865356, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 401, 'Sender': '10.0.0.15', 'Sent': 1651547996.9898968, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 427, 'Sender': '10.0.0.14', 'Sent': 1651547996.9901838, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 86, 'Sender': '10.0.0.15', 'Sent': 1651547997.1901429, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 170, 'Sender': '10.0.0.14', 'Sent': 1651547997.1906705, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 97, 'Sender': '10.0.0.15', 'Sent': 1651547997.2920935, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 313, 'Sender': '10.0.0.15', 'Sent': 1651547997.3946173, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 424, 'Sender': '10.0.0.15', 'Sent': 1651547997.7985723, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 382, 'Sender': '10.0.0.19', 'Sent': 1651547997.8734105, 'Broker': 'None', 'Brokered': 0}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 119, 'Sender': '10.0.0.13', 'Sent': 1651547998.0813925, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 404, 'Sender': '10.0.0.15', 'Sent': 1651547998.1008523, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 319, 'Sender': '10.0.0.15', 'Sent': 1651547998.3020084, 'Broker': 'None', 'Brokered': 0}
+Reply received as updatebackup
+[{'ip': '10.0.0.15', 'port': '5571', 'topics': ['sound|20', 'light|20']}, {'ip': '10.0.0.14', 'port': '5571', 'topics': ['weather|20']}, {'ip': '10.0.0.13', 'port': '5571', 'topics': ['location|10', 'humidity|20']}, {'ip': '10.0.0.19', 'port': '5571', 'topics': ['smell|20']}]
+Broker received: 
+{'Topic': 'sound|20', 'Value': 193, 'Sender': '10.0.0.15', 'Sent': 1651547998.4029312, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 300, 'Sender': '10.0.0.13', 'Sent': 1651547998.5875897, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 189, 'Sender': '10.0.0.15', 'Sent': 1651547998.605323, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 409, 'Sender': '10.0.0.15', 'Sent': 1651547998.8061576, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 360, 'Sender': '10.0.0.15', 'Sent': 1651547999.0100646, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 133, 'Sender': '10.0.0.15', 'Sent': 1651547999.2116647, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 486, 'Sender': '10.0.0.19', 'Sent': 1651547999.2882786, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 155, 'Sender': '10.0.0.15', 'Sent': 1651547999.311987, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 3, 'Sender': '10.0.0.15', 'Sent': 1651547999.4122565, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 220, 'Sender': '10.0.0.15', 'Sent': 1651547999.51418, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 59, 'Sender': '10.0.0.19', 'Sent': 1651547999.59233, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 269, 'Sender': '10.0.0.15', 'Sent': 1651547999.614569, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 423, 'Sender': '10.0.0.15', 'Sent': 1651547999.716117, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 68, 'Sender': '10.0.0.14', 'Sent': 1651548000.034165, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 464, 'Sender': '10.0.0.19', 'Sent': 1651548000.295388, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 283, 'Sender': '10.0.0.15', 'Sent': 1651548000.3226314, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 237, 'Sender': '10.0.0.13', 'Sent': 1651548000.5084546, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 116, 'Sender': '10.0.0.13', 'Sent': 1651548000.7091494, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 163, 'Sender': '10.0.0.13', 'Sent': 1651548000.8115358, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 461, 'Sender': '10.0.0.15', 'Sent': 1651548000.8281887, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 248, 'Sender': '10.0.0.14', 'Sent': 1651548000.837312, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 232, 'Sender': '10.0.0.13', 'Sent': 1651548001.1135664, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 365, 'Sender': '10.0.0.13', 'Sent': 1651548001.2146728, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 217, 'Sender': '10.0.0.15', 'Sent': 1651548001.2383292, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 75, 'Sender': '10.0.0.13', 'Sent': 1651548001.315994, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 18, 'Sender': '10.0.0.15', 'Sent': 1651548001.3386047, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 270, 'Sender': '10.0.0.13', 'Sent': 1651548001.4188879, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 222, 'Sender': '10.0.0.15', 'Sent': 1651548001.4390807, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 19, 'Sender': '10.0.0.15', 'Sent': 1651548001.5397644, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 304, 'Sender': '10.0.0.13', 'Sent': 1651548001.6250422, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 491, 'Sender': '10.0.0.15', 'Sent': 1651548001.6400735, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 0, 'Sender': '10.0.0.15', 'Sent': 1651548001.7411501, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 238, 'Sender': '10.0.0.14', 'Sent': 1651548001.741175, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 277, 'Sender': '10.0.0.15', 'Sent': 1651548001.8436856, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 294, 'Sender': '10.0.0.15', 'Sent': 1651548001.9445264, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 72, 'Sender': '10.0.0.15', 'Sent': 1651548002.0450492, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 414, 'Sender': '10.0.0.15', 'Sent': 1651548002.3491154, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 249, 'Sender': '10.0.0.15', 'Sent': 1651548002.5503304, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 267, 'Sender': '10.0.0.13', 'Sent': 1651548002.6347454, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 82, 'Sender': '10.0.0.13', 'Sent': 1651548002.835372, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 178, 'Sender': '10.0.0.13', 'Sent': 1651548002.935714, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 116, 'Sender': '10.0.0.15', 'Sent': 1651548003.0574815, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 158, 'Sender': '10.0.0.19', 'Sent': 1651548003.1363306, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 35, 'Sender': '10.0.0.14', 'Sent': 1651548003.1589668, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 144, 'Sender': '10.0.0.15', 'Sent': 1651548003.2629373, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 181, 'Sender': '10.0.0.14', 'Sent': 1651548003.2632732, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 129, 'Sender': '10.0.0.13', 'Sent': 1651548003.3368976, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 456, 'Sender': '10.0.0.19', 'Sent': 1651548003.3370523, 'Broker': 'None', 'Brokered': 0}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Broker received: 
+{'Topic': 'location|10', 'Value': 126, 'Sender': '10.0.0.13', 'Sent': 1651548003.743222, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 424, 'Sender': '10.0.0.15', 'Sent': 1651548003.8709104, 'Broker': 'None', 'Brokered': 0}
+Reply received as updatebackup
+[{'ip': '10.0.0.15', 'port': '5571', 'topics': ['sound|20', 'light|20']}, {'ip': '10.0.0.14', 'port': '5571', 'topics': ['weather|20']}, {'ip': '10.0.0.13', 'port': '5571', 'topics': ['location|10', 'humidity|20']}, {'ip': '10.0.0.19', 'port': '5571', 'topics': ['smell|20']}]
+Broker received: 
+{'Topic': 'smell|20', 'Value': 436, 'Sender': '10.0.0.19', 'Sent': 1651548004.2464876, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 465, 'Sender': '10.0.0.15', 'Sent': 1651548004.3749425, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 163, 'Sender': '10.0.0.14', 'Sent': 1651548004.3750248, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 388, 'Sender': '10.0.0.15', 'Sent': 1651548004.4751644, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 55, 'Sender': '10.0.0.15', 'Sent': 1651548004.576192, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 348, 'Sender': '10.0.0.14', 'Sent': 1651548004.677325, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 111, 'Sender': '10.0.0.15', 'Sent': 1651548004.782252, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 46, 'Sender': '10.0.0.19', 'Sent': 1651548005.0587797, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 367, 'Sender': '10.0.0.13', 'Sent': 1651548005.1603112, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 187, 'Sender': '10.0.0.13', 'Sent': 1651548005.3625169, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 456, 'Sender': '10.0.0.15', 'Sent': 1651548005.4873662, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 130, 'Sender': '10.0.0.15', 'Sent': 1651548005.6878674, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 344, 'Sender': '10.0.0.15', 'Sent': 1651548005.7881207, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 475, 'Sender': '10.0.0.13', 'Sent': 1651548005.9692492, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 203, 'Sender': '10.0.0.15', 'Sent': 1651548005.9903915, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 442, 'Sender': '10.0.0.15', 'Sent': 1651548006.092959, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 176, 'Sender': '10.0.0.13', 'Sent': 1651548006.173561, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 450, 'Sender': '10.0.0.14', 'Sent': 1651548006.1959257, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 495, 'Sender': '10.0.0.15', 'Sent': 1651548006.2955832, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 438, 'Sender': '10.0.0.15', 'Sent': 1651548006.4966033, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 52, 'Sender': '10.0.0.15', 'Sent': 1651548006.5969617, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 17, 'Sender': '10.0.0.14', 'Sent': 1651548006.6050315, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 323, 'Sender': '10.0.0.13', 'Sent': 1651548006.6859093, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 257, 'Sender': '10.0.0.15', 'Sent': 1651548006.7017007, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 17, 'Sender': '10.0.0.15', 'Sent': 1651548006.801833, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651548006.8058827, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 107, 'Sender': '10.0.0.15', 'Sent': 1651548006.9021819, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 69, 'Sender': '10.0.0.15', 'Sent': 1651548007.1040187, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 350, 'Sender': '10.0.0.13', 'Sent': 1651548007.1889153, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 145, 'Sender': '10.0.0.19', 'Sent': 1651548007.1886919, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 432, 'Sender': '10.0.0.15', 'Sent': 1651548007.2050548, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 3, 'Sender': '10.0.0.19', 'Sent': 1651548007.389366, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 190, 'Sender': '10.0.0.13', 'Sent': 1651548007.4925015, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 299, 'Sender': '10.0.0.15', 'Sent': 1651548007.609536, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 275, 'Sender': '10.0.0.13', 'Sent': 1651548007.6963975, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 375, 'Sender': '10.0.0.13', 'Sent': 1651548007.7966743, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 5, 'Sender': '10.0.0.15', 'Sent': 1651548007.9114347, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 140, 'Sender': '10.0.0.15', 'Sent': 1651548008.0127428, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 387, 'Sender': '10.0.0.13', 'Sent': 1651548008.2008328, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 373, 'Sender': '10.0.0.19', 'Sent': 1651548008.200987, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 115, 'Sender': '10.0.0.14', 'Sent': 1651548008.3121414, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 78, 'Sender': '10.0.0.15', 'Sent': 1651548008.315188, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 339, 'Sender': '10.0.0.14', 'Sent': 1651548008.5133562, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 9, 'Sender': '10.0.0.13', 'Sent': 1651548008.704494, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 388, 'Sender': '10.0.0.15', 'Sent': 1651548008.7178621, 'Broker': 'None', 'Brokered': 0}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Broker received: 
+{'Topic': 'smell|20', 'Value': 323, 'Sender': '10.0.0.19', 'Sent': 1651548009.0085442, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 272, 'Sender': '10.0.0.14', 'Sent': 1651548009.0179973, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 28, 'Sender': '10.0.0.13', 'Sent': 1651548009.1083815, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 92, 'Sender': '10.0.0.15', 'Sent': 1651548009.1185799, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 385, 'Sender': '10.0.0.15', 'Sent': 1651548009.3190053, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 265, 'Sender': '10.0.0.15', 'Sent': 1651548009.419254, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 59, 'Sender': '10.0.0.13', 'Sent': 1651548009.5132565, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 451, 'Sender': '10.0.0.19', 'Sent': 1651548009.5171885, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 164, 'Sender': '10.0.0.15', 'Sent': 1651548009.519683, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 173, 'Sender': '10.0.0.15', 'Sent': 1651548009.620708, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 299, 'Sender': '10.0.0.19', 'Sent': 1651548009.6196258, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 7, 'Sender': '10.0.0.13', 'Sent': 1651548009.713789, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 225, 'Sender': '10.0.0.15', 'Sent': 1651548009.7214792, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 166, 'Sender': '10.0.0.15', 'Sent': 1651548009.8219419, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 72, 'Sender': '10.0.0.15', 'Sent': 1651548009.922708, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 287, 'Sender': '10.0.0.13', 'Sent': 1651548010.0227823, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 195, 'Sender': '10.0.0.19', 'Sent': 1651548010.1239219, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 2, 'Sender': '10.0.0.14', 'Sent': 1651548010.2249246, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 372, 'Sender': '10.0.0.15', 'Sent': 1651548010.324267, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 211, 'Sender': '10.0.0.13', 'Sent': 1651548010.4248328, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 157, 'Sender': '10.0.0.15', 'Sent': 1651548010.5249946, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 157, 'Sender': '10.0.0.13', 'Sent': 1651548010.5251963, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 154, 'Sender': '10.0.0.14', 'Sent': 1651548010.5265684, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 40, 'Sender': '10.0.0.15', 'Sent': 1651548010.7253501, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 269, 'Sender': '10.0.0.19', 'Sent': 1651548010.8287294, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 160, 'Sender': '10.0.0.13', 'Sent': 1651548010.9288552, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 45, 'Sender': '10.0.0.15', 'Sent': 1651548011.1281824, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 341, 'Sender': '10.0.0.15', 'Sent': 1651548011.2302637, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 73, 'Sender': '10.0.0.13', 'Sent': 1651548011.2318087, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 13, 'Sender': '10.0.0.19', 'Sent': 1651548011.2335715, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 191, 'Sender': '10.0.0.19', 'Sent': 1651548011.7362514, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 63, 'Sender': '10.0.0.14', 'Sent': 1651548011.7388916, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 219, 'Sender': '10.0.0.13', 'Sent': 1651548011.833824, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 66, 'Sender': '10.0.0.15', 'Sent': 1651548011.9336576, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 156, 'Sender': '10.0.0.15', 'Sent': 1651548012.1351287, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 279, 'Sender': '10.0.0.13', 'Sent': 1651548012.2360156, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 410, 'Sender': '10.0.0.15', 'Sent': 1651548012.335685, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 468, 'Sender': '10.0.0.13', 'Sent': 1651548012.4367597, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 480, 'Sender': '10.0.0.15', 'Sent': 1651548012.5361993, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 14, 'Sender': '10.0.0.15', 'Sent': 1651548012.9414515, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 6, 'Sender': '10.0.0.15', 'Sent': 1651548013.2463925, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 358, 'Sender': '10.0.0.15', 'Sent': 1651548013.4468405, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 64, 'Sender': '10.0.0.15', 'Sent': 1651548013.64831, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 298, 'Sender': '10.0.0.15', 'Sent': 1651548013.748649, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 406, 'Sender': '10.0.0.15', 'Sent': 1651548013.9490614, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 203, 'Sender': '10.0.0.15', 'Sent': 1651548014.1497724, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 39, 'Sender': '10.0.0.15', 'Sent': 1651548014.2505133, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 74, 'Sender': '10.0.0.19', 'Sent': 1651548014.2609088, 'Broker': 'None', 'Brokered': 0}
+Reply received as updatebackup
+[{'ip': '10.0.0.15', 'port': '5571', 'topics': ['sound|20', 'light|20']}, {'ip': '10.0.0.14', 'port': '5571', 'topics': ['weather|20']}, {'ip': '10.0.0.13', 'port': '5571', 'topics': ['location|10', 'humidity|20']}, {'ip': '10.0.0.19', 'port': '5571', 'topics': ['smell|20']}]
+Broker received: 
+{'Topic': 'weather|20', 'Value': 95, 'Sender': '10.0.0.14', 'Sent': 1651548014.3621724, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 366, 'Sender': '10.0.0.15', 'Sent': 1651548014.7521305, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 335, 'Sender': '10.0.0.15', 'Sent': 1651548015.0530417, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 29, 'Sender': '10.0.0.13', 'Sent': 1651548015.05611, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 322, 'Sender': '10.0.0.14', 'Sent': 1651548015.464883, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 96, 'Sender': '10.0.0.14', 'Sent': 1651548015.5651135, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 195, 'Sender': '10.0.0.13', 'Sent': 1651548015.7583828, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 420, 'Sender': '10.0.0.15', 'Sent': 1651548015.9560356, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 440, 'Sender': '10.0.0.19', 'Sent': 1651548016.1701586, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 141, 'Sender': '10.0.0.13', 'Sent': 1651548016.2602608, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 278, 'Sender': '10.0.0.15', 'Sent': 1651548016.3572273, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 319, 'Sender': '10.0.0.19', 'Sent': 1651548016.4710317, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 64, 'Sender': '10.0.0.15', 'Sent': 1651548016.6580615, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 423, 'Sender': '10.0.0.14', 'Sent': 1651548016.6683779, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 394, 'Sender': '10.0.0.13', 'Sent': 1651548016.761696, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 319, 'Sender': '10.0.0.15', 'Sent': 1651548016.8587866, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 424, 'Sender': '10.0.0.19', 'Sent': 1651548016.972668, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 138, 'Sender': '10.0.0.13', 'Sent': 1651548017.0625732, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 34, 'Sender': '10.0.0.15', 'Sent': 1651548017.2603397, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 7, 'Sender': '10.0.0.15', 'Sent': 1651548017.3606951, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 464, 'Sender': '10.0.0.15', 'Sent': 1651548017.5640435, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 172, 'Sender': '10.0.0.13', 'Sent': 1651548017.764823, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 239, 'Sender': '10.0.0.14', 'Sent': 1651548017.7715912, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 271, 'Sender': '10.0.0.19', 'Sent': 1651548017.7751756, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 6, 'Sender': '10.0.0.15', 'Sent': 1651548017.8649564, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 463, 'Sender': '10.0.0.13', 'Sent': 1651548017.8651412, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 273, 'Sender': '10.0.0.19', 'Sent': 1651548017.8753746, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 479, 'Sender': '10.0.0.14', 'Sent': 1651548017.97221, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 497, 'Sender': '10.0.0.15', 'Sent': 1651548018.0654871, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 149, 'Sender': '10.0.0.13', 'Sent': 1651548018.266245, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 301, 'Sender': '10.0.0.15', 'Sent': 1651548018.2661371, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 389, 'Sender': '10.0.0.13', 'Sent': 1651548018.3668246, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 193, 'Sender': '10.0.0.15', 'Sent': 1651548018.4670594, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 248, 'Sender': '10.0.0.14', 'Sent': 1651548018.5743182, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 484, 'Sender': '10.0.0.15', 'Sent': 1651548018.8682513, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 455, 'Sender': '10.0.0.13', 'Sent': 1651548018.868446, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 284, 'Sender': '10.0.0.13', 'Sent': 1651548019.0692465, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 115, 'Sender': '10.0.0.15', 'Sent': 1651548019.1688857, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 205, 'Sender': '10.0.0.13', 'Sent': 1651548019.1694396, 'Broker': 'None', 'Brokered': 0}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Broker received: 
+{'Topic': 'light|20', 'Value': 358, 'Sender': '10.0.0.15', 'Sent': 1651548019.370211, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 275, 'Sender': '10.0.0.15', 'Sent': 1651548019.570692, 'Broker': 'None', 'Brokered': 0}
+Reply received as updatebackup
+[{'ip': '10.0.0.15', 'port': '5571', 'topics': ['sound|20', 'light|20']}, {'ip': '10.0.0.14', 'port': '5571', 'topics': ['weather|20']}, {'ip': '10.0.0.13', 'port': '5571', 'topics': ['location|10', 'humidity|20']}, {'ip': '10.0.0.19', 'port': '5571', 'topics': ['smell|20']}]
+Broker received: 
+{'Topic': 'sound|20', 'Value': 2, 'Sender': '10.0.0.15', 'Sent': 1651548019.6709044, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 94, 'Sender': '10.0.0.13', 'Sent': 1651548019.6717596, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 353, 'Sender': '10.0.0.13', 'Sent': 1651548019.8723717, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 466, 'Sender': '10.0.0.13', 'Sent': 1651548019.9726226, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 427, 'Sender': '10.0.0.15', 'Sent': 1651548020.1725004, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 476, 'Sender': '10.0.0.13', 'Sent': 1651548020.1730888, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 376, 'Sender': '10.0.0.15', 'Sent': 1651548020.2726612, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 326, 'Sender': '10.0.0.13', 'Sent': 1651548020.3737557, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 447, 'Sender': '10.0.0.19', 'Sent': 1651548020.6847966, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 165, 'Sender': '10.0.0.15', 'Sent': 1651548020.8744466, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 437, 'Sender': '10.0.0.15', 'Sent': 1651548020.9747956, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 183, 'Sender': '10.0.0.13', 'Sent': 1651548021.175922, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 12, 'Sender': '10.0.0.14', 'Sent': 1651548021.3839061, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 211, 'Sender': '10.0.0.15', 'Sent': 1651548021.4766612, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 4, 'Sender': '10.0.0.15', 'Sent': 1651548021.576859, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 432, 'Sender': '10.0.0.15', 'Sent': 1651548021.6771724, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 19, 'Sender': '10.0.0.15', 'Sent': 1651548021.7774997, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 103, 'Sender': '10.0.0.15', 'Sent': 1651548021.9781435, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 191, 'Sender': '10.0.0.15', 'Sent': 1651548022.078335, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 14, 'Sender': '10.0.0.15', 'Sent': 1651548022.1786277, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 90, 'Sender': '10.0.0.13', 'Sent': 1651548022.279082, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 38, 'Sender': '10.0.0.19', 'Sent': 1651548022.2893293, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 210, 'Sender': '10.0.0.19', 'Sent': 1651548022.4899187, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 357, 'Sender': '10.0.0.15', 'Sent': 1651548022.9817457, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 364, 'Sender': '10.0.0.13', 'Sent': 1651548023.2841384, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 55, 'Sender': '10.0.0.14', 'Sent': 1651548023.2914803, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 171, 'Sender': '10.0.0.13', 'Sent': 1651548023.3844225, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 335, 'Sender': '10.0.0.19', 'Sent': 1651548023.5936248, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 40, 'Sender': '10.0.0.14', 'Sent': 1651548023.6927323, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 199, 'Sender': '10.0.0.15', 'Sent': 1651548023.8861606, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 427, 'Sender': '10.0.0.15', 'Sent': 1651548023.9869463, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 83, 'Sender': '10.0.0.13', 'Sent': 1651548023.9866626, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 426, 'Sender': '10.0.0.15', 'Sent': 1651548024.5891302, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 458, 'Sender': '10.0.0.14', 'Sent': 1651548024.596718, 'Broker': 'None', 'Brokered': 0}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Broker received: 
+{'Topic': 'location|10', 'Value': 194, 'Sender': '10.0.0.13', 'Sent': 1651548024.689202, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 472, 'Sender': '10.0.0.15', 'Sent': 1651548024.6894834, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 132, 'Sender': '10.0.0.15', 'Sent': 1651548024.7896678, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 309, 'Sender': '10.0.0.15', 'Sent': 1651548025.0905344, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 46, 'Sender': '10.0.0.19', 'Sent': 1651548025.20027, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 299, 'Sender': '10.0.0.15', 'Sent': 1651548025.2915275, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 288, 'Sender': '10.0.0.13', 'Sent': 1651548025.3916612, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 287, 'Sender': '10.0.0.15', 'Sent': 1651548025.493751, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 356, 'Sender': '10.0.0.14', 'Sent': 1651548025.4994624, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 209, 'Sender': '10.0.0.13', 'Sent': 1651548025.694036, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 113, 'Sender': '10.0.0.14', 'Sent': 1651548025.7002866, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 195, 'Sender': '10.0.0.19', 'Sent': 1651548025.7015007, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 238, 'Sender': '10.0.0.15', 'Sent': 1651548025.995313, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 478, 'Sender': '10.0.0.13', 'Sent': 1651548025.9950607, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 465, 'Sender': '10.0.0.14', 'Sent': 1651548026.1012769, 'Broker': 'None', 'Brokered': 0}
+Reply received as updatebackup
+[{'ip': '10.0.0.15', 'port': '5571', 'topics': ['sound|20', 'light|20']}, {'ip': '10.0.0.14', 'port': '5571', 'topics': ['weather|20']}, {'ip': '10.0.0.13', 'port': '5571', 'topics': ['location|10', 'humidity|20']}, {'ip': '10.0.0.19', 'port': '5571', 'topics': ['smell|20']}]
+Broker received: 
+{'Topic': 'light|20', 'Value': 268, 'Sender': '10.0.0.15', 'Sent': 1651548026.797672, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 119, 'Sender': '10.0.0.15', 'Sent': 1651548026.8979378, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 106, 'Sender': '10.0.0.15', 'Sent': 1651548027.0986192, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 1, 'Sender': '10.0.0.15', 'Sent': 1651548027.1988773, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 464, 'Sender': '10.0.0.19', 'Sent': 1651548027.205591, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 73, 'Sender': '10.0.0.14', 'Sent': 1651548027.3051894, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 380, 'Sender': '10.0.0.13', 'Sent': 1651548027.9004414, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 391, 'Sender': '10.0.0.19', 'Sent': 1651548027.9076254, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 305, 'Sender': '10.0.0.15', 'Sent': 1651548028.101474, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 121, 'Sender': '10.0.0.15', 'Sent': 1651548028.2017894, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 229, 'Sender': '10.0.0.13', 'Sent': 1651548028.3018007, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 364, 'Sender': '10.0.0.14', 'Sent': 1651548028.3082607, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 246, 'Sender': '10.0.0.13', 'Sent': 1651548028.4020636, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 256, 'Sender': '10.0.0.15', 'Sent': 1651548028.502796, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 468, 'Sender': '10.0.0.13', 'Sent': 1651548028.6030233, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 189, 'Sender': '10.0.0.15', 'Sent': 1651548028.9041767, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 422, 'Sender': '10.0.0.14', 'Sent': 1651548028.9105396, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 83, 'Sender': '10.0.0.15', 'Sent': 1651548029.0046642, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 198, 'Sender': '10.0.0.15', 'Sent': 1651548029.1048758, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 155, 'Sender': '10.0.0.15', 'Sent': 1651548029.3052542, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 251, 'Sender': '10.0.0.13', 'Sent': 1651548029.510126, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 383, 'Sender': '10.0.0.14', 'Sent': 1651548029.5123417, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 25, 'Sender': '10.0.0.15', 'Sent': 1651548029.611089, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 137, 'Sender': '10.0.0.19', 'Sent': 1651548029.8135955, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 336, 'Sender': '10.0.0.15', 'Sent': 1651548029.9126825, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 141, 'Sender': '10.0.0.14', 'Sent': 1651548029.9139373, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 408, 'Sender': '10.0.0.13', 'Sent': 1651548030.0126352, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 269, 'Sender': '10.0.0.15', 'Sent': 1651548030.0136852, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 2, 'Sender': '10.0.0.15', 'Sent': 1651548030.1147723, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 234, 'Sender': '10.0.0.14', 'Sent': 1651548030.1153393, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 402, 'Sender': '10.0.0.15', 'Sent': 1651548030.2151477, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 4, 'Sender': '10.0.0.13', 'Sent': 1651548030.4172332, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 446, 'Sender': '10.0.0.13', 'Sent': 1651548030.5183613, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 113, 'Sender': '10.0.0.13', 'Sent': 1651548030.6190882, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 455, 'Sender': '10.0.0.13', 'Sent': 1651548031.1207528, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 61, 'Sender': '10.0.0.15', 'Sent': 1651548031.3211758, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 43, 'Sender': '10.0.0.13', 'Sent': 1651548031.4216256, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 6, 'Sender': '10.0.0.15', 'Sent': 1651548031.5239336, 'Broker': 'None', 'Brokered': 0}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Broker received: 
+{'Topic': 'light|20', 'Value': 389, 'Sender': '10.0.0.15', 'Sent': 1651548031.72479, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 175, 'Sender': '10.0.0.19', 'Sent': 1651548031.8253305, 'Broker': 'None', 'Brokered': 0}
+Reply received as updatebackup
+[]
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 153, 'Sender': '10.0.0.13', 'Sent': 1651548032.2294612, 'Broker': 'None', 'Brokered': 0}
+Broker unsubscribing from tcp://10.0.0.15:5571
+Broker unsubscribing from tcp://10.0.0.13:5571
+Broker received: 
+{'Topic': 'smell|20', 'Value': 270, 'Sender': '10.0.0.19', 'Sent': 1651548033.538842, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 231, 'Sender': '10.0.0.14', 'Sent': 1651548034.0409777, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 191, 'Sender': '10.0.0.14', 'Sent': 1651548034.1413453, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 347, 'Sender': '10.0.0.14', 'Sent': 1651548034.3419762, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 316, 'Sender': '10.0.0.14', 'Sent': 1651548034.8436003, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 11, 'Sender': '10.0.0.19', 'Sent': 1651548035.646775, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 478, 'Sender': '10.0.0.19', 'Sent': 1651548036.4506404, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 313, 'Sender': '10.0.0.14', 'Sent': 1651548036.7524157, 'Broker': 'None', 'Brokered': 0}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Broker received: 
+{'Topic': 'weather|20', 'Value': 488, 'Sender': '10.0.0.14', 'Sent': 1651548037.2556047, 'Broker': 'None', 'Brokered': 0}
+Reply received as updatebackup
+[]
+Broker received: 
+{'Topic': 'weather|20', 'Value': 327, 'Sender': '10.0.0.14', 'Sent': 1651548037.55721, 'Broker': 'None', 'Brokered': 0}
+Broker unsubscribing from tcp://10.0.0.14:5571
+Broker received: 
+{'Topic': 'smell|20', 'Value': 334, 'Sender': '10.0.0.19', 'Sent': 1651548038.260688, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 118, 'Sender': '10.0.0.19', 'Sent': 1651548038.4617572, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 196, 'Sender': '10.0.0.19', 'Sent': 1651548038.6624742, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 427, 'Sender': '10.0.0.19', 'Sent': 1651548038.9638448, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 21, 'Sender': '10.0.0.19', 'Sent': 1651548040.476301, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 369, 'Sender': '10.0.0.19', 'Sent': 1651548041.282333, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 470, 'Sender': '10.0.0.19', 'Sent': 1651548041.3825066, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 379, 'Sender': '10.0.0.19', 'Sent': 1651548042.28931, 'Broker': 'None', 'Brokered': 0}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Broker received: 
+{'Topic': 'smell|20', 'Value': 187, 'Sender': '10.0.0.19', 'Sent': 1651548042.9920778, 'Broker': 'None', 'Brokered': 0}
+Reply received as updatebackup
+[{'ip': '10.0.0.15', 'port': '5571', 'topics': ['sound|20', 'light|20']}, {'ip': '10.0.0.14', 'port': '5571', 'topics': ['weather|20']}, {'ip': '10.0.0.13', 'port': '5571', 'topics': ['location|10', 'humidity|20']}, {'ip': '10.0.0.19', 'port': '5571', 'topics': ['smell|20']}]
+Broker received: 
+{'Topic': 'smell|20', 'Value': 368, 'Sender': '10.0.0.19', 'Sent': 1651548043.4946291, 'Broker': 'None', 'Brokered': 0}
+Broker subscribing to tcp://10.0.0.15:5571
+Broker subscribing to tcp://10.0.0.14:5571
+Broker subscribing to tcp://10.0.0.13:5571
+Broker received: 
+{'Topic': 'sound|20', 'Value': 303, 'Sender': '10.0.0.15', 'Sent': 1651548043.6949, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 311, 'Sender': '10.0.0.19', 'Sent': 1651548043.6985476, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 71, 'Sender': '10.0.0.15', 'Sent': 1651548043.7962809, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 171, 'Sender': '10.0.0.15', 'Sent': 1651548043.9967942, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 257, 'Sender': '10.0.0.15', 'Sent': 1651548044.1978214, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 493, 'Sender': '10.0.0.13', 'Sent': 1651548044.2020135, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 336, 'Sender': '10.0.0.14', 'Sent': 1651548044.3924263, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 239, 'Sender': '10.0.0.15', 'Sent': 1651548044.4986813, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 245, 'Sender': '10.0.0.19', 'Sent': 1651548044.502662, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 342, 'Sender': '10.0.0.14', 'Sent': 1651548044.5939705, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 138, 'Sender': '10.0.0.14', 'Sent': 1651548044.6943662, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 184, 'Sender': '10.0.0.13', 'Sent': 1651548044.704018, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 81, 'Sender': '10.0.0.15', 'Sent': 1651548044.8006616, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 255, 'Sender': '10.0.0.19', 'Sent': 1651548044.8041375, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 379, 'Sender': '10.0.0.14', 'Sent': 1651548044.8957343, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 183, 'Sender': '10.0.0.13', 'Sent': 1651548044.904769, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 85, 'Sender': '10.0.0.15', 'Sent': 1651548045.003, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 397, 'Sender': '10.0.0.15', 'Sent': 1651548045.2046928, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 167, 'Sender': '10.0.0.15', 'Sent': 1651548045.509461, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 1, 'Sender': '10.0.0.15', 'Sent': 1651548045.6107836, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 210, 'Sender': '10.0.0.19', 'Sent': 1651548045.8130217, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 1, 'Sender': '10.0.0.15', 'Sent': 1651548045.8134608, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 374, 'Sender': '10.0.0.13', 'Sent': 1651548045.9142034, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 233, 'Sender': '10.0.0.19', 'Sent': 1651548046.1155212, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 364, 'Sender': '10.0.0.14', 'Sent': 1651548046.2009037, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 228, 'Sender': '10.0.0.15', 'Sent': 1651548046.2173502, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 54, 'Sender': '10.0.0.13', 'Sent': 1651548046.7196043, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 63, 'Sender': '10.0.0.15', 'Sent': 1651548046.8202405, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 164, 'Sender': '10.0.0.15', 'Sent': 1651548046.9206061, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 294, 'Sender': '10.0.0.14', 'Sent': 1651548047.0082474, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 207, 'Sender': '10.0.0.15', 'Sent': 1651548047.1247337, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 37, 'Sender': '10.0.0.14', 'Sent': 1651548047.2102633, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 320, 'Sender': '10.0.0.15', 'Sent': 1651548047.3253357, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 56, 'Sender': '10.0.0.19', 'Sent': 1651548047.4270456, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 308, 'Sender': '10.0.0.15', 'Sent': 1651548047.7280204, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 365, 'Sender': '10.0.0.19', 'Sent': 1651548047.7283776, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'sound|20', 'Value': 446, 'Sender': '10.0.0.15', 'Sent': 1651548047.9293342, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 249, 'Sender': '10.0.0.15', 'Sent': 1651548048.0297272, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 388, 'Sender': '10.0.0.19', 'Sent': 1651548048.1303551, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 411, 'Sender': '10.0.0.13', 'Sent': 1651548048.3321092, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'light|20', 'Value': 389, 'Sender': '10.0.0.15', 'Sent': 1651548048.432325, 'Broker': 'None', 'Brokered': 0}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Broker received: 
+{'Topic': 'sound|20', 'Value': 30, 'Sender': '10.0.0.15', 'Sent': 1651548048.5326488, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 484, 'Sender': '10.0.0.13', 'Sent': 1651548048.733817, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 435, 'Sender': '10.0.0.19', 'Sent': 1651548048.8343797, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'smell|20', 'Value': 102, 'Sender': '10.0.0.19', 'Sent': 1651548049.1356137, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 309, 'Sender': '10.0.0.13', 'Sent': 1651548049.3381054, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 192, 'Sender': '10.0.0.13', 'Sent': 1651548049.5387142, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 431, 'Sender': '10.0.0.13', 'Sent': 1651548049.6389291, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 471, 'Sender': '10.0.0.13', 'Sent': 1651548049.7392988, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'location|10', 'Value': 277, 'Sender': '10.0.0.13', 'Sent': 1651548049.8398798, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'weather|20', 'Value': 375, 'Sender': '10.0.0.14', 'Sent': 1651548049.9233048, 'Broker': 'None', 'Brokered': 0}
+Reply received as updatebackup
+[]
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 372, 'Sender': '10.0.0.13', 'Sent': 1651548050.1410341, 'Broker': 'None', 'Brokered': 0}
+Broker unsubscribing from tcp://10.0.0.19:5571
+Broker unsubscribing from tcp://10.0.0.14:5571
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 204, 'Sender': '10.0.0.13', 'Sent': 1651548050.7426455, 'Broker': 'None', 'Brokered': 0}
+Broker received: 
+{'Topic': 'humidity|20', 'Value': 46, 'Sender': '10.0.0.13', 'Sent': 1651548051.2459302, 'Broker': 'None', 'Brokered': 0}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatebackup
+[{'ip': '10.0.0.42', 'port': '5571', 'topics': ['location|20', 'altitude|10', 'weather|10', 'smell|10', 'temperature|10', 'light|20', 'humidity|20']}, {'ip': '10.0.0.47', 'port': '5571', 'topics': ['humidity|10', 'sound|20', 'location|10', 'smell|20']}]
+Error: unable to lock polling for updates
+Error: unable to lock polling for updates
+Error: unable to lock polling for updates
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatebackup
+[]
+Error: unable to lock polling for updates
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatebackup
+[]
+Error: unable to lock polling for updates
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatebackup
+[]
+Error: unable to lock polling for updates
+Error: unable to lock polling for updates
+WARNING:kazoo.client:Connection dropped: socket connection broken
+WARNING:kazoo.client:Transition to CONNECTING
+Current state is now = SUSPENDED
+WARNING:kazoo.client:Connection dropped: socket connection broken
+WARNING:kazoo.client:Transition to CONNECTING
+Current state is now = SUSPENDED
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+WARNING:kazoo.client:Connection dropped: socket connection error: Network is unreachable
