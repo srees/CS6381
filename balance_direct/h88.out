@@ -1,7 +1,7 @@
 Current libzmq version is 4.3.4
 Current  pyzmq version is 22.3.0
 Main: parse command line arguments
-Subscriber interested in listening for these topics: ['smell|20', 'light|20', 'pressure|20', 'sound|20', 'altitude|20', 'humidity|10', 'weather|20', 'airquality|20']
+Subscriber interested in listening for these topics: ['sound|20']
 Getting subscriber object
 Binding REP to tcp://10.0.0.88:5580
 Getting registry proxy
@@ -19,18 +19,148 @@ Connecting to 10.0.0.5:5550
 Starting registry monitor loop thread
 Registering with tcp://10.0.0.5:5550...
 Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
-Event: {'event': 1, 'value': 23, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
 Registration sent
+Event: {'event': 1, 'value': 24, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
 Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
 Registration received
 Waiting for start from registry
 Retrieving history...
-Getting smell|20 from tcp://10.0.0.10:5572
-WARNING:kazoo.client:Connection dropped: socket connection broken
+Getting sound|20 from tcp://10.0.0.10:5572
+{'Topic': 'sound|20', 'Value': 171, 'Sender': '10.0.0.10', 'Sent': 1651556140.9020164, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556147.2411454, 'Latency': 0.0}
+{'Topic': 'sound|20', 'Value': 367, 'Sender': '10.0.0.10', 'Sent': 1651556141.0024757, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556147.2415173, 'Latency': 0.0}
+{'Topic': 'sound|20', 'Value': 387, 'Sender': '10.0.0.10', 'Sent': 1651556141.516633, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556147.2415905, 'Latency': 0.0}
+{'Topic': 'sound|20', 'Value': 201, 'Sender': '10.0.0.10', 'Sent': 1651556142.8406987, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556147.2416449, 'Latency': 0.0}
+{'Topic': 'sound|20', 'Value': 360, 'Sender': '10.0.0.10', 'Sent': 1651556144.4687533, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556147.241699, 'Latency': 0.0}
+{'Topic': 'sound|20', 'Value': 476, 'Sender': '10.0.0.10', 'Sent': 1651556145.586091, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556147.2417867, 'Latency': 0.0}
+{'Topic': 'sound|20', 'Value': 332, 'Sender': '10.0.0.10', 'Sent': 1651556145.690001, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556147.2418406, 'Latency': 0.0}
+{'Topic': 'sound|20', 'Value': 472, 'Sender': '10.0.0.10', 'Sent': 1651556145.8935134, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556147.2418873, 'Latency': 0.0}
+{'Topic': 'sound|20', 'Value': 244, 'Sender': '10.0.0.10', 'Sent': 1651556145.9967096, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556147.241932, 'Latency': 0.0}
+{'Topic': 'sound|20', 'Value': 372, 'Sender': '10.0.0.10', 'Sent': 1651556146.9090703, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556147.2419763, 'Latency': 0.0}
+Subscribing to tcp://10.0.0.10:5571
+Starting update loop thread
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Starting subscriber listen loop...
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['sound|20']}]
+{'Topic': 'sound|20', 'Value': 184, 'Sender': '10.0.0.10', 'Sent': 1651556148.4301462, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556148.4537704, 'Latency': 0.023624181747436523}
+{'Topic': 'sound|20', 'Value': 111, 'Sender': '10.0.0.10', 'Sent': 1651556148.938573, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556148.9592578, 'Latency': 0.02068495750427246}
+{'Topic': 'sound|20', 'Value': 122, 'Sender': '10.0.0.10', 'Sent': 1651556149.9533963, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556149.9753196, 'Latency': 0.021923303604125977}
+{'Topic': 'sound|20', 'Value': 119, 'Sender': '10.0.0.10', 'Sent': 1651556150.0537405, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556150.0755546, 'Latency': 0.02181410789489746}
+{'Topic': 'sound|20', 'Value': 373, 'Sender': '10.0.0.10', 'Sent': 1651556151.3626592, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556151.384354, 'Latency': 0.02169489860534668}
+{'Topic': 'sound|20', 'Value': 376, 'Sender': '10.0.0.10', 'Sent': 1651556151.563509, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556151.5850232, 'Latency': 0.021514177322387695}
+{'Topic': 'sound|20', 'Value': 299, 'Sender': '10.0.0.10', 'Sent': 1651556151.865485, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556151.887201, 'Latency': 0.02171611785888672}
+{'Topic': 'sound|20', 'Value': 150, 'Sender': '10.0.0.10', 'Sent': 1651556154.5847628, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556154.6077173, 'Latency': 0.022954463958740234}
+{'Topic': 'sound|20', 'Value': 207, 'Sender': '10.0.0.10', 'Sent': 1651556154.6850996, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556154.7072012, 'Latency': 0.022101640701293945}
+{'Topic': 'sound|20', 'Value': 186, 'Sender': '10.0.0.10', 'Sent': 1651556157.1018608, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556157.1251543, 'Latency': 0.023293495178222656}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['sound|20']}]
+{'Topic': 'sound|20', 'Value': 394, 'Sender': '10.0.0.10', 'Sent': 1651556157.9076486, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556157.9301257, 'Latency': 0.022477149963378906}
+{'Topic': 'sound|20', 'Value': 381, 'Sender': '10.0.0.10', 'Sent': 1651556159.3213048, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556159.3434603, 'Latency': 0.0221555233001709}
+{'Topic': 'sound|20', 'Value': 358, 'Sender': '10.0.0.10', 'Sent': 1651556159.522207, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556159.5461485, 'Latency': 0.023941516876220703}
+{'Topic': 'sound|20', 'Value': 271, 'Sender': '10.0.0.10', 'Sent': 1651556161.5392437, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556161.56198, 'Latency': 0.022736310958862305}
+{'Topic': 'sound|20', 'Value': 248, 'Sender': '10.0.0.10', 'Sent': 1651556161.7400203, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556161.7617562, 'Latency': 0.02173590660095215}
+{'Topic': 'sound|20', 'Value': 13, 'Sender': '10.0.0.10', 'Sent': 1651556162.4445224, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556162.467006, 'Latency': 0.02248358726501465}
+{'Topic': 'sound|20', 'Value': 140, 'Sender': '10.0.0.10', 'Sent': 1651556163.2495606, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556163.2709556, 'Latency': 0.021394968032836914}
+{'Topic': 'sound|20', 'Value': 437, 'Sender': '10.0.0.10', 'Sent': 1651556163.9530425, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556163.974538, 'Latency': 0.021495580673217773}
+{'Topic': 'sound|20', 'Value': 4, 'Sender': '10.0.0.10', 'Sent': 1651556164.3549607, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556164.3765612, 'Latency': 0.02160048484802246}
+{'Topic': 'sound|20', 'Value': 493, 'Sender': '10.0.0.10', 'Sent': 1651556164.455278, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556164.4764469, 'Latency': 0.021168947219848633}
+{'Topic': 'sound|20', 'Value': 322, 'Sender': '10.0.0.10', 'Sent': 1651556164.5555549, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556164.5778847, 'Latency': 0.02232980728149414}
+{'Topic': 'sound|20', 'Value': 225, 'Sender': '10.0.0.10', 'Sent': 1651556164.8580935, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556164.8824542, 'Latency': 0.02436065673828125}
+{'Topic': 'sound|20', 'Value': 287, 'Sender': '10.0.0.10', 'Sent': 1651556165.764742, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556165.7863674, 'Latency': 0.021625518798828125}
+{'Topic': 'sound|20', 'Value': 30, 'Sender': '10.0.0.10', 'Sent': 1651556166.4689777, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556166.4907568, 'Latency': 0.02177906036376953}
+{'Topic': 'sound|20', 'Value': 426, 'Sender': '10.0.0.10', 'Sent': 1651556166.8708694, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556166.8934581, 'Latency': 0.022588729858398438}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['sound|20']}]
+{'Topic': 'sound|20', 'Value': 249, 'Sender': '10.0.0.10', 'Sent': 1651556167.5742142, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556167.5967185, 'Latency': 0.022504329681396484}
+{'Topic': 'sound|20', 'Value': 41, 'Sender': '10.0.0.10', 'Sent': 1651556167.7746723, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556167.795586, 'Latency': 0.02091383934020996}
+{'Topic': 'sound|20', 'Value': 346, 'Sender': '10.0.0.10', 'Sent': 1651556168.48067, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556168.5038176, 'Latency': 0.0231475830078125}
+{'Topic': 'sound|20', 'Value': 65, 'Sender': '10.0.0.10', 'Sent': 1651556168.682689, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556168.7044382, 'Latency': 0.021749258041381836}
+{'Topic': 'sound|20', 'Value': 165, 'Sender': '10.0.0.10', 'Sent': 1651556169.084072, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556169.1062338, 'Latency': 0.02216172218322754}
+{'Topic': 'sound|20', 'Value': 215, 'Sender': '10.0.0.10', 'Sent': 1651556169.1844075, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556169.205549, 'Latency': 0.021141529083251953}
+{'Topic': 'sound|20', 'Value': 265, 'Sender': '10.0.0.10', 'Sent': 1651556170.090324, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556170.1129348, 'Latency': 0.022610902786254883}
+{'Topic': 'sound|20', 'Value': 218, 'Sender': '10.0.0.10', 'Sent': 1651556170.7933388, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556170.8154924, 'Latency': 0.022153615951538086}
+{'Topic': 'sound|20', 'Value': 495, 'Sender': '10.0.0.10', 'Sent': 1651556172.9054608, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556172.9288228, 'Latency': 0.023361921310424805}
+{'Topic': 'sound|20', 'Value': 230, 'Sender': '10.0.0.10', 'Sent': 1651556174.6140025, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556174.635318, 'Latency': 0.021315574645996094}
+{'Topic': 'sound|20', 'Value': 282, 'Sender': '10.0.0.10', 'Sent': 1651556175.820846, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556175.8425891, 'Latency': 0.021743059158325195}
+{'Topic': 'sound|20', 'Value': 423, 'Sender': '10.0.0.10', 'Sent': 1651556176.5234785, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556176.5450704, 'Latency': 0.021591901779174805}
+{'Topic': 'sound|20', 'Value': 94, 'Sender': '10.0.0.10', 'Sent': 1651556176.9254339, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556176.9501078, 'Latency': 0.024673938751220703}
+{'Topic': 'sound|20', 'Value': 266, 'Sender': '10.0.0.10', 'Sent': 1651556177.2275486, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556177.2488654, 'Latency': 0.0213167667388916}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['sound|20']}]
+{'Topic': 'sound|20', 'Value': 306, 'Sender': '10.0.0.10', 'Sent': 1651556177.7321274, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556177.7549198, 'Latency': 0.022792339324951172}
+{'Topic': 'sound|20', 'Value': 218, 'Sender': '10.0.0.10', 'Sent': 1651556177.832416, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556177.85382, 'Latency': 0.021404027938842773}
+{'Topic': 'sound|20', 'Value': 397, 'Sender': '10.0.0.10', 'Sent': 1651556178.134072, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556178.1578188, 'Latency': 0.023746728897094727}
+{'Topic': 'sound|20', 'Value': 258, 'Sender': '10.0.0.10', 'Sent': 1651556179.3416665, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556179.3645144, 'Latency': 0.022847890853881836}
+{'Topic': 'sound|20', 'Value': 303, 'Sender': '10.0.0.10', 'Sent': 1651556179.6432984, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556179.6675081, 'Latency': 0.02420973777770996}
+{'Topic': 'sound|20', 'Value': 421, 'Sender': '10.0.0.10', 'Sent': 1651556179.8454065, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556179.869076, 'Latency': 0.02366948127746582}
+{'Topic': 'sound|20', 'Value': 326, 'Sender': '10.0.0.10', 'Sent': 1651556180.7506182, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556180.774561, 'Latency': 0.02394270896911621}
+{'Topic': 'sound|20', 'Value': 192, 'Sender': '10.0.0.10', 'Sent': 1651556180.9516857, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556180.9782076, 'Latency': 0.026521921157836914}
+{'Topic': 'sound|20', 'Value': 172, 'Sender': '10.0.0.10', 'Sent': 1651556182.0582845, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556182.0797231, 'Latency': 0.0214385986328125}
+{'Topic': 'sound|20', 'Value': 204, 'Sender': '10.0.0.10', 'Sent': 1651556182.964754, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556182.98525, 'Latency': 0.020495891571044922}
+{'Topic': 'sound|20', 'Value': 364, 'Sender': '10.0.0.10', 'Sent': 1651556185.384108, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556185.4069242, 'Latency': 0.022816181182861328}
+{'Topic': 'sound|20', 'Value': 154, 'Sender': '10.0.0.10', 'Sent': 1651556185.5863125, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556185.6079197, 'Latency': 0.021607160568237305}
+{'Topic': 'sound|20', 'Value': 381, 'Sender': '10.0.0.10', 'Sent': 1651556187.1936123, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556187.2150369, 'Latency': 0.021424531936645508}
+{'Topic': 'sound|20', 'Value': 338, 'Sender': '10.0.0.10', 'Sent': 1651556187.3943245, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556187.4159384, 'Latency': 0.02161383628845215}
+{'Topic': 'sound|20', 'Value': 13, 'Sender': '10.0.0.10', 'Sent': 1651556187.494846, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556187.5178273, 'Latency': 0.02298116683959961}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['sound|20']}]
+{'Topic': 'sound|20', 'Value': 7, 'Sender': '10.0.0.10', 'Sent': 1651556188.9108558, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556188.9336805, 'Latency': 0.022824764251708984}
+{'Topic': 'sound|20', 'Value': 246, 'Sender': '10.0.0.10', 'Sent': 1651556189.614211, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556189.6355495, 'Latency': 0.021338462829589844}
+{'Topic': 'sound|20', 'Value': 419, 'Sender': '10.0.0.10', 'Sent': 1651556190.8218172, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556190.843215, 'Latency': 0.021397829055786133}
+{'Topic': 'sound|20', 'Value': 265, 'Sender': '10.0.0.10', 'Sent': 1651556191.323849, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556191.3456702, 'Latency': 0.021821260452270508}
+{'Topic': 'sound|20', 'Value': 312, 'Sender': '10.0.0.10', 'Sent': 1651556192.4321876, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556192.4575408, 'Latency': 0.025353193283081055}
+{'Topic': 'sound|20', 'Value': 480, 'Sender': '10.0.0.10', 'Sent': 1651556193.444795, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556193.4667747, 'Latency': 0.021979808807373047}
+{'Topic': 'sound|20', 'Value': 111, 'Sender': '10.0.0.10', 'Sent': 1651556195.7579746, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556195.7814345, 'Latency': 0.023459911346435547}
+{'Topic': 'sound|20', 'Value': 161, 'Sender': '10.0.0.10', 'Sent': 1651556196.0605, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556196.0822635, 'Latency': 0.02176356315612793}
+{'Topic': 'sound|20', 'Value': 280, 'Sender': '10.0.0.10', 'Sent': 1651556196.366134, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556196.388651, 'Latency': 0.022516965866088867}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['sound|20']}]
+{'Topic': 'sound|20', 'Value': 364, 'Sender': '10.0.0.10', 'Sent': 1651556200.6952472, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556200.7181559, 'Latency': 0.022908687591552734}
+{'Topic': 'sound|20', 'Value': 113, 'Sender': '10.0.0.10', 'Sent': 1651556204.9228244, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556204.944298, 'Latency': 0.02147364616394043}
+{'Topic': 'sound|20', 'Value': 296, 'Sender': '10.0.0.10', 'Sent': 1651556206.734741, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556206.756968, 'Latency': 0.022227048873901367}
+{'Topic': 'sound|20', 'Value': 468, 'Sender': '10.0.0.10', 'Sent': 1651556206.8349404, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556206.860466, 'Latency': 0.025525569915771484}
+{'Topic': 'sound|20', 'Value': 425, 'Sender': '10.0.0.10', 'Sent': 1651556207.4376256, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556207.4590642, 'Latency': 0.0214385986328125}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['sound|20']}]
+{'Topic': 'sound|20', 'Value': 342, 'Sender': '10.0.0.10', 'Sent': 1651556207.9421487, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.88', 'Received': 1651556207.9659119, 'Latency': 0.023763179779052734}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.28', 'port': '5571', 'topics': ['sound|20']}]
+Error: unable to lock polling for updates
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.37', 'port': '5571', 'topics': ['sound|20']}]
+Error: unable to lock polling for updates
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[]
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[]
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+WARNING:kazoo.client:Connection dropped: outstanding heartbeat ping not received
 WARNING:kazoo.client:Transition to CONNECTING
 Current state is now = SUSPENDED
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: None

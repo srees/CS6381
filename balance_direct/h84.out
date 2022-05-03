@@ -1,7 +1,7 @@
 Current libzmq version is 4.3.4
 Current  pyzmq version is 22.3.0
 Main: parse command line arguments
-Subscriber interested in listening for these topics: ['humidity|10']
+Subscriber interested in listening for these topics: ['location|20']
 Getting subscriber object
 Binding REP to tcp://10.0.0.84:5580
 Getting registry proxy
@@ -17,20 +17,161 @@ Checking if registries/registry5 exists (it better be)
 registries/registry5 znode indeed exists; get value
 Connecting to 10.0.0.5:5550
 Starting registry monitor loop thread
-Registering with tcp://10.0.0.5:5550...
 Event: {'event': 2, 'value': 115, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECT_DELAYED'}
+Registering with tcp://10.0.0.5:5550...
 Registration sent
 Event: {'event': 1, 'value': 23, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_CONNECTED'}
 Event: {'event': 4096, 'value': 0, 'endpoint': b'tcp://10.0.0.5:5550', 'description': 'EVENT_HANDSHAKE_SUCCEEDED'}
 Registration received
 Waiting for start from registry
 Retrieving history...
-Getting humidity|10 from tcp://10.0.0.15:5572
-WARNING:kazoo.client:Connection dropped: socket connection broken
+Getting location|20 from tcp://10.0.0.10:5572
+{'Topic': 'location|20', 'Value': 236, 'Sender': '10.0.0.10', 'Sent': 1651556136.7769876, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556145.876627, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 22, 'Sender': '10.0.0.10', 'Sent': 1651556137.5807834, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556145.8777878, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 175, 'Sender': '10.0.0.10', 'Sent': 1651556137.882498, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556145.8795373, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 346, 'Sender': '10.0.0.10', 'Sent': 1651556138.1836643, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556145.8931417, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 332, 'Sender': '10.0.0.10', 'Sent': 1651556139.5935209, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556145.8959758, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 246, 'Sender': '10.0.0.10', 'Sent': 1651556140.1975083, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556145.898358, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 13, 'Sender': '10.0.0.10', 'Sent': 1651556140.800956, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556145.8985586, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 218, 'Sender': '10.0.0.10', 'Sent': 1651556142.43909, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556145.8987398, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 77, 'Sender': '10.0.0.10', 'Sent': 1651556143.3451629, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556145.8988392, 'Latency': 0.0}
+{'Topic': 'location|20', 'Value': 178, 'Sender': '10.0.0.10', 'Sent': 1651556144.0615025, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556145.898933, 'Latency': 0.0}
+Subscribing to tcp://10.0.0.10:5571
+Starting update loop thread
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Starting subscriber listen loop...
+{'Topic': 'location|20', 'Value': 440, 'Sender': '10.0.0.10', 'Sent': 1651556146.0972354, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556146.1192832, 'Latency': 0.022047758102416992}
+{'Topic': 'location|20', 'Value': 90, 'Sender': '10.0.0.10', 'Sent': 1651556146.2024758, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556146.225474, 'Latency': 0.022998332977294922}
+{'Topic': 'location|20', 'Value': 265, 'Sender': '10.0.0.10', 'Sent': 1651556146.605928, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556146.627342, 'Latency': 0.02141404151916504}
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['location|20']}]
+{'Topic': 'location|20', 'Value': 233, 'Sender': '10.0.0.10', 'Sent': 1651556147.2156248, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556147.239519, 'Latency': 0.023894071578979492}
+{'Topic': 'location|20', 'Value': 186, 'Sender': '10.0.0.10', 'Sent': 1651556147.9229555, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556147.9458568, 'Latency': 0.022901296615600586}
+{'Topic': 'location|20', 'Value': 174, 'Sender': '10.0.0.10', 'Sent': 1651556148.1272795, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556148.150926, 'Latency': 0.02364659309387207}
+{'Topic': 'location|20', 'Value': 62, 'Sender': '10.0.0.10', 'Sent': 1651556149.1440332, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556149.1663766, 'Latency': 0.02234339714050293}
+{'Topic': 'location|20', 'Value': 467, 'Sender': '10.0.0.10', 'Sent': 1651556150.9601007, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556150.9819195, 'Latency': 0.021818876266479492}
+{'Topic': 'location|20', 'Value': 429, 'Sender': '10.0.0.10', 'Sent': 1651556151.2617335, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556151.284226, 'Latency': 0.022492408752441406}
+{'Topic': 'location|20', 'Value': 74, 'Sender': '10.0.0.10', 'Sent': 1651556151.663817, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556151.6857426, 'Latency': 0.021925687789916992}
+{'Topic': 'location|20', 'Value': 189, 'Sender': '10.0.0.10', 'Sent': 1651556154.1816566, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556154.2044487, 'Latency': 0.02279210090637207}
+{'Topic': 'location|20', 'Value': 243, 'Sender': '10.0.0.10', 'Sent': 1651556155.1884131, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556155.2097373, 'Latency': 0.02132415771484375}
+{'Topic': 'location|20', 'Value': 321, 'Sender': '10.0.0.10', 'Sent': 1651556155.288888, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556155.3101707, 'Latency': 0.021282672882080078}
+{'Topic': 'location|20', 'Value': 132, 'Sender': '10.0.0.10', 'Sent': 1651556155.389363, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556155.4116268, 'Latency': 0.022263765335083008}
+{'Topic': 'location|20', 'Value': 238, 'Sender': '10.0.0.10', 'Sent': 1651556155.692455, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556155.7142138, 'Latency': 0.0217587947845459}
+{'Topic': 'location|20', 'Value': 100, 'Sender': '10.0.0.10', 'Sent': 1651556156.1963701, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556156.2184827, 'Latency': 0.022112607955932617}
+{'Topic': 'location|20', 'Value': 189, 'Sender': '10.0.0.10', 'Sent': 1651556156.5982265, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556156.6201909, 'Latency': 0.021964311599731445}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['location|20']}]
+{'Topic': 'location|20', 'Value': 93, 'Sender': '10.0.0.10', 'Sent': 1651556158.611831, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556158.632899, 'Latency': 0.021068096160888672}
+{'Topic': 'location|20', 'Value': 11, 'Sender': '10.0.0.10', 'Sent': 1651556158.7121797, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556158.7335088, 'Latency': 0.021329164505004883}
+{'Topic': 'location|20', 'Value': 265, 'Sender': '10.0.0.10', 'Sent': 1651556159.0131383, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556159.0349762, 'Latency': 0.021837949752807617}
+{'Topic': 'location|20', 'Value': 132, 'Sender': '10.0.0.10', 'Sent': 1651556159.1207793, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556159.144772, 'Latency': 0.02399277687072754}
+{'Topic': 'location|20', 'Value': 260, 'Sender': '10.0.0.10', 'Sent': 1651556160.6342065, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556160.6563666, 'Latency': 0.022160053253173828}
+{'Topic': 'location|20', 'Value': 153, 'Sender': '10.0.0.10', 'Sent': 1651556160.935792, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556160.9597962, 'Latency': 0.024004220962524414}
+{'Topic': 'location|20', 'Value': 70, 'Sender': '10.0.0.10', 'Sent': 1651556161.036207, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556161.0625618, 'Latency': 0.02635478973388672}
+{'Topic': 'location|20', 'Value': 314, 'Sender': '10.0.0.10', 'Sent': 1651556161.136752, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556161.1596138, 'Latency': 0.022861957550048828}
+{'Topic': 'location|20', 'Value': 423, 'Sender': '10.0.0.10', 'Sent': 1651556161.840237, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556161.8621364, 'Latency': 0.02189946174621582}
+{'Topic': 'location|20', 'Value': 59, 'Sender': '10.0.0.10', 'Sent': 1651556162.2435513, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556162.2662945, 'Latency': 0.02274322509765625}
+{'Topic': 'location|20', 'Value': 328, 'Sender': '10.0.0.10', 'Sent': 1651556164.053699, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556164.0760267, 'Latency': 0.022327661514282227}
+{'Topic': 'location|20', 'Value': 343, 'Sender': '10.0.0.10', 'Sent': 1651556164.1541352, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556164.178429, 'Latency': 0.02429366111755371}
+{'Topic': 'location|20', 'Value': 281, 'Sender': '10.0.0.10', 'Sent': 1651556165.2607634, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556165.2832034, 'Latency': 0.022439956665039062}
+{'Topic': 'location|20', 'Value': 408, 'Sender': '10.0.0.10', 'Sent': 1651556166.6697643, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556166.6917462, 'Latency': 0.02198195457458496}
+{'Topic': 'location|20', 'Value': 119, 'Sender': '10.0.0.10', 'Sent': 1651556166.971604, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556166.9960275, 'Latency': 0.02442336082458496}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['location|20']}]
+{'Topic': 'location|20', 'Value': 368, 'Sender': '10.0.0.10', 'Sent': 1651556169.385522, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556169.4076538, 'Latency': 0.022131919860839844}
+{'Topic': 'location|20', 'Value': 264, 'Sender': '10.0.0.10', 'Sent': 1651556169.8894956, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556169.9142418, 'Latency': 0.024746179580688477}
+{'Topic': 'location|20', 'Value': 258, 'Sender': '10.0.0.10', 'Sent': 1651556170.5926628, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556170.6181333, 'Latency': 0.025470495223999023}
+{'Topic': 'location|20', 'Value': 463, 'Sender': '10.0.0.10', 'Sent': 1651556171.0943735, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556171.1194162, 'Latency': 0.02504277229309082}
+{'Topic': 'location|20', 'Value': 441, 'Sender': '10.0.0.10', 'Sent': 1651556171.496137, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556171.5175421, 'Latency': 0.02140522003173828}
+{'Topic': 'location|20', 'Value': 361, 'Sender': '10.0.0.10', 'Sent': 1651556171.5964093, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556171.6191003, 'Latency': 0.022691011428833008}
+{'Topic': 'location|20', 'Value': 282, 'Sender': '10.0.0.10', 'Sent': 1651556172.3011947, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556172.3245144, 'Latency': 0.023319721221923828}
+{'Topic': 'location|20', 'Value': 29, 'Sender': '10.0.0.10', 'Sent': 1651556172.5023088, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556172.5250652, 'Latency': 0.022756338119506836}
+{'Topic': 'location|20', 'Value': 270, 'Sender': '10.0.0.10', 'Sent': 1651556173.1062317, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556173.1308668, 'Latency': 0.02463507652282715}
+{'Topic': 'location|20', 'Value': 210, 'Sender': '10.0.0.10', 'Sent': 1651556173.2065485, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556173.229899, 'Latency': 0.02335047721862793}
+{'Topic': 'location|20', 'Value': 257, 'Sender': '10.0.0.10', 'Sent': 1651556176.222418, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556176.2457418, 'Latency': 0.023323774337768555}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['location|20']}]
+{'Topic': 'location|20', 'Value': 469, 'Sender': '10.0.0.10', 'Sent': 1651556178.9391794, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556178.9620488, 'Latency': 0.022869348526000977}
+{'Topic': 'location|20', 'Value': 443, 'Sender': '10.0.0.10', 'Sent': 1651556180.046648, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556180.0698657, 'Latency': 0.02321767807006836}
+{'Topic': 'location|20', 'Value': 353, 'Sender': '10.0.0.10', 'Sent': 1651556180.2478228, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556180.2730916, 'Latency': 0.0252687931060791}
+{'Topic': 'location|20', 'Value': 413, 'Sender': '10.0.0.10', 'Sent': 1651556181.2530322, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556181.2783394, 'Latency': 0.025307178497314453}
+{'Topic': 'location|20', 'Value': 174, 'Sender': '10.0.0.10', 'Sent': 1651556182.462298, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556182.4843118, 'Latency': 0.02201390266418457}
+{'Topic': 'location|20', 'Value': 92, 'Sender': '10.0.0.10', 'Sent': 1651556182.763581, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556182.7906964, 'Latency': 0.027115345001220703}
+{'Topic': 'location|20', 'Value': 118, 'Sender': '10.0.0.10', 'Sent': 1651556183.874504, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556183.896957, 'Latency': 0.022452831268310547}
+{'Topic': 'location|20', 'Value': 44, 'Sender': '10.0.0.10', 'Sent': 1651556184.5802097, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556184.602457, 'Latency': 0.022247314453125}
+{'Topic': 'location|20', 'Value': 285, 'Sender': '10.0.0.10', 'Sent': 1651556184.781779, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556184.804141, 'Latency': 0.02236199378967285}
+{'Topic': 'location|20', 'Value': 230, 'Sender': '10.0.0.10', 'Sent': 1651556186.1892993, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556186.2105615, 'Latency': 0.021262168884277344}
+{'Topic': 'location|20', 'Value': 467, 'Sender': '10.0.0.10', 'Sent': 1651556186.9925876, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556187.0144842, 'Latency': 0.0218966007232666}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['location|20']}]
+{'Topic': 'location|20', 'Value': 139, 'Sender': '10.0.0.10', 'Sent': 1651556190.7206368, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556190.7444134, 'Latency': 0.023776531219482422}
+{'Topic': 'location|20', 'Value': 111, 'Sender': '10.0.0.10', 'Sent': 1651556191.827275, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556191.8510141, 'Latency': 0.023739099502563477}
+{'Topic': 'location|20', 'Value': 222, 'Sender': '10.0.0.10', 'Sent': 1651556192.028146, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556192.0505764, 'Latency': 0.022430419921875}
+{'Topic': 'location|20', 'Value': 125, 'Sender': '10.0.0.10', 'Sent': 1651556193.6469653, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556193.6684191, 'Latency': 0.021453857421875}
+{'Topic': 'location|20', 'Value': 181, 'Sender': '10.0.0.10', 'Sent': 1651556194.0491164, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556194.0750518, 'Latency': 0.02593541145324707}
+{'Topic': 'location|20', 'Value': 310, 'Sender': '10.0.0.10', 'Sent': 1651556194.95356, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556194.9754417, 'Latency': 0.021881580352783203}
+{'Topic': 'location|20', 'Value': 448, 'Sender': '10.0.0.10', 'Sent': 1651556195.3561199, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556195.3786395, 'Latency': 0.022519588470458984}
+{'Topic': 'location|20', 'Value': 242, 'Sender': '10.0.0.10', 'Sent': 1651556195.557114, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556195.5789158, 'Latency': 0.02180194854736328}
+{'Topic': 'location|20', 'Value': 476, 'Sender': '10.0.0.10', 'Sent': 1651556196.9724805, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556196.9945078, 'Latency': 0.022027254104614258}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['location|20']}]
+{'Topic': 'location|20', 'Value': 489, 'Sender': '10.0.0.10', 'Sent': 1651556197.5757196, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556197.5994139, 'Latency': 0.023694276809692383}
+{'Topic': 'location|20', 'Value': 347, 'Sender': '10.0.0.10', 'Sent': 1651556197.7769134, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556197.7998202, 'Latency': 0.022906780242919922}
+{'Topic': 'location|20', 'Value': 73, 'Sender': '10.0.0.10', 'Sent': 1651556197.8773665, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556197.899244, 'Latency': 0.021877527236938477}
+{'Topic': 'location|20', 'Value': 320, 'Sender': '10.0.0.10', 'Sent': 1651556198.0782983, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556198.1023006, 'Latency': 0.0240023136138916}
+{'Topic': 'location|20', 'Value': 11, 'Sender': '10.0.0.10', 'Sent': 1651556198.4797297, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556198.5038667, 'Latency': 0.024137020111083984}
+{'Topic': 'location|20', 'Value': 447, 'Sender': '10.0.0.10', 'Sent': 1651556198.9833746, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556199.0072534, 'Latency': 0.023878812789916992}
+{'Topic': 'location|20', 'Value': 200, 'Sender': '10.0.0.10', 'Sent': 1651556203.1125348, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556203.1353753, 'Latency': 0.022840499877929688}
+{'Topic': 'location|20', 'Value': 273, 'Sender': '10.0.0.10', 'Sent': 1651556203.7159517, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556203.738119, 'Latency': 0.022167205810546875}
+{'Topic': 'location|20', 'Value': 221, 'Sender': '10.0.0.10', 'Sent': 1651556204.1184769, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556204.140447, 'Latency': 0.021970033645629883}
+{'Topic': 'location|20', 'Value': 486, 'Sender': '10.0.0.10', 'Sent': 1651556204.2190459, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556204.2432346, 'Latency': 0.024188756942749023}
+{'Topic': 'location|20', 'Value': 147, 'Sender': '10.0.0.10', 'Sent': 1651556205.0232186, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556205.0452266, 'Latency': 0.02200794219970703}
+{'Topic': 'location|20', 'Value': 471, 'Sender': '10.0.0.10', 'Sent': 1651556205.5271993, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556205.5501807, 'Latency': 0.02298140525817871}
+{'Topic': 'location|20', 'Value': 284, 'Sender': '10.0.0.10', 'Sent': 1651556206.2314234, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556206.2587078, 'Latency': 0.02728438377380371}
+{'Topic': 'location|20', 'Value': 71, 'Sender': '10.0.0.10', 'Sent': 1651556206.4320734, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556206.4535747, 'Latency': 0.02150130271911621}
+{'Topic': 'location|20', 'Value': 97, 'Sender': '10.0.0.10', 'Sent': 1651556207.0355651, 'Broker': 'None', 'Brokered': 0, 'Subscriber': '10.0.0.84', 'Received': 1651556207.0581572, 'Latency': 0.02259206771850586}
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.10', 'port': '5571', 'topics': ['location|20']}]
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.26', 'port': '5571', 'topics': ['location|20']}]
+Error: unable to lock polling for updates
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[{'ip': '10.0.0.37', 'port': '5571', 'topics': ['location|20']}]
+Error: unable to lock polling for updates
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[]
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+Reply received as updatesub
+[]
+Error: unable to lock polling for updates
+Fetching updates from registry 10.0.0.5:5550
+Request sent
+WARNING:kazoo.client:Connection dropped: outstanding heartbeat ping not received
 WARNING:kazoo.client:Transition to CONNECTING
 Current state is now = SUSPENDED
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
-WARNING:kazoo.client:Connection dropped: socket connection error: Connection refused
 WARNING:kazoo.client:Connection dropped: socket connection error: None
+WARNING:kazoo.client:Connection dropped: socket connection error: None
+WARNING:kazoo.client:Connection dropped: socket connection error: Network is unreachable
